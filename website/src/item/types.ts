@@ -14,6 +14,7 @@ export interface QuantifiedItem {
 
 export interface Item {
   id: number;
+  internal: boolean;
   display_name: string;
   internal_name: string;
   stack_size: number;

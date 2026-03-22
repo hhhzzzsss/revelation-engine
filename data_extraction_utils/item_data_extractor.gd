@@ -18,12 +18,7 @@ func _ready() -> void:
     var all_items: Array = ItemMap.all_item_ids \
         .map(func(id: int): return ItemMap.id_to_resource[id]) \
         .filter(func(i: Item): return not is_directional_block(i)) \
-        .filter(func(i: Item): return not is_internal_and_unfuseable(i))
-        
-    # Check that there aren't any internal items left
-    for item: Item in all_items:
-        if item.internal:
-            print("[Item Data Extractor] Found internal fuseable item: %s" % item.display_name)
+        .filter(func(i: Item): return i.icon != null && i.id > 0) # id > 0 condition to specifically exclude air
     
     # Serialize item data and save
     var serialized_item_data: Array = []
@@ -68,6 +63,7 @@ func item_to_dict(item: Item) -> Dictionary:
     var item_dict: Dictionary = {}
     
     item_dict["id"] = item.id
+    item_dict["internal"] = item.internal
     item_dict["display_name"] = item.display_name
     item_dict["internal_name"] = item.internal_name
     item_dict["stack_size"] = item.stack_size
@@ -150,11 +146,6 @@ func is_directional_block(i: Item) -> bool:
         if i.display_name.ends_with("+"): return true
         if i.display_name.ends_with("-"): return true
     return false
-
-func is_internal_and_unfuseable(i: Item) -> bool:
-    assert(i.essence is VitalEssence)
-    var essence: VitalEssence = i.essence
-    return i.internal && not essence.fuseable
 
 func clear_directory(path: String) -> void:
     if not DirAccess.dir_exists_absolute(path):

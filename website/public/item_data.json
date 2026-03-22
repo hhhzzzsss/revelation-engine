@@ -3,6 +3,734 @@
         "block_data": {
             "axe_affinity": false,
             "axe_required": false,
+            "break_time": 1.0,
+            "drop_item": 1,
+            "flammability": 0.5,
+            "griefable": true,
+            "meat_affinity": false,
+            "pickaxe_affinity": true,
+            "pickaxe_required": false,
+            "plant_affinity": false,
+            "shovel_affinity": false,
+            "sustain_fire": false,
+            "unbreakable": false
+        },
+        "color": [
+            0.7471466064453125,
+            0.1284167468547821,
+            0.041030142456293106
+        ],
+        "display_name": "debug block",
+        "essence": {
+            "bias": 0.0,
+            "energy": 1.0,
+            "fuseable": false,
+            "output_tags": [],
+            "properties": {
+                "aqua": 0.0,
+                "blockiness": 0.0,
+                "clay": 0.0,
+                "danger": 0.0,
+                "edibility": 0.0,
+                "faith": 0.0,
+                "hate": 0.0,
+                "lust": 0.0,
+                "mercury": 0.0,
+                "phlegm": 0.0,
+                "sulfur": 0.0,
+                "utility": 0.0,
+                "wearability": 0.0
+            },
+            "rank": 0.0,
+            "tags": []
+        },
+        "id": 1,
+        "internal": true,
+        "internal_name": "void block",
+        "is_block": true,
+        "max_durability": 0,
+        "stack_size": 50
+    },
+    {
+        "block_data": {
+            "axe_affinity": false,
+            "axe_required": false,
+            "break_time": 1.0,
+            "drop_item": 2,
+            "flammability": 0.5,
+            "griefable": true,
+            "meat_affinity": false,
+            "pickaxe_affinity": false,
+            "pickaxe_required": false,
+            "plant_affinity": false,
+            "shovel_affinity": false,
+            "sustain_fire": false,
+            "unbreakable": false
+        },
+        "color": [
+            0.3379848897457123,
+            0.38509464263916016,
+            0.3998302221298218
+        ],
+        "display_name": "debug block",
+        "essence": {
+            "bias": 0.0,
+            "energy": 1.0,
+            "fuseable": false,
+            "output_tags": [],
+            "properties": {
+                "aqua": 0.0,
+                "blockiness": 0.0,
+                "clay": 0.0,
+                "danger": 0.0,
+                "edibility": 0.0,
+                "faith": 0.0,
+                "hate": 0.0,
+                "lust": 0.0,
+                "mercury": 0.0,
+                "phlegm": 0.0,
+                "sulfur": 0.0,
+                "utility": 0.0,
+                "wearability": 0.0
+            },
+            "rank": 0.0,
+            "tags": []
+        },
+        "id": 2,
+        "internal": true,
+        "internal_name": "debug",
+        "is_block": true,
+        "max_durability": 0,
+        "stack_size": 50
+    },
+    {
+        "block_data": {
+            "axe_affinity": false,
+            "axe_required": false,
+            "break_time": 0.10000000149011612,
+            "drop_item": 3,
+            "flammability": 0.5,
+            "griefable": true,
+            "meat_affinity": false,
+            "pickaxe_affinity": true,
+            "pickaxe_required": false,
+            "plant_affinity": false,
+            "shovel_affinity": false,
+            "sustain_fire": false,
+            "unbreakable": false
+        },
+        "color": [
+            0.6702996492385864,
+            0.2747983932495117,
+            0.2602665424346924
+        ],
+        "display_name": "debug block",
+        "essence": {
+            "bias": 0.0,
+            "energy": 1.0,
+            "fuseable": false,
+            "output_tags": [],
+            "properties": {
+                "aqua": 0.0,
+                "blockiness": 0.0,
+                "clay": 0.0,
+                "danger": 0.0,
+                "edibility": 0.0,
+                "faith": 0.0,
+                "hate": 0.0,
+                "lust": 0.0,
+                "mercury": 0.0,
+                "phlegm": 0.0,
+                "sulfur": 0.0,
+                "utility": 0.0,
+                "wearability": 0.0
+            },
+            "rank": 0.0,
+            "tags": []
+        },
+        "id": 3,
+        "internal": true,
+        "internal_name": "replace_1",
+        "is_block": true,
+        "max_durability": 0,
+        "stack_size": 50
+    },
+    {
+        "block_data": {
+            "axe_affinity": false,
+            "axe_required": false,
+            "break_time": 0.10000000149011612,
+            "drop_item": 4,
+            "flammability": 0.5,
+            "griefable": true,
+            "meat_affinity": false,
+            "pickaxe_affinity": false,
+            "pickaxe_required": false,
+            "plant_affinity": false,
+            "shovel_affinity": false,
+            "sustain_fire": false,
+            "unbreakable": false
+        },
+        "color": [
+            0.665631115436554,
+            0.3674560785293579,
+            0.26386556029319763
+        ],
+        "display_name": "debug block",
+        "essence": {
+            "bias": 0.0,
+            "energy": 1.0,
+            "fuseable": false,
+            "output_tags": [],
+            "properties": {
+                "aqua": 0.0,
+                "blockiness": 0.0,
+                "clay": 0.0,
+                "danger": 0.0,
+                "edibility": 0.0,
+                "faith": 0.0,
+                "hate": 0.0,
+                "lust": 0.0,
+                "mercury": 0.0,
+                "phlegm": 0.0,
+                "sulfur": 0.0,
+                "utility": 0.0,
+                "wearability": 0.0
+            },
+            "rank": 0.0,
+            "tags": []
+        },
+        "id": 4,
+        "internal": true,
+        "internal_name": "replace_2",
+        "is_block": true,
+        "max_durability": 0,
+        "stack_size": 50
+    },
+    {
+        "block_data": {
+            "axe_affinity": false,
+            "axe_required": false,
+            "break_time": 0.10000000149011612,
+            "drop_item": 5,
+            "flammability": 0.5,
+            "griefable": true,
+            "meat_affinity": false,
+            "pickaxe_affinity": false,
+            "pickaxe_required": false,
+            "plant_affinity": false,
+            "shovel_affinity": false,
+            "sustain_fire": false,
+            "unbreakable": false
+        },
+        "color": [
+            0.6614379286766052,
+            0.4514896869659424,
+            0.2759697735309601
+        ],
+        "display_name": "debug block",
+        "essence": {
+            "bias": 0.0,
+            "energy": 1.0,
+            "fuseable": false,
+            "output_tags": [],
+            "properties": {
+                "aqua": 0.0,
+                "blockiness": 0.0,
+                "clay": 0.0,
+                "danger": 0.0,
+                "edibility": 0.0,
+                "faith": 0.0,
+                "hate": 0.0,
+                "lust": 0.0,
+                "mercury": 0.0,
+                "phlegm": 0.0,
+                "sulfur": 0.0,
+                "utility": 0.0,
+                "wearability": 0.0
+            },
+            "rank": 0.0,
+            "tags": []
+        },
+        "id": 5,
+        "internal": true,
+        "internal_name": "replace_3",
+        "is_block": true,
+        "max_durability": 0,
+        "stack_size": 50
+    },
+    {
+        "block_data": {
+            "axe_affinity": false,
+            "axe_required": false,
+            "break_time": 0.10000000149011612,
+            "drop_item": 6,
+            "flammability": 0.5,
+            "griefable": true,
+            "meat_affinity": false,
+            "pickaxe_affinity": false,
+            "pickaxe_required": false,
+            "plant_affinity": false,
+            "shovel_affinity": false,
+            "sustain_fire": false,
+            "unbreakable": false
+        },
+        "color": [
+            0.6473474502563477,
+            0.6185892820358276,
+            0.30815720558166504
+        ],
+        "display_name": "debug block",
+        "essence": {
+            "bias": 0.0,
+            "energy": 1.0,
+            "fuseable": false,
+            "output_tags": [],
+            "properties": {
+                "aqua": 0.0,
+                "blockiness": 0.0,
+                "clay": 0.0,
+                "danger": 0.0,
+                "edibility": 0.0,
+                "faith": 0.0,
+                "hate": 0.0,
+                "lust": 0.0,
+                "mercury": 0.0,
+                "phlegm": 0.0,
+                "sulfur": 0.0,
+                "utility": 0.0,
+                "wearability": 0.0
+            },
+            "rank": 0.0,
+            "tags": []
+        },
+        "id": 6,
+        "internal": true,
+        "internal_name": "replace_4",
+        "is_block": true,
+        "max_durability": 0,
+        "stack_size": 50
+    },
+    {
+        "block_data": {
+            "axe_affinity": false,
+            "axe_required": false,
+            "break_time": 0.10000000149011612,
+            "drop_item": 7,
+            "flammability": 0.5,
+            "griefable": true,
+            "meat_affinity": false,
+            "pickaxe_affinity": true,
+            "pickaxe_required": false,
+            "plant_affinity": false,
+            "shovel_affinity": false,
+            "sustain_fire": false,
+            "unbreakable": false
+        },
+        "color": [
+            0.5492742657661438,
+            0.6179441213607788,
+            0.2958832085132599
+        ],
+        "display_name": "debug block",
+        "essence": {
+            "bias": 0.0,
+            "energy": 1.0,
+            "fuseable": false,
+            "output_tags": [],
+            "properties": {
+                "aqua": 0.0,
+                "blockiness": 0.0,
+                "clay": 0.0,
+                "danger": 0.0,
+                "edibility": 0.0,
+                "faith": 0.0,
+                "hate": 0.0,
+                "lust": 0.0,
+                "mercury": 0.0,
+                "phlegm": 0.0,
+                "sulfur": 0.0,
+                "utility": 0.0,
+                "wearability": 0.0
+            },
+            "rank": 0.0,
+            "tags": []
+        },
+        "id": 7,
+        "internal": true,
+        "internal_name": "replace_5",
+        "is_block": true,
+        "max_durability": 0,
+        "stack_size": 50
+    },
+    {
+        "block_data": {
+            "axe_affinity": false,
+            "axe_required": false,
+            "break_time": 1.0,
+            "drop_item": 8,
+            "flammability": 0.5,
+            "griefable": true,
+            "meat_affinity": false,
+            "pickaxe_affinity": false,
+            "pickaxe_required": false,
+            "plant_affinity": false,
+            "shovel_affinity": false,
+            "sustain_fire": false,
+            "unbreakable": false
+        },
+        "color": [
+            0.3497326076030731,
+            0.6188439130783081,
+            0.2807741165161133
+        ],
+        "display_name": "debug block",
+        "essence": {
+            "bias": 0.0,
+            "energy": 1.0,
+            "fuseable": false,
+            "output_tags": [],
+            "properties": {
+                "aqua": 0.0,
+                "blockiness": 0.0,
+                "clay": 0.0,
+                "danger": 0.0,
+                "edibility": 0.0,
+                "faith": 0.0,
+                "hate": 0.0,
+                "lust": 0.0,
+                "mercury": 0.0,
+                "phlegm": 0.0,
+                "sulfur": 0.0,
+                "utility": 0.0,
+                "wearability": 0.0
+            },
+            "rank": 0.0,
+            "tags": []
+        },
+        "id": 8,
+        "internal": true,
+        "internal_name": "replace_6",
+        "is_block": true,
+        "max_durability": 0,
+        "stack_size": 50
+    },
+    {
+        "block_data": {
+            "axe_affinity": false,
+            "axe_required": false,
+            "break_time": 1.0,
+            "drop_item": 9,
+            "flammability": 0.5,
+            "griefable": true,
+            "meat_affinity": false,
+            "pickaxe_affinity": false,
+            "pickaxe_required": false,
+            "plant_affinity": false,
+            "shovel_affinity": false,
+            "sustain_fire": false,
+            "unbreakable": false
+        },
+        "color": [
+            0.3577115833759308,
+            0.624955415725708,
+            0.450335294008255
+        ],
+        "display_name": "debug block",
+        "essence": {
+            "bias": 0.0,
+            "energy": 1.0,
+            "fuseable": false,
+            "output_tags": [],
+            "properties": {
+                "aqua": 0.0,
+                "blockiness": 0.0,
+                "clay": 0.0,
+                "danger": 0.0,
+                "edibility": 0.0,
+                "faith": 0.0,
+                "hate": 0.0,
+                "lust": 0.0,
+                "mercury": 0.0,
+                "phlegm": 0.0,
+                "sulfur": 0.0,
+                "utility": 0.0,
+                "wearability": 0.0
+            },
+            "rank": 0.0,
+            "tags": []
+        },
+        "id": 9,
+        "internal": true,
+        "internal_name": "replace_7",
+        "is_block": true,
+        "max_durability": 0,
+        "stack_size": 50
+    },
+    {
+        "block_data": {
+            "axe_affinity": false,
+            "axe_required": false,
+            "break_time": 1.0,
+            "drop_item": 10,
+            "flammability": 0.5,
+            "griefable": true,
+            "meat_affinity": false,
+            "pickaxe_affinity": false,
+            "pickaxe_required": false,
+            "plant_affinity": false,
+            "shovel_affinity": false,
+            "sustain_fire": false,
+            "unbreakable": false
+        },
+        "color": [
+            0.36032596230506897,
+            0.63193279504776,
+            0.5823783874511719
+        ],
+        "display_name": "debug block",
+        "essence": {
+            "bias": 0.0,
+            "energy": 1.0,
+            "fuseable": false,
+            "output_tags": [],
+            "properties": {
+                "aqua": 0.0,
+                "blockiness": 0.0,
+                "clay": 0.0,
+                "danger": 0.0,
+                "edibility": 0.0,
+                "faith": 0.0,
+                "hate": 0.0,
+                "lust": 0.0,
+                "mercury": 0.0,
+                "phlegm": 0.0,
+                "sulfur": 0.0,
+                "utility": 0.0,
+                "wearability": 0.0
+            },
+            "rank": 0.0,
+            "tags": []
+        },
+        "id": 10,
+        "internal": true,
+        "internal_name": "replace_8",
+        "is_block": true,
+        "max_durability": 0,
+        "stack_size": 50
+    },
+    {
+        "block_data": {
+            "axe_affinity": false,
+            "axe_required": false,
+            "break_time": 1.0,
+            "drop_item": 11,
+            "flammability": 0.5,
+            "griefable": true,
+            "meat_affinity": false,
+            "pickaxe_affinity": false,
+            "pickaxe_required": false,
+            "plant_affinity": false,
+            "shovel_affinity": false,
+            "sustain_fire": false,
+            "unbreakable": false
+        },
+        "color": [
+            0.3261692523956299,
+            0.5790680050849915,
+            0.6571428775787354
+        ],
+        "display_name": "debug block",
+        "essence": {
+            "bias": 0.0,
+            "energy": 1.0,
+            "fuseable": false,
+            "output_tags": [],
+            "properties": {
+                "aqua": 0.0,
+                "blockiness": 0.0,
+                "clay": 0.0,
+                "danger": 0.0,
+                "edibility": 0.0,
+                "faith": 0.0,
+                "hate": 0.0,
+                "lust": 0.0,
+                "mercury": 0.0,
+                "phlegm": 0.0,
+                "sulfur": 0.0,
+                "utility": 0.0,
+                "wearability": 0.0
+            },
+            "rank": 0.0,
+            "tags": []
+        },
+        "id": 11,
+        "internal": true,
+        "internal_name": "replace_9",
+        "is_block": true,
+        "max_durability": 0,
+        "stack_size": 50
+    },
+    {
+        "block_data": {
+            "axe_affinity": false,
+            "axe_required": false,
+            "break_time": 1.0,
+            "drop_item": 12,
+            "flammability": 0.5,
+            "griefable": true,
+            "meat_affinity": false,
+            "pickaxe_affinity": false,
+            "pickaxe_required": false,
+            "plant_affinity": false,
+            "shovel_affinity": false,
+            "sustain_fire": false,
+            "unbreakable": false
+        },
+        "color": [
+            0.2747814357280731,
+            0.4376029074192047,
+            0.6646634340286255
+        ],
+        "display_name": "debug block",
+        "essence": {
+            "bias": 0.0,
+            "energy": 1.0,
+            "fuseable": false,
+            "output_tags": [],
+            "properties": {
+                "aqua": 0.0,
+                "blockiness": 0.0,
+                "clay": 0.0,
+                "danger": 0.0,
+                "edibility": 0.0,
+                "faith": 0.0,
+                "hate": 0.0,
+                "lust": 0.0,
+                "mercury": 0.0,
+                "phlegm": 0.0,
+                "sulfur": 0.0,
+                "utility": 0.0,
+                "wearability": 0.0
+            },
+            "rank": 0.0,
+            "tags": []
+        },
+        "id": 12,
+        "internal": true,
+        "internal_name": "replace_10",
+        "is_block": true,
+        "max_durability": 0,
+        "stack_size": 50
+    },
+    {
+        "block_data": {
+            "axe_affinity": false,
+            "axe_required": false,
+            "break_time": 0.10000000149011612,
+            "drop_item": 13,
+            "flammability": 0.5,
+            "griefable": true,
+            "meat_affinity": false,
+            "pickaxe_affinity": false,
+            "pickaxe_required": false,
+            "plant_affinity": false,
+            "shovel_affinity": false,
+            "sustain_fire": false,
+            "unbreakable": false
+        },
+        "color": [
+            0.11798407137393951,
+            0.10456494987010956,
+            0.08682598173618317
+        ],
+        "display_name": "direction block",
+        "essence": {
+            "bias": 0.0,
+            "energy": 1.0,
+            "fuseable": false,
+            "output_tags": [],
+            "properties": {
+                "aqua": 0.0,
+                "blockiness": 0.0,
+                "clay": 0.0,
+                "danger": 0.0,
+                "edibility": 0.0,
+                "faith": 0.0,
+                "hate": 0.0,
+                "lust": 0.0,
+                "mercury": 0.0,
+                "phlegm": 0.0,
+                "sulfur": 0.0,
+                "utility": 0.0,
+                "wearability": 0.0
+            },
+            "rank": 0.0,
+            "tags": []
+        },
+        "id": 13,
+        "internal": true,
+        "internal_name": "direction block",
+        "is_block": true,
+        "max_durability": 0,
+        "stack_size": 50
+    },
+    {
+        "block_data": {
+            "axe_affinity": false,
+            "axe_required": false,
+            "break_time": 1.0,
+            "drop_item": 20,
+            "flammability": 0.5,
+            "griefable": true,
+            "meat_affinity": false,
+            "pickaxe_affinity": false,
+            "pickaxe_required": false,
+            "plant_affinity": false,
+            "shovel_affinity": false,
+            "sustain_fire": false,
+            "unbreakable": false
+        },
+        "color": [
+            0.6067736148834229,
+            0.35350140929222107,
+            0.661200225353241
+        ],
+        "display_name": "debug block w",
+        "essence": {
+            "bias": 0.0,
+            "energy": 1.0,
+            "fuseable": false,
+            "output_tags": [],
+            "properties": {
+                "aqua": 0.0,
+                "blockiness": 0.0,
+                "clay": 0.0,
+                "danger": 0.0,
+                "edibility": 0.0,
+                "faith": 0.0,
+                "hate": 0.0,
+                "lust": 0.0,
+                "mercury": 0.0,
+                "phlegm": 0.0,
+                "sulfur": 0.0,
+                "utility": 0.0,
+                "wearability": 0.0
+            },
+            "rank": 0.0,
+            "tags": []
+        },
+        "id": 20,
+        "internal": true,
+        "internal_name": "replace_water",
+        "is_block": true,
+        "max_durability": 0,
+        "stack_size": 50
+    },
+    {
+        "block_data": {
+            "axe_affinity": false,
+            "axe_required": false,
             "break_time": 4.0,
             "drop_item": 26,
             "flammability": 0.0,
@@ -51,6 +779,7 @@
             ]
         },
         "id": 26,
+        "internal": false,
         "internal_name": "heaven block",
         "is_block": true,
         "max_durability": 0,
@@ -108,6 +837,7 @@
             ]
         },
         "id": 27,
+        "internal": false,
         "internal_name": "naraka block",
         "is_block": true,
         "max_durability": 0,
@@ -147,6 +877,7 @@
             ]
         },
         "id": 28,
+        "internal": false,
         "internal_name": "multitool",
         "max_durability": 312,
         "stack_size": 1
@@ -202,6 +933,7 @@
             ]
         },
         "id": 29,
+        "internal": false,
         "internal_name": "womb block",
         "is_block": true,
         "max_durability": 0,
@@ -259,6 +991,7 @@
             ]
         },
         "id": 30,
+        "internal": false,
         "internal_name": "pocket block",
         "is_block": true,
         "max_durability": 0,
@@ -314,10 +1047,62 @@
             ]
         },
         "id": 31,
+        "internal": false,
         "internal_name": "respawn block",
         "is_block": true,
         "max_durability": 0,
         "stack_size": 5
+    },
+    {
+        "block_data": {
+            "axe_affinity": false,
+            "axe_required": false,
+            "break_time": 1.0,
+            "flammability": 0.0,
+            "griefable": false,
+            "meat_affinity": false,
+            "pickaxe_affinity": false,
+            "pickaxe_required": false,
+            "plant_affinity": false,
+            "shovel_affinity": false,
+            "sustain_fire": false,
+            "unbreakable": true
+        },
+        "color": [
+            0.85313880443573,
+            0.8996503949165344,
+            0.8846937417984009
+        ],
+        "display_name": "revelation block",
+        "essence": {
+            "bias": 0.0,
+            "energy": 0.0,
+            "fuseable": false,
+            "output_tags": [],
+            "properties": {
+                "aqua": 0.0,
+                "blockiness": 1.0,
+                "clay": 0.0,
+                "danger": 0.0,
+                "edibility": 0.0,
+                "faith": 0.0,
+                "hate": 0.0,
+                "lust": 0.0,
+                "mercury": 0.0,
+                "phlegm": 0.0,
+                "sulfur": 0.0,
+                "utility": 0.0,
+                "wearability": 0.0
+            },
+            "rank": 0.0,
+            "tags": []
+        },
+        "id": 32,
+        "internal": true,
+        "internal_name": "cutscene block",
+        "is_block": true,
+        "max_durability": 0,
+        "stack_size": 50
     },
     {
         "color": [
@@ -353,6 +1138,7 @@
             ]
         },
         "id": 4389,
+        "internal": false,
         "internal_name": "super drill",
         "max_durability": 5000,
         "stack_size": 1
@@ -390,6 +1176,7 @@
             ]
         },
         "id": 8418,
+        "internal": false,
         "internal_name": "string",
         "max_durability": 0,
         "stack_size": 50
@@ -428,6 +1215,7 @@
             ]
         },
         "id": 8479,
+        "internal": false,
         "internal_name": "clay lump",
         "max_durability": 0,
         "stack_size": 50
@@ -467,6 +1255,7 @@
             ]
         },
         "id": 8600,
+        "internal": false,
         "internal_name": "shell",
         "max_durability": 0,
         "stack_size": 50
@@ -521,6 +1310,7 @@
             ]
         },
         "id": 12421,
+        "internal": false,
         "internal_name": "sponge block",
         "is_block": true,
         "max_durability": 0,
@@ -576,6 +1366,7 @@
             ]
         },
         "id": 12422,
+        "internal": false,
         "internal_name": "diffuse block",
         "is_block": true,
         "max_durability": 0,
@@ -631,6 +1422,7 @@
             ]
         },
         "id": 12438,
+        "internal": false,
         "internal_name": "ice cube",
         "is_block": true,
         "max_durability": 0,
@@ -684,6 +1476,7 @@
             ]
         },
         "id": 12441,
+        "internal": false,
         "internal_name": "fractal block",
         "is_block": true,
         "max_durability": 0,
@@ -726,6 +1519,7 @@
             ]
         },
         "id": 13320,
+        "internal": false,
         "internal_name": "plush",
         "max_durability": 0,
         "stack_size": 5
@@ -763,6 +1557,7 @@
             ]
         },
         "id": 13333,
+        "internal": false,
         "internal_name": "wool",
         "max_durability": 0,
         "stack_size": 50
@@ -801,6 +1596,7 @@
             ]
         },
         "id": 13442,
+        "internal": false,
         "internal_name": "feather",
         "max_durability": 0,
         "stack_size": 50
@@ -839,6 +1635,7 @@
             ]
         },
         "id": 14043,
+        "internal": false,
         "internal_name": "magnetite ore",
         "max_durability": 0,
         "stack_size": 50
@@ -876,6 +1673,7 @@
             ]
         },
         "id": 14044,
+        "internal": false,
         "internal_name": "plastril ore",
         "max_durability": 0,
         "stack_size": 50
@@ -915,6 +1713,7 @@
             ]
         },
         "id": 14045,
+        "internal": false,
         "internal_name": "silver vessel",
         "max_durability": 0,
         "stack_size": 5
@@ -953,6 +1752,7 @@
             ]
         },
         "id": 14047,
+        "internal": false,
         "internal_name": "kila",
         "max_durability": 0,
         "stack_size": 1
@@ -994,6 +1794,7 @@
             ]
         },
         "id": 14048,
+        "internal": false,
         "internal_name": "bolus",
         "max_durability": 0,
         "stack_size": 1
@@ -1032,6 +1833,7 @@
             ]
         },
         "id": 14051,
+        "internal": false,
         "internal_name": "metal leg",
         "max_durability": 0,
         "stack_size": 50
@@ -1071,6 +1873,7 @@
             ]
         },
         "id": 14059,
+        "internal": false,
         "internal_name": "silicon crystal",
         "max_durability": 0,
         "stack_size": 5
@@ -1109,6 +1912,7 @@
             ]
         },
         "id": 37234,
+        "internal": false,
         "internal_name": "stick",
         "max_durability": 0,
         "stack_size": 50
@@ -1147,6 +1951,7 @@
             ]
         },
         "id": 37250,
+        "internal": false,
         "internal_name": "thorn",
         "max_durability": 0,
         "stack_size": 50
@@ -1186,6 +1991,7 @@
             ]
         },
         "id": 38442,
+        "internal": false,
         "internal_name": "fire",
         "max_durability": 0,
         "stack_size": 50
@@ -1225,6 +2031,7 @@
             ]
         },
         "id": 38450,
+        "internal": false,
         "internal_name": "water",
         "max_durability": 0,
         "stack_size": 50
@@ -1264,6 +2071,7 @@
             ]
         },
         "id": 38473,
+        "internal": false,
         "internal_name": "agnite ore",
         "max_durability": 0,
         "stack_size": 50
@@ -1317,6 +2125,7 @@
             ]
         },
         "id": 70014,
+        "internal": false,
         "internal_name": "e",
         "is_block": true,
         "max_durability": 0,
@@ -1371,6 +2180,7 @@
             ]
         },
         "id": 70021,
+        "internal": false,
         "internal_name": "f",
         "is_block": true,
         "max_durability": 0,
@@ -1425,6 +2235,7 @@
             ]
         },
         "id": 70028,
+        "internal": false,
         "internal_name": "g",
         "is_block": true,
         "max_durability": 0,
@@ -1479,6 +2290,7 @@
             ]
         },
         "id": 70035,
+        "internal": false,
         "internal_name": "h",
         "is_block": true,
         "max_durability": 0,
@@ -1533,6 +2345,7 @@
             ]
         },
         "id": 70042,
+        "internal": false,
         "internal_name": "i",
         "is_block": true,
         "max_durability": 0,
@@ -1587,6 +2400,7 @@
             ]
         },
         "id": 70049,
+        "internal": false,
         "internal_name": "j",
         "is_block": true,
         "max_durability": 0,
@@ -1641,6 +2455,7 @@
             ]
         },
         "id": 70056,
+        "internal": false,
         "internal_name": "k",
         "is_block": true,
         "max_durability": 0,
@@ -1695,6 +2510,7 @@
             ]
         },
         "id": 70063,
+        "internal": false,
         "internal_name": "l",
         "is_block": true,
         "max_durability": 0,
@@ -1749,6 +2565,7 @@
             ]
         },
         "id": 70070,
+        "internal": false,
         "internal_name": "m",
         "is_block": true,
         "max_durability": 0,
@@ -1803,6 +2620,7 @@
             ]
         },
         "id": 70077,
+        "internal": false,
         "internal_name": "n",
         "is_block": true,
         "max_durability": 0,
@@ -1858,6 +2676,7 @@
             ]
         },
         "id": 70084,
+        "internal": false,
         "internal_name": "o",
         "is_block": true,
         "max_durability": 0,
@@ -1912,6 +2731,7 @@
             ]
         },
         "id": 70091,
+        "internal": false,
         "internal_name": "p",
         "is_block": true,
         "max_durability": 0,
@@ -1966,6 +2786,7 @@
             ]
         },
         "id": 70098,
+        "internal": false,
         "internal_name": "q",
         "is_block": true,
         "max_durability": 0,
@@ -2020,6 +2841,7 @@
             ]
         },
         "id": 70105,
+        "internal": false,
         "internal_name": "r",
         "is_block": true,
         "max_durability": 0,
@@ -2074,6 +2896,7 @@
             ]
         },
         "id": 70112,
+        "internal": false,
         "internal_name": "s",
         "is_block": true,
         "max_durability": 0,
@@ -2128,6 +2951,7 @@
             ]
         },
         "id": 70119,
+        "internal": false,
         "internal_name": "t",
         "is_block": true,
         "max_durability": 0,
@@ -2182,6 +3006,7 @@
             ]
         },
         "id": 70126,
+        "internal": false,
         "internal_name": "u",
         "is_block": true,
         "max_durability": 0,
@@ -2236,6 +3061,7 @@
             ]
         },
         "id": 70133,
+        "internal": false,
         "internal_name": "v",
         "is_block": true,
         "max_durability": 0,
@@ -2290,6 +3116,7 @@
             ]
         },
         "id": 70140,
+        "internal": false,
         "internal_name": "w",
         "is_block": true,
         "max_durability": 0,
@@ -2344,6 +3171,7 @@
             ]
         },
         "id": 70147,
+        "internal": false,
         "internal_name": "x",
         "is_block": true,
         "max_durability": 0,
@@ -2398,6 +3226,7 @@
             ]
         },
         "id": 70154,
+        "internal": false,
         "internal_name": "y",
         "is_block": true,
         "max_durability": 0,
@@ -2452,6 +3281,7 @@
             ]
         },
         "id": 70161,
+        "internal": false,
         "internal_name": "z",
         "is_block": true,
         "max_durability": 0,
@@ -2490,6 +3320,7 @@
             ]
         },
         "id": 81231,
+        "internal": false,
         "internal_name": "plastril empty bucket",
         "max_durability": 0,
         "stack_size": 1
@@ -2528,6 +3359,7 @@
             ]
         },
         "id": 81232,
+        "internal": false,
         "internal_name": "water bucket",
         "max_durability": 0,
         "stack_size": 1
@@ -2567,6 +3399,7 @@
             ]
         },
         "id": 81235,
+        "internal": false,
         "internal_name": "infinite spiller",
         "max_durability": 0,
         "stack_size": 1
@@ -2605,6 +3438,7 @@
             ]
         },
         "id": 81238,
+        "internal": false,
         "internal_name": "infinite absorber",
         "max_durability": 0,
         "stack_size": 1
@@ -2643,6 +3477,7 @@
             ]
         },
         "id": 93008,
+        "internal": false,
         "internal_name": "eye",
         "max_durability": 0,
         "stack_size": 50
@@ -2681,6 +3516,7 @@
             ]
         },
         "id": 93013,
+        "internal": false,
         "internal_name": "bone",
         "max_durability": 0,
         "stack_size": 50
@@ -2734,6 +3570,7 @@
             ]
         },
         "id": 93015,
+        "internal": false,
         "internal_name": "style_plant",
         "is_block": true,
         "max_durability": 0,
@@ -2773,6 +3610,7 @@
             ]
         },
         "id": 93025,
+        "internal": false,
         "internal_name": "marble",
         "max_durability": 0,
         "stack_size": 50
@@ -2812,6 +3650,7 @@
             ]
         },
         "id": 93037,
+        "internal": false,
         "internal_name": "meat apparatus",
         "max_durability": 0,
         "stack_size": 50
@@ -2849,6 +3688,7 @@
             ]
         },
         "id": 93045,
+        "internal": false,
         "internal_name": "foe",
         "max_durability": 0,
         "stack_size": 5
@@ -2886,6 +3726,7 @@
             ]
         },
         "id": 93046,
+        "internal": false,
         "internal_name": "stranger",
         "max_durability": 0,
         "stack_size": 5
@@ -2924,6 +3765,7 @@
             ]
         },
         "id": 93047,
+        "internal": false,
         "internal_name": "friend",
         "max_durability": 0,
         "stack_size": 5
@@ -2962,6 +3804,7 @@
             ]
         },
         "id": 93048,
+        "internal": false,
         "internal_name": "mana ore",
         "max_durability": 0,
         "stack_size": 50
@@ -3002,6 +3845,7 @@
             ]
         },
         "id": 93049,
+        "internal": false,
         "internal_name": "essence ball",
         "max_durability": 0,
         "stack_size": 50
@@ -3039,6 +3883,7 @@
             ]
         },
         "id": 93057,
+        "internal": false,
         "internal_name": "plastic pellet",
         "max_durability": 0,
         "stack_size": 50
@@ -3079,6 +3924,7 @@
             ]
         },
         "id": 93076,
+        "internal": false,
         "internal_name": "gear",
         "max_durability": 0,
         "stack_size": 50
@@ -3120,6 +3966,7 @@
             ]
         },
         "id": 93118,
+        "internal": false,
         "internal_name": "dice",
         "max_durability": 0,
         "stack_size": 50
@@ -3161,6 +4008,7 @@
             ]
         },
         "id": 93170,
+        "internal": false,
         "internal_name": "glaggle token",
         "max_durability": 0,
         "stack_size": 5
@@ -3200,6 +4048,7 @@
             ]
         },
         "id": 93173,
+        "internal": false,
         "internal_name": "goo",
         "max_durability": 0,
         "stack_size": 50
@@ -3237,6 +4086,7 @@
             ]
         },
         "id": 93198,
+        "internal": false,
         "internal_name": "glass shard",
         "max_durability": 0,
         "stack_size": 50
@@ -3277,6 +4127,7 @@
             ]
         },
         "id": 93220,
+        "internal": false,
         "internal_name": "empty capsule",
         "max_durability": 0,
         "stack_size": 50
@@ -3316,6 +4167,7 @@
             ]
         },
         "id": 93268,
+        "internal": false,
         "internal_name": "segment",
         "max_durability": 0,
         "stack_size": 50
@@ -3356,6 +4208,7 @@
             ]
         },
         "id": 93269,
+        "internal": false,
         "internal_name": "appendage",
         "max_durability": 0,
         "stack_size": 50
@@ -3395,6 +4248,7 @@
             ]
         },
         "id": 93270,
+        "internal": false,
         "internal_name": "eye",
         "max_durability": 0,
         "stack_size": 50
@@ -3434,6 +4288,7 @@
             ]
         },
         "id": 93271,
+        "internal": false,
         "internal_name": "gland",
         "max_durability": 0,
         "stack_size": 50
@@ -3473,6 +4328,7 @@
             ]
         },
         "id": 93274,
+        "internal": false,
         "internal_name": "segment",
         "max_durability": 0,
         "stack_size": 50
@@ -3512,6 +4368,7 @@
             ]
         },
         "id": 93275,
+        "internal": false,
         "internal_name": "blush",
         "max_durability": 0,
         "stack_size": 50
@@ -3565,6 +4422,7 @@
             ]
         },
         "id": 432234,
+        "internal": false,
         "internal_name": "simblock",
         "is_block": true,
         "max_durability": 0,
@@ -3619,6 +4477,7 @@
             ]
         },
         "id": 432235,
+        "internal": false,
         "internal_name": "simblock 2",
         "is_block": true,
         "max_durability": 0,
@@ -3673,6 +4532,7 @@
             ]
         },
         "id": 432236,
+        "internal": false,
         "internal_name": "simblock 4",
         "is_block": true,
         "max_durability": 0,
@@ -3727,6 +4587,7 @@
             ]
         },
         "id": 432237,
+        "internal": false,
         "internal_name": "simblock 3",
         "is_block": true,
         "max_durability": 0,
@@ -3781,6 +4642,7 @@
             ]
         },
         "id": 432238,
+        "internal": false,
         "internal_name": "simblock 5",
         "is_block": true,
         "max_durability": 0,
@@ -3835,6 +4697,7 @@
             ]
         },
         "id": 432239,
+        "internal": false,
         "internal_name": "flionide block",
         "is_block": true,
         "max_durability": 0,
@@ -3888,6 +4751,7 @@
             ]
         },
         "id": 432333,
+        "internal": false,
         "internal_name": "tooth block",
         "is_block": true,
         "max_durability": 0,
@@ -3943,6 +4807,7 @@
             ]
         },
         "id": 434377,
+        "internal": false,
         "internal_name": "star block",
         "is_block": true,
         "max_durability": 0,
@@ -3998,6 +4863,7 @@
             ]
         },
         "id": 434378,
+        "internal": false,
         "internal_name": "sun block",
         "is_block": true,
         "max_durability": 0,
@@ -4052,6 +4918,7 @@
             ]
         },
         "id": 699986,
+        "internal": false,
         "internal_name": "a",
         "is_block": true,
         "max_durability": 0,
@@ -4106,6 +4973,7 @@
             ]
         },
         "id": 699993,
+        "internal": false,
         "internal_name": "b",
         "is_block": true,
         "max_durability": 0,
@@ -4160,6 +5028,7 @@
             ]
         },
         "id": 700000,
+        "internal": false,
         "internal_name": "c",
         "is_block": true,
         "max_durability": 0,
@@ -4214,10 +5083,234 @@
             ]
         },
         "id": 700007,
+        "internal": false,
         "internal_name": "d",
         "is_block": true,
         "max_durability": 0,
         "stack_size": 50
+    },
+    {
+        "block_data": {
+            "axe_affinity": false,
+            "axe_required": false,
+            "break_time": 1.0,
+            "drop_item": 3341234,
+            "flammability": 0.0,
+            "griefable": true,
+            "meat_affinity": false,
+            "pickaxe_affinity": false,
+            "pickaxe_required": false,
+            "plant_affinity": false,
+            "shovel_affinity": false,
+            "sustain_fire": false,
+            "unbreakable": false
+        },
+        "color": [
+            0.85313880443573,
+            0.8996503949165344,
+            0.8846937417984009
+        ],
+        "display_name": "beep block",
+        "essence": {
+            "bias": 0.0,
+            "energy": 0.15,
+            "fuseable": false,
+            "output_tags": [],
+            "properties": {
+                "aqua": 0.0,
+                "blockiness": 1.0,
+                "clay": 0.0,
+                "danger": 0.0,
+                "edibility": 0.0,
+                "faith": 0.03,
+                "hate": 0.04,
+                "lust": 0.0,
+                "mercury": 0.0,
+                "phlegm": 0.0,
+                "sulfur": 0.0,
+                "utility": 1.0,
+                "wearability": 0.0
+            },
+            "rank": 0.0,
+            "tags": [
+                "meat",
+                "digital"
+            ]
+        },
+        "id": 3341234,
+        "internal": true,
+        "internal_name": "beep block",
+        "is_block": true,
+        "max_durability": 0,
+        "stack_size": 50
+    },
+    {
+        "block_data": {
+            "axe_affinity": false,
+            "axe_required": false,
+            "break_time": 4.0,
+            "flammability": 0.0,
+            "griefable": true,
+            "meat_affinity": false,
+            "pickaxe_affinity": false,
+            "pickaxe_required": false,
+            "plant_affinity": false,
+            "shovel_affinity": false,
+            "sustain_fire": false,
+            "unbreakable": false
+        },
+        "color": [
+            0.4812585413455963,
+            0.42498859763145447,
+            0.35516035556793213
+        ],
+        "display_name": "manikin block",
+        "essence": {
+            "bias": 0.0,
+            "energy": 0.3,
+            "fuseable": false,
+            "output_tags": [],
+            "properties": {
+                "aqua": 1.0,
+                "blockiness": 1.0,
+                "clay": 0.0,
+                "danger": 0.76,
+                "edibility": 0.0,
+                "faith": 1.0,
+                "hate": 1.0,
+                "lust": 1.0,
+                "mercury": 0.89,
+                "phlegm": 0.07,
+                "sulfur": 1.0,
+                "utility": 0.66,
+                "wearability": 0.0
+            },
+            "rank": 0.3,
+            "tags": [
+                "glass",
+                "bright",
+                "magnetite",
+                "metal"
+            ]
+        },
+        "id": 5131244,
+        "internal": true,
+        "internal_name": "manikin block",
+        "is_block": true,
+        "max_durability": 0,
+        "stack_size": 5
+    },
+    {
+        "block_data": {
+            "axe_affinity": false,
+            "axe_required": false,
+            "break_time": 4.0,
+            "flammability": 0.0,
+            "griefable": true,
+            "meat_affinity": false,
+            "pickaxe_affinity": false,
+            "pickaxe_required": false,
+            "plant_affinity": false,
+            "shovel_affinity": false,
+            "sustain_fire": false,
+            "unbreakable": false
+        },
+        "color": [
+            0.4812585413455963,
+            0.42498859763145447,
+            0.35516035556793213
+        ],
+        "display_name": "blasphemy block",
+        "essence": {
+            "bias": 0.0,
+            "energy": 0.3,
+            "fuseable": false,
+            "output_tags": [],
+            "properties": {
+                "aqua": 1.0,
+                "blockiness": 1.0,
+                "clay": 0.0,
+                "danger": 0.76,
+                "edibility": 0.0,
+                "faith": 1.0,
+                "hate": 1.0,
+                "lust": 1.0,
+                "mercury": 0.89,
+                "phlegm": 0.07,
+                "sulfur": 1.0,
+                "utility": 0.66,
+                "wearability": 0.0
+            },
+            "rank": 0.3,
+            "tags": [
+                "glass",
+                "bright",
+                "magnetite",
+                "metal"
+            ]
+        },
+        "id": 5131245,
+        "internal": true,
+        "internal_name": "blasphemy block",
+        "is_block": true,
+        "max_durability": 0,
+        "stack_size": 5
+    },
+    {
+        "block_data": {
+            "axe_affinity": false,
+            "axe_required": false,
+            "break_time": 4.0,
+            "flammability": 0.0,
+            "griefable": true,
+            "meat_affinity": false,
+            "pickaxe_affinity": false,
+            "pickaxe_required": false,
+            "plant_affinity": false,
+            "shovel_affinity": false,
+            "sustain_fire": false,
+            "unbreakable": false
+        },
+        "color": [
+            0.4812585413455963,
+            0.42498859763145447,
+            0.35516035556793213
+        ],
+        "display_name": "metal golem block",
+        "essence": {
+            "bias": 0.0,
+            "energy": 0.3,
+            "fuseable": false,
+            "output_tags": [],
+            "properties": {
+                "aqua": 1.0,
+                "blockiness": 1.0,
+                "clay": 0.0,
+                "danger": 0.76,
+                "edibility": 0.0,
+                "faith": 1.0,
+                "hate": 1.0,
+                "lust": 1.0,
+                "mercury": 0.89,
+                "phlegm": 0.07,
+                "sulfur": 1.0,
+                "utility": 0.66,
+                "wearability": 0.0
+            },
+            "rank": 0.3,
+            "tags": [
+                "glass",
+                "bright",
+                "magnetite",
+                "metal"
+            ]
+        },
+        "id": 5131246,
+        "internal": true,
+        "internal_name": "metal golem block",
+        "is_block": true,
+        "max_durability": 0,
+        "stack_size": 5
     },
     {
         "block_data": {
@@ -4267,7 +5360,232 @@
             ]
         },
         "id": 5131247,
+        "internal": false,
         "internal_name": "uterus block",
+        "is_block": true,
+        "max_durability": 0,
+        "stack_size": 5
+    },
+    {
+        "block_data": {
+            "axe_affinity": false,
+            "axe_required": false,
+            "break_time": 4.0,
+            "flammability": 0.0,
+            "griefable": true,
+            "meat_affinity": false,
+            "pickaxe_affinity": false,
+            "pickaxe_required": false,
+            "plant_affinity": false,
+            "shovel_affinity": false,
+            "sustain_fire": false,
+            "unbreakable": false
+        },
+        "color": [
+            0.4812585413455963,
+            0.42498859763145447,
+            0.35516035556793213
+        ],
+        "display_name": "metal gel block",
+        "essence": {
+            "bias": 0.0,
+            "energy": 0.3,
+            "fuseable": false,
+            "output_tags": [],
+            "properties": {
+                "aqua": 1.0,
+                "blockiness": 1.0,
+                "clay": 0.0,
+                "danger": 0.76,
+                "edibility": 0.0,
+                "faith": 1.0,
+                "hate": 1.0,
+                "lust": 1.0,
+                "mercury": 0.89,
+                "phlegm": 0.07,
+                "sulfur": 1.0,
+                "utility": 0.66,
+                "wearability": 0.0
+            },
+            "rank": 0.3,
+            "tags": [
+                "glass",
+                "bright",
+                "magnetite",
+                "metal"
+            ]
+        },
+        "id": 5131249,
+        "internal": true,
+        "internal_name": "metal gel block",
+        "is_block": true,
+        "max_durability": 0,
+        "stack_size": 5
+    },
+    {
+        "block_data": {
+            "axe_affinity": false,
+            "axe_required": false,
+            "break_time": 4.0,
+            "flammability": 0.0,
+            "griefable": true,
+            "meat_affinity": false,
+            "pickaxe_affinity": false,
+            "pickaxe_required": false,
+            "plant_affinity": false,
+            "shovel_affinity": false,
+            "sustain_fire": false,
+            "unbreakable": false
+        },
+        "color": [
+            0.4812585413455963,
+            0.42498859763145447,
+            0.35516035556793213
+        ],
+        "display_name": "gel block",
+        "essence": {
+            "bias": 0.0,
+            "energy": 0.3,
+            "fuseable": false,
+            "output_tags": [],
+            "properties": {
+                "aqua": 1.0,
+                "blockiness": 1.0,
+                "clay": 0.0,
+                "danger": 0.76,
+                "edibility": 0.0,
+                "faith": 1.0,
+                "hate": 1.0,
+                "lust": 1.0,
+                "mercury": 0.89,
+                "phlegm": 0.07,
+                "sulfur": 1.0,
+                "utility": 0.66,
+                "wearability": 0.0
+            },
+            "rank": 0.3,
+            "tags": [
+                "glass",
+                "bright",
+                "magnetite",
+                "metal"
+            ]
+        },
+        "id": 5131250,
+        "internal": true,
+        "internal_name": "gel block",
+        "is_block": true,
+        "max_durability": 0,
+        "stack_size": 5
+    },
+    {
+        "block_data": {
+            "axe_affinity": false,
+            "axe_required": false,
+            "break_time": 4.0,
+            "flammability": 0.0,
+            "griefable": true,
+            "meat_affinity": false,
+            "pickaxe_affinity": false,
+            "pickaxe_required": false,
+            "plant_affinity": false,
+            "shovel_affinity": false,
+            "sustain_fire": false,
+            "unbreakable": false
+        },
+        "color": [
+            0.4812585413455963,
+            0.42498859763145447,
+            0.35516035556793213
+        ],
+        "display_name": "mini gel block",
+        "essence": {
+            "bias": 0.0,
+            "energy": 0.3,
+            "fuseable": false,
+            "output_tags": [],
+            "properties": {
+                "aqua": 1.0,
+                "blockiness": 1.0,
+                "clay": 0.0,
+                "danger": 0.76,
+                "edibility": 0.0,
+                "faith": 1.0,
+                "hate": 1.0,
+                "lust": 1.0,
+                "mercury": 0.89,
+                "phlegm": 0.07,
+                "sulfur": 1.0,
+                "utility": 0.66,
+                "wearability": 0.0
+            },
+            "rank": 0.3,
+            "tags": [
+                "glass",
+                "bright",
+                "magnetite",
+                "metal"
+            ]
+        },
+        "id": 5131256,
+        "internal": true,
+        "internal_name": "mini gel block",
+        "is_block": true,
+        "max_durability": 0,
+        "stack_size": 5
+    },
+    {
+        "block_data": {
+            "axe_affinity": false,
+            "axe_required": false,
+            "break_time": 4.0,
+            "flammability": 0.0,
+            "griefable": true,
+            "meat_affinity": false,
+            "pickaxe_affinity": false,
+            "pickaxe_required": false,
+            "plant_affinity": false,
+            "shovel_affinity": false,
+            "sustain_fire": false,
+            "unbreakable": false
+        },
+        "color": [
+            0.4812585413455963,
+            0.42498859763145447,
+            0.35516035556793213
+        ],
+        "display_name": "koadma block",
+        "essence": {
+            "bias": 0.0,
+            "energy": 0.3,
+            "fuseable": false,
+            "output_tags": [],
+            "properties": {
+                "aqua": 1.0,
+                "blockiness": 1.0,
+                "clay": 0.0,
+                "danger": 0.76,
+                "edibility": 0.0,
+                "faith": 1.0,
+                "hate": 1.0,
+                "lust": 1.0,
+                "mercury": 0.89,
+                "phlegm": 0.07,
+                "sulfur": 1.0,
+                "utility": 0.66,
+                "wearability": 0.0
+            },
+            "rank": 0.3,
+            "tags": [
+                "glass",
+                "bright",
+                "magnetite",
+                "metal"
+            ]
+        },
+        "id": 5131259,
+        "internal": true,
+        "internal_name": "koadma block",
         "is_block": true,
         "max_durability": 0,
         "stack_size": 5
@@ -4306,6 +5624,7 @@
             ]
         },
         "id": 7289371,
+        "internal": false,
         "internal_name": "hate wand",
         "max_durability": 101,
         "stack_size": 1
@@ -4344,6 +5663,7 @@
             ]
         },
         "id": 7289372,
+        "internal": false,
         "internal_name": "faith wand",
         "max_durability": 30,
         "stack_size": 1
@@ -4383,6 +5703,7 @@
             ]
         },
         "id": 7289373,
+        "internal": false,
         "internal_name": "heart wand",
         "max_durability": 300,
         "stack_size": 1
@@ -4421,6 +5742,7 @@
             ]
         },
         "id": 7289374,
+        "internal": false,
         "internal_name": "hand wand",
         "max_durability": 170,
         "stack_size": 1
@@ -4461,6 +5783,7 @@
             ]
         },
         "id": 7289376,
+        "internal": false,
         "internal_name": "ball wand",
         "max_durability": 300,
         "stack_size": 1
@@ -4500,6 +5823,7 @@
             ]
         },
         "id": 7289377,
+        "internal": false,
         "internal_name": "rename pencil",
         "max_durability": 100,
         "stack_size": 1
@@ -4555,6 +5879,7 @@
             ]
         },
         "id": 10170591,
+        "internal": false,
         "internal_name": "vomit block",
         "is_block": true,
         "max_durability": 0,
@@ -4610,6 +5935,7 @@
             ]
         },
         "id": 10170648,
+        "internal": false,
         "internal_name": "love block",
         "is_block": true,
         "max_durability": 0,
@@ -4664,6 +5990,7 @@
             ]
         },
         "id": 10170804,
+        "internal": false,
         "internal_name": "ambiguous block 1",
         "is_block": true,
         "max_durability": 0,
@@ -4718,6 +6045,7 @@
             ]
         },
         "id": 11009880,
+        "internal": false,
         "internal_name": "ambiguous block 3",
         "is_block": true,
         "max_durability": 0,
@@ -4772,6 +6100,7 @@
             ]
         },
         "id": 11009881,
+        "internal": false,
         "internal_name": "ambiguous block 2",
         "is_block": true,
         "max_durability": 0,
@@ -4826,6 +6155,7 @@
             ]
         },
         "id": 11009882,
+        "internal": false,
         "internal_name": "ambiguous block 4",
         "is_block": true,
         "max_durability": 0,
@@ -4880,6 +6210,7 @@
             ]
         },
         "id": 11009885,
+        "internal": false,
         "internal_name": "ambiguous block 6",
         "is_block": true,
         "max_durability": 0,
@@ -4934,6 +6265,7 @@
             ]
         },
         "id": 11009886,
+        "internal": false,
         "internal_name": "ambiguous block 5",
         "is_block": true,
         "max_durability": 0,
@@ -4987,6 +6319,7 @@
             ]
         },
         "id": 11009890,
+        "internal": false,
         "internal_name": "prismatic block",
         "is_block": true,
         "max_durability": 0,
@@ -5043,6 +6376,7 @@
             ]
         },
         "id": 11013322,
+        "internal": false,
         "internal_name": "accelo block",
         "is_block": true,
         "max_durability": 0,
@@ -5084,6 +6418,7 @@
             ]
         },
         "id": 34251235,
+        "internal": false,
         "internal_name": "light pincer",
         "max_durability": 500,
         "stack_size": 1
@@ -5121,6 +6456,7 @@
             ]
         },
         "id": 34567887,
+        "internal": false,
         "internal_name": "grappling hook",
         "max_durability": 110,
         "stack_size": 1
@@ -5160,6 +6496,7 @@
             ]
         },
         "id": 34567890,
+        "internal": false,
         "internal_name": "hookshot",
         "max_durability": 250,
         "stack_size": 1
@@ -5200,6 +6537,7 @@
             ]
         },
         "id": 34567891,
+        "internal": false,
         "internal_name": "longshot",
         "max_durability": 550,
         "stack_size": 1
@@ -5240,6 +6578,7 @@
             ]
         },
         "id": 34567892,
+        "internal": false,
         "internal_name": "hookshot",
         "max_durability": 500,
         "stack_size": 1
@@ -5280,6 +6619,7 @@
             ]
         },
         "id": 45389523,
+        "internal": false,
         "internal_name": "bubblebear capsule",
         "max_durability": 0,
         "stack_size": 50
@@ -5320,6 +6660,7 @@
             ]
         },
         "id": 45389524,
+        "internal": false,
         "internal_name": "sheep capsule",
         "max_durability": 0,
         "stack_size": 50
@@ -5359,6 +6700,7 @@
             ]
         },
         "id": 45389525,
+        "internal": false,
         "internal_name": "manikin capsule",
         "max_durability": 0,
         "stack_size": 50
@@ -5400,6 +6742,7 @@
             ]
         },
         "id": 45389526,
+        "internal": false,
         "internal_name": "blasphemy capsule",
         "max_durability": 0,
         "stack_size": 50
@@ -5439,6 +6782,7 @@
             ]
         },
         "id": 45389527,
+        "internal": false,
         "internal_name": "ofanim capsule",
         "max_durability": 0,
         "stack_size": 50
@@ -5479,6 +6823,7 @@
             ]
         },
         "id": 45389528,
+        "internal": false,
         "internal_name": "kodama capsule",
         "max_durability": 0,
         "stack_size": 50
@@ -5519,6 +6864,7 @@
             ]
         },
         "id": 45389530,
+        "internal": false,
         "internal_name": "noot capsule",
         "max_durability": 0,
         "stack_size": 50
@@ -5558,6 +6904,7 @@
             ]
         },
         "id": 45389531,
+        "internal": false,
         "internal_name": "mimic capsule",
         "max_durability": 0,
         "stack_size": 50
@@ -5598,6 +6945,7 @@
             ]
         },
         "id": 45389532,
+        "internal": false,
         "internal_name": "meeshuu capsule",
         "max_durability": 0,
         "stack_size": 50
@@ -5638,6 +6986,7 @@
             ]
         },
         "id": 45389533,
+        "internal": false,
         "internal_name": "baal capsule",
         "max_durability": 0,
         "stack_size": 50
@@ -5678,6 +7027,7 @@
             ]
         },
         "id": 45389538,
+        "internal": false,
         "internal_name": "fish capsule",
         "max_durability": 0,
         "stack_size": 50
@@ -5718,6 +7068,7 @@
             ]
         },
         "id": 45389539,
+        "internal": false,
         "internal_name": "gyro fish capsule",
         "max_durability": 0,
         "stack_size": 50
@@ -5760,6 +7111,7 @@
             ]
         },
         "id": 45389541,
+        "internal": false,
         "internal_name": "agni capsule",
         "max_durability": 0,
         "stack_size": 50
@@ -5800,6 +7152,7 @@
             ]
         },
         "id": 45389546,
+        "internal": false,
         "internal_name": "fruit femme capsule",
         "max_durability": 0,
         "stack_size": 50
@@ -5841,6 +7194,7 @@
             ]
         },
         "id": 45389547,
+        "internal": false,
         "internal_name": "leviathan spawner",
         "max_durability": 0,
         "stack_size": 50
@@ -5881,6 +7235,7 @@
             ]
         },
         "id": 45389553,
+        "internal": false,
         "internal_name": "boid capsule",
         "max_durability": 0,
         "stack_size": 50
@@ -5920,6 +7275,7 @@
             ]
         },
         "id": 45389554,
+        "internal": false,
         "internal_name": "wildebeest capsule",
         "max_durability": 0,
         "stack_size": 50
@@ -5959,7 +7315,48 @@
             ]
         },
         "id": 45389555,
+        "internal": false,
         "internal_name": "toy dog capsule",
+        "max_durability": 0,
+        "stack_size": 50
+    },
+    {
+        "color": [
+            0.6664961576461792,
+            0.512702465057373,
+            0.7018755078315735
+        ],
+        "display_name": "kali capsule",
+        "essence": {
+            "bias": 0.0,
+            "energy": 0.7,
+            "fuseable": false,
+            "output_tags": [],
+            "properties": {
+                "aqua": 0.58,
+                "blockiness": 0.0,
+                "clay": 0.68,
+                "danger": 1.0,
+                "edibility": 0.52,
+                "faith": 0.45,
+                "hate": 1.0,
+                "lust": 1.0,
+                "mercury": 0.38,
+                "phlegm": 1.0,
+                "sulfur": 0.56,
+                "utility": 0.09,
+                "wearability": 0.19
+            },
+            "rank": 0.3,
+            "tags": [
+                "glass",
+                "meat",
+                "capsule"
+            ]
+        },
+        "id": 45389556,
+        "internal": true,
+        "internal_name": "kali capsule",
         "max_durability": 0,
         "stack_size": 50
     },
@@ -5999,6 +7396,7 @@
             ]
         },
         "id": 45389557,
+        "internal": false,
         "internal_name": "fungus bubblebeast capsule",
         "max_durability": 0,
         "stack_size": 50
@@ -6040,6 +7438,7 @@
             ]
         },
         "id": 45389562,
+        "internal": false,
         "internal_name": "diatom capsule",
         "max_durability": 0,
         "stack_size": 50
@@ -6080,6 +7479,7 @@
             ]
         },
         "id": 45389563,
+        "internal": false,
         "internal_name": "gel capsule",
         "max_durability": 0,
         "stack_size": 50
@@ -6120,6 +7520,7 @@
             ]
         },
         "id": 45389564,
+        "internal": false,
         "internal_name": "worm capsule",
         "max_durability": 0,
         "stack_size": 50
@@ -6160,6 +7561,7 @@
             ]
         },
         "id": 45389565,
+        "internal": false,
         "internal_name": "dominion capsule",
         "max_durability": 0,
         "stack_size": 50
@@ -6200,6 +7602,7 @@
             ]
         },
         "id": 45389566,
+        "internal": false,
         "internal_name": "goo capsule",
         "max_durability": 0,
         "stack_size": 50
@@ -6240,6 +7643,7 @@
             ]
         },
         "id": 45389567,
+        "internal": false,
         "internal_name": "vyrm capsule",
         "max_durability": 0,
         "stack_size": 50
@@ -6280,6 +7684,7 @@
             ]
         },
         "id": 45389568,
+        "internal": false,
         "internal_name": "sunny capsule",
         "max_durability": 0,
         "stack_size": 50
@@ -6320,6 +7725,7 @@
             ]
         },
         "id": 45389569,
+        "internal": false,
         "internal_name": "principality capsule",
         "max_durability": 0,
         "stack_size": 50
@@ -6360,6 +7766,7 @@
             ]
         },
         "id": 45389570,
+        "internal": false,
         "internal_name": "bee capsule",
         "max_durability": 0,
         "stack_size": 50
@@ -6400,6 +7807,7 @@
             ]
         },
         "id": 45389571,
+        "internal": false,
         "internal_name": "mercury capsule",
         "max_durability": 0,
         "stack_size": 50
@@ -6438,6 +7846,7 @@
             ]
         },
         "id": 45389572,
+        "internal": false,
         "internal_name": "noot egg",
         "max_durability": 0,
         "stack_size": 50
@@ -6477,6 +7886,7 @@
             ]
         },
         "id": 45389575,
+        "internal": false,
         "internal_name": "moccos capsule",
         "max_durability": 0,
         "stack_size": 50
@@ -6517,6 +7927,7 @@
             ]
         },
         "id": 45389576,
+        "internal": false,
         "internal_name": "golem capsule",
         "max_durability": 0,
         "stack_size": 50
@@ -6556,6 +7967,7 @@
             ]
         },
         "id": 45389587,
+        "internal": false,
         "internal_name": "bubblebear egg",
         "max_durability": 0,
         "stack_size": 50
@@ -6597,6 +8009,7 @@
             ]
         },
         "id": 45389603,
+        "internal": false,
         "internal_name": "shark capsule",
         "max_durability": 0,
         "stack_size": 50
@@ -6636,6 +8049,7 @@
             ]
         },
         "id": 45389604,
+        "internal": false,
         "internal_name": "platinum golem capsule",
         "max_durability": 0,
         "stack_size": 50
@@ -6675,6 +8089,7 @@
             ]
         },
         "id": 45389605,
+        "internal": false,
         "internal_name": "archangel capsule",
         "max_durability": 0,
         "stack_size": 50
@@ -6714,7 +8129,47 @@
             ]
         },
         "id": 45389839,
+        "internal": false,
         "internal_name": "preta capsule",
+        "max_durability": 0,
+        "stack_size": 50
+    },
+    {
+        "color": [
+            0.36313724517822266,
+            0.23947712779045105,
+            0.2893463969230652
+        ],
+        "display_name": "yhvh capsule",
+        "essence": {
+            "bias": 0.0,
+            "energy": 0.3,
+            "fuseable": false,
+            "output_tags": [],
+            "properties": {
+                "aqua": 0.44,
+                "blockiness": 0.0,
+                "clay": 0.32,
+                "danger": 1.0,
+                "edibility": 0.0,
+                "faith": 0.59,
+                "hate": 1.0,
+                "lust": 0.0,
+                "mercury": 0.3,
+                "phlegm": 1.0,
+                "sulfur": 0.13,
+                "utility": 0.0,
+                "wearability": 0.0
+            },
+            "rank": 0.0,
+            "tags": [
+                "glass",
+                "meat"
+            ]
+        },
+        "id": 45390785,
+        "internal": true,
+        "internal_name": "yhvh capsule",
         "max_durability": 0,
         "stack_size": 50
     },
@@ -6754,6 +8209,7 @@
             ]
         },
         "id": 45390792,
+        "internal": false,
         "internal_name": "glaggler capsule",
         "max_durability": 0,
         "stack_size": 50
@@ -6792,6 +8248,7 @@
             ]
         },
         "id": 84810581,
+        "internal": false,
         "internal_name": "bomb",
         "max_durability": 0,
         "stack_size": 50
@@ -6830,6 +8287,7 @@
             ]
         },
         "id": 84810582,
+        "internal": false,
         "internal_name": "super bomb",
         "max_durability": 0,
         "stack_size": 50
@@ -6870,6 +8328,7 @@
             ]
         },
         "id": 84810583,
+        "internal": false,
         "internal_name": "fire bomb",
         "max_durability": 0,
         "stack_size": 50
@@ -6909,6 +8368,7 @@
             ]
         },
         "id": 84810587,
+        "internal": false,
         "internal_name": "water bomb",
         "max_durability": 0,
         "stack_size": 50
@@ -6962,6 +8422,7 @@
             ]
         },
         "id": 119534997,
+        "internal": false,
         "internal_name": "seaweed foliage",
         "is_block": true,
         "max_durability": 0,
@@ -7016,6 +8477,7 @@
             ]
         },
         "id": 119534998,
+        "internal": false,
         "internal_name": "lively seaweed foliage",
         "is_block": true,
         "max_durability": 0,
@@ -7070,6 +8532,7 @@
             ]
         },
         "id": 119539932,
+        "internal": false,
         "internal_name": "moss fuzz foliage",
         "is_block": true,
         "max_durability": 0,
@@ -7125,6 +8588,7 @@
             ]
         },
         "id": 119542211,
+        "internal": false,
         "internal_name": "grave foliage",
         "is_block": true,
         "max_durability": 0,
@@ -7179,6 +8643,7 @@
             ]
         },
         "id": 119542215,
+        "internal": false,
         "internal_name": "zany foliage",
         "is_block": true,
         "max_durability": 0,
@@ -7233,6 +8698,7 @@
             ]
         },
         "id": 119542217,
+        "internal": false,
         "internal_name": "buzz flower foliage",
         "is_block": true,
         "max_durability": 0,
@@ -7287,6 +8753,7 @@
             ]
         },
         "id": 119542218,
+        "internal": false,
         "internal_name": "rose foliage",
         "is_block": true,
         "max_durability": 0,
@@ -7342,6 +8809,7 @@
             ]
         },
         "id": 119542219,
+        "internal": false,
         "internal_name": "grass grass foliage",
         "is_block": true,
         "max_durability": 0,
@@ -7397,6 +8865,7 @@
             ]
         },
         "id": 119542222,
+        "internal": false,
         "internal_name": "dandelion foliage",
         "is_block": true,
         "max_durability": 0,
@@ -7451,6 +8920,7 @@
             ]
         },
         "id": 119542223,
+        "internal": false,
         "internal_name": "grass foliage",
         "is_block": true,
         "max_durability": 0,
@@ -7505,6 +8975,7 @@
             ]
         },
         "id": 119542226,
+        "internal": false,
         "internal_name": "aster foliage",
         "is_block": true,
         "max_durability": 0,
@@ -7559,6 +9030,7 @@
             ]
         },
         "id": 119542227,
+        "internal": false,
         "internal_name": "flesh foliage",
         "is_block": true,
         "max_durability": 0,
@@ -7614,6 +9086,7 @@
             ]
         },
         "id": 119542228,
+        "internal": false,
         "internal_name": "cyst foliage",
         "is_block": true,
         "max_durability": 0,
@@ -7668,6 +9141,7 @@
             ]
         },
         "id": 119542229,
+        "internal": false,
         "internal_name": "desert grass foliage",
         "is_block": true,
         "max_durability": 0,
@@ -7723,6 +9197,7 @@
             ]
         },
         "id": 119542230,
+        "internal": false,
         "internal_name": "visognia flower foliage",
         "is_block": true,
         "max_durability": 0,
@@ -7778,6 +9253,7 @@
             ]
         },
         "id": 119542232,
+        "internal": false,
         "internal_name": "abble foliage",
         "is_block": true,
         "max_durability": 0,
@@ -7832,6 +9308,7 @@
             ]
         },
         "id": 119542234,
+        "internal": false,
         "internal_name": "pale grass foliage",
         "is_block": true,
         "max_durability": 0,
@@ -7887,6 +9364,7 @@
             ]
         },
         "id": 119542236,
+        "internal": false,
         "internal_name": "abble flower foliage",
         "is_block": true,
         "max_durability": 0,
@@ -7941,6 +9419,7 @@
             ]
         },
         "id": 119542237,
+        "internal": false,
         "internal_name": "blue grass foliage",
         "is_block": true,
         "max_durability": 0,
@@ -7995,6 +9474,7 @@
             ]
         },
         "id": 119542239,
+        "internal": false,
         "internal_name": "bright grass foliage",
         "is_block": true,
         "max_durability": 0,
@@ -8049,6 +9529,7 @@
             ]
         },
         "id": 119542242,
+        "internal": false,
         "internal_name": "wheat foliage",
         "is_block": true,
         "max_durability": 0,
@@ -8103,6 +9584,7 @@
             ]
         },
         "id": 119542243,
+        "internal": false,
         "internal_name": "lavender foliage",
         "is_block": true,
         "max_durability": 0,
@@ -8159,6 +9641,7 @@
             ]
         },
         "id": 119542352,
+        "internal": false,
         "internal_name": "balloon foliage",
         "is_block": true,
         "max_durability": 0,
@@ -8214,6 +9697,7 @@
             ]
         },
         "id": 119542691,
+        "internal": false,
         "internal_name": "star foliage",
         "is_block": true,
         "max_durability": 0,
@@ -8267,6 +9751,7 @@
             ]
         },
         "id": 119639177,
+        "internal": false,
         "internal_name": "red plastic block",
         "is_block": true,
         "max_durability": 0,
@@ -8320,6 +9805,7 @@
             ]
         },
         "id": 119639178,
+        "internal": false,
         "internal_name": "green plastic block",
         "is_block": true,
         "max_durability": 0,
@@ -8373,6 +9859,7 @@
             ]
         },
         "id": 119639179,
+        "internal": false,
         "internal_name": "blue plastic block",
         "is_block": true,
         "max_durability": 0,
@@ -8426,6 +9913,7 @@
             ]
         },
         "id": 119639180,
+        "internal": false,
         "internal_name": "yellow plastic block",
         "is_block": true,
         "max_durability": 0,
@@ -8479,6 +9967,7 @@
             ]
         },
         "id": 119639181,
+        "internal": false,
         "internal_name": "pink plastic block",
         "is_block": true,
         "max_durability": 0,
@@ -8532,6 +10021,7 @@
             ]
         },
         "id": 119639182,
+        "internal": false,
         "internal_name": "white plastic block",
         "is_block": true,
         "max_durability": 0,
@@ -8585,6 +10075,7 @@
             ]
         },
         "id": 119639183,
+        "internal": false,
         "internal_name": "black plastic block",
         "is_block": true,
         "max_durability": 0,
@@ -8638,6 +10129,7 @@
             ]
         },
         "id": 119639184,
+        "internal": false,
         "internal_name": "brown plastic block",
         "is_block": true,
         "max_durability": 0,
@@ -8692,6 +10184,7 @@
             ]
         },
         "id": 119639295,
+        "internal": false,
         "internal_name": "wrapper block",
         "is_block": true,
         "max_durability": 0,
@@ -8746,6 +10239,7 @@
             ]
         },
         "id": 119639411,
+        "internal": false,
         "internal_name": "couch block",
         "is_block": true,
         "max_durability": 0,
@@ -8800,6 +10294,7 @@
             ]
         },
         "id": 119639492,
+        "internal": false,
         "internal_name": "comfort block",
         "is_block": true,
         "max_durability": 0,
@@ -8867,6 +10362,7 @@
             ]
         },
         "id": 126239450,
+        "internal": false,
         "internal_name": "mana ore block",
         "is_block": true,
         "max_durability": 0,
@@ -8921,6 +10417,7 @@
             ]
         },
         "id": 128453002,
+        "internal": false,
         "internal_name": "pink grass block",
         "is_block": true,
         "max_durability": 0,
@@ -8974,6 +10471,7 @@
             ]
         },
         "id": 128455900,
+        "internal": false,
         "internal_name": "grass grass block",
         "is_block": true,
         "max_durability": 0,
@@ -9028,6 +10526,7 @@
             ]
         },
         "id": 128455912,
+        "internal": false,
         "internal_name": "pale grass block",
         "is_block": true,
         "max_durability": 0,
@@ -9082,6 +10581,7 @@
             ]
         },
         "id": 128455924,
+        "internal": false,
         "internal_name": "blue grass block",
         "is_block": true,
         "max_durability": 0,
@@ -9136,6 +10636,7 @@
             ]
         },
         "id": 128455936,
+        "internal": false,
         "internal_name": "grass block",
         "is_block": true,
         "max_durability": 0,
@@ -9190,6 +10691,7 @@
             ]
         },
         "id": 128455937,
+        "internal": false,
         "internal_name": "snow grass block",
         "is_block": true,
         "max_durability": 0,
@@ -9243,6 +10745,7 @@
             ]
         },
         "id": 128455938,
+        "internal": false,
         "internal_name": "snow block",
         "is_block": true,
         "max_durability": 0,
@@ -9297,6 +10800,7 @@
             ]
         },
         "id": 128455941,
+        "internal": false,
         "internal_name": "bright grass block",
         "is_block": true,
         "max_durability": 0,
@@ -9351,6 +10855,7 @@
             ]
         },
         "id": 128455968,
+        "internal": false,
         "internal_name": "plant",
         "is_block": true,
         "max_durability": 0,
@@ -9392,6 +10897,7 @@
             ]
         },
         "id": 142750516,
+        "internal": false,
         "internal_name": "agnite sword",
         "max_durability": 65,
         "stack_size": 1
@@ -9430,6 +10936,7 @@
             ]
         },
         "id": 152595397,
+        "internal": false,
         "internal_name": "iron axe",
         "max_durability": 300,
         "stack_size": 1
@@ -9468,6 +10975,7 @@
             ]
         },
         "id": 152595407,
+        "internal": false,
         "internal_name": "clay axe",
         "max_durability": 256,
         "stack_size": 1
@@ -9506,6 +11014,7 @@
             ]
         },
         "id": 152595417,
+        "internal": false,
         "internal_name": "key axe",
         "max_durability": 150,
         "stack_size": 1
@@ -9545,6 +11054,7 @@
             ]
         },
         "id": 152595520,
+        "internal": false,
         "internal_name": "plum axe",
         "max_durability": 311,
         "stack_size": 1
@@ -9584,6 +11094,7 @@
             ]
         },
         "id": 152610613,
+        "internal": false,
         "internal_name": "mace",
         "max_durability": 110,
         "stack_size": 1
@@ -9622,6 +11133,7 @@
             ]
         },
         "id": 152610617,
+        "internal": false,
         "internal_name": "iron sword",
         "max_durability": 128,
         "stack_size": 1
@@ -9660,6 +11172,7 @@
             ]
         },
         "id": 152610618,
+        "internal": false,
         "internal_name": "paddle",
         "max_durability": 90,
         "stack_size": 1
@@ -9699,6 +11212,7 @@
             ]
         },
         "id": 152610624,
+        "internal": false,
         "internal_name": "gel bruiser",
         "max_durability": 180,
         "stack_size": 1
@@ -9737,6 +11251,7 @@
             ]
         },
         "id": 152610629,
+        "internal": false,
         "internal_name": "plastril sword",
         "max_durability": 230,
         "stack_size": 1
@@ -9776,6 +11291,7 @@
             ]
         },
         "id": 152610630,
+        "internal": false,
         "internal_name": "excalibur",
         "max_durability": 700,
         "stack_size": 1
@@ -9815,6 +11331,7 @@
             ]
         },
         "id": 152610631,
+        "internal": false,
         "internal_name": "pronged sword",
         "max_durability": 400,
         "stack_size": 1
@@ -9853,6 +11370,7 @@
             ]
         },
         "id": 152610632,
+        "internal": false,
         "internal_name": "crystal sword",
         "max_durability": 65,
         "stack_size": 1
@@ -9891,6 +11409,7 @@
             ]
         },
         "id": 152610633,
+        "internal": false,
         "internal_name": "color sword",
         "max_durability": 800,
         "stack_size": 1
@@ -9929,6 +11448,7 @@
             ]
         },
         "id": 152610638,
+        "internal": false,
         "internal_name": "tendril pick",
         "max_durability": 330,
         "stack_size": 1
@@ -9968,6 +11488,7 @@
             ]
         },
         "id": 152610639,
+        "internal": false,
         "internal_name": "cristella's bane",
         "max_durability": 400,
         "stack_size": 1
@@ -10008,6 +11529,7 @@
             ]
         },
         "id": 152610645,
+        "internal": false,
         "internal_name": "ice pick",
         "max_durability": 200,
         "stack_size": 1
@@ -10047,6 +11569,7 @@
             ]
         },
         "id": 152610729,
+        "internal": false,
         "internal_name": "hinokagutsuchi",
         "max_durability": 1200,
         "stack_size": 1
@@ -10085,6 +11608,7 @@
             ]
         },
         "id": 152629588,
+        "internal": false,
         "internal_name": "bone pick",
         "max_durability": 212,
         "stack_size": 1
@@ -10123,6 +11647,7 @@
             ]
         },
         "id": 152629594,
+        "internal": false,
         "internal_name": "wooden pickaxe",
         "max_durability": 135,
         "stack_size": 1
@@ -10163,6 +11688,7 @@
             ]
         },
         "id": 152629605,
+        "internal": false,
         "internal_name": "leaf pick",
         "max_durability": 90,
         "stack_size": 1
@@ -10201,6 +11727,7 @@
             ]
         },
         "id": 152629606,
+        "internal": false,
         "internal_name": "hoe",
         "max_durability": 700,
         "stack_size": 1
@@ -10239,6 +11766,7 @@
             ]
         },
         "id": 152629756,
+        "internal": false,
         "internal_name": "iron pickaxe",
         "max_durability": 270,
         "stack_size": 1
@@ -10278,6 +11806,7 @@
             ]
         },
         "id": 152629757,
+        "internal": false,
         "internal_name": "scythe",
         "max_durability": 1300,
         "stack_size": 1
@@ -10316,6 +11845,7 @@
             ]
         },
         "id": 152629788,
+        "internal": false,
         "internal_name": "shovel",
         "max_durability": 600,
         "stack_size": 1
@@ -10369,6 +11899,7 @@
             ]
         },
         "id": 155571962,
+        "internal": false,
         "internal_name": "mana block",
         "is_block": true,
         "max_durability": 0,
@@ -10422,6 +11953,7 @@
             ]
         },
         "id": 163146874,
+        "internal": false,
         "internal_name": "plate block",
         "is_block": true,
         "max_durability": 0,
@@ -10475,6 +12007,7 @@
             ]
         },
         "id": 163146877,
+        "internal": false,
         "internal_name": "grill block 1",
         "is_block": true,
         "max_durability": 0,
@@ -10528,6 +12061,7 @@
             ]
         },
         "id": 163146878,
+        "internal": false,
         "internal_name": "grill block 2",
         "is_block": true,
         "max_durability": 0,
@@ -10584,6 +12118,7 @@
             ]
         },
         "id": 163146883,
+        "internal": false,
         "internal_name": "lamp",
         "is_block": true,
         "max_durability": 0,
@@ -10640,6 +12175,7 @@
             ]
         },
         "id": 163146890,
+        "internal": false,
         "internal_name": "pool lamp",
         "is_block": true,
         "max_durability": 0,
@@ -10696,6 +12232,7 @@
             ]
         },
         "id": 163146903,
+        "internal": false,
         "internal_name": "heat lamp",
         "is_block": true,
         "max_durability": 0,
@@ -10752,6 +12289,7 @@
             ]
         },
         "id": 163146915,
+        "internal": false,
         "internal_name": "purple lamp",
         "is_block": true,
         "max_durability": 0,
@@ -10808,6 +12346,7 @@
             ]
         },
         "id": 163146922,
+        "internal": false,
         "internal_name": "green lamp",
         "is_block": true,
         "max_durability": 0,
@@ -10864,6 +12403,7 @@
             ]
         },
         "id": 163146929,
+        "internal": false,
         "internal_name": "yellow lamp",
         "is_block": true,
         "max_durability": 0,
@@ -10919,6 +12459,7 @@
             ]
         },
         "id": 163146936,
+        "internal": false,
         "internal_name": "dark lamp",
         "is_block": true,
         "max_durability": 0,
@@ -10975,6 +12516,7 @@
             ]
         },
         "id": 163146968,
+        "internal": false,
         "internal_name": "sodium lamp",
         "is_block": true,
         "max_durability": 0,
@@ -11029,6 +12571,7 @@
             ]
         },
         "id": 163165934,
+        "internal": false,
         "internal_name": "lucid block",
         "is_block": true,
         "max_durability": 0,
@@ -11083,6 +12626,7 @@
             ]
         },
         "id": 163165935,
+        "internal": false,
         "internal_name": "lucid block 2",
         "is_block": true,
         "max_durability": 0,
@@ -11136,6 +12680,7 @@
             ]
         },
         "id": 163166151,
+        "internal": false,
         "internal_name": "plastril block",
         "is_block": true,
         "max_durability": 0,
@@ -11189,6 +12734,7 @@
             ]
         },
         "id": 163166160,
+        "internal": false,
         "internal_name": "metal block",
         "is_block": true,
         "max_durability": 0,
@@ -11242,6 +12788,7 @@
             ]
         },
         "id": 163166161,
+        "internal": false,
         "internal_name": "metal block 2",
         "is_block": true,
         "max_durability": 0,
@@ -11296,6 +12843,7 @@
             ]
         },
         "id": 163166162,
+        "internal": false,
         "internal_name": "gold block",
         "is_block": true,
         "max_durability": 0,
@@ -11349,6 +12897,7 @@
             ]
         },
         "id": 163166165,
+        "internal": false,
         "internal_name": "rust block",
         "is_block": true,
         "max_durability": 0,
@@ -11402,6 +12951,7 @@
             ]
         },
         "id": 163166192,
+        "internal": false,
         "internal_name": "aluminum block",
         "is_block": true,
         "max_durability": 0,
@@ -11456,6 +13006,7 @@
             ]
         },
         "id": 163166193,
+        "internal": false,
         "internal_name": "osmium block",
         "is_block": true,
         "max_durability": 0,
@@ -11509,6 +13060,7 @@
             ]
         },
         "id": 163166194,
+        "internal": false,
         "internal_name": "silver block",
         "is_block": true,
         "max_durability": 0,
@@ -11563,6 +13115,7 @@
             ]
         },
         "id": 163166195,
+        "internal": false,
         "internal_name": "cobalt block",
         "is_block": true,
         "max_durability": 0,
@@ -11616,6 +13169,7 @@
             ]
         },
         "id": 163166197,
+        "internal": false,
         "internal_name": "lavender block",
         "is_block": true,
         "max_durability": 0,
@@ -11670,6 +13224,7 @@
             ]
         },
         "id": 163166417,
+        "internal": false,
         "internal_name": "circuit block",
         "is_block": true,
         "max_durability": 0,
@@ -11725,6 +13280,7 @@
             ]
         },
         "id": 164114274,
+        "internal": false,
         "internal_name": "agnite block",
         "is_block": true,
         "max_durability": 0,
@@ -11780,6 +13336,7 @@
             ]
         },
         "id": 164114324,
+        "internal": false,
         "internal_name": "obsidian block",
         "is_block": true,
         "max_durability": 0,
@@ -11835,6 +13392,7 @@
             ]
         },
         "id": 164197188,
+        "internal": false,
         "internal_name": "petal block",
         "is_block": true,
         "max_durability": 0,
@@ -11889,6 +13447,7 @@
             ]
         },
         "id": 164197192,
+        "internal": false,
         "internal_name": "core block",
         "is_block": true,
         "max_durability": 0,
@@ -11953,6 +13512,7 @@
             ]
         },
         "id": 164199506,
+        "internal": false,
         "internal_name": "glass",
         "is_block": true,
         "max_durability": 0,
@@ -12007,6 +13567,7 @@
             ]
         },
         "id": 164199507,
+        "internal": false,
         "internal_name": "steel window block",
         "is_block": true,
         "max_durability": 0,
@@ -12061,6 +13622,7 @@
             ]
         },
         "id": 164199508,
+        "internal": false,
         "internal_name": "mirage block",
         "is_block": true,
         "max_durability": 0,
@@ -12114,6 +13676,7 @@
             ]
         },
         "id": 164199509,
+        "internal": false,
         "internal_name": "anger block",
         "is_block": true,
         "max_durability": 0,
@@ -12178,6 +13741,7 @@
             ]
         },
         "id": 164199511,
+        "internal": false,
         "internal_name": "glass tile block",
         "is_block": true,
         "max_durability": 0,
@@ -12232,6 +13796,7 @@
             ]
         },
         "id": 164199519,
+        "internal": false,
         "internal_name": "ornament block",
         "is_block": true,
         "max_durability": 0,
@@ -12286,6 +13851,7 @@
             ]
         },
         "id": 172784065,
+        "internal": false,
         "internal_name": "limestone block",
         "is_block": true,
         "max_durability": 0,
@@ -12339,6 +13905,7 @@
             ]
         },
         "id": 172784066,
+        "internal": false,
         "internal_name": "granite block",
         "is_block": true,
         "max_durability": 0,
@@ -12392,6 +13959,7 @@
             ]
         },
         "id": 172784067,
+        "internal": false,
         "internal_name": "concrete block",
         "is_block": true,
         "max_durability": 0,
@@ -12446,6 +14014,7 @@
             ]
         },
         "id": 172784069,
+        "internal": false,
         "internal_name": "limestone tile block",
         "is_block": true,
         "max_durability": 0,
@@ -12499,6 +14068,7 @@
             ]
         },
         "id": 172784131,
+        "internal": false,
         "internal_name": "asphalt block",
         "is_block": true,
         "max_durability": 0,
@@ -12553,6 +14123,7 @@
             ]
         },
         "id": 187008691,
+        "internal": false,
         "internal_name": "sandstone block",
         "is_block": true,
         "max_durability": 0,
@@ -12607,6 +14178,7 @@
             ]
         },
         "id": 210518545,
+        "internal": false,
         "internal_name": "plastril ore block",
         "is_block": true,
         "max_durability": 0,
@@ -12661,6 +14233,7 @@
             ]
         },
         "id": 210518546,
+        "internal": false,
         "internal_name": "magnetite ore block",
         "is_block": true,
         "max_durability": 0,
@@ -12729,6 +14302,7 @@
             ]
         },
         "id": 210568392,
+        "internal": false,
         "internal_name": "agnite ore block",
         "is_block": true,
         "max_durability": 0,
@@ -12782,6 +14356,7 @@
             ]
         },
         "id": 210664593,
+        "internal": false,
         "internal_name": "cobblestone tile block",
         "is_block": true,
         "max_durability": 0,
@@ -12835,6 +14410,7 @@
             ]
         },
         "id": 210664600,
+        "internal": false,
         "internal_name": "pool tile block",
         "is_block": true,
         "max_durability": 0,
@@ -12889,6 +14465,7 @@
             ]
         },
         "id": 210896160,
+        "internal": false,
         "internal_name": "brick block",
         "is_block": true,
         "max_durability": 0,
@@ -12942,6 +14519,7 @@
             ]
         },
         "id": 210896288,
+        "internal": false,
         "internal_name": "stone tile block",
         "is_block": true,
         "max_durability": 0,
@@ -12996,6 +14574,7 @@
             ]
         },
         "id": 210896293,
+        "internal": false,
         "internal_name": "temple brick block",
         "is_block": true,
         "max_durability": 0,
@@ -13050,6 +14629,7 @@
             ]
         },
         "id": 210896296,
+        "internal": false,
         "internal_name": "clay brick block",
         "is_block": true,
         "max_durability": 0,
@@ -13104,6 +14684,7 @@
             ]
         },
         "id": 210896297,
+        "internal": false,
         "internal_name": "clay tile block",
         "is_block": true,
         "max_durability": 0,
@@ -13157,6 +14738,7 @@
             ]
         },
         "id": 210928447,
+        "internal": false,
         "internal_name": "diorite block",
         "is_block": true,
         "max_durability": 0,
@@ -13210,6 +14792,7 @@
             ]
         },
         "id": 210951704,
+        "internal": false,
         "internal_name": "cobblestone block",
         "is_block": true,
         "max_durability": 0,
@@ -13263,6 +14846,7 @@
             ]
         },
         "id": 210957600,
+        "internal": false,
         "internal_name": "onyx block",
         "is_block": true,
         "max_durability": 0,
@@ -13317,6 +14901,7 @@
             ]
         },
         "id": 210957604,
+        "internal": false,
         "internal_name": "cold stone block",
         "is_block": true,
         "max_durability": 0,
@@ -13370,6 +14955,7 @@
             ]
         },
         "id": 210957605,
+        "internal": false,
         "internal_name": "stone block",
         "is_block": true,
         "max_durability": 0,
@@ -13423,6 +15009,7 @@
             ]
         },
         "id": 210957613,
+        "internal": false,
         "internal_name": "rigid stone block",
         "is_block": true,
         "max_durability": 0,
@@ -13478,6 +15065,7 @@
             ]
         },
         "id": 210957629,
+        "internal": false,
         "internal_name": "guard cube",
         "is_block": true,
         "max_durability": 0,
@@ -13532,6 +15120,7 @@
             ]
         },
         "id": 210957731,
+        "internal": false,
         "internal_name": "sky stone block",
         "is_block": true,
         "max_durability": 0,
@@ -13586,6 +15175,7 @@
             ]
         },
         "id": 210957744,
+        "internal": false,
         "internal_name": "shoal rock block",
         "is_block": true,
         "max_durability": 0,
@@ -13640,6 +15230,7 @@
             ]
         },
         "id": 210957953,
+        "internal": false,
         "internal_name": "tigerstone block",
         "is_block": true,
         "max_durability": 0,
@@ -13694,6 +15285,7 @@
             ]
         },
         "id": 210991928,
+        "internal": false,
         "internal_name": "zany block",
         "is_block": true,
         "max_durability": 0,
@@ -13733,6 +15325,7 @@
             ]
         },
         "id": 238794324,
+        "internal": false,
         "internal_name": "glider hand",
         "max_durability": 700,
         "stack_size": 1
@@ -13785,6 +15378,7 @@
             ]
         },
         "id": 296519338,
+        "internal": false,
         "internal_name": "sand block",
         "is_block": true,
         "max_durability": 0,
@@ -13838,6 +15432,7 @@
             ]
         },
         "id": 296519344,
+        "internal": false,
         "internal_name": "black sand block",
         "is_block": true,
         "max_durability": 0,
@@ -13892,6 +15487,7 @@
             ]
         },
         "id": 296519659,
+        "internal": false,
         "internal_name": "shale block",
         "is_block": true,
         "max_durability": 0,
@@ -13945,6 +15541,7 @@
             ]
         },
         "id": 324041065,
+        "internal": false,
         "internal_name": "druid dirt block",
         "is_block": true,
         "max_durability": 0,
@@ -13998,6 +15595,7 @@
             ]
         },
         "id": 324041069,
+        "internal": false,
         "internal_name": "dirt block",
         "is_block": true,
         "max_durability": 0,
@@ -14063,6 +15661,7 @@
             ]
         },
         "id": 324041072,
+        "internal": false,
         "internal_name": "clay block",
         "is_block": true,
         "max_durability": 0,
@@ -14116,6 +15715,7 @@
             ]
         },
         "id": 324041073,
+        "internal": false,
         "internal_name": "mud block",
         "is_block": true,
         "max_durability": 0,
@@ -14170,6 +15770,7 @@
             ]
         },
         "id": 324041105,
+        "internal": false,
         "internal_name": "clay baller",
         "is_block": true,
         "max_durability": 0,
@@ -14225,6 +15826,7 @@
             ]
         },
         "id": 324041137,
+        "internal": false,
         "internal_name": "ball baller",
         "is_block": true,
         "max_durability": 0,
@@ -14280,6 +15882,7 @@
             ]
         },
         "id": 324041138,
+        "internal": false,
         "internal_name": "friend friender",
         "is_block": true,
         "max_durability": 0,
@@ -14335,6 +15938,7 @@
             ]
         },
         "id": 370953288,
+        "internal": false,
         "internal_name": "cache cube",
         "is_block": true,
         "max_durability": 0,
@@ -14389,6 +15993,7 @@
             ]
         },
         "id": 370953289,
+        "internal": false,
         "internal_name": "hope cube",
         "is_block": true,
         "max_durability": 0,
@@ -14442,6 +16047,7 @@
             ]
         },
         "id": 370953303,
+        "internal": false,
         "internal_name": "cabinet",
         "is_block": true,
         "max_durability": 0,
@@ -14495,6 +16101,7 @@
             ]
         },
         "id": 370953352,
+        "internal": false,
         "internal_name": "funnel",
         "is_block": true,
         "max_durability": 0,
@@ -14548,6 +16155,7 @@
             ]
         },
         "id": 379146635,
+        "internal": false,
         "internal_name": "bookshelf block",
         "is_block": true,
         "max_durability": 0,
@@ -14687,6 +16295,7 @@
             ]
         },
         "id": 379348721,
+        "internal": false,
         "internal_name": "cardboard box",
         "is_block": true,
         "max_durability": 0,
@@ -14808,6 +16417,7 @@
             ]
         },
         "id": 379348735,
+        "internal": false,
         "internal_name": "blessing cube",
         "is_block": true,
         "max_durability": 0,
@@ -14861,6 +16471,7 @@
             ]
         },
         "id": 379348927,
+        "internal": false,
         "internal_name": "infested wood block",
         "is_block": true,
         "max_durability": 0,
@@ -14914,6 +16525,7 @@
             ]
         },
         "id": 379348931,
+        "internal": false,
         "internal_name": "plank block",
         "is_block": true,
         "max_durability": 0,
@@ -14967,6 +16579,7 @@
             ]
         },
         "id": 379348932,
+        "internal": false,
         "internal_name": "varnished wood block",
         "is_block": true,
         "max_durability": 0,
@@ -15089,6 +16702,7 @@
             ]
         },
         "id": 379348937,
+        "internal": false,
         "internal_name": "clay pot",
         "is_block": true,
         "max_durability": 0,
@@ -15155,6 +16769,7 @@
             ]
         },
         "id": 379348987,
+        "internal": false,
         "internal_name": "melon block",
         "is_block": true,
         "max_durability": 0,
@@ -15219,6 +16834,7 @@
             ]
         },
         "id": 379348988,
+        "internal": false,
         "internal_name": "cactus block",
         "is_block": true,
         "max_durability": 0,
@@ -15285,6 +16901,7 @@
             ]
         },
         "id": 379348989,
+        "internal": false,
         "internal_name": "oppleberry block",
         "is_block": true,
         "max_durability": 0,
@@ -15340,6 +16957,7 @@
             ]
         },
         "id": 379348990,
+        "internal": false,
         "internal_name": "pulp block",
         "is_block": true,
         "max_durability": 0,
@@ -15479,6 +17097,7 @@
             ]
         },
         "id": 379349058,
+        "internal": false,
         "internal_name": "letter cube",
         "is_block": true,
         "max_durability": 0,
@@ -15532,6 +17151,7 @@
             ]
         },
         "id": 379349063,
+        "internal": false,
         "internal_name": "plank block",
         "is_block": true,
         "max_durability": 0,
@@ -15585,6 +17205,7 @@
             ]
         },
         "id": 379349244,
+        "internal": false,
         "internal_name": "wood block",
         "is_block": true,
         "max_durability": 0,
@@ -15639,6 +17260,7 @@
             ]
         },
         "id": 379349255,
+        "internal": false,
         "internal_name": "pimble block",
         "is_block": true,
         "max_durability": 0,
@@ -15692,6 +17314,7 @@
             ]
         },
         "id": 379349259,
+        "internal": false,
         "internal_name": "abble block",
         "is_block": true,
         "max_durability": 0,
@@ -15747,6 +17370,7 @@
             ]
         },
         "id": 379349260,
+        "internal": false,
         "internal_name": "dried abble block",
         "is_block": true,
         "max_durability": 0,
@@ -15800,6 +17424,7 @@
             ]
         },
         "id": 379349263,
+        "internal": false,
         "internal_name": "white wood block",
         "is_block": true,
         "max_durability": 0,
@@ -15853,6 +17478,7 @@
             ]
         },
         "id": 379349271,
+        "internal": false,
         "internal_name": "comb block",
         "is_block": true,
         "max_durability": 0,
@@ -15906,6 +17532,7 @@
             ]
         },
         "id": 379351245,
+        "internal": false,
         "internal_name": "wallpaper block",
         "is_block": true,
         "max_durability": 0,
@@ -15947,6 +17574,7 @@
             ]
         },
         "id": 492348301,
+        "internal": false,
         "internal_name": "tiamana compass",
         "max_durability": 60,
         "stack_size": 1
@@ -15987,6 +17615,7 @@
             ]
         },
         "id": 492348302,
+        "internal": false,
         "internal_name": "tiamana compass",
         "max_durability": 60,
         "stack_size": 1
@@ -16025,6 +17654,7 @@
             ]
         },
         "id": 543253245,
+        "internal": false,
         "internal_name": "blaster glove",
         "max_durability": 400,
         "stack_size": 1
@@ -16062,6 +17692,7 @@
             ]
         },
         "id": 741113042,
+        "internal": false,
         "internal_name": "raw sheep flesh",
         "max_durability": 0,
         "stack_size": 1
@@ -16100,6 +17731,7 @@
             ]
         },
         "id": 741113043,
+        "internal": false,
         "internal_name": "cooked wildebeest flesh",
         "max_durability": 0,
         "stack_size": 1
@@ -16138,6 +17770,7 @@
             ]
         },
         "id": 741113044,
+        "internal": false,
         "internal_name": "cooked sheep flesh",
         "max_durability": 0,
         "stack_size": 1
@@ -16176,6 +17809,7 @@
             ]
         },
         "id": 741115357,
+        "internal": false,
         "internal_name": "raw bubblebear flesh",
         "max_durability": 0,
         "stack_size": 1
@@ -16215,6 +17849,7 @@
             ]
         },
         "id": 741115358,
+        "internal": false,
         "internal_name": "cooked bubblebear flesh",
         "max_durability": 0,
         "stack_size": 1
@@ -16253,6 +17888,7 @@
             ]
         },
         "id": 741115359,
+        "internal": false,
         "internal_name": "raw bubblebear flesh fungus",
         "max_durability": 0,
         "stack_size": 1
@@ -16292,6 +17928,7 @@
             ]
         },
         "id": 741115360,
+        "internal": false,
         "internal_name": "cooked bubblebear flesh fungus",
         "max_durability": 0,
         "stack_size": 1
@@ -16330,6 +17967,7 @@
             ]
         },
         "id": 741115365,
+        "internal": false,
         "internal_name": "fish corpse",
         "max_durability": 0,
         "stack_size": 5
@@ -16369,6 +18007,7 @@
             ]
         },
         "id": 741115366,
+        "internal": false,
         "internal_name": "cooked fish corpse",
         "max_durability": 0,
         "stack_size": 5
@@ -16407,6 +18046,7 @@
             ]
         },
         "id": 741115373,
+        "internal": false,
         "internal_name": "raw noot flesh",
         "max_durability": 0,
         "stack_size": 1
@@ -16446,6 +18086,7 @@
             ]
         },
         "id": 741115374,
+        "internal": false,
         "internal_name": "cooked noot flesh",
         "max_durability": 0,
         "stack_size": 1
@@ -16483,6 +18124,7 @@
             ]
         },
         "id": 741236933,
+        "internal": false,
         "internal_name": "raw wildebeest flesh",
         "max_durability": 0,
         "stack_size": 1
@@ -16521,6 +18163,7 @@
             ]
         },
         "id": 824288112,
+        "internal": false,
         "internal_name": "melon slice",
         "max_durability": 0,
         "stack_size": 5
@@ -16559,6 +18202,7 @@
             ]
         },
         "id": 824288113,
+        "internal": false,
         "internal_name": "solberry",
         "max_durability": 0,
         "stack_size": 5
@@ -16597,6 +18241,7 @@
             ]
         },
         "id": 824288114,
+        "internal": false,
         "internal_name": "oppleberry slice",
         "max_durability": 0,
         "stack_size": 5
@@ -16635,6 +18280,7 @@
             ]
         },
         "id": 824288121,
+        "internal": false,
         "internal_name": "nut",
         "max_durability": 0,
         "stack_size": 5
@@ -16674,6 +18320,7 @@
             ]
         },
         "id": 824288122,
+        "internal": false,
         "internal_name": "revelation nut",
         "max_durability": 0,
         "stack_size": 5
@@ -16714,6 +18361,7 @@
             ]
         },
         "id": 824288126,
+        "internal": false,
         "internal_name": "popsicle",
         "max_durability": 0,
         "stack_size": 5
@@ -16751,6 +18399,7 @@
             ]
         },
         "id": 824288127,
+        "internal": false,
         "internal_name": "doughnut",
         "max_durability": 0,
         "stack_size": 5
@@ -16788,6 +18437,7 @@
             ]
         },
         "id": 824288128,
+        "internal": false,
         "internal_name": "tofu",
         "max_durability": 0,
         "stack_size": 5
@@ -16825,6 +18475,7 @@
             ]
         },
         "id": 824288129,
+        "internal": false,
         "internal_name": "baguette",
         "max_durability": 0,
         "stack_size": 5
@@ -16863,6 +18514,7 @@
             ]
         },
         "id": 824288158,
+        "internal": false,
         "internal_name": "pepper",
         "max_durability": 0,
         "stack_size": 5
@@ -16901,6 +18553,7 @@
             ]
         },
         "id": 824288170,
+        "internal": false,
         "internal_name": "juice",
         "max_durability": 0,
         "stack_size": 5
@@ -16939,6 +18592,7 @@
             ]
         },
         "id": 1378733028,
+        "internal": false,
         "internal_name": "omni hat",
         "max_durability": 900,
         "stack_size": 1
@@ -16977,6 +18631,7 @@
             ]
         },
         "id": 1378733132,
+        "internal": false,
         "internal_name": "ribbon",
         "max_durability": 75,
         "stack_size": 1
@@ -17015,6 +18670,7 @@
             ]
         },
         "id": 1378733163,
+        "internal": false,
         "internal_name": "vocal string",
         "max_durability": 700,
         "stack_size": 1
@@ -17068,6 +18724,7 @@
             ]
         },
         "id": 1442063622,
+        "internal": false,
         "internal_name": "mutchroom block",
         "is_block": true,
         "max_durability": 0,
@@ -17122,6 +18779,7 @@
             ]
         },
         "id": 1442087430,
+        "internal": false,
         "internal_name": "floroid block",
         "is_block": true,
         "max_durability": 0,
@@ -17175,6 +18833,7 @@
             ]
         },
         "id": 1442087433,
+        "internal": false,
         "internal_name": "moss block",
         "is_block": true,
         "max_durability": 0,
@@ -17228,6 +18887,7 @@
             ]
         },
         "id": 1442087435,
+        "internal": false,
         "internal_name": "flesh block",
         "is_block": true,
         "max_durability": 0,
@@ -17282,6 +18942,7 @@
             ]
         },
         "id": 1442087436,
+        "internal": false,
         "internal_name": "eye cyst block",
         "is_block": true,
         "max_durability": 0,
@@ -17336,6 +18997,7 @@
             ]
         },
         "id": 1442087437,
+        "internal": false,
         "internal_name": "skin block",
         "is_block": true,
         "max_durability": 0,
@@ -17390,6 +19052,7 @@
             ]
         },
         "id": 1442087450,
+        "internal": false,
         "internal_name": "dog block",
         "is_block": true,
         "max_durability": 0,
@@ -17444,6 +19107,7 @@
             ]
         },
         "id": 1442087457,
+        "internal": false,
         "internal_name": "cat block",
         "is_block": true,
         "max_durability": 0,
@@ -17499,6 +19163,7 @@
             ]
         },
         "id": 1442087659,
+        "internal": false,
         "internal_name": "smore block",
         "is_block": true,
         "max_durability": 0,
@@ -17567,6 +19232,7 @@
             ]
         },
         "id": 1442318884,
+        "internal": false,
         "internal_name": "leaf block",
         "is_block": true,
         "max_durability": 0,
@@ -17636,6 +19302,7 @@
             ]
         },
         "id": 1442318885,
+        "internal": false,
         "internal_name": "snowy leaf block",
         "is_block": true,
         "max_durability": 0,
@@ -17705,6 +19372,7 @@
             ]
         },
         "id": 1442318887,
+        "internal": false,
         "internal_name": "dry leaf block",
         "is_block": true,
         "max_durability": 0,
@@ -17743,6 +19411,7 @@
             ]
         },
         "id": 1501748742,
+        "internal": false,
         "internal_name": "choker",
         "max_durability": 90,
         "stack_size": 1
@@ -17778,6 +19447,7 @@
             "tags": []
         },
         "id": 1501748746,
+        "internal": false,
         "internal_name": "bunny ears",
         "max_durability": 215,
         "stack_size": 1
@@ -17816,6 +19486,7 @@
             ]
         },
         "id": 1501748747,
+        "internal": false,
         "internal_name": "snorkel",
         "max_durability": 200,
         "stack_size": 1
@@ -17854,6 +19525,7 @@
             ]
         },
         "id": 1501748749,
+        "internal": false,
         "internal_name": "flippers",
         "max_durability": 200,
         "stack_size": 1
@@ -17893,6 +19565,7 @@
             ]
         },
         "id": 1501748756,
+        "internal": false,
         "internal_name": "claw hand",
         "max_durability": 300,
         "stack_size": 1
@@ -17931,6 +19604,7 @@
             ]
         },
         "id": 1501748758,
+        "internal": false,
         "internal_name": "sponge shoes",
         "max_durability": 250,
         "stack_size": 1
@@ -17969,6 +19643,7 @@
             ]
         },
         "id": 1501748864,
+        "internal": false,
         "internal_name": "wheel shoes",
         "max_durability": 400,
         "stack_size": 1
@@ -18007,6 +19682,7 @@
             ]
         },
         "id": 1562779034,
+        "internal": false,
         "internal_name": "solberry earring",
         "max_durability": 96,
         "stack_size": 1
@@ -18045,6 +19721,7 @@
             ]
         },
         "id": 1604068919,
+        "internal": false,
         "internal_name": "hair clip",
         "max_durability": 70,
         "stack_size": 1
@@ -18082,6 +19759,7 @@
             ]
         },
         "id": 1604069088,
+        "internal": false,
         "internal_name": "thorn talisman",
         "max_durability": 500,
         "stack_size": 1
@@ -18120,6 +19798,7 @@
             ]
         },
         "id": 1604069109,
+        "internal": false,
         "internal_name": "string bracelet",
         "max_durability": 51,
         "stack_size": 1
@@ -18159,6 +19838,7 @@
             ]
         },
         "id": 1604069110,
+        "internal": false,
         "internal_name": "bubble hat",
         "max_durability": 180,
         "stack_size": 1
@@ -18197,6 +19877,7 @@
             ]
         },
         "id": 1604069122,
+        "internal": false,
         "internal_name": "bead bracelet",
         "max_durability": 64,
         "stack_size": 1
@@ -18235,6 +19916,7 @@
             ]
         },
         "id": 1633662554,
+        "internal": false,
         "internal_name": "locket",
         "max_durability": 600,
         "stack_size": 1
@@ -18274,6 +19956,7 @@
             ]
         },
         "id": 1633662734,
+        "internal": false,
         "internal_name": "dybbuk necklace",
         "max_durability": 777,
         "stack_size": 1
@@ -18314,6 +19997,7 @@
             ]
         },
         "id": 1633883498,
+        "internal": false,
         "internal_name": "vitality ring",
         "max_durability": 250,
         "stack_size": 1
@@ -18354,6 +20038,7 @@
             ]
         },
         "id": 1633883505,
+        "internal": false,
         "internal_name": "vitality ring",
         "max_durability": 250,
         "stack_size": 1
@@ -18392,6 +20077,7 @@
             ]
         },
         "id": 1633883506,
+        "internal": false,
         "internal_name": "heavy boots",
         "max_durability": 150,
         "stack_size": 1
@@ -18431,6 +20117,7 @@
             ]
         },
         "id": 1633883507,
+        "internal": false,
         "internal_name": "golden boots",
         "max_durability": 350,
         "stack_size": 1
@@ -18471,6 +20158,7 @@
             ]
         },
         "id": 1633883508,
+        "internal": false,
         "internal_name": "murder ring",
         "max_durability": 250,
         "stack_size": 1
@@ -18509,6 +20197,7 @@
             ]
         },
         "id": 1633883518,
+        "internal": false,
         "internal_name": "purity ring",
         "max_durability": 300,
         "stack_size": 1
@@ -18547,6 +20236,7 @@
             ]
         },
         "id": 1633911935,
+        "internal": false,
         "internal_name": "love ring",
         "max_durability": 600,
         "stack_size": 1
@@ -18586,6 +20276,7 @@
             ]
         },
         "id": 1649317470,
+        "internal": false,
         "internal_name": "flower earring",
         "max_durability": 61,
         "stack_size": 1
@@ -18623,6 +20314,7 @@
             ]
         },
         "id": 1657599219,
+        "internal": false,
         "internal_name": "duck earring",
         "max_durability": 65,
         "stack_size": 1
@@ -18661,6 +20353,7 @@
             ]
         },
         "id": 1663550427,
+        "internal": false,
         "internal_name": "duck bracelet",
         "max_durability": 60,
         "stack_size": 1
