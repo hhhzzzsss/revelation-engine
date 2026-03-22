@@ -1,13 +1,15 @@
+import { useMemo } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import type { FuserParameters, Item } from './types';
-import { useMemo } from 'react';
 import ApotheosisSolver from './apotheosisSolver';
+import fuserParamUrl from '../assets/fuser_params.json?url';
+import itemDataUrl from '../assets/item_data.json?url';
 
 export const useFuserParameters = () => {
   return useQuery({
     queryKey: ['fuserParameters'],
     queryFn: async () => {
-      const response = await fetch(`${import.meta.env.BASE_URL}fuser_params.json`);
+      const response = await fetch(fuserParamUrl);
       if (!response.ok) {
         throw new Error('Failed to fetch fuser parameters');
       }
@@ -22,7 +24,7 @@ export const useItemData = () => {
   return useQuery({
     queryKey: ['itemData'],
     queryFn: async () => {
-      const response = await fetch(`${import.meta.env.BASE_URL}item_data.json`);
+      const response = await fetch(itemDataUrl);
       if (!response.ok) {
         throw new Error('Failed to fetch item data');
       }
