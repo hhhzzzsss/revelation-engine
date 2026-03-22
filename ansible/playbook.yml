@@ -1,0 +1,14 @@
+- name: Deploy website
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: Upload website files
+      ansible.posix.synchronize:
+        src: ../website/dist/
+        dest: /var/www/revelation-engine/
+        archive: true
+        delete: true
+        rsync_opts:
+          - "--chown=root:root"
+          - "--chmod=D755,F644"
+      become: true
