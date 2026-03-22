@@ -21,10 +21,11 @@ function NavButton({ children, selected, onClick }: NavButtonProps) {
 }
 
 function Navbar() {
-  const { currentView, setView } = useNavStore();
+  const currentView = useNavStore((state) => state.currentView);
+  const setView = useNavStore((state) => state.setView);
 
   return (
-    <div className="static border-b-2 border-secondary-800 flex items-center space-x-4">
+    <header className="static border-b-2 border-secondary-800 flex items-center space-x-4">
       <Logo />
       <nav className="flex-1 px-4">
         <ul className="flex justify-end space-x-4">
@@ -40,7 +41,7 @@ function Navbar() {
           ))}
         </ul>
       </nav>
-    </div>
+    </header>
   );
 }
 

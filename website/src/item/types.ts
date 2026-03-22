@@ -43,6 +43,14 @@ export interface BlockData {
   sustain_fire: boolean;
   drop_item?: number;
   drop_loot?: DropLoot;
+  pickaxe_affinity: boolean;
+  pickaxe_required: boolean;
+  meat_affinity: boolean;
+  plant_affinity: boolean;
+  shovel_affinity: boolean;
+  axe_affinity: boolean;
+  axe_required: boolean;
+  break_time: number;
 }
 
 export interface DropLoot {

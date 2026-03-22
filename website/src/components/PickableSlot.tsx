@@ -31,7 +31,7 @@ function PickableSlot({ qItem, onQItemChange }: PickableSlotProps) {
 
   return (
     <div className="relative w-96 flex items-center space-x-2 overflow-visible">
-      <Slot className="flex-none" qItem={qItem} />
+      <Slot className="flex-none" item={qItem?.item} count={qItem?.count} />
       <div className="flex-1 font-pixel leading-none">{qItem?.item.display_name}</div>
       {stackable && <IntRangeInput
         className="max-w-12"
