@@ -7,7 +7,7 @@ export const useFuserParameters = () => {
   return useQuery({
     queryKey: ['fuserParameters'],
     queryFn: async () => {
-      const response = await fetch('/fuser_params.json');
+      const response = await fetch(`${import.meta.env.BASE_URL}fuser_params.json`);
       if (!response.ok) {
         throw new Error('Failed to fetch fuser parameters');
       }
@@ -22,7 +22,7 @@ export const useItemData = () => {
   return useQuery({
     queryKey: ['itemData'],
     queryFn: async () => {
-      const response = await fetch('/item_data.json');
+      const response = await fetch(`${import.meta.env.BASE_URL}item_data.json`);
       if (!response.ok) {
         throw new Error('Failed to fetch item data');
       }

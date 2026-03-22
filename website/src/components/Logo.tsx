@@ -1,7 +1,9 @@
+import { IMAGE_PATHS } from '../image/util';
+
 function Logo() {
   return (
     <div className="flex items-center">
-      <img src="/revelation_nut.svg" className="w-16 h-16" />
+      <img src={IMAGE_PATHS.revelation_nut} className="w-16 h-16" />
       <h1 className="text-2xl/5 font-pixel">
         <span className="text-primary-500">Revelation</span>
         <br />
