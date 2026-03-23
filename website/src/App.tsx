@@ -30,7 +30,7 @@ function App() {
           <ItemInfoPanel />
         </div>
       </div>
-      <footer className="absolute left-1 bottom-2 font-pixel leading-1 text-nowrap text-sm">
+      <footer className="absolute left-1 bottom-2 pointer-events-none font-pixel leading-1 text-nowrap text-sm">
         for lucid blocks v2.8.7
       </footer>
     </div>
