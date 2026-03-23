@@ -19,7 +19,7 @@ function App() {
       <div className="flex-1 min-h-0 flex align-stretch">
         <div className="flex-1 min-w-0 h-full flex justify-center">
           <div className="max-w-full overflow-scroll">
-            <div className="flex-1 max-w-384 w-fit py-4 px-8">
+            <div className="flex-1 py-4 px-8">
               {currentView === VIEW_STATES.apotheosis && <ApotheosisView />}
               {currentView === VIEW_STATES.enumeration && <EnumerationView />}
               {currentView === VIEW_STATES.derivation && <DerivationView />}
