@@ -25,8 +25,8 @@ function Navbar() {
   const setView = useNavStore((state) => state.setView);
 
   return (
-    <header className="static border-b-2 border-secondary-800 flex items-center space-x-4">
-      <Logo />
+    <header className="border-b-2 border-secondary-800 flex items-center overflow-x-scroll">
+      <Logo className="shrink-0" />
       <nav className="flex-1 px-4">
         <ul className="flex justify-end space-x-4">
           {Object.values(VIEW_STATES).map((view) => (
