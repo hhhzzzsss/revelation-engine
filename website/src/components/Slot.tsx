@@ -20,7 +20,7 @@ function Slot({ className, item, count }: SlotProps) {
   }, [item, setPanelItem]);
 
   return (
-    <div className={`group relative size-icon ${className ?? ''}`} onClick={handleClick}>
+    <div className={`group relative size-icon shrink-0 ${className ?? ''}`} onClick={handleClick}>
       <img src={IMAGE_PATHS.slot} className="absolute size-full pixelated opacity-100 group-hover:opacity-0" />
       <img src={IMAGE_PATHS.slot_hover} className="absolute size-full pixelated opacity-0 group-hover:opacity-100" />
       <div className="absolute inset-icon-1">

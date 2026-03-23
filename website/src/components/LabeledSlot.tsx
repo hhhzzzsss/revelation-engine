@@ -8,7 +8,7 @@ interface LabeledSlotProps {
 
 function LabeledSlot({ item, count }: LabeledSlotProps) {
   return (
-    <div className="w-full flex items-center space-x-2 overflow-visible">
+    <div className="w-64 flex items-center space-x-2 overflow-visible">
       <Slot item={item} count={count} />
       <div className="flex-1 font-pixel leading-none">{item?.display_name}</div>
     </div>
