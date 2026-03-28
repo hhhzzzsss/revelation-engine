@@ -53,7 +53,7 @@ function EnumerationView() {
     return () => {
       cancelEnumeration();
     };
-  }, [batchSolver, isEnumerating]);
+  }, [batchSolver, isEnumerating, setRecipes]);
 
   return (
     <>

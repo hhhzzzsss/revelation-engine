@@ -8,13 +8,16 @@ export const itemMatchesSearchTerm = (searchTerm: string, item?: Item): boolean 
 export const compareItemsBySearchTerm = (searchTerm: string, a: Item, b: Item, alphabetical=true): number => {
   const posA = a.display_name.toLowerCase().indexOf(searchTerm.toLowerCase());
   const posB = b.display_name.toLowerCase().indexOf(searchTerm.toLowerCase());
+
   if (posA !== posB) {
-    return posA - posB; // Prioritize items with earlier match
+    if (posA === -1) return 1;
+    if (posB === -1) return -1;
+    return posA - posB;
+  }
+  
+  if (alphabetical) {
+    return a.display_name.localeCompare(b.display_name);
   } else {
-    if (alphabetical) {
-      return a.display_name.localeCompare(b.display_name);
-    } else {
-      return a.id - b.id;
-    }
+    return a.id - b.id;
   }
 };

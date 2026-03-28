@@ -17,8 +17,10 @@ interface InventoryPickerProps {
 }
 function InventoryPicker({ className, items, onItemsChange }: InventoryPickerProps) {
   const { data: itemData } = useItemData();
+  const [searchTerm, setSearchTerm] = useState('');
+
   const itemIdSet = useMemo(() => new Set(items.map((item) => item.id)), [items]);
-  const sortedItems = useMemo(() => items.toSorted((a, b) => a.id - b.id), [items]);
+  const sortedItems = useMemo(() => items.toSorted((a, b) => compareItemsBySearchTerm(searchTerm, a, b, false)), [items, searchTerm]);
 
   const handleDelete = (item: Item) => {
     const index = sortedItems.findIndex((i) => i.id === item.id);
@@ -70,6 +72,8 @@ function InventoryPicker({ className, items, onItemsChange }: InventoryPickerPro
       <InventoryItemPicker
         className="w-80 pl-4"
         itemData={itemData}
+        searchTerm={searchTerm}
+        onSearchTermChange={setSearchTerm}
         filter={(item) => !itemIdSet.has(item.id)}
         onSelect={handleSelect}
       />
@@ -148,12 +152,20 @@ function InventoryItem({ item, onDelete }: InventoryItemProps) {
 interface InventoryItemPickerProps {
   className?: string;
   itemData?: Item[];
+  searchTerm?: string;
+  onSearchTermChange?: (term: string) => void;
   filter: (item: Item) => boolean;
   onSelect?: (item: Item) => void;
 }
-function InventoryItemPicker({ className, itemData, filter, onSelect }: InventoryItemPickerProps) {
+function InventoryItemPicker({
+  className,
+  itemData,
+  searchTerm='',
+  onSearchTermChange,
+  filter,
+  onSelect
+}: InventoryItemPickerProps) {
   const listRef = useRef<HTMLDivElement>(null);
-  const [searchTerm, setSearchTerm] = useState('');
 
   const filteredItemData = useMemo(() => {
     return itemData
@@ -170,8 +182,8 @@ function InventoryItemPicker({ className, itemData, filter, onSelect }: Inventor
   });
 
   const handleSearchChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearchTerm(e.target.value.toLowerCase());
-  }, []);
+    onSearchTermChange?.(e.target.value.toLowerCase());
+  }, [onSearchTermChange]);
 
   return (
     <div className={`flex flex-col ${className}`}>
