@@ -1054,57 +1054,6 @@
         "stack_size": 5
     },
     {
-        "block_data": {
-            "axe_affinity": false,
-            "axe_required": false,
-            "break_time": 1.0,
-            "flammability": 0.0,
-            "griefable": false,
-            "meat_affinity": false,
-            "pickaxe_affinity": false,
-            "pickaxe_required": false,
-            "plant_affinity": false,
-            "shovel_affinity": false,
-            "sustain_fire": false,
-            "unbreakable": true
-        },
-        "color": [
-            0.85313880443573,
-            0.8996503949165344,
-            0.8846937417984009
-        ],
-        "display_name": "revelation block",
-        "essence": {
-            "bias": 0.0,
-            "energy": 0.0,
-            "fuseable": false,
-            "output_tags": [],
-            "properties": {
-                "aqua": 0.0,
-                "blockiness": 1.0,
-                "clay": 0.0,
-                "danger": 0.0,
-                "edibility": 0.0,
-                "faith": 0.0,
-                "hate": 0.0,
-                "lust": 0.0,
-                "mercury": 0.0,
-                "phlegm": 0.0,
-                "sulfur": 0.0,
-                "utility": 0.0,
-                "wearability": 0.0
-            },
-            "rank": 0.0,
-            "tags": []
-        },
-        "id": 32,
-        "internal": true,
-        "internal_name": "cutscene block",
-        "is_block": true,
-        "max_durability": 0,
-        "stack_size": 50
-    },
-    {
         "color": [
             0.7863872051239014,
             0.7397340536117554,
@@ -13117,60 +13066,6 @@
         "id": 163166195,
         "internal": false,
         "internal_name": "cobalt block",
-        "is_block": true,
-        "max_durability": 0,
-        "stack_size": 50
-    },
-    {
-        "block_data": {
-            "axe_affinity": false,
-            "axe_required": false,
-            "break_time": 8.0,
-            "flammability": 0.0,
-            "griefable": true,
-            "meat_affinity": false,
-            "pickaxe_affinity": false,
-            "pickaxe_required": false,
-            "plant_affinity": false,
-            "shovel_affinity": false,
-            "sustain_fire": false,
-            "unbreakable": true
-        },
-        "color": [
-            0.178287073969841,
-            0.16895000636577606,
-            0.242509126663208
-        ],
-        "display_name": "lavender block",
-        "essence": {
-            "bias": 0.0,
-            "energy": 1.0,
-            "fuseable": false,
-            "output_tags": [],
-            "properties": {
-                "aqua": 1.0,
-                "blockiness": 1.0,
-                "clay": 0.0,
-                "danger": 0.0,
-                "edibility": 0.0,
-                "faith": 0.53,
-                "hate": 0.14,
-                "lust": 0.0,
-                "mercury": 1.0,
-                "phlegm": 0.0,
-                "sulfur": 0.0,
-                "utility": 0.13,
-                "wearability": 0.0
-            },
-            "rank": 0.0,
-            "tags": [
-                "metal",
-                "cold"
-            ]
-        },
-        "id": 163166197,
-        "internal": false,
-        "internal_name": "lavender block",
         "is_block": true,
         "max_durability": 0,
         "stack_size": 50

@@ -17,8 +17,7 @@ func _ready() -> void:
     # Get valid items
     var all_items: Array = ItemMap.all_item_ids \
         .map(func(id: int): return ItemMap.id_to_resource[id]) \
-        .filter(func(i: Item): return not is_directional_block(i)) \
-        .filter(func(i: Item): return i.icon != null && i.id > 0) # id > 0 condition to specifically exclude air
+        .filter(is_valid_item)
     
     # Serialize item data and save
     var serialized_item_data: Array = []
@@ -141,11 +140,14 @@ func drop_loot_to_dict(l: Loot) -> Dictionary:
     
     return d
 
-func is_directional_block(i: Item) -> bool:
+func is_valid_item(i: Item) -> bool:
+    if i.id == 0: return false # Exclude air
+    if i.icon == null: return false
     if i is Block:
-        if i.display_name.ends_with("+"): return true
-        if i.display_name.ends_with("-"): return true
-    return false
+        if i.display_name.ends_with("+"): return false
+        if i.display_name.ends_with("-"): return false
+        if i.unbreakable and !i.essence.fuseable: return false
+    return true
 
 func clear_directory(path: String) -> void:
     if not DirAccess.dir_exists_absolute(path):
