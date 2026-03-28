@@ -32,32 +32,34 @@ function ItemInfoPanel() {
   } : undefined;
 
   return (
-    <section className="w-86 h-full px-4 border-l-2 border-secondary-800 flex flex-col">
-      <header className="flex justify-between items-start my-2">
-        <h2 className="inline-block text-xl font-pixel">Item Details</h2>
-        {isOpen && (
-          <button
-            onClick={close}
-            className="inline-block font-pixel text-lg text-severe-500 hover:text-severe-400"
-          >
-            x
-          </button>
+    <div className={`h-full ${isOpen ? 'w-86' : 'w-0'} transition-width duration-300 overflow-hidden`}>
+      <section className="w-86 h-full px-4 border-l-2 border-secondary-800 flex flex-col">
+        <header className="flex justify-between items-start my-2">
+          <h2 className="inline-block text-xl font-pixel">Item Details</h2>
+          {isOpen && (
+            <button
+              onClick={close}
+              className="inline-block font-pixel text-lg text-severe-500 hover:text-severe-400"
+            >
+              x
+            </button>
+          )}
+        </header>
+
+        {!item && <div className="font-pixel">Click an item to see details</div>}
+
+        {item && (
+          <div className="flex-1 py-2 space-y-2 overflow-y-auto">
+            <LabeledSlot item={item} />
+            <DictInfo title="Properties" dict={properties} />
+            <DictInfo title="Essence" dict={essence} />
+            <ListInfo title="Tags" list={tags} />
+            <ListInfo title="Output Tags" list={outputTags} />
+            {blockData && <DictInfo title="Block Data" dict={blockData} />}
+          </div>
         )}
-      </header>
-
-      {!item && <div className="font-pixel">Click an item to see details</div>}
-
-      {item && (
-        <div className="flex-1 py-2 space-y-2 overflow-y-scroll">
-          <LabeledSlot item={item} />
-          <DictInfo title="Properties" dict={properties} />
-          <DictInfo title="Essence" dict={essence} />
-          <ListInfo title="Tags" list={tags} />
-          <ListInfo title="Output Tags" list={outputTags} />
-          {blockData && <DictInfo title="Block Data" dict={blockData} />}
-        </div>
-      )}
-    </section>
+      </section>
+    </div>
   );
 }
 

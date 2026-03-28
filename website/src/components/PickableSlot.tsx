@@ -4,6 +4,7 @@ import Slot from './Slot';
 import Button from './Button';
 import ItemPicker from './ItemPicker';
 import IntRangeInput from './IntRangeInput';
+import DeleteButton from './DeleteButton';
 
 interface PickableSlotProps {
   qItem: QuantifiedItem | null;
@@ -17,7 +18,8 @@ function PickableSlot({ qItem, onQItemChange }: PickableSlotProps) {
   const stackable = stackSize > 1;
 
   const handleInputChange = useCallback((v: number) => {
-    onQItemChange?.({ item: qItem!.item, count: v });
+    if (!qItem) return;
+    onQItemChange?.({ item: qItem.item, count: v });
   }, [onQItemChange, qItem]);
 
   const onItemChange = useCallback((item: Item) => {
@@ -41,18 +43,15 @@ function PickableSlot({ qItem, onQItemChange }: PickableSlotProps) {
         onChange={handleInputChange}
       />}
       <Button
-        className="bg-primary-600 rounded-sm hover:bg-primary-500"
+        className="bg-primary-600 hover:bg-primary-500"
         onClick={() => setPicking(true)}
       >
         set
       </Button>
-      <Button
-        className="bg-severe-500 rounded-sm hover:bg-severe-400 disabled:opacity-30"
+      <DeleteButton
         onClick={() => onQItemChange?.(null)}
         disabled={!qItem}
-      >
-        x
-      </Button>
+      />
       <div className="absolute top-full z-10">
         {picking && <ItemPicker initialItem={qItem?.item} onSelect={onItemChange} onBlur={onPickerBlur} />}
       </div>

@@ -17,6 +17,7 @@
   --color-severe-500: oklch(0.65 0.2 25);
   --color-bg-500: oklch(0.30 0.03 310);
   --color-bg-600: oklch(0.25 0.03 310);
+  --color-bg-700: oklch(0.10 0.03 310);
   --color-fg-500: oklch(0.95 0.01 125);
   --color-fg-600: oklch(0.85 0.01 125);
 
@@ -31,6 +32,7 @@
 :root {
   overflow: hidden;
   background-color: var(--color-bg-500);
+  scrollbar-color: #888 transparent;
 }
 
 body {
@@ -50,11 +52,13 @@ input:focus {
   image-rendering: pixelated;
 }
 
-.no-spinner {
-  appearance: textfield;
-}
-.no-spinner::-webkit-outer-spin-button,
-.no-spinner::-webkit-inner-spin-button {
-  appearance: none;
-  margin: 0;
+.justify-center-pseudo {
+  justify-content: start;
+  & > * {
+    flex: none;
+  }
+  &::before, &::after {
+    content: '';
+    flex: 1;
+  }
 }

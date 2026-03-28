@@ -1,8 +1,9 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { useItemData } from '../item/hooks';
 import type { Item } from '../item/types';
-import Input from './Input';
+import { useItemData } from '../item/hooks';
+import { compareItemsBySearchTerm, itemMatchesSearchTerm } from '../item/util';
 import { getIconPath } from '../image/util';
+import Input from './Input';
 
 interface ItemPickerProps {
   initialItem?: Item;
@@ -27,13 +28,13 @@ function ItemPicker({ initialItem, onSelect, onBlur }: ItemPickerProps) {
   // Filter and sort items based on search term
   const filteredItemData = useMemo(() => {
     return itemData
-      ?.filter((item) => matchesSearchTerm(searchTerm, item))
-      .toSorted((a, b) => compareBySearchTerm(searchTerm, a, b));
+      ?.filter((item) => itemMatchesSearchTerm(searchTerm, item))
+      .toSorted((a, b) => compareItemsBySearchTerm(searchTerm, a, b));
   }, [itemData, searchTerm]);
 
   // Determine selected item
   const unfilteredSelectedItem = userSelectedItem || initialItem;
-  const selectedItem = matchesSearchTerm(searchTerm, unfilteredSelectedItem) ? unfilteredSelectedItem : filteredItemData?.[0] ?? null;
+  const selectedItem = itemMatchesSearchTerm(searchTerm, unfilteredSelectedItem) ? unfilteredSelectedItem : filteredItemData?.[0] ?? null;
   const selectedItemVisible = filteredItemData?.some((item) => item.id === selectedItem?.id) ?? false;
 
   // Ref callback to store list items
@@ -53,7 +54,7 @@ function ItemPicker({ initialItem, onSelect, onBlur }: ItemPickerProps) {
   }, [filteredItemData, selectedItem]);
 
   // Handle search input changes
-  const onSearchChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleSearchChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
     setSearchTerm(e.target.value.toLowerCase());
   }, []);
 
@@ -126,9 +127,9 @@ function ItemPicker({ initialItem, onSelect, onBlur }: ItemPickerProps) {
         className="w-full mb-2"
         placeholder="search"
         value={searchTerm}
-        onChange={onSearchChange}
+        onChange={handleSearchChange}
       />
-      <ul className="flex-1 w-full flex flex-col overflow-y-scroll">
+      <ul className="flex-1 w-full flex flex-col overflow-y-auto">
         {filteredItemData?.map((item) => (
           <li
             ref={(listItem) => listItemRefCallback(item, listItem)}
@@ -144,18 +145,5 @@ function ItemPicker({ initialItem, onSelect, onBlur }: ItemPickerProps) {
     </div>
   );
 }
-const matchesSearchTerm = (searchTerm: string, item?: Item): boolean => {
-  if (!item) return false;
-  return item.display_name.toLowerCase().includes(searchTerm.toLowerCase());
-};
-const compareBySearchTerm = (searchTerm: string, a: Item, b: Item): number => {
-  const posA = a.display_name.toLowerCase().indexOf(searchTerm.toLowerCase());
-  const posB = b.display_name.toLowerCase().indexOf(searchTerm.toLowerCase());
-  if (posA !== posB) {
-    return posA - posB; // Prioritize items with earlier match
-  } else {
-    return a.display_name.localeCompare(b.display_name); // Otherwise sort alphabetically
-  }
-};
 
 export default ItemPicker;

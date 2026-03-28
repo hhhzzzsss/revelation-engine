@@ -36,3 +36,21 @@ export const useApotheosisStore = create<ApotheosisState>((set) => ({
     return { qItems: newQItems };
   }),
 }));
+
+export interface EnumerationState {
+  items: Item[];
+  setItems: (items: Item[]) => void;
+}
+export const useEnumerationStore = create<EnumerationState>((set) => ({
+  items: [],
+  setItems: (items) => set({ items }),
+}));
+
+export interface HoverTooltipState {
+  text: string | null;
+  setText: (text: string | null) => void;
+}
+export const useTooltipStore = create<HoverTooltipState>((set) => ({
+  text: null,
+  setText: (text) => set({ text }),
+}));

@@ -9,7 +9,7 @@ interface ValidatedInputProps {
   className?: string;
 }
 
-function ValidatedInput({
+function IntRangeInput({
   className,
   value,
   onChange,
@@ -91,13 +91,13 @@ function ValidatedInput({
 
   return <Input
     ref={inputRef}
+    className={`${className ?? ''}`}
     value={maskedValue ?? value}
     onChange={handleChange}
     onBlur={handleBlur}
     onKeyDown={handleKeyDown}
-    className={`no-spinner ${className ?? ''}`}
     {...props}
   />;
 }
 
-export default ValidatedInput;
+export default IntRangeInput;
