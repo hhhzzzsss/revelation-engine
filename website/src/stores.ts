@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 import { VIEW_STATES, type ViewState } from './components/views/util';
-import type { Item, QuantifiedItem } from './item/types';
+import type { Item, QuantifiedItem, Recipe } from './item/types';
 
 export interface NavState {
   currentView: ViewState;
@@ -39,11 +39,15 @@ export const useApotheosisStore = create<ApotheosisState>((set) => ({
 
 export interface EnumerationState {
   items: Item[];
+  recipes: Recipe[];
   setItems: (items: Item[]) => void;
+  setRecipes: (recipes: Recipe[]) => void;
 }
 export const useEnumerationStore = create<EnumerationState>((set) => ({
   items: [],
+  recipes: [],
   setItems: (items) => set({ items }),
+  setRecipes: (recipes) => set({ recipes }),
 }));
 
 export interface HoverTooltipState {

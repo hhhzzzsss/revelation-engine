@@ -14,7 +14,7 @@ type Intensity = 'low' | 'medium' | 'high';
 function EnumerationView() {
   const batchSolver = useApotheosisBatchSolver();
 
-  const { items, setItems } = useEnumerationStore();
+  const { items, setItems, recipes, setRecipes } = useEnumerationStore();
   const itemsRef = useRef(items);
 
   const [effort, setEffort] = useState<Intensity>('medium');
@@ -22,7 +22,6 @@ function EnumerationView() {
   
   const [isEnumerating, setIsEnumerating] = useState(false);
   const [progressDisplay, setProgressDisplay] = useState('');
-  const [recipes, setRecipes] = useState<Recipe[]>([]);
 
   const canEnumerate = batchSolver && items.length > 1 && !isEnumerating;
 
