@@ -7,6 +7,7 @@ import Button from '../Button';
 import Slot from '../Slot';
 import Input from '../Input';
 import { itemMatchesSearchTerm } from '../../item/util';
+import { useVirtualizer } from '@tanstack/react-virtual';
 
 type Intensity = 'low' | 'medium' | 'high';
 
@@ -61,41 +62,50 @@ function EnumerationView() {
       <h2 className="text-2xl font-pixel mb-2">Available Items</h2>
       <InventoryPicker className="mb-2" items={items} onItemsChange={setItems} />
 
-      <div className="mb-2 flex items-center space-x-2">
-        <span className="font-pixel">effort: </span>
-        {['low', 'medium', 'high'].map((level) => (
-          <Button
-            key={level}
-            className={`${effort === level ? 'bg-primary-600' : 'bg-secondary-700 text-fg-600 opacity-60 hover:opacity-100'} font-pixel`}
-            onClick={() => setEffort(level as Intensity)}
-          >
-            {level.charAt(0).toUpperCase() + level.slice(1)}
-          </Button>
-        ))}
+      <div className="my-4">
+        <div className="mb-2 flex items-center space-x-2">
+          <span className="font-pixel">effort: </span>
+          {['low', 'medium', 'high'].map((level) => (
+            <Button
+              key={level}
+              className={`${effort === level ? 'bg-primary-600' : 'bg-secondary-700 text-fg-600 opacity-60 hover:opacity-100'} font-pixel`}
+              onClick={() => setEffort(level as Intensity)}
+            >
+              {level.charAt(0).toUpperCase() + level.slice(1)}
+            </Button>
+          ))}
+        </div>
+        <Button
+          className="mb-2 bg-primary-600 hover:bg-primary-500"
+          onClick={() => setIsEnumerating(true)}
+          disabled={!canEnumerate}
+        >
+          {isEnumerating ? 'Enumerating...' : 'Enumerate!'}
+        </Button>
+        <span className="ml-4 font-pixel text-fg-600">
+          {progressDisplay}
+        </span>
       </div>
-
-      <Button
-        className="mb-2 bg-primary-600 hover:bg-primary-500"
-        onClick={() => setIsEnumerating(true)}
-        disabled={!canEnumerate}
-      >
-        {isEnumerating ? 'Enumerating...' : 'Enumerate!'}
-      </Button>
-      <span className="ml-4 font-pixel text-fg-600">
-        {progressDisplay}
-      </span>
       
-      {recipes.length > 0 && <RecipeList recipes={recipes} />}
+      <RecipeList recipes={recipes} />
     </>
   );
 }
 
 function RecipeList({ recipes }: { recipes: Recipe[] }) {
   const [searchTerm, setSearchTerm] = useState('');
+  const listRef = useRef<HTMLDivElement>(null);
 
   const filteredRecipes = recipes
     .filter((recipe) => itemMatchesSearchTerm(searchTerm, recipe.output.item))
     .toSorted((a, b) => a.output.item.id - b.output.item.id);
+
+  // eslint-disable-next-line react-hooks/incompatible-library
+  const rowVirtualizer = useVirtualizer({
+    count: filteredRecipes.length,
+    getScrollElement: () => listRef.current,
+    estimateSize: () => 80,
+  });
 
   return (
     <>
@@ -106,16 +116,25 @@ function RecipeList({ recipes }: { recipes: Recipe[] }) {
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value.toLowerCase())}
       />
-      <div className="max-w-full h-128 overflow-y-auto">
+      <div ref={listRef} className="max-w-full h-128 overflow-y-auto">
         {filteredRecipes.length === 0 && (
           <div className="mt-4 text-center font-pixel text-fg-600">
             no recipes found
           </div>
         )}
-        <div className="w-4xl mx-auto flex flex-wrap justify-center gap-2">
-          {filteredRecipes.map((recipe, index) => (
-            <RecipeDisplay key={index} recipe={recipe} />
-          ))}
+        <div style={{ height: rowVirtualizer.getTotalSize() }} className="relative w-lg mx-auto flex flex-col">
+          {rowVirtualizer.getVirtualItems().map((virtualItem) => {
+            const recipe = filteredRecipes[virtualItem.index];
+            return (
+              <div
+                key={recipe.output.item.id}
+                className="absolute top-0 right-0 min-w-0"
+                style={{ transform: `translateY(${virtualItem.start}px)` }}
+              >
+                <RecipeDisplay key={virtualItem.index} recipe={recipe} />
+              </div>
+            );
+          })}
         </div>
       </div>
       <div className="h-12" />
@@ -125,7 +144,10 @@ function RecipeList({ recipes }: { recipes: Recipe[] }) {
 
 function RecipeDisplay({ recipe }: { recipe: Recipe }) {
   return (
-    <div className="border-2 border-secondary-800 flex items-center">
+    <div className="flex items-center">
+      {Array.from({ length: 6 - recipe.inputs.length }).map((_, index) => (
+        <Slot key={index} />
+      ))}
       {recipe.inputs.map((qItem, index) => (
         <Slot key={index} item={qItem.item} count={qItem.count} />
       ))}

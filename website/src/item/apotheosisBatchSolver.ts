@@ -128,7 +128,7 @@ class ApotheosisBatchSolver {
     let cancelled = false;
     const cancel = () => cancelled = true;
 
-    const batchSize = 4096;
+    const batchSize = 8192;
     const aggregator = new EnergyRatioRecipeAggregator();
     const transformer = new CopyOutputTransformer(availableItems);
 

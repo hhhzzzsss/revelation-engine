@@ -4,6 +4,7 @@ import { useItemData } from '../item/hooks';
 import { compareItemsBySearchTerm, itemMatchesSearchTerm } from '../item/util';
 import { getIconPath } from '../image/util';
 import Input from './Input';
+import { useVirtualizer } from '@tanstack/react-virtual';
 
 interface ItemPickerProps {
   initialItem?: Item;
@@ -16,7 +17,7 @@ function ItemPicker({ initialItem, onSelect, onBlur }: ItemPickerProps) {
 
   const containerRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
-  const listItemRefs = useRef<Record<number, HTMLLIElement | null>>({});
+  const listRef = useRef<HTMLDivElement>(null);
   const [searchTerm, setSearchTerm] = useState('');
   const [userSelectedItem, setUserSelectedItem] = useState<Item | null>(null);
 
@@ -32,26 +33,26 @@ function ItemPicker({ initialItem, onSelect, onBlur }: ItemPickerProps) {
       .toSorted((a, b) => compareItemsBySearchTerm(searchTerm, a, b));
   }, [itemData, searchTerm]);
 
+  // Virtualizer for item list
+  // eslint-disable-next-line react-hooks/incompatible-library
+  const rowVirtualizer = useVirtualizer({
+    count: filteredItemData?.length ?? 0,
+    getScrollElement: () => listRef.current,
+    estimateSize: () => 40,
+  });
+
   // Determine selected item
   const unfilteredSelectedItem = userSelectedItem || initialItem;
   const selectedItem = itemMatchesSearchTerm(searchTerm, unfilteredSelectedItem) ? unfilteredSelectedItem : filteredItemData?.[0] ?? null;
   const selectedItemVisible = filteredItemData?.some((item) => item.id === selectedItem?.id) ?? false;
 
-  // Ref callback to store list items
-  const listItemRefCallback = useCallback((item: Item, listItem: HTMLLIElement | null) => {
-    listItemRefs.current[item.id] = listItem;
-    if (item.id === selectedItem?.id) {
-      listItem?.scrollIntoView({ block: 'nearest' });
-    }
-  }, [selectedItem]);
-
   // Scroll to selected item
   useEffect(() => {
-    if (filteredItemData) {
-      const selectedItemRef = listItemRefs.current[selectedItem?.id ?? -1];
-      selectedItemRef?.scrollIntoView({ block: 'nearest' });
+    const selectedItemIdx = filteredItemData?.findIndex((item) => item.id === selectedItem?.id) ?? -1;
+    if (selectedItemIdx >= 0) {
+      rowVirtualizer.scrollToIndex(selectedItemIdx);
     }
-  }, [filteredItemData, selectedItem]);
+  }, [rowVirtualizer, filteredItemData, selectedItem]);
 
   // Handle search input changes
   const handleSearchChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
@@ -129,19 +130,31 @@ function ItemPicker({ initialItem, onSelect, onBlur }: ItemPickerProps) {
         value={searchTerm}
         onChange={handleSearchChange}
       />
-      <ul className="flex-1 w-full flex flex-col overflow-y-auto">
-        {filteredItemData?.map((item) => (
-          <li
-            ref={(listItem) => listItemRefCallback(item, listItem)}
-            key={item.id}
-            className={`p-1 rounded-sm flex items-center space-x-2  hover:bg-bg-600 ${selectedItem?.id === item.id ? 'bg-bg-600' : ''}`}
-            onClick={() => onSelect?.(item)}
-          >
-            <img src={getIconPath(item)} alt={item.display_name} className="inline-block w-8 h-8 mr-2 pixelated" />
-            <span className="font-pixel">{item.display_name}</span>
-          </li>
-        ))}
-      </ul>
+      <div ref={listRef} className="flex-1 w-full overflow-y-auto">
+        <div
+          style={{ 'height': `${rowVirtualizer.getTotalSize()}px` }}
+          className="relative w-full"
+        >
+          {rowVirtualizer.getVirtualItems().map((virtualRow) => {
+            const item = filteredItemData?.[virtualRow.index];
+            if (!item) return null;
+            return (
+              <div
+                key={item.id}
+                className={`absolute top-0 left-0 w-full min-w-0 rounded-sm flex items-center space-x-2  hover:bg-bg-600 ${selectedItem?.id === item.id ? 'bg-bg-600' : ''}`}
+                style={{
+                  height: `${virtualRow.size}px`,
+                  transform: `translateY(${virtualRow.start}px)`,
+                }}
+                onClick={() => onSelect?.(item)}
+              >
+                <img src={getIconPath(item)} alt={item.display_name} className="inline-block w-8 h-8 mr-2 pixelated" />
+                <span className="font-pixel">{item.display_name}</span>
+              </div>
+            );
+          })}
+        </div>
+      </div>
     </div>
   );
 }
