@@ -84,13 +84,20 @@ function DictInfo({title, dict={}}: {title: string, dict?: Record<string, string
       <ul className="pl-4">
         {Object.entries(dict).map(([key, value]) => (
           <li key={key} className="font-pixel text-sm/5 text-fg-600">
-            {`${key}: ${value}`}
+            {`${key}: `}<span className={getDictValueColor(value)}>{`${value}`}</span>
           </li>
         ))}
       </ul>
     </div>
   );
 }
+const getDictValueColor = (value: string | number | boolean): string => {
+  if (typeof value === 'boolean') {
+    return value ? 'text-primary-600' : 'text-severe-600';
+  } else {
+    return 'text-fg-600';
+  }
+};
 
 function ListInfo({title, list=[]}: {title: string, list?: string[]}) {
   return (
@@ -98,7 +105,10 @@ function ListInfo({title, list=[]}: {title: string, list?: string[]}) {
       <h3 className="font-pixel text-lg/5">{title}</h3>
       <ul className="pl-4">
         {list.map((value) => (
-          <li key={value} className="font-pixel text-sm/5 text-fg-600">
+          <li
+            key={value}
+            className="font-pixel text-sm/5 text-fg-600"
+          >
             {value}
           </li>
         ))}
