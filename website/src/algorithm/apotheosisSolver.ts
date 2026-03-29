@@ -1,4 +1,4 @@
-import type { Color, FuserParameters, Item, QuantifiedItem } from './types';
+import type { Color, FuserParameters, Item, QuantifiedItem } from '../item/types';
 
 interface PreprocessedItem {
   item: Item;

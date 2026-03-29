@@ -1,6 +1,6 @@
 import { useMemo } from 'react';
 import type { QuantifiedItem } from '../../item/types';
-import { useApotheosisSolver } from '../../item/hooks';
+import { useApotheosisSolver } from '../../algorithm/hooks';
 import { useApotheosisStore } from '../../stores';
 import PickableSlot from '../PickableSlot';
 import LabeledSlot from '../LabeledSlot';

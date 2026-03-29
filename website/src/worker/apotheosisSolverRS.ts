@@ -1,5 +1,6 @@
 import init, { ApotheosisSolverRS } from '../../pkg/apotheosis_lib';
-import type { FuserParameters, Item, SerializedInputBatch, SerializedOutputBatch } from '../item/types';
+import type { FuserParameters, Item } from '../item/types';
+import type { SerializedInputBatch, SerializedOutputBatch } from './types';
 
 const initPromise = init();
 

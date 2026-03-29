@@ -1,4 +1,4 @@
-import type { Recipe } from './types';
+import type { Recipe } from '../item/types';
 
 export abstract class RecipeAggregator {
   protected recipeMap = new Map<number, Recipe>();

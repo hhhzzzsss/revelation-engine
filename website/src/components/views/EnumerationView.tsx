@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import type { Recipe } from '../../item/types';
 import InventoryPicker from '../InventoryPicker';
-import { useApotheosisBatchSolver } from '../../item/hooks';
+import { useApotheosisBatchSolver } from '../../algorithm/hooks';
 import { useEnumerationStore } from '../../stores';
 import Button from '../Button';
 import Slot from '../Slot';

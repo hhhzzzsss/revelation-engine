@@ -63,19 +63,3 @@ export interface Recipe {
   inputs: QuantifiedItem[];
   output: QuantifiedItem;
 }
-
-export interface SerializedSlot {
-  id: number;
-  count: number;
-}
-
-export interface SerializedInputBatch {
-  ids: Int32Array;
-  counts: Int32Array;
-  sample_sizes: Uint32Array;
-}
-
-export interface SerializedOutputBatch {
-  ids: Int32Array;
-  counts: Int32Array;
-}

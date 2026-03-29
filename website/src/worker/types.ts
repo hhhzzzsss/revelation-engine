@@ -1,4 +1,8 @@
-import type { FuserParameters, Item, SerializedInputBatch, SerializedOutputBatch } from '../item/types';
+import type { FuserParameters, Item } from '../item/types';
+
+interface BaseMessage {
+  id: number;
+}
 
 export type ToWorkerMessage = InitializationMessage | BatchMessage;
 
@@ -29,6 +33,18 @@ export interface BatchResultMessage extends BaseMessage {
   output: SerializedOutputBatch;
 }
 
-interface BaseMessage {
+export interface SerializedSlot {
   id: number;
+  count: number;
+}
+
+export interface SerializedInputBatch {
+  ids: Int32Array;
+  counts: Int32Array;
+  sample_sizes: Uint32Array;
+}
+
+export interface SerializedOutputBatch {
+  ids: Int32Array;
+  counts: Int32Array;
 }

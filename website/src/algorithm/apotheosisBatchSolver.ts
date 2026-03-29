@@ -1,7 +1,8 @@
 import ApotheosisWorker from '../worker/apotheosisWorker.ts?worker'; 
-import type { FromWorkerMessage, InitializationMessage, ToWorkerMessage } from '../worker/types';
-import type { FuserParameters, Item, QuantifiedItem, Recipe, SerializedInputBatch } from './types';
+import type { FromWorkerMessage, InitializationMessage, ToWorkerMessage, SerializedInputBatch } from '../worker/types';
+import type { FuserParameters, Item, QuantifiedItem, Recipe } from '../item/types';
 import { EnergyRatioRecipeAggregator } from './recipeAggregator';
+import PriorityQueue from './priorityQueue';
 
 let batchSolverInstance: ApotheosisBatchSolver | null = null;
 export const getApotheosisBatchSolver = (fuserParams: FuserParameters, itemData: Item[]) => {
@@ -214,7 +215,7 @@ class ApotheosisBatchSolver {
 
 
 type RecipeInputGenerator = Generator<[QuantifiedItem[], number]>; // yields [input, progress]
-type VariationGenerator = Generator<[number, number]>;
+type VariationGenerator = Generator<QuantifiedItem[]>;
 
 function* getTwoInputIterator(items: Item[], targetSampleCount: number): RecipeInputGenerator {
   const combinations = (items.length * (items.length - 1)) / 2;
@@ -222,36 +223,39 @@ function* getTwoInputIterator(items: Item[], targetSampleCount: number): RecipeI
   let counter = 0;
   for (let i = 0; i < items.length; i++) {
     for (let j = i + 1; j < items.length; j++) {
-      for (const [countI, countJ] of getVariationIterator(items[i], items[j], variationBudget)) {
-        yield [[{ item: items[i], count: countI }, { item: items[j], count: countJ }], counter / combinations];
+      for (const inputVariation of getVariationIterator([items[i], items[j]], variationBudget)) {
+        yield [inputVariation, counter / combinations];
       }
       counter++;
     }
   }
 }
-function* getVariationIterator(item1: Item, item2: Item, limit: number): VariationGenerator {
-  const swapped = item1.essence.energy > item2.essence.energy;
-  if (swapped) {
-    [item1, item2] = [item2, item1];
-  }
 
-  const energy1 = item1.essence.energy;
-  const energy2 = item2.essence.energy;
-  const stackSize1 = item1.stack_size;
-  const stackSize2 = item2.stack_size;
-  let count1 = 1;
-  let count2 = 1;
+// Try input variations in order of increasing energy
+function* getVariationIterator(items: Item[], limit: number): VariationGenerator {
+  const pq = new PriorityQueue<number[]>();
+  const energies = items.map(item => item.essence.energy);
+  const stackSizes = items.map(item => item.stack_size);
+  const getKey = (counts: number[]) => counts.reduce((sum, count) => sum*50 + count, 0);
+  const getEnergy = (counts: number[]) => counts.reduce((sum, count, i) => sum + energies[i] * count, 0);
+  const getVariation = (counts: number[]): QuantifiedItem[] => counts.map((count, i) => ({ item: items[i], count }));
 
+  const seen = new Set<number>();
+  const initialCount = Array<number>(items.length).fill(1);
+  pq.push(initialCount, getEnergy(initialCount));
   for (let i = 0; i < limit; i++) {
-    yield swapped ? [count2, count1] : [count1, count2];
+    const counts = pq.pop();
+    if (!counts) break;
+    yield getVariation(counts);
 
-    count1++;
-    if (energy1*count1 > 2*energy2*count2 || count1 > stackSize1) {
-      count1 = 1;
-      count2++;
-      if (count2 > stackSize2) {
-        return;
-      }
+    for (let j = 0; j < items.length; j++) {
+      if (counts[j] >= stackSizes[j]) continue;
+      const newCounts = [...counts];
+      newCounts[j]++;
+      const key = getKey(newCounts);
+      if (seen.has(key)) continue;
+      seen.add(key);
+      pq.push(newCounts, getEnergy(newCounts));
     }
   }
 }

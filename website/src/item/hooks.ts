@@ -1,8 +1,5 @@
-import { useMemo } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import type { FuserParameters, Item } from './types';
-import ApotheosisSolver from './apotheosisSolver';
-import { getApotheosisBatchSolver } from './apotheosisBatchSolver';
 import fuserParamUrl from '../assets/fuser_params.json?url';
 import itemDataUrl from '../assets/item_data.json?url';
 
@@ -34,20 +31,4 @@ export const useItemData = () => {
     staleTime: Infinity,
     gcTime: Infinity,
   });
-};
-
-export const useApotheosisSolver = () => {
-  const { data: fuserParams } = useFuserParameters();
-  const { data: itemData } = useItemData();
-  return useMemo(() => {
-    if (!fuserParams || !itemData) return null;
-    return new ApotheosisSolver(fuserParams, itemData);
-  }, [fuserParams, itemData]);
-};
-
-export const useApotheosisBatchSolver = () => {
-  const { data: fuserParams } = useFuserParameters();
-  const { data: itemData } = useItemData();
-  if (!fuserParams || !itemData) return null;
-  return getApotheosisBatchSolver(fuserParams, itemData);
 };
