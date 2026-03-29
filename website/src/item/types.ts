@@ -22,6 +22,7 @@ export interface Item {
   color: Color;
   essence: Essence;
   block_data?: BlockData;
+  tool_data?: ToolData;
 }
 
 export type Color = [number, number, number];
@@ -62,4 +63,17 @@ export interface DropLoot {
 export interface Recipe {
   inputs: QuantifiedItem[];
   output: QuantifiedItem;
+}
+
+export interface ToolData {
+  attack_increase: number;
+  axe_boost: boolean;
+  pickaxe_boost: boolean;
+  cristella_boost: boolean;
+  slime_boost: boolean;
+  plant_boost: boolean;
+  meat_boost: boolean;
+  shovel_boost: boolean;
+  break_speed_increase: number;
+  fire_aspect: boolean
 }

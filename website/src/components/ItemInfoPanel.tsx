@@ -30,6 +30,19 @@ function ItemInfoPanel() {
     'axe required': item.block_data.axe_required,
     'break time': round(item.block_data.break_time),
   } : undefined;
+  const toolData = item?.tool_data ? {
+    'attack increase': round(item.tool_data.attack_increase),
+    'axe boost': item.tool_data.axe_boost,
+    'pickaxe boost': item.tool_data.pickaxe_boost,
+    'cristella boost': item.tool_data.cristella_boost,
+    'slime boost': item.tool_data.slime_boost,
+    'plant boost': item.tool_data.plant_boost,
+    'meat boost': item.tool_data.meat_boost,
+    'shovel boost': item.tool_data.shovel_boost,
+    'break speed increase': round(item.tool_data.break_speed_increase),
+    'fire aspect': item.tool_data.fire_aspect
+
+  } : undefined;
 
   return (
     <div className={`h-full ${isOpen ? 'w-86' : 'w-0'} transition-width duration-300 overflow-hidden`}>
@@ -56,6 +69,7 @@ function ItemInfoPanel() {
             <ListInfo title="Tags" list={tags} />
             <ListInfo title="Output Tags" list={outputTags} />
             {blockData && <DictInfo title="Block Data" dict={blockData} />}
+            {toolData && <DictInfo title="Tool Data" dict={toolData} />}
           </div>
         )}
       </section>

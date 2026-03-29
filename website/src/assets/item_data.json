@@ -47,7 +47,6 @@
         "id": 1,
         "internal": true,
         "internal_name": "void block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -99,7 +98,6 @@
         "id": 2,
         "internal": true,
         "internal_name": "debug",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -151,7 +149,6 @@
         "id": 3,
         "internal": true,
         "internal_name": "replace_1",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -203,7 +200,6 @@
         "id": 4,
         "internal": true,
         "internal_name": "replace_2",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -255,7 +251,6 @@
         "id": 5,
         "internal": true,
         "internal_name": "replace_3",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -307,7 +302,6 @@
         "id": 6,
         "internal": true,
         "internal_name": "replace_4",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -359,7 +353,6 @@
         "id": 7,
         "internal": true,
         "internal_name": "replace_5",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -411,7 +404,6 @@
         "id": 8,
         "internal": true,
         "internal_name": "replace_6",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -463,7 +455,6 @@
         "id": 9,
         "internal": true,
         "internal_name": "replace_7",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -515,7 +506,6 @@
         "id": 10,
         "internal": true,
         "internal_name": "replace_8",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -567,7 +557,6 @@
         "id": 11,
         "internal": true,
         "internal_name": "replace_9",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -619,7 +608,6 @@
         "id": 12,
         "internal": true,
         "internal_name": "replace_10",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -671,7 +659,6 @@
         "id": 13,
         "internal": true,
         "internal_name": "direction block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -723,7 +710,6 @@
         "id": 20,
         "internal": true,
         "internal_name": "replace_water",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -781,7 +767,6 @@
         "id": 26,
         "internal": false,
         "internal_name": "heaven block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 1
     },
@@ -839,7 +824,6 @@
         "id": 27,
         "internal": false,
         "internal_name": "naraka block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 1
     },
@@ -880,7 +864,19 @@
         "internal": false,
         "internal_name": "multitool",
         "max_durability": 312,
-        "stack_size": 1
+        "stack_size": 1,
+        "tool_data": {
+            "attack_increase": 0,
+            "axe_boost": true,
+            "break_speed_increase": 3.0,
+            "cristella_boost": false,
+            "fire_aspect": false,
+            "meat_boost": false,
+            "pickaxe_boost": true,
+            "plant_boost": false,
+            "shovel_boost": true,
+            "slime_boost": false
+        }
     },
     {
         "block_data": {
@@ -935,7 +931,6 @@
         "id": 29,
         "internal": false,
         "internal_name": "womb block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 5
     },
@@ -993,7 +988,6 @@
         "id": 30,
         "internal": false,
         "internal_name": "pocket block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 1
     },
@@ -1049,7 +1043,6 @@
         "id": 31,
         "internal": false,
         "internal_name": "respawn block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 5
     },
@@ -1090,7 +1083,19 @@
         "internal": false,
         "internal_name": "super drill",
         "max_durability": 5000,
-        "stack_size": 1
+        "stack_size": 1,
+        "tool_data": {
+            "attack_increase": 1,
+            "axe_boost": true,
+            "break_speed_increase": 3.0,
+            "cristella_boost": true,
+            "fire_aspect": false,
+            "meat_boost": true,
+            "pickaxe_boost": true,
+            "plant_boost": true,
+            "shovel_boost": true,
+            "slime_boost": true
+        }
     },
     {
         "color": [
@@ -1261,7 +1266,6 @@
         "id": 12421,
         "internal": false,
         "internal_name": "sponge block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 5
     },
@@ -1317,7 +1321,6 @@
         "id": 12422,
         "internal": false,
         "internal_name": "diffuse block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 5
     },
@@ -1373,7 +1376,6 @@
         "id": 12438,
         "internal": false,
         "internal_name": "ice cube",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 5
     },
@@ -1427,7 +1429,6 @@
         "id": 12441,
         "internal": false,
         "internal_name": "fractal block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 5
     },
@@ -2076,7 +2077,6 @@
         "id": 70014,
         "internal": false,
         "internal_name": "e",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -2131,7 +2131,6 @@
         "id": 70021,
         "internal": false,
         "internal_name": "f",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -2186,7 +2185,6 @@
         "id": 70028,
         "internal": false,
         "internal_name": "g",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -2241,7 +2239,6 @@
         "id": 70035,
         "internal": false,
         "internal_name": "h",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -2296,7 +2293,6 @@
         "id": 70042,
         "internal": false,
         "internal_name": "i",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -2351,7 +2347,6 @@
         "id": 70049,
         "internal": false,
         "internal_name": "j",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -2406,7 +2401,6 @@
         "id": 70056,
         "internal": false,
         "internal_name": "k",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -2461,7 +2455,6 @@
         "id": 70063,
         "internal": false,
         "internal_name": "l",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -2516,7 +2509,6 @@
         "id": 70070,
         "internal": false,
         "internal_name": "m",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -2571,7 +2563,6 @@
         "id": 70077,
         "internal": false,
         "internal_name": "n",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -2627,7 +2618,6 @@
         "id": 70084,
         "internal": false,
         "internal_name": "o",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -2682,7 +2672,6 @@
         "id": 70091,
         "internal": false,
         "internal_name": "p",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -2737,7 +2726,6 @@
         "id": 70098,
         "internal": false,
         "internal_name": "q",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -2792,7 +2780,6 @@
         "id": 70105,
         "internal": false,
         "internal_name": "r",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -2847,7 +2834,6 @@
         "id": 70112,
         "internal": false,
         "internal_name": "s",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -2902,7 +2888,6 @@
         "id": 70119,
         "internal": false,
         "internal_name": "t",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -2957,7 +2942,6 @@
         "id": 70126,
         "internal": false,
         "internal_name": "u",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -3012,7 +2996,6 @@
         "id": 70133,
         "internal": false,
         "internal_name": "v",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -3067,7 +3050,6 @@
         "id": 70140,
         "internal": false,
         "internal_name": "w",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -3122,7 +3104,6 @@
         "id": 70147,
         "internal": false,
         "internal_name": "x",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -3177,7 +3158,6 @@
         "id": 70154,
         "internal": false,
         "internal_name": "y",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -3232,7 +3212,6 @@
         "id": 70161,
         "internal": false,
         "internal_name": "z",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -3272,7 +3251,19 @@
         "internal": false,
         "internal_name": "plastril empty bucket",
         "max_durability": 0,
-        "stack_size": 1
+        "stack_size": 1,
+        "tool_data": {
+            "attack_increase": 0,
+            "axe_boost": false,
+            "break_speed_increase": 0.0,
+            "cristella_boost": false,
+            "fire_aspect": false,
+            "meat_boost": false,
+            "pickaxe_boost": false,
+            "plant_boost": false,
+            "shovel_boost": false,
+            "slime_boost": false
+        }
     },
     {
         "color": [
@@ -3311,7 +3302,19 @@
         "internal": false,
         "internal_name": "water bucket",
         "max_durability": 0,
-        "stack_size": 1
+        "stack_size": 1,
+        "tool_data": {
+            "attack_increase": 0,
+            "axe_boost": false,
+            "break_speed_increase": 0.0,
+            "cristella_boost": false,
+            "fire_aspect": false,
+            "meat_boost": false,
+            "pickaxe_boost": false,
+            "plant_boost": false,
+            "shovel_boost": false,
+            "slime_boost": false
+        }
     },
     {
         "color": [
@@ -3351,7 +3354,19 @@
         "internal": false,
         "internal_name": "infinite spiller",
         "max_durability": 0,
-        "stack_size": 1
+        "stack_size": 1,
+        "tool_data": {
+            "attack_increase": 0,
+            "axe_boost": false,
+            "break_speed_increase": 0.0,
+            "cristella_boost": false,
+            "fire_aspect": false,
+            "meat_boost": false,
+            "pickaxe_boost": false,
+            "plant_boost": false,
+            "shovel_boost": false,
+            "slime_boost": false
+        }
     },
     {
         "color": [
@@ -3390,7 +3405,19 @@
         "internal": false,
         "internal_name": "infinite absorber",
         "max_durability": 0,
-        "stack_size": 1
+        "stack_size": 1,
+        "tool_data": {
+            "attack_increase": 0,
+            "axe_boost": false,
+            "break_speed_increase": 0.0,
+            "cristella_boost": false,
+            "fire_aspect": false,
+            "meat_boost": false,
+            "pickaxe_boost": false,
+            "plant_boost": false,
+            "shovel_boost": false,
+            "slime_boost": false
+        }
     },
     {
         "color": [
@@ -3521,7 +3548,6 @@
         "id": 93015,
         "internal": false,
         "internal_name": "style_plant",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -4373,7 +4399,6 @@
         "id": 432234,
         "internal": false,
         "internal_name": "simblock",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -4428,7 +4453,6 @@
         "id": 432235,
         "internal": false,
         "internal_name": "simblock 2",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -4483,7 +4507,6 @@
         "id": 432236,
         "internal": false,
         "internal_name": "simblock 4",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -4538,7 +4561,6 @@
         "id": 432237,
         "internal": false,
         "internal_name": "simblock 3",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -4593,7 +4615,6 @@
         "id": 432238,
         "internal": false,
         "internal_name": "simblock 5",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -4648,7 +4669,6 @@
         "id": 432239,
         "internal": false,
         "internal_name": "flionide block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -4702,7 +4722,6 @@
         "id": 432333,
         "internal": false,
         "internal_name": "tooth block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -4758,7 +4777,6 @@
         "id": 434377,
         "internal": false,
         "internal_name": "star block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -4814,7 +4832,6 @@
         "id": 434378,
         "internal": false,
         "internal_name": "sun block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -4869,7 +4886,6 @@
         "id": 699986,
         "internal": false,
         "internal_name": "a",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -4924,7 +4940,6 @@
         "id": 699993,
         "internal": false,
         "internal_name": "b",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -4979,7 +4994,6 @@
         "id": 700000,
         "internal": false,
         "internal_name": "c",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -5034,7 +5048,6 @@
         "id": 700007,
         "internal": false,
         "internal_name": "d",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -5089,7 +5102,6 @@
         "id": 3341234,
         "internal": true,
         "internal_name": "beep block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -5145,7 +5157,6 @@
         "id": 5131244,
         "internal": true,
         "internal_name": "manikin block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 5
     },
@@ -5201,7 +5212,6 @@
         "id": 5131245,
         "internal": true,
         "internal_name": "blasphemy block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 5
     },
@@ -5257,7 +5267,6 @@
         "id": 5131246,
         "internal": true,
         "internal_name": "metal golem block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 5
     },
@@ -5311,7 +5320,6 @@
         "id": 5131247,
         "internal": false,
         "internal_name": "uterus block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 5
     },
@@ -5367,7 +5375,6 @@
         "id": 5131249,
         "internal": true,
         "internal_name": "metal gel block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 5
     },
@@ -5423,7 +5430,6 @@
         "id": 5131250,
         "internal": true,
         "internal_name": "gel block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 5
     },
@@ -5479,7 +5485,6 @@
         "id": 5131256,
         "internal": true,
         "internal_name": "mini gel block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 5
     },
@@ -5535,7 +5540,6 @@
         "id": 5131259,
         "internal": true,
         "internal_name": "koadma block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 5
     },
@@ -5830,7 +5834,6 @@
         "id": 10170591,
         "internal": false,
         "internal_name": "vomit block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -5886,7 +5889,6 @@
         "id": 10170648,
         "internal": false,
         "internal_name": "love block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -5941,7 +5943,6 @@
         "id": 10170804,
         "internal": false,
         "internal_name": "ambiguous block 1",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -5996,7 +5997,6 @@
         "id": 11009880,
         "internal": false,
         "internal_name": "ambiguous block 3",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -6051,7 +6051,6 @@
         "id": 11009881,
         "internal": false,
         "internal_name": "ambiguous block 2",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -6106,7 +6105,6 @@
         "id": 11009882,
         "internal": false,
         "internal_name": "ambiguous block 4",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -6161,7 +6159,6 @@
         "id": 11009885,
         "internal": false,
         "internal_name": "ambiguous block 6",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -6216,7 +6213,6 @@
         "id": 11009886,
         "internal": false,
         "internal_name": "ambiguous block 5",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -6270,7 +6266,6 @@
         "id": 11009890,
         "internal": false,
         "internal_name": "prismatic block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -6327,7 +6322,6 @@
         "id": 11013322,
         "internal": false,
         "internal_name": "accelo block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -8373,7 +8367,6 @@
         "id": 119534997,
         "internal": false,
         "internal_name": "seaweed foliage",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -8428,7 +8421,6 @@
         "id": 119534998,
         "internal": false,
         "internal_name": "lively seaweed foliage",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -8483,7 +8475,6 @@
         "id": 119539932,
         "internal": false,
         "internal_name": "moss fuzz foliage",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -8539,7 +8530,6 @@
         "id": 119542211,
         "internal": false,
         "internal_name": "grave foliage",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -8594,7 +8584,6 @@
         "id": 119542215,
         "internal": false,
         "internal_name": "zany foliage",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -8649,7 +8638,6 @@
         "id": 119542217,
         "internal": false,
         "internal_name": "buzz flower foliage",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -8704,7 +8692,6 @@
         "id": 119542218,
         "internal": false,
         "internal_name": "rose foliage",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -8760,7 +8747,6 @@
         "id": 119542219,
         "internal": false,
         "internal_name": "grass grass foliage",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -8816,7 +8802,6 @@
         "id": 119542222,
         "internal": false,
         "internal_name": "dandelion foliage",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -8871,7 +8856,6 @@
         "id": 119542223,
         "internal": false,
         "internal_name": "grass foliage",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -8926,7 +8910,6 @@
         "id": 119542226,
         "internal": false,
         "internal_name": "aster foliage",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -8981,7 +8964,6 @@
         "id": 119542227,
         "internal": false,
         "internal_name": "flesh foliage",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -9037,7 +9019,6 @@
         "id": 119542228,
         "internal": false,
         "internal_name": "cyst foliage",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -9092,7 +9073,6 @@
         "id": 119542229,
         "internal": false,
         "internal_name": "desert grass foliage",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -9148,7 +9128,6 @@
         "id": 119542230,
         "internal": false,
         "internal_name": "visognia flower foliage",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -9204,7 +9183,6 @@
         "id": 119542232,
         "internal": false,
         "internal_name": "abble foliage",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -9259,7 +9237,6 @@
         "id": 119542234,
         "internal": false,
         "internal_name": "pale grass foliage",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -9315,7 +9292,6 @@
         "id": 119542236,
         "internal": false,
         "internal_name": "abble flower foliage",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -9370,7 +9346,6 @@
         "id": 119542237,
         "internal": false,
         "internal_name": "blue grass foliage",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -9425,7 +9400,6 @@
         "id": 119542239,
         "internal": false,
         "internal_name": "bright grass foliage",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -9480,7 +9454,6 @@
         "id": 119542242,
         "internal": false,
         "internal_name": "wheat foliage",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -9535,7 +9508,6 @@
         "id": 119542243,
         "internal": false,
         "internal_name": "lavender foliage",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -9592,7 +9564,6 @@
         "id": 119542352,
         "internal": false,
         "internal_name": "balloon foliage",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -9648,7 +9619,6 @@
         "id": 119542691,
         "internal": false,
         "internal_name": "star foliage",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -9702,7 +9672,6 @@
         "id": 119639177,
         "internal": false,
         "internal_name": "red plastic block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -9756,7 +9725,6 @@
         "id": 119639178,
         "internal": false,
         "internal_name": "green plastic block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -9810,7 +9778,6 @@
         "id": 119639179,
         "internal": false,
         "internal_name": "blue plastic block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -9864,7 +9831,6 @@
         "id": 119639180,
         "internal": false,
         "internal_name": "yellow plastic block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -9918,7 +9884,6 @@
         "id": 119639181,
         "internal": false,
         "internal_name": "pink plastic block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -9972,7 +9937,6 @@
         "id": 119639182,
         "internal": false,
         "internal_name": "white plastic block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -10026,7 +9990,6 @@
         "id": 119639183,
         "internal": false,
         "internal_name": "black plastic block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -10080,7 +10043,6 @@
         "id": 119639184,
         "internal": false,
         "internal_name": "brown plastic block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -10135,7 +10097,6 @@
         "id": 119639295,
         "internal": false,
         "internal_name": "wrapper block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -10190,7 +10151,6 @@
         "id": 119639411,
         "internal": false,
         "internal_name": "couch block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -10245,7 +10205,6 @@
         "id": 119639492,
         "internal": false,
         "internal_name": "comfort block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -10313,7 +10272,6 @@
         "id": 126239450,
         "internal": false,
         "internal_name": "mana ore block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -10368,7 +10326,6 @@
         "id": 128453002,
         "internal": false,
         "internal_name": "pink grass block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -10422,7 +10379,6 @@
         "id": 128455900,
         "internal": false,
         "internal_name": "grass grass block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -10477,7 +10433,6 @@
         "id": 128455912,
         "internal": false,
         "internal_name": "pale grass block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -10532,7 +10487,6 @@
         "id": 128455924,
         "internal": false,
         "internal_name": "blue grass block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -10587,7 +10541,6 @@
         "id": 128455936,
         "internal": false,
         "internal_name": "grass block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -10642,7 +10595,6 @@
         "id": 128455937,
         "internal": false,
         "internal_name": "snow grass block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -10696,7 +10648,6 @@
         "id": 128455938,
         "internal": false,
         "internal_name": "snow block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -10751,7 +10702,6 @@
         "id": 128455941,
         "internal": false,
         "internal_name": "bright grass block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -10806,7 +10756,6 @@
         "id": 128455968,
         "internal": false,
         "internal_name": "plant",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -10849,7 +10798,19 @@
         "internal": false,
         "internal_name": "agnite sword",
         "max_durability": 65,
-        "stack_size": 1
+        "stack_size": 1,
+        "tool_data": {
+            "attack_increase": 2,
+            "axe_boost": false,
+            "break_speed_increase": 0.0,
+            "cristella_boost": false,
+            "fire_aspect": true,
+            "meat_boost": false,
+            "pickaxe_boost": false,
+            "plant_boost": false,
+            "shovel_boost": false,
+            "slime_boost": false
+        }
     },
     {
         "color": [
@@ -10888,7 +10849,19 @@
         "internal": false,
         "internal_name": "iron axe",
         "max_durability": 300,
-        "stack_size": 1
+        "stack_size": 1,
+        "tool_data": {
+            "attack_increase": 3,
+            "axe_boost": true,
+            "break_speed_increase": 2.15,
+            "cristella_boost": false,
+            "fire_aspect": false,
+            "meat_boost": false,
+            "pickaxe_boost": false,
+            "plant_boost": false,
+            "shovel_boost": false,
+            "slime_boost": false
+        }
     },
     {
         "color": [
@@ -10927,7 +10900,19 @@
         "internal": false,
         "internal_name": "clay axe",
         "max_durability": 256,
-        "stack_size": 1
+        "stack_size": 1,
+        "tool_data": {
+            "attack_increase": 2,
+            "axe_boost": true,
+            "break_speed_increase": 2.0,
+            "cristella_boost": false,
+            "fire_aspect": false,
+            "meat_boost": false,
+            "pickaxe_boost": false,
+            "plant_boost": false,
+            "shovel_boost": false,
+            "slime_boost": false
+        }
     },
     {
         "color": [
@@ -10966,7 +10951,19 @@
         "internal": false,
         "internal_name": "key axe",
         "max_durability": 150,
-        "stack_size": 1
+        "stack_size": 1,
+        "tool_data": {
+            "attack_increase": 4,
+            "axe_boost": true,
+            "break_speed_increase": 1.8,
+            "cristella_boost": false,
+            "fire_aspect": false,
+            "meat_boost": false,
+            "pickaxe_boost": false,
+            "plant_boost": false,
+            "shovel_boost": false,
+            "slime_boost": false
+        }
     },
     {
         "color": [
@@ -11006,7 +11003,19 @@
         "internal": false,
         "internal_name": "plum axe",
         "max_durability": 311,
-        "stack_size": 1
+        "stack_size": 1,
+        "tool_data": {
+            "attack_increase": 1,
+            "axe_boost": true,
+            "break_speed_increase": 2.75,
+            "cristella_boost": false,
+            "fire_aspect": false,
+            "meat_boost": false,
+            "pickaxe_boost": false,
+            "plant_boost": false,
+            "shovel_boost": false,
+            "slime_boost": false
+        }
     },
     {
         "color": [
@@ -11046,7 +11055,19 @@
         "internal": false,
         "internal_name": "mace",
         "max_durability": 110,
-        "stack_size": 1
+        "stack_size": 1,
+        "tool_data": {
+            "attack_increase": 3,
+            "axe_boost": false,
+            "break_speed_increase": 0.0,
+            "cristella_boost": false,
+            "fire_aspect": false,
+            "meat_boost": false,
+            "pickaxe_boost": false,
+            "plant_boost": false,
+            "shovel_boost": false,
+            "slime_boost": false
+        }
     },
     {
         "color": [
@@ -11085,7 +11106,19 @@
         "internal": false,
         "internal_name": "iron sword",
         "max_durability": 128,
-        "stack_size": 1
+        "stack_size": 1,
+        "tool_data": {
+            "attack_increase": 3,
+            "axe_boost": false,
+            "break_speed_increase": 0.0,
+            "cristella_boost": false,
+            "fire_aspect": false,
+            "meat_boost": false,
+            "pickaxe_boost": false,
+            "plant_boost": false,
+            "shovel_boost": false,
+            "slime_boost": false
+        }
     },
     {
         "color": [
@@ -11124,7 +11157,19 @@
         "internal": false,
         "internal_name": "paddle",
         "max_durability": 90,
-        "stack_size": 1
+        "stack_size": 1,
+        "tool_data": {
+            "attack_increase": 2,
+            "axe_boost": false,
+            "break_speed_increase": 0.0,
+            "cristella_boost": false,
+            "fire_aspect": false,
+            "meat_boost": false,
+            "pickaxe_boost": false,
+            "plant_boost": false,
+            "shovel_boost": false,
+            "slime_boost": false
+        }
     },
     {
         "color": [
@@ -11164,7 +11209,19 @@
         "internal": false,
         "internal_name": "gel bruiser",
         "max_durability": 180,
-        "stack_size": 1
+        "stack_size": 1,
+        "tool_data": {
+            "attack_increase": 4,
+            "axe_boost": false,
+            "break_speed_increase": 0.0,
+            "cristella_boost": false,
+            "fire_aspect": false,
+            "meat_boost": false,
+            "pickaxe_boost": false,
+            "plant_boost": false,
+            "shovel_boost": false,
+            "slime_boost": true
+        }
     },
     {
         "color": [
@@ -11203,7 +11260,19 @@
         "internal": false,
         "internal_name": "plastril sword",
         "max_durability": 230,
-        "stack_size": 1
+        "stack_size": 1,
+        "tool_data": {
+            "attack_increase": 4,
+            "axe_boost": false,
+            "break_speed_increase": 0.0,
+            "cristella_boost": false,
+            "fire_aspect": false,
+            "meat_boost": false,
+            "pickaxe_boost": false,
+            "plant_boost": false,
+            "shovel_boost": false,
+            "slime_boost": false
+        }
     },
     {
         "color": [
@@ -11243,7 +11312,19 @@
         "internal": false,
         "internal_name": "excalibur",
         "max_durability": 700,
-        "stack_size": 1
+        "stack_size": 1,
+        "tool_data": {
+            "attack_increase": 6,
+            "axe_boost": false,
+            "break_speed_increase": 0.0,
+            "cristella_boost": false,
+            "fire_aspect": false,
+            "meat_boost": false,
+            "pickaxe_boost": false,
+            "plant_boost": false,
+            "shovel_boost": false,
+            "slime_boost": false
+        }
     },
     {
         "color": [
@@ -11283,7 +11364,19 @@
         "internal": false,
         "internal_name": "pronged sword",
         "max_durability": 400,
-        "stack_size": 1
+        "stack_size": 1,
+        "tool_data": {
+            "attack_increase": 4,
+            "axe_boost": false,
+            "break_speed_increase": 0.0,
+            "cristella_boost": false,
+            "fire_aspect": false,
+            "meat_boost": false,
+            "pickaxe_boost": false,
+            "plant_boost": false,
+            "shovel_boost": false,
+            "slime_boost": false
+        }
     },
     {
         "color": [
@@ -11322,7 +11415,19 @@
         "internal": false,
         "internal_name": "crystal sword",
         "max_durability": 65,
-        "stack_size": 1
+        "stack_size": 1,
+        "tool_data": {
+            "attack_increase": 5,
+            "axe_boost": false,
+            "break_speed_increase": 0.0,
+            "cristella_boost": false,
+            "fire_aspect": false,
+            "meat_boost": false,
+            "pickaxe_boost": false,
+            "plant_boost": false,
+            "shovel_boost": false,
+            "slime_boost": false
+        }
     },
     {
         "color": [
@@ -11361,7 +11466,19 @@
         "internal": false,
         "internal_name": "color sword",
         "max_durability": 800,
-        "stack_size": 1
+        "stack_size": 1,
+        "tool_data": {
+            "attack_increase": 6,
+            "axe_boost": false,
+            "break_speed_increase": 0.0,
+            "cristella_boost": false,
+            "fire_aspect": false,
+            "meat_boost": false,
+            "pickaxe_boost": false,
+            "plant_boost": false,
+            "shovel_boost": false,
+            "slime_boost": false
+        }
     },
     {
         "color": [
@@ -11400,7 +11517,19 @@
         "internal": false,
         "internal_name": "tendril pick",
         "max_durability": 330,
-        "stack_size": 1
+        "stack_size": 1,
+        "tool_data": {
+            "attack_increase": 4,
+            "axe_boost": false,
+            "break_speed_increase": 4.0,
+            "cristella_boost": false,
+            "fire_aspect": false,
+            "meat_boost": false,
+            "pickaxe_boost": true,
+            "plant_boost": false,
+            "shovel_boost": false,
+            "slime_boost": false
+        }
     },
     {
         "color": [
@@ -11440,7 +11569,19 @@
         "internal": false,
         "internal_name": "cristella's bane",
         "max_durability": 400,
-        "stack_size": 1
+        "stack_size": 1,
+        "tool_data": {
+            "attack_increase": 4,
+            "axe_boost": false,
+            "break_speed_increase": 3.0,
+            "cristella_boost": true,
+            "fire_aspect": false,
+            "meat_boost": false,
+            "pickaxe_boost": true,
+            "plant_boost": false,
+            "shovel_boost": false,
+            "slime_boost": false
+        }
     },
     {
         "color": [
@@ -11481,7 +11622,19 @@
         "internal": false,
         "internal_name": "ice pick",
         "max_durability": 200,
-        "stack_size": 1
+        "stack_size": 1,
+        "tool_data": {
+            "attack_increase": 2,
+            "axe_boost": false,
+            "break_speed_increase": 4.0,
+            "cristella_boost": false,
+            "fire_aspect": false,
+            "meat_boost": false,
+            "pickaxe_boost": true,
+            "plant_boost": false,
+            "shovel_boost": false,
+            "slime_boost": false
+        }
     },
     {
         "color": [
@@ -11521,7 +11674,19 @@
         "internal": false,
         "internal_name": "hinokagutsuchi",
         "max_durability": 1200,
-        "stack_size": 1
+        "stack_size": 1,
+        "tool_data": {
+            "attack_increase": 7,
+            "axe_boost": false,
+            "break_speed_increase": 0.0,
+            "cristella_boost": false,
+            "fire_aspect": true,
+            "meat_boost": false,
+            "pickaxe_boost": false,
+            "plant_boost": false,
+            "shovel_boost": false,
+            "slime_boost": false
+        }
     },
     {
         "color": [
@@ -11560,7 +11725,19 @@
         "internal": false,
         "internal_name": "bone pick",
         "max_durability": 212,
-        "stack_size": 1
+        "stack_size": 1,
+        "tool_data": {
+            "attack_increase": 3,
+            "axe_boost": false,
+            "break_speed_increase": 2.0,
+            "cristella_boost": false,
+            "fire_aspect": false,
+            "meat_boost": true,
+            "pickaxe_boost": true,
+            "plant_boost": false,
+            "shovel_boost": false,
+            "slime_boost": false
+        }
     },
     {
         "color": [
@@ -11599,7 +11776,19 @@
         "internal": false,
         "internal_name": "wooden pickaxe",
         "max_durability": 135,
-        "stack_size": 1
+        "stack_size": 1,
+        "tool_data": {
+            "attack_increase": 1,
+            "axe_boost": false,
+            "break_speed_increase": 2.0,
+            "cristella_boost": false,
+            "fire_aspect": false,
+            "meat_boost": false,
+            "pickaxe_boost": true,
+            "plant_boost": false,
+            "shovel_boost": false,
+            "slime_boost": false
+        }
     },
     {
         "color": [
@@ -11640,7 +11829,19 @@
         "internal": false,
         "internal_name": "leaf pick",
         "max_durability": 90,
-        "stack_size": 1
+        "stack_size": 1,
+        "tool_data": {
+            "attack_increase": 1,
+            "axe_boost": false,
+            "break_speed_increase": 2.7,
+            "cristella_boost": false,
+            "fire_aspect": false,
+            "meat_boost": false,
+            "pickaxe_boost": true,
+            "plant_boost": true,
+            "shovel_boost": false,
+            "slime_boost": false
+        }
     },
     {
         "color": [
@@ -11679,7 +11880,19 @@
         "internal": false,
         "internal_name": "hoe",
         "max_durability": 700,
-        "stack_size": 1
+        "stack_size": 1,
+        "tool_data": {
+            "attack_increase": 1,
+            "axe_boost": false,
+            "break_speed_increase": 0.0,
+            "cristella_boost": false,
+            "fire_aspect": false,
+            "meat_boost": false,
+            "pickaxe_boost": false,
+            "plant_boost": false,
+            "shovel_boost": false,
+            "slime_boost": false
+        }
     },
     {
         "color": [
@@ -11718,7 +11931,19 @@
         "internal": false,
         "internal_name": "iron pickaxe",
         "max_durability": 270,
-        "stack_size": 1
+        "stack_size": 1,
+        "tool_data": {
+            "attack_increase": 1,
+            "axe_boost": false,
+            "break_speed_increase": 3.0,
+            "cristella_boost": false,
+            "fire_aspect": false,
+            "meat_boost": false,
+            "pickaxe_boost": true,
+            "plant_boost": false,
+            "shovel_boost": false,
+            "slime_boost": false
+        }
     },
     {
         "color": [
@@ -11758,7 +11983,19 @@
         "internal": false,
         "internal_name": "scythe",
         "max_durability": 1300,
-        "stack_size": 1
+        "stack_size": 1,
+        "tool_data": {
+            "attack_increase": 2,
+            "axe_boost": false,
+            "break_speed_increase": 7.0,
+            "cristella_boost": false,
+            "fire_aspect": false,
+            "meat_boost": false,
+            "pickaxe_boost": true,
+            "plant_boost": false,
+            "shovel_boost": false,
+            "slime_boost": false
+        }
     },
     {
         "color": [
@@ -11797,7 +12034,19 @@
         "internal": false,
         "internal_name": "shovel",
         "max_durability": 600,
-        "stack_size": 1
+        "stack_size": 1,
+        "tool_data": {
+            "attack_increase": 0,
+            "axe_boost": false,
+            "break_speed_increase": 6.0,
+            "cristella_boost": false,
+            "fire_aspect": false,
+            "meat_boost": false,
+            "pickaxe_boost": false,
+            "plant_boost": false,
+            "shovel_boost": true,
+            "slime_boost": false
+        }
     },
     {
         "block_data": {
@@ -11850,7 +12099,6 @@
         "id": 155571962,
         "internal": false,
         "internal_name": "mana block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -11904,7 +12152,6 @@
         "id": 163146874,
         "internal": false,
         "internal_name": "plate block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -11958,7 +12205,6 @@
         "id": 163146877,
         "internal": false,
         "internal_name": "grill block 1",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -12012,7 +12258,6 @@
         "id": 163146878,
         "internal": false,
         "internal_name": "grill block 2",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -12069,7 +12314,6 @@
         "id": 163146883,
         "internal": false,
         "internal_name": "lamp",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -12126,7 +12370,6 @@
         "id": 163146890,
         "internal": false,
         "internal_name": "pool lamp",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -12183,7 +12426,6 @@
         "id": 163146903,
         "internal": false,
         "internal_name": "heat lamp",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -12240,7 +12482,6 @@
         "id": 163146915,
         "internal": false,
         "internal_name": "purple lamp",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -12297,7 +12538,6 @@
         "id": 163146922,
         "internal": false,
         "internal_name": "green lamp",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -12354,7 +12594,6 @@
         "id": 163146929,
         "internal": false,
         "internal_name": "yellow lamp",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -12410,7 +12649,6 @@
         "id": 163146936,
         "internal": false,
         "internal_name": "dark lamp",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -12467,7 +12705,6 @@
         "id": 163146968,
         "internal": false,
         "internal_name": "sodium lamp",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -12522,7 +12759,6 @@
         "id": 163165934,
         "internal": false,
         "internal_name": "lucid block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -12577,7 +12813,6 @@
         "id": 163165935,
         "internal": false,
         "internal_name": "lucid block 2",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -12631,7 +12866,6 @@
         "id": 163166151,
         "internal": false,
         "internal_name": "plastril block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -12685,7 +12919,6 @@
         "id": 163166160,
         "internal": false,
         "internal_name": "metal block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -12739,7 +12972,6 @@
         "id": 163166161,
         "internal": false,
         "internal_name": "metal block 2",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -12794,7 +13026,6 @@
         "id": 163166162,
         "internal": false,
         "internal_name": "gold block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -12848,7 +13079,6 @@
         "id": 163166165,
         "internal": false,
         "internal_name": "rust block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -12902,7 +13132,6 @@
         "id": 163166192,
         "internal": false,
         "internal_name": "aluminum block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -12957,7 +13186,6 @@
         "id": 163166193,
         "internal": false,
         "internal_name": "osmium block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -13011,7 +13239,6 @@
         "id": 163166194,
         "internal": false,
         "internal_name": "silver block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -13066,7 +13293,6 @@
         "id": 163166195,
         "internal": false,
         "internal_name": "cobalt block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -13121,7 +13347,6 @@
         "id": 163166417,
         "internal": false,
         "internal_name": "circuit block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -13177,7 +13402,6 @@
         "id": 164114274,
         "internal": false,
         "internal_name": "agnite block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -13233,7 +13457,6 @@
         "id": 164114324,
         "internal": false,
         "internal_name": "obsidian block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -13289,7 +13512,6 @@
         "id": 164197188,
         "internal": false,
         "internal_name": "petal block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -13344,7 +13566,6 @@
         "id": 164197192,
         "internal": false,
         "internal_name": "core block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -13409,7 +13630,6 @@
         "id": 164199506,
         "internal": false,
         "internal_name": "glass",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -13464,7 +13684,6 @@
         "id": 164199507,
         "internal": false,
         "internal_name": "steel window block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -13519,7 +13738,6 @@
         "id": 164199508,
         "internal": false,
         "internal_name": "mirage block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -13573,7 +13791,6 @@
         "id": 164199509,
         "internal": false,
         "internal_name": "anger block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -13638,7 +13855,6 @@
         "id": 164199511,
         "internal": false,
         "internal_name": "glass tile block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -13693,7 +13909,6 @@
         "id": 164199519,
         "internal": false,
         "internal_name": "ornament block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -13748,7 +13963,6 @@
         "id": 172784065,
         "internal": false,
         "internal_name": "limestone block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -13802,7 +14016,6 @@
         "id": 172784066,
         "internal": false,
         "internal_name": "granite block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -13856,7 +14069,6 @@
         "id": 172784067,
         "internal": false,
         "internal_name": "concrete block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -13911,7 +14123,6 @@
         "id": 172784069,
         "internal": false,
         "internal_name": "limestone tile block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -13965,7 +14176,6 @@
         "id": 172784131,
         "internal": false,
         "internal_name": "asphalt block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -14020,7 +14230,6 @@
         "id": 187008691,
         "internal": false,
         "internal_name": "sandstone block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -14075,7 +14284,6 @@
         "id": 210518545,
         "internal": false,
         "internal_name": "plastril ore block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -14130,7 +14338,6 @@
         "id": 210518546,
         "internal": false,
         "internal_name": "magnetite ore block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -14199,7 +14406,6 @@
         "id": 210568392,
         "internal": false,
         "internal_name": "agnite ore block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -14253,7 +14459,6 @@
         "id": 210664593,
         "internal": false,
         "internal_name": "cobblestone tile block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -14307,7 +14512,6 @@
         "id": 210664600,
         "internal": false,
         "internal_name": "pool tile block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -14362,7 +14566,6 @@
         "id": 210896160,
         "internal": false,
         "internal_name": "brick block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -14416,7 +14619,6 @@
         "id": 210896288,
         "internal": false,
         "internal_name": "stone tile block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -14471,7 +14673,6 @@
         "id": 210896293,
         "internal": false,
         "internal_name": "temple brick block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -14526,7 +14727,6 @@
         "id": 210896296,
         "internal": false,
         "internal_name": "clay brick block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -14581,7 +14781,6 @@
         "id": 210896297,
         "internal": false,
         "internal_name": "clay tile block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -14635,7 +14834,6 @@
         "id": 210928447,
         "internal": false,
         "internal_name": "diorite block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -14689,7 +14887,6 @@
         "id": 210951704,
         "internal": false,
         "internal_name": "cobblestone block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -14743,7 +14940,6 @@
         "id": 210957600,
         "internal": false,
         "internal_name": "onyx block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -14798,7 +14994,6 @@
         "id": 210957604,
         "internal": false,
         "internal_name": "cold stone block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -14852,7 +15047,6 @@
         "id": 210957605,
         "internal": false,
         "internal_name": "stone block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -14906,7 +15100,6 @@
         "id": 210957613,
         "internal": false,
         "internal_name": "rigid stone block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -14962,7 +15155,6 @@
         "id": 210957629,
         "internal": false,
         "internal_name": "guard cube",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -15017,7 +15209,6 @@
         "id": 210957731,
         "internal": false,
         "internal_name": "sky stone block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -15072,7 +15263,6 @@
         "id": 210957744,
         "internal": false,
         "internal_name": "shoal rock block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -15127,7 +15317,6 @@
         "id": 210957953,
         "internal": false,
         "internal_name": "tigerstone block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -15182,7 +15371,6 @@
         "id": 210991928,
         "internal": false,
         "internal_name": "zany block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -15275,7 +15463,6 @@
         "id": 296519338,
         "internal": false,
         "internal_name": "sand block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -15329,7 +15516,6 @@
         "id": 296519344,
         "internal": false,
         "internal_name": "black sand block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -15384,7 +15570,6 @@
         "id": 296519659,
         "internal": false,
         "internal_name": "shale block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -15438,7 +15623,6 @@
         "id": 324041065,
         "internal": false,
         "internal_name": "druid dirt block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -15492,7 +15676,6 @@
         "id": 324041069,
         "internal": false,
         "internal_name": "dirt block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -15558,7 +15741,6 @@
         "id": 324041072,
         "internal": false,
         "internal_name": "clay block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -15612,7 +15794,6 @@
         "id": 324041073,
         "internal": false,
         "internal_name": "mud block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -15667,7 +15848,6 @@
         "id": 324041105,
         "internal": false,
         "internal_name": "clay baller",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -15723,7 +15903,6 @@
         "id": 324041137,
         "internal": false,
         "internal_name": "ball baller",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -15779,7 +15958,6 @@
         "id": 324041138,
         "internal": false,
         "internal_name": "friend friender",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -15835,7 +16013,6 @@
         "id": 370953288,
         "internal": false,
         "internal_name": "cache cube",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -15890,7 +16067,6 @@
         "id": 370953289,
         "internal": false,
         "internal_name": "hope cube",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -15944,7 +16120,6 @@
         "id": 370953303,
         "internal": false,
         "internal_name": "cabinet",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -15998,7 +16173,6 @@
         "id": 370953352,
         "internal": false,
         "internal_name": "funnel",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -16052,7 +16226,6 @@
         "id": 379146635,
         "internal": false,
         "internal_name": "bookshelf block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -16192,7 +16365,6 @@
         "id": 379348721,
         "internal": false,
         "internal_name": "cardboard box",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 5
     },
@@ -16314,7 +16486,6 @@
         "id": 379348735,
         "internal": false,
         "internal_name": "blessing cube",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 5
     },
@@ -16368,7 +16539,6 @@
         "id": 379348927,
         "internal": false,
         "internal_name": "infested wood block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -16422,7 +16592,6 @@
         "id": 379348931,
         "internal": false,
         "internal_name": "plank block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -16476,7 +16645,6 @@
         "id": 379348932,
         "internal": false,
         "internal_name": "varnished wood block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -16599,7 +16767,6 @@
         "id": 379348937,
         "internal": false,
         "internal_name": "clay pot",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 5
     },
@@ -16666,7 +16833,6 @@
         "id": 379348987,
         "internal": false,
         "internal_name": "melon block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -16731,7 +16897,6 @@
         "id": 379348988,
         "internal": false,
         "internal_name": "cactus block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -16798,7 +16963,6 @@
         "id": 379348989,
         "internal": false,
         "internal_name": "oppleberry block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -16854,7 +17018,6 @@
         "id": 379348990,
         "internal": false,
         "internal_name": "pulp block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -16994,7 +17157,6 @@
         "id": 379349058,
         "internal": false,
         "internal_name": "letter cube",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 5
     },
@@ -17048,7 +17210,6 @@
         "id": 379349063,
         "internal": false,
         "internal_name": "plank block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -17102,7 +17263,6 @@
         "id": 379349244,
         "internal": false,
         "internal_name": "wood block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -17157,7 +17317,6 @@
         "id": 379349255,
         "internal": false,
         "internal_name": "pimble block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -17211,7 +17370,6 @@
         "id": 379349259,
         "internal": false,
         "internal_name": "abble block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -17267,7 +17425,6 @@
         "id": 379349260,
         "internal": false,
         "internal_name": "dried abble block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -17321,7 +17478,6 @@
         "id": 379349263,
         "internal": false,
         "internal_name": "white wood block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -17375,7 +17531,6 @@
         "id": 379349271,
         "internal": false,
         "internal_name": "comb block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -17429,7 +17584,6 @@
         "id": 379351245,
         "internal": false,
         "internal_name": "wallpaper block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -18621,7 +18775,6 @@
         "id": 1442063622,
         "internal": false,
         "internal_name": "mutchroom block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -18676,7 +18829,6 @@
         "id": 1442087430,
         "internal": false,
         "internal_name": "floroid block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -18730,7 +18882,6 @@
         "id": 1442087433,
         "internal": false,
         "internal_name": "moss block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -18784,7 +18935,6 @@
         "id": 1442087435,
         "internal": false,
         "internal_name": "flesh block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -18839,7 +18989,6 @@
         "id": 1442087436,
         "internal": false,
         "internal_name": "eye cyst block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -18894,7 +19043,6 @@
         "id": 1442087437,
         "internal": false,
         "internal_name": "skin block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -18949,7 +19097,6 @@
         "id": 1442087450,
         "internal": false,
         "internal_name": "dog block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -19004,7 +19151,6 @@
         "id": 1442087457,
         "internal": false,
         "internal_name": "cat block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -19060,7 +19206,6 @@
         "id": 1442087659,
         "internal": false,
         "internal_name": "smore block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -19129,7 +19274,6 @@
         "id": 1442318884,
         "internal": false,
         "internal_name": "leaf block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -19199,7 +19343,6 @@
         "id": 1442318885,
         "internal": false,
         "internal_name": "snowy leaf block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
@@ -19269,7 +19412,6 @@
         "id": 1442318887,
         "internal": false,
         "internal_name": "dry leaf block",
-        "is_block": true,
         "max_durability": 0,
         "stack_size": 50
     },
