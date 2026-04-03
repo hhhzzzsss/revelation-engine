@@ -1,8 +1,8 @@
-import ApotheosisWorker from '../worker/apotheosisWorker.ts?worker'; 
-import type { FromWorkerMessage, InitializationMessage, ToWorkerMessage, SerializedInputBatch } from '../worker/types';
+import type { SerializedInputBatch } from '../worker/types';
 import type { FuserParameters, Item, QuantifiedItem, Recipe } from '../item/types';
 import { EnergyRatioRecipeAggregator } from './recipeAggregator';
 import PriorityQueue from './priorityQueue';
+import WorkerPool from './workerPool';
 
 let batchSolverInstance: ApotheosisBatchSolver | null = null;
 export const getApotheosisBatchSolver = (fuserParams: FuserParameters, itemData: Item[]) => {
@@ -22,43 +22,15 @@ interface ProgressMessage {
 }
 
 class ApotheosisBatchSolver {
-  private workerPromise: Promise<Worker>;
-  private fuserParams: FuserParameters;
-  private itemData: Item[];
+  private pool: WorkerPool;
   private itemMap: Record<number, Item>;
-  private messageIdCounter = 0;
 
   constructor(fuserParams: FuserParameters, itemData: Item[]) {
-    this.fuserParams = fuserParams;
-    this.itemData = itemData;
     this.itemMap = Object.fromEntries(itemData.map((item) => [item.id, item]));
-    this.workerPromise = this.initializeWorker();
+    this.pool = new WorkerPool(fuserParams, itemData);
   }
 
-  private initializeWorker = async () => {
-    const worker = new ApotheosisWorker();
-
-    try {
-      const response = await this.sendWorkerMessage(worker, {
-        type: 'initialize',
-        fuserParams: this.fuserParams,
-        itemData: this.itemData,
-      } as InitializationMessage);
-
-      if (response.type !== 'ready') {
-        throw new Error('Worker failed to initialize');
-      }
-    } catch (error) {
-      worker.terminate();
-      throw error;
-    }
-
-    return worker;
-  };
-
-  public fuseBatch = async (input: QuantifiedItem[][]): Promise<QuantifiedItem[]> => {
-    const worker = await this.workerPromise;
-
+  public fuseBatch = async (input: QuantifiedItem[][], onSuccess: (recipes: Recipe[]) => void, onError: (error: Error) => void) => {
     const ids = [];
     const counts = [];
     const sampleSizes = [];
@@ -80,45 +52,38 @@ class ApotheosisBatchSolver {
       sample_sizes: Uint32Array.from(sampleSizes),
     };
 
-    // Send message to worker and await response1
-    let response: FromWorkerMessage;
-    try {
-      response = await this.sendWorkerMessage(
-        worker,
-        {
-          id: this.messageIdCounter++,
-          type: 'batch',
-          input: serializedBatch,
-        },
-        [
-          serializedBatch.ids.buffer,
-          serializedBatch.counts.buffer,
-          serializedBatch.sample_sizes.buffer
-        ],
-      );
-      
+    await this.pool.submitMessage({
+      type: 'batch',
+      input: serializedBatch,
+    }, [
+      serializedBatch.ids.buffer,
+      serializedBatch.counts.buffer,
+      serializedBatch.sample_sizes.buffer,
+    ], (response) => {
       if (response.type !== 'batch_result') {
-        throw new Error('Unexpected response type from worker');
+        onError(new Error('Unexpected response type from worker'));
+        return;
       }
-    } catch (error) {
-      // If there's an error, we assume the worker has crashed and we need to reinitialize it
-      worker.terminate();
-      this.workerPromise = this.initializeWorker();
-      throw error;
-    }
 
-    const outputIds = response.output.ids;
-    const outputCounts = response.output.counts;
-    const result: QuantifiedItem[] = [];
-    for (let i = 0; i < outputIds.length; i++) {
-      const item = this.itemMap[outputIds[i]];
-      if (item) {
-        result.push({ item, count: outputCounts[i] });
-      } else {
-        throw new Error(`Worker returned unknown item ID: ${outputIds[i]}`);
+      const outputIds = response.output.ids;
+      const outputCounts = response.output.counts;
+      const recipes: Recipe[] = [];
+      for (let i = 0; i < outputIds.length; i++) {
+        const item = this.itemMap[outputIds[i]];
+        if (item) {
+          recipes.push({
+            inputs: input[i],
+            output: { item, count: outputCounts[i] },
+          });
+        } else {
+          onError(new Error(`Worker returned unknown item ID: ${outputIds[i]}`));
+          return;
+        }
       }
-    }
-    return result;
+      onSuccess(recipes);
+    }, (error) => {
+      onError(error);
+    });
   };
 
   public enumerateFusions = (
@@ -133,24 +98,26 @@ class ApotheosisBatchSolver {
     const aggregator = new EnergyRatioRecipeAggregator();
     const transformer = new CopyOutputTransformer(availableItems);
 
-    let batch: QuantifiedItem[][] = [];
+    const batch: QuantifiedItem[][] = [];
     let recipesChecked = 0;
 
-    const flushBatch = async () => {
-      const results = await this.fuseBatch(batch);
-      const recipes = results.map((output, index) => ({
-        inputs: batch[index],
-        output,
-      }));
-
-      batch = [];
-
+    const outputCallback = (recipes: Recipe[]) => {
       recipesChecked += recipes.length;
       for (const recipe of recipes) {
         aggregator.addRecipe(recipe);
         const transformed = transformer.transform(recipe);
         if (transformed) batch.push(transformed);
       }
+    };
+
+    const errorCallback = (error: Error) => {
+      cancel();
+      callback({ count: recipesChecked, progress: 1, error, done: true });
+    };
+
+    const processBatch = async () => {
+      const subBatch = batch.splice(0, batchSize);
+      await this.fuseBatch(subBatch, outputCallback, errorCallback);
     };
 
     void (async () => {
@@ -161,14 +128,16 @@ class ApotheosisBatchSolver {
 
         batch.push(input);
         while (batch.length >= batchSize) {
-          await flushBatch();
+          await processBatch();
           callback({ recipes: aggregator.getRecipes(), count: recipesChecked, progress });
         }
       }
 
-      while (batch.length > 0) {
-        await flushBatch();
-        callback({ recipes: aggregator.getRecipes(), count: recipesChecked, progress: 1 });
+      while (await this.pool.hasNextUpdate()) {
+        if (batch.length > 0) {
+          await processBatch();
+          callback({ recipes: aggregator.getRecipes(), count: recipesChecked, progress: 1 });
+        }
       }
 
       callback({ recipes: aggregator.getRecipes(), count: recipesChecked, progress: 1, done: true });
@@ -177,39 +146,6 @@ class ApotheosisBatchSolver {
     });
 
     return cancel;
-  };
-
-  private sendWorkerMessage = (worker: Worker, message: ToWorkerMessage, transfer?: Transferable[]): Promise<FromWorkerMessage> => {
-    return new Promise<FromWorkerMessage>((resolve, reject) => {
-      let responded = false;
-
-      const messageHandler = (e: MessageEvent) => {
-        const response = e.data as FromWorkerMessage;
-        if (response.id === message.id) {
-          if (response.type === 'error') {
-            reject(new Error(response.message));
-          } else {
-            resolve(response);
-          }
-          worker.removeEventListener('message', messageHandler);
-          responded = true;
-        }
-      };
-
-      worker.addEventListener('message', messageHandler);
-      if (transfer) {
-        worker.postMessage(message, transfer);
-      } else {
-        worker.postMessage(message);
-      }
-
-      setTimeout(() => {
-        if (!responded) {
-          reject(new Error('Worker did not respond in time'));
-          worker.removeEventListener('message', messageHandler);
-        }
-      }, 30000); // 30 second timeout
-    });
   };
 }
 

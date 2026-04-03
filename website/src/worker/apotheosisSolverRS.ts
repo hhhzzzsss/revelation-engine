@@ -53,6 +53,10 @@ const tags_to_bitset = (tags: string[], sorted_tags: string[]): number => {
   return bitset;
 };
 
+export const loadWrappedSolver = async (fuserParams: FuserParameters, itemData: Item[]): Promise<ApotheosisSolverRSWrapper> => {
+  const solver = await loadSolver(fuserParams, itemData);
+  return new ApotheosisSolverRSWrapper(solver);
+};
 export class ApotheosisSolverRSWrapper {
   private solver: ApotheosisSolverRS;
 
@@ -73,7 +77,3 @@ export class ApotheosisSolverRSWrapper {
     return outputBatch;
   }
 }
-export const loadWrappedSolver = async (fuserParams: FuserParameters, itemData: Item[]): Promise<ApotheosisSolverRSWrapper> => {
-  const solver = await loadSolver(fuserParams, itemData);
-  return new ApotheosisSolverRSWrapper(solver);
-};

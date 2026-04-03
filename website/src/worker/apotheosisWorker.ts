@@ -1,66 +1,58 @@
 import { loadWrappedSolver } from './apotheosisSolverRS';
 import type { ApotheosisSolverRSWrapper } from './apotheosisSolverRS';
-import type { BatchMessage, BatchResultMessage, ErrorMessage, ReadyMessage, ToWorkerMessage } from './types';
+import type { FromWorkerFullMessage, FromWorkerMessage, ToWorkerFullMessage, ToWorkerMessage } from './types';
+
+type MessageWithTransfer = FromWorkerMessage & { transfer?: Transferable[] };
 
 let wrappedSolver: ApotheosisSolverRSWrapper | null = null;
 
-onmessage = (e: MessageEvent) => {
-  const message = e.data as ToWorkerMessage;
-  switch (message.type) {
-    case 'initialize':
-      loadWrappedSolver(message.fuserParams, message.itemData).then((newWrappedSolver) => {
-        wrappedSolver = newWrappedSolver;
-        const response: ReadyMessage = { type: 'ready', id: message.id };
-        postMessage(response);
-      }).catch((error) => {
-        const response: ErrorMessage = {
-          id: message.id,
-          type: 'error',
-          message: 'Error loading Rust solver'
-        };
-        if (error instanceof Error) {
-          response.message += `: ${error.message}`;
-        }
-        postMessage(response);
+onmessage = async (e: MessageEvent) => {
+  const { id: messageId, ...message } = e.data as ToWorkerFullMessage;
 
-        wrappedSolver = null; // Ensure wrappedSolver is null on failure
-      });
-      break;
-    case 'batch':
-      handleBatchMessage(message);
-      break;
+  const { transfer, ...response } = await handleMessage(message);
+  const fullResponse: FromWorkerFullMessage = { ...response, id: messageId };
+
+  if (transfer) {
+    postMessage(fullResponse, transfer);
+  } else {
+    postMessage(fullResponse);
   }
 };
 
-const handleBatchMessage = (message: BatchMessage) => {
-  if (!wrappedSolver) {
-    const response: ErrorMessage = {
-      id: message.id,
-      type: 'error',
-      message: 'Solver does not exist - either it is not initialized yet or crashed'
-    };
-    postMessage(response);
-    return;
-  }
-
+const handleMessage = async (message: ToWorkerMessage): Promise<MessageWithTransfer> => {
   try {
-    const output = wrappedSolver.fuseBatch(message.input);
-    const batchResultMessage: BatchResultMessage = {
-      id: message.id,
-      type: 'batch_result',
-      output,
-    };
-    postMessage(batchResultMessage, [output.ids.buffer, output.counts.buffer]);
-  } catch (error) {
-    wrappedSolver = null; // Ensure wrappedSolver is null on failure
-    const errorMessage: ErrorMessage = {
-      id: message.id,
-      type: 'error',
-      message: 'Error processing batch'
-    };
-    if (error instanceof Error) {
-      errorMessage.message += `: ${error.message}`;
+    if (message.type === 'initialize') {
+      if (wrappedSolver) {
+        throw new Error('Solver is already initialized'); // Should not initialize twice
+      }
+      wrappedSolver = await loadWrappedSolver(message.fuserParams, message.itemData);
+      return { type: 'ready' };
     }
-    postMessage(errorMessage);
+    
+    // Everything other than initialization requires the solver to be loaded
+    if (!wrappedSolver) {
+      throw new Error('Solver does not exist - either it is not initialized yet or crashed');
+    }
+    
+    if (message.type === 'batch') {
+      const output = wrappedSolver.fuseBatch(message.input);
+      return {
+        type: 'batch_result',
+        output,
+        transfer: [output.ids.buffer, output.counts.buffer]
+      };
+    }
+    
+    throw new Error('Unknown message type');
+  } catch (error) {
+    wrappedSolver = null; // Ensure wrappedSolver is null after failure
+
+    let errorMessage = `Error occurred while handling ${message.type} message`;
+    if (error instanceof Error) {
+      errorMessage += `: ${error.message}`;
+    }
+    console.error(error);
+
+    return { type: 'error', message: errorMessage };
   }
 };

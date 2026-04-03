@@ -1,34 +1,38 @@
 import type { FuserParameters, Item } from '../item/types';
 
-interface BaseMessage {
-  id: number;
+interface MessageMeta {
+  id: string;
 }
+
+export type ToWorkerFullMessage = MessageMeta & ToWorkerMessage;
 
 export type ToWorkerMessage = InitializationMessage | BatchMessage;
 
-export interface InitializationMessage extends BaseMessage {
+export interface InitializationMessage {
   type: 'initialize';
   fuserParams: FuserParameters;
   itemData: Item[];
 }
 
-export interface BatchMessage extends BaseMessage {
+export interface BatchMessage {
   type: 'batch';
   input: SerializedInputBatch;
 }
 
+export type FromWorkerFullMessage = MessageMeta & FromWorkerMessage;
+
 export type FromWorkerMessage = ReadyMessage | ErrorMessage | BatchResultMessage;
 
-export interface ReadyMessage extends BaseMessage {
+export interface ReadyMessage {
   type: 'ready';
 }
 
-export interface ErrorMessage extends BaseMessage {
+export interface ErrorMessage {
   type: 'error';
   message: string;
 }
 
-export interface BatchResultMessage extends BaseMessage {
+export interface BatchResultMessage {
   type: 'batch_result';
   output: SerializedOutputBatch;
 }
