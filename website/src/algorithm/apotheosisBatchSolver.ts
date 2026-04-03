@@ -98,7 +98,7 @@ class ApotheosisBatchSolver {
     const aggregator = new EnergyRatioRecipeAggregator();
     const transformer = new CopyOutputTransformer(availableItems);
 
-    const batch: QuantifiedItem[][] = [];
+    const sampleQueue: QuantifiedItem[][] = [];
     let recipesChecked = 0;
 
     const outputCallback = (recipes: Recipe[]) => {
@@ -106,7 +106,7 @@ class ApotheosisBatchSolver {
       for (const recipe of recipes) {
         aggregator.addRecipe(recipe);
         const transformed = transformer.transform(recipe);
-        if (transformed) batch.push(transformed);
+        if (transformed) sampleQueue.push(transformed);
       }
     };
 
@@ -116,8 +116,8 @@ class ApotheosisBatchSolver {
     };
 
     const processBatch = async () => {
-      const subBatch = batch.splice(0, batchSize);
-      await this.fuseBatch(subBatch, outputCallback, errorCallback);
+      const batch = sampleQueue.splice(0, batchSize);
+      await this.fuseBatch(batch, outputCallback, errorCallback);
     };
 
     void (async () => {
@@ -126,15 +126,15 @@ class ApotheosisBatchSolver {
           return;
         }
 
-        batch.push(input);
-        while (batch.length >= batchSize) {
+        sampleQueue.push(input);
+        while (sampleQueue.length >= batchSize) {
           await processBatch();
           callback({ recipes: aggregator.getRecipes(), count: recipesChecked, progress });
         }
       }
 
       while (await this.pool.hasNextUpdate()) {
-        if (batch.length > 0) {
+        if (sampleQueue.length > 0) {
           await processBatch();
           callback({ recipes: aggregator.getRecipes(), count: recipesChecked, progress: 1 });
         }
