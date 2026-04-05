@@ -10,9 +10,15 @@ interface ItemPickerProps {
   initialItem?: Item;
   onSelect?: (item: Item) => void;
   onBlur?: () => void;
+  filter?: (item: Item) => boolean;
 }
 
-function ItemPicker({ initialItem, onSelect, onBlur }: ItemPickerProps) {
+function ItemPicker({
+  initialItem,
+  onSelect,
+  onBlur,
+  filter = () => true,
+}: ItemPickerProps) {
   const { data: itemData } = useItemData();
 
   const containerRef = useRef<HTMLDivElement>(null);
@@ -29,9 +35,10 @@ function ItemPicker({ initialItem, onSelect, onBlur }: ItemPickerProps) {
   // Filter and sort items based on search term
   const filteredItemData = useMemo(() => {
     return itemData
+      ?.filter(filter)
       ?.filter((item) => itemMatchesSearchTerm(searchTerm, item))
       .toSorted((a, b) => compareItemsBySearchTerm(searchTerm, a, b));
-  }, [itemData, searchTerm]);
+  }, [itemData, searchTerm, filter]);
 
   // Virtualizer for item list
   // eslint-disable-next-line react-hooks/incompatible-library

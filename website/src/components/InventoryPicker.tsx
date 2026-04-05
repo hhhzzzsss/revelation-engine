@@ -8,6 +8,7 @@ import Input from './Input';
 import { getIconPath } from '../image/util';
 import Button from './Button';
 import { useVirtualizer } from '@tanstack/react-virtual';
+import { useAvailableItemsStore } from '../stores';
 
 
 interface InventoryPickerProps {
@@ -17,6 +18,8 @@ interface InventoryPickerProps {
 }
 function InventoryPicker({ className, items, onItemsChange }: InventoryPickerProps) {
   const { data: itemData } = useItemData();
+  const showUnfuseable = useAvailableItemsStore((state) => state.showUnfuseable);
+  const setShowUnfuseable = useAvailableItemsStore((state) => state.setShowUnfuseable);
   const [searchTerm, setSearchTerm] = useState('');
 
   const itemIdSet = useMemo(() => new Set(items.map((item) => item.id)), [items]);
@@ -38,7 +41,14 @@ function InventoryPicker({ className, items, onItemsChange }: InventoryPickerPro
 
   const handleSelectAll = () => {
     if (!itemData) return;
-    const newItems = [...itemData];
+
+    let newItems: Item[];
+    if (showUnfuseable) {
+      newItems = [...itemData];
+    } else {
+      newItems = itemData.filter((item) => item.essence.fuseable);
+    }
+
     onItemsChange?.(newItems);
   };
 
@@ -49,7 +59,14 @@ function InventoryPicker({ className, items, onItemsChange }: InventoryPickerPro
   return (
     <div className={`flex h-128 ${className}`}>
       <div className="w-150 flex flex-col border-r-2 border-secondary-800">
-        <div className="pr-4 mb-2 flex justify-end space-x-2">
+        <div className="pr-4 mb-2 flex space-x-2">
+          <Button
+            className={`${showUnfuseable ? 'bg-primary-600 hover:bg-primary-500' : 'bg-secondary-700 text-fg-600 opacity-60 hover:opacity-100'}`}
+            onClick={() => setShowUnfuseable(!showUnfuseable)}
+          >
+            show unfuseable
+          </Button>
+          <div className="flex-1" />
           <Button
             className="bg-primary-600 hover:bg-primary-500"
             onClick={handleSelectAll}
@@ -74,7 +91,10 @@ function InventoryPicker({ className, items, onItemsChange }: InventoryPickerPro
         itemData={itemData}
         searchTerm={searchTerm}
         onSearchTermChange={setSearchTerm}
-        filter={(item) => !itemIdSet.has(item.id)}
+        filter={(item) => (
+          !itemIdSet.has(item.id)
+          && (showUnfuseable || item.essence.fuseable)
+        )}
         onSelect={handleSelect}
       />
     </div>
