@@ -1,4 +1,4 @@
-import { useCallback } from 'react';
+import { memo, useCallback } from 'react';
 import { getIconPath, IMAGE_PATHS } from '../image/util';
 import type { Item } from '../item/types';
 import { useInfoPanelStore, useTooltipStore } from '../stores';
@@ -9,7 +9,7 @@ interface SlotProps {
   count?: number;
 }
 
-function Slot({ className, item, count }: SlotProps) {
+const Slot = memo(function Slot({ className, item, count }: SlotProps) {
   const stackable = (item?.stack_size ?? 1) > 1;
 
   const setPanelItem = useInfoPanelStore((state) => state.viewItem);
@@ -47,6 +47,6 @@ function Slot({ className, item, count }: SlotProps) {
       </div>
     </div>
   );
-}
+});
 
 export default Slot;
