@@ -1,6 +1,6 @@
 import type { SerializedInputBatch } from '../worker/types';
 import type { FuserParameters, Item, QuantifiedItem, Recipe } from '../item/types';
-import { EnergyRatioDerivationAggregator, EnergyRatioEnumerationAggregator } from './recipeAggregator';
+import { QualityHeuristicDerivationAggregator, QualityHeuristicEnumerationAggregator } from './recipeAggregator';
 import PriorityQueue from './priorityQueue';
 import WorkerPool from './workerPool';
 import { clamp, randomInt, sample, sampleSize } from 'es-toolkit';
@@ -145,7 +145,7 @@ class ApotheosisBatchSolver {
     const cancel = () => cancelled = true;
 
     const batchSize = 8192;
-    const aggregator = new EnergyRatioEnumerationAggregator();
+    const aggregator = new QualityHeuristicEnumerationAggregator();
     const transformer = new CopyOutputTransformer(availableItems);
 
     const sampleQueue: QuantifiedItem[][] = [];
@@ -215,7 +215,7 @@ class ApotheosisBatchSolver {
     const mutationPopulation = populationSize * 8 / 16;
     const crossoverPopulation = populationSize * 7 / 16;
 
-    const aggregator = new EnergyRatioDerivationAggregator();
+    const aggregator = new QualityHeuristicDerivationAggregator();
     const offspringCalculator = new OffspringCalculator(availableItems);
     
     const getRandomSample = (): QuantifiedItem[] => {

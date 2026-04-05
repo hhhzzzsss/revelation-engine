@@ -1,5 +1,5 @@
 import type { QuantifiedItem, Recipe } from '../item/types';
-import { compareEnergyRatio } from './util';
+import { compareQualityHeuristic } from './util';
 
 export abstract class EnumerationAggregator {
   protected recipeMap = new Map<number, Recipe>();
@@ -24,9 +24,9 @@ export abstract class EnumerationAggregator {
   }
 }
 
-export class EnergyRatioEnumerationAggregator extends EnumerationAggregator {
+export class QualityHeuristicEnumerationAggregator extends EnumerationAggregator {
   protected compareRecipes(recipeA: Recipe, recipeB: Recipe): number {
-    return -compareEnergyRatio(recipeA, recipeB);
+    return -compareQualityHeuristic(recipeA, recipeB);
   }
 }
 
@@ -109,8 +109,8 @@ export abstract class DerivationAggregator {
   };
 }
 
-export class EnergyRatioDerivationAggregator extends DerivationAggregator {
+export class QualityHeuristicDerivationAggregator extends DerivationAggregator {
   protected compareRecipes(recipeA: Recipe, recipeB: Recipe): number {
-    return -compareEnergyRatio(recipeA, recipeB);
+    return -compareQualityHeuristic(recipeA, recipeB);
   }
 }
