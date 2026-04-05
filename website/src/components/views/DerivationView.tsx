@@ -20,7 +20,7 @@ function DerivationView() {
   const itemsRef = useRef(items);
   const targetItemRef = useRef(targetItem);
 
-  const [effort, setEffort] = useState<Effort>('low');
+  const [effort, setEffort] = useState<Effort>('medium');
   const maxGenerationsRef = useRef<number>(512);
 
   const [isDeriving, setIsDeriving] = useState(false);
