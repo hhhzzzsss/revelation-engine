@@ -31,11 +31,9 @@ interface Candidate {
 
 class ApotheosisBatchSolver {
   private pool: WorkerPool;
-  private itemData: Item[];
   private itemMap: Record<number, Item>;
 
   constructor(fuserParams: FuserParameters, itemData: Item[]) {
-    this.itemData = itemData;
     this.itemMap = Object.fromEntries(itemData.map((item) => [item.id, item]));
     this.pool = new WorkerPool(fuserParams, itemData);
   }
