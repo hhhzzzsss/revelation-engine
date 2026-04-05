@@ -5,7 +5,7 @@ export const getQualityHeuristic = (recipe: Recipe): number => {
   const outputEnergy = recipe.output.item.essence.energy * recipe.output.count;
   const totalQuantity = recipe.inputs.reduce((sum, input) => sum + input.count, 0) + recipe.output.count;
   const energyRatio = outputEnergy / (inputEnergy + 0.0001);
-  return energyRatio + 1.0 / (totalQuantity + 8); // Main metric is energy ratio, with a small bonus for fewer total items to encourage simpler recipes
+  return energyRatio + 4.0 / (totalQuantity + 8); // Main metric is energy ratio, with a small bonus for fewer total items to encourage simpler recipes
 };
 
 export const getEnergyRatio = (recipe: Recipe): number => {
