@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { useAvailableItemsStore, useDerivationStore } from '../../stores';
-import { useApotheosisBatchSolver } from '../../algorithm/hooks';
+import { useApotheosisBatchSolver, useProgressCallbackThrottler } from '../../algorithm/hooks';
 import Button from '../Button';
 import InventoryPicker from '../InventoryPicker';
 import type { Recipe } from '../../item/types';
@@ -39,27 +39,34 @@ function DerivationView() {
     maxGenerationsRef.current = effort === 'low' ? 128 : effort === 'medium' ? 512 : 2048;
   }, [effort]);
 
+  const progressCallbackThrottler = useProgressCallbackThrottler();
+
   useEffect(() => {
     if (!batchSolver || !isDeriving || itemsRef.current.length < 2 || !targetItemRef.current) return;
 
-    const cancelDerivation = batchSolver.deriveRecipes(itemsRef.current, targetItemRef.current, maxGenerationsRef.current, (message) => {
-      if (message.error) {
-        console.error(message.error);
-        setIsDeriving(false);
-        return;
-      }
-      if (message.done) {
-        setIsDeriving(false);
-      }
+    const cancelDerivation = batchSolver.deriveRecipes(
+      itemsRef.current,
+      targetItemRef.current,
+      maxGenerationsRef.current,
+      progressCallbackThrottler((message) => {
+        if (message.error) {
+          console.error(message.error);
+          setIsDeriving(false);
+          return;
+        }
+        if (message.done) {
+          setIsDeriving(false);
+        }
 
-      setRecipes(message.recipes ?? []);
-      setProgressDisplay(`${message.count} recipes checked (${Math.round(message.progress * 100)})%`);
-    });
+        setRecipes(message.recipes ?? []);
+        setProgressDisplay(`${message.count} recipes checked (${Math.round(message.progress * 100)})%`);
+      }),
+    );
 
     return () => {
       cancelDerivation();
     };
-  }, [batchSolver, isDeriving, setRecipes]);
+  }, [batchSolver, isDeriving, setRecipes, progressCallbackThrottler]);
 
   return (
     <>

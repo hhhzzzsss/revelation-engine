@@ -1,12 +1,13 @@
 import { useEffect, useRef, useState } from 'react';
 import type { Recipe } from '../../item/types';
 import InventoryPicker from '../InventoryPicker';
-import { useApotheosisBatchSolver } from '../../algorithm/hooks';
+import { useApotheosisBatchSolver, useProgressCallbackThrottler } from '../../algorithm/hooks';
 import { useAvailableItemsStore, useEnumerationStore } from '../../stores';
 import Button from '../Button';
 import Input from '../Input';
 import { compareItemsBySearchTerm, itemMatchesSearchTerm } from '../../item/util';
 import RecipeList from '../RecipeList';
+import type { ProgressMessage } from '../../algorithm/apotheosisBatchSolver';
 
 type Effort = 'low' | 'medium' | 'high';
 
@@ -33,27 +34,33 @@ function EnumerationView() {
     targetCountRef.current = effort === 'low' ? 4096 : effort === 'medium' ? 65536 : 262144;
   }, [effort]);
 
+  const progressCallbackThrottler = useProgressCallbackThrottler();
+
   useEffect(() => {
     if (!batchSolver || !isEnumerating || itemsRef.current.length < 2) return;
 
-    const cancelEnumeration = batchSolver.enumerateFusions(itemsRef.current, targetCountRef.current, (message) => {
-      if (message.error) {
-        console.error(message.error);
-        setIsEnumerating(false);
-        return;
-      }
-      if (message.done) {
-        setIsEnumerating(false);
-      }
+    const cancelEnumeration = batchSolver.enumerateFusions(
+      itemsRef.current,
+      targetCountRef.current,
+      progressCallbackThrottler((message: ProgressMessage) => {
+        if (message.error) {
+          console.error(message.error);
+          setIsEnumerating(false);
+          return;
+        }
+        if (message.done) {
+          setIsEnumerating(false);
+        }
 
-      setRecipes(message.recipes ?? []);
-      setProgressDisplay(`${message.count} recipes checked (${Math.round(message.progress * 100)})%`);
-    });
+        setRecipes(message.recipes ?? []);
+        setProgressDisplay(`${message.count} recipes checked (${Math.round(message.progress * 100)})%`);
+      }),
+    );
 
     return () => {
       cancelEnumeration();
     };
-  }, [batchSolver, isEnumerating, setRecipes]);
+  }, [batchSolver, isEnumerating, setRecipes, progressCallbackThrottler]);
 
   return (
     <>

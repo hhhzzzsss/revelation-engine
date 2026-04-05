@@ -14,7 +14,7 @@ export const getApotheosisBatchSolver = (fuserParams: FuserParameters, itemData:
   return batchSolverInstance;
 };
 
-interface ProgressMessage {
+export interface ProgressMessage {
   recipes?: Recipe[];
   progress: number; // value between 0 and 1
   count: number;
