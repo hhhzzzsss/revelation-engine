@@ -211,9 +211,10 @@ class ApotheosisBatchSolver {
     const populationBatchNum = this.pool.getNumWorkers();
     const batchSize = 1024 / populationBatchNum;
     const populationSize = batchSize * populationBatchNum;
-    const elitePopulation = populationSize * 1 / 16;
-    const mutationPopulation = populationSize * 8 / 16;
-    const crossoverPopulation = populationSize * 7 / 16;
+    const numSubPopulations = 8;
+    const eliteProportion = 1 / 16;
+    const mutationProportion = 8 / 16;
+    // const crossoverProportion = 7 / 16;
 
     const aggregator = new QualityHeuristicDerivationAggregator();
     const offspringCalculator = new OffspringCalculator(availableItems);
@@ -250,29 +251,55 @@ class ApotheosisBatchSolver {
       subtractEnergyRatioFromValidRecipes(candidates);
       aggregateValidRecipes(candidates); // Aggregate any valid recipes
 
-      for (let generation = 0; generation < maxGenerations; generation++) {
+      const subPopBestCosts = Array.from({ length: numSubPopulations }, () => Infinity);
+      const subPopLastImprovementGen = Array.from({ length: numSubPopulations }, () => 0);
+
+      for (let generation = 1; generation <= maxGenerations; generation++) {
         if (cancelled) {
           return;
         }
 
-        // Sort candidates by increasing cost
-        candidates.sort((a, b) => a.cost - b.cost);
-
         // Clear population array and repopulate with offspring
         population = [];
-        for (let i = 0; i < elitePopulation; i++) {
-          population.push(candidates[i].inputs);
-        }
-        for (let i = 0; i < mutationPopulation; i++) {
-          const parent = this.tournamentSelect(candidates);
-          const offspring = offspringCalculator.getMutation(parent.inputs);
-          population.push(offspring);
-        }
-        for (let i = 0; i < crossoverPopulation; i++) {
-          const parentA = this.tournamentSelect(candidates);
-          const parentB = this.tournamentSelect(candidates);
-          const offspring = offspringCalculator.getCrossover(parentA.inputs, parentB.inputs);
-          population.push(offspring);
+        for (let subPopIdx = 0; subPopIdx < numSubPopulations; subPopIdx++) {
+          const subPopStart = Math.floor(subPopIdx * populationSize / numSubPopulations);
+          const subPopEnd = Math.floor((subPopIdx + 1) * populationSize / numSubPopulations);
+          const subPopCandidates = candidates.slice(subPopStart, subPopEnd);
+          subPopCandidates.sort((a, b) => a.cost - b.cost); // Sort candidates by increasing cost
+
+          if (subPopCandidates[0].cost < subPopBestCosts[subPopIdx]) {
+            subPopBestCosts[subPopIdx] = subPopCandidates[0].cost;
+            subPopLastImprovementGen[subPopIdx] = generation;
+          }
+
+          if (generation - subPopLastImprovementGen[subPopIdx] >= 128) {
+            console.log(`Reinitializing subpopulation ${subPopIdx} at generation ${generation} due to lack of improvement`);
+            // If no improvement in 64 generations, reinitialize subpopulation with random samples
+            for (let i = subPopStart; i < subPopEnd; i++) {
+              population.push(getRandomSample());
+            }
+            subPopBestCosts[subPopIdx] = Infinity;
+            subPopLastImprovementGen[subPopIdx] = generation;
+          } else {
+            // Otherwise, create offspring from current subpopulation
+            const elitePopulation = Math.floor(eliteProportion * subPopCandidates.length);
+            const mutationPopulation = Math.floor(mutationProportion * subPopCandidates.length);
+            const crossoverPopulation = subPopCandidates.length - elitePopulation - mutationPopulation;
+            for (let i = 0; i < elitePopulation; i++) {
+              population.push(subPopCandidates[i].inputs);
+            }
+            for (let i = 0; i < mutationPopulation; i++) {
+              const parent = this.tournamentSelect(subPopCandidates);
+              const offspring = offspringCalculator.getMutation(parent.inputs);
+              population.push(offspring);
+            }
+            for (let i = 0; i < crossoverPopulation; i++) {
+              const parentA = this.tournamentSelect(subPopCandidates);
+              const parentB = this.tournamentSelect(subPopCandidates);
+              const offspring = offspringCalculator.getCrossover(parentA.inputs, parentB.inputs);
+              population.push(offspring);
+            }
+          }
         }
 
         // Clear candidates array and replace compute new candidates from the new population
