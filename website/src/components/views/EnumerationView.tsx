@@ -5,7 +5,7 @@ import { useApotheosisBatchSolver } from '../../algorithm/hooks';
 import { useAvailableItemsStore, useEnumerationStore } from '../../stores';
 import Button from '../Button';
 import Input from '../Input';
-import { itemMatchesSearchTerm } from '../../item/util';
+import { compareItemsBySearchTerm, itemMatchesSearchTerm } from '../../item/util';
 import RecipeList from '../RecipeList';
 
 type Effort = 'low' | 'medium' | 'high';
@@ -106,7 +106,7 @@ function SearchableRecipeList({ recipes }: { recipes: Recipe[] }) {
       <RecipeList
         recipes={recipes}
         filter={(recipe) => itemMatchesSearchTerm(searchTerm, recipe.output.item)}
-        comparator={(a, b) => a.output.item.id - b.output.item.id}
+        comparator={(a, b) => compareItemsBySearchTerm(searchTerm, a.output.item, b.output.item, false)}
       />
       <div className="h-12" />
     </>

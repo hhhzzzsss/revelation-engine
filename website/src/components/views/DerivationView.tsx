@@ -108,14 +108,13 @@ function SearchableRecipeList({ recipes }: { recipes: Recipe[] }) {
       <h2 className="text-2xl font-pixel mb-2">Recipes</h2>
       <Input
         className="w-full mb-2"
-        placeholder="search by output item"
+        placeholder="search by input item"
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value.toLowerCase())}
       />
       <RecipeList
         recipes={recipes}
-        filter={(recipe) => itemMatchesSearchTerm(searchTerm, recipe.output.item)}
-        comparator={(a, b) => a.output.item.id - b.output.item.id}
+        filter={(recipe) => recipe.inputs.some((input) => itemMatchesSearchTerm(searchTerm, input.item))}
       />
       <div className="h-12" />
     </>
