@@ -4,6 +4,7 @@ import { EnergyRatioDerivationAggregator, EnergyRatioEnumerationAggregator } fro
 import PriorityQueue from './priorityQueue';
 import WorkerPool from './workerPool';
 import { clamp, randomInt, sample, sampleSize } from 'es-toolkit';
+import { getEnergyRatio } from './util';
 
 let batchSolverInstance: ApotheosisBatchSolver | null = null;
 export const getApotheosisBatchSolver = (fuserParams: FuserParameters, itemData: Item[]) => {
@@ -23,7 +24,7 @@ export interface ProgressMessage {
 }
 
 interface Candidate {
-  input: QuantifiedItem[];
+  inputs: QuantifiedItem[];
   output: QuantifiedItem;
   cost: number;
 }
@@ -100,7 +101,7 @@ class ApotheosisBatchSolver {
         const item = this.itemMap[outputIds[i]];
         if (item) {
           candidates.push({
-            input: input[i],
+            inputs: input[i],
             output: { item, count: outputCounts[i] },
             cost: costs[i],
           });
@@ -218,22 +219,37 @@ class ApotheosisBatchSolver {
 
     const aggregator = new EnergyRatioDerivationAggregator();
     const offspringCalculator = new OffspringCalculator(availableItems);
+    
+    const getRandomSample = (): QuantifiedItem[] => {
+      const numInputs = randomInt(2, Math.min(availableItems.length, 6) + 1);
+      const items = sampleSize(availableItems, numInputs);
+      return items.map(item => ({ item, count: randomInt(1, item.stack_size + 1) }));
+    };
 
     const aggregateValidRecipes = (candidates: Candidate[]) => {
       for (const candidate of candidates) {
         if (candidate.output.item.id === target.id) {
           aggregator.addRecipe({
-            inputs: candidate.input,
+            inputs: candidate.inputs,
             output: candidate.output,
           });
         }
       }
     };
 
+    const subtractEnergyRatioFromValidRecipes = (candidates: Candidate[]) => {
+      candidates.forEach(candidate => {
+        if (candidate.output.item.id === target.id) {
+          candidate.cost -= getEnergyRatio({ inputs: candidate.inputs, output: candidate.output });
+        }
+      });
+    };
+
     (async () => {
       // Initialize population with random samples and compute initial candidates
-      let population: QuantifiedItem[][] = Array.from({ length: populationSize }, () => this.getRandomSample());
+      let population: QuantifiedItem[][] = Array.from({ length: populationSize }, () => getRandomSample());
       let candidates = await this.computePopulationCosts(population, target, batchSize);
+      subtractEnergyRatioFromValidRecipes(candidates);
       aggregateValidRecipes(candidates); // Aggregate any valid recipes
 
       for (let generation = 0; generation < maxGenerations; generation++) {
@@ -247,22 +263,23 @@ class ApotheosisBatchSolver {
         // Clear population array and repopulate with offspring
         population = [];
         for (let i = 0; i < elitePopulation; i++) {
-          population.push(candidates[i].input);
+          population.push(candidates[i].inputs);
         }
         for (let i = 0; i < mutationPopulation; i++) {
           const parent = this.tournamentSelect(candidates);
-          const offspring = offspringCalculator.getMutation(parent.input);
+          const offspring = offspringCalculator.getMutation(parent.inputs);
           population.push(offspring);
         }
         for (let i = 0; i < crossoverPopulation; i++) {
           const parentA = this.tournamentSelect(candidates);
           const parentB = this.tournamentSelect(candidates);
-          const offspring = offspringCalculator.getCrossover(parentA.input, parentB.input);
+          const offspring = offspringCalculator.getCrossover(parentA.inputs, parentB.inputs);
           population.push(offspring);
         }
 
         // Clear candidates array and replace compute new candidates from the new population
         candidates = await this.computePopulationCosts(population, target, batchSize);
+        subtractEnergyRatioFromValidRecipes(candidates);
         aggregateValidRecipes(candidates); // Aggregate any valid recipes
 
         callback({ recipes: aggregator.getRecipes(), count: (generation + 1) * populationSize, progress: (generation + 1) / maxGenerations });
@@ -276,18 +293,13 @@ class ApotheosisBatchSolver {
 
     return cancel;
   };
-  private getRandomSample = (): QuantifiedItem[] => {
-    const numInputs = Math.floor(Math.random() * 5) + 2; // Random sample size between 2 and 6
-    const items = sampleSize(this.itemData, numInputs);
-    return items.map(item => ({ item, count: randomInt(1, item.stack_size + 1) }));
-  };
   private tournamentSelect = (candidates: Candidate[]): Candidate => {
     const [candidateA, candidateB] = sampleSize(candidates, 2);
     return candidateA.cost < candidateB.cost ? candidateA : candidateB;
   };
   private computePopulationCosts = async (population: QuantifiedItem[][], target: Item, batchSize: number): Promise<Candidate[]> => {
     const errors: Error[] = [];
-    const results: Candidate[] = Array.from({ length: population.length }, () => ({ input: population[0], output: { item: target, count: 1 }, cost: Infinity }));
+    const results: Candidate[] = Array.from({ length: population.length }, () => ({ inputs: population[0], output: { item: target, count: 1 }, cost: Infinity }));
     const outputCallback = (popIdx: number, candidates: Candidate[]) => {
       for (let j = 0; j < candidates.length; j++) {
         results[popIdx + j] = candidates[j];

@@ -8,6 +8,7 @@ import { itemMatchesSearchTerm } from '../../item/util';
 import RecipeList from '../RecipeList';
 import Input from '../Input';
 import PickableItem from '../PickableItem';
+import { compareEnergyRatio } from '../../algorithm/util';
 
 type Effort = 'low' | 'medium' | 'high';
 
@@ -19,7 +20,7 @@ function DerivationView() {
   const itemsRef = useRef(items);
   const targetItemRef = useRef(targetItem);
 
-  const [effort, setEffort] = useState<Effort>('medium');
+  const [effort, setEffort] = useState<Effort>('low');
   const maxGenerationsRef = useRef<number>(512);
 
   const [isDeriving, setIsDeriving] = useState(false);
@@ -122,6 +123,7 @@ function SearchableRecipeList({ recipes }: { recipes: Recipe[] }) {
       <RecipeList
         recipes={recipes}
         filter={(recipe) => recipe.inputs.some((input) => itemMatchesSearchTerm(searchTerm, input.item))}
+        comparator={(a, b) => -compareEnergyRatio(a, b)}
       />
       <div className="h-12" />
     </>
