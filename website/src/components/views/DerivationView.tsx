@@ -98,6 +98,13 @@ function DerivationView() {
         >
           {isDeriving ? 'Deriving...' : 'Derive!'}
         </Button>
+        <Button
+          className="mb-2 ml-2 bg-severe-600 hover:bg-severe-500"
+          onClick={() => setIsDeriving(false)}
+          disabled={!isDeriving}
+        >
+          Cancel
+        </Button>
         <span className="ml-4 font-pixel text-fg-600">
           {progressDisplay}
         </span>

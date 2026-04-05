@@ -88,6 +88,13 @@ function EnumerationView() {
         >
           {isEnumerating ? 'Enumerating...' : 'Enumerate!'}
         </Button>
+        <Button
+          className="mb-2 ml-2 bg-severe-600 hover:bg-severe-500"
+          onClick={() => setIsEnumerating(false)}
+          disabled={!isEnumerating}
+        >
+          Cancel
+        </Button>
         <span className="ml-4 font-pixel text-fg-600">
           {progressDisplay}
         </span>
