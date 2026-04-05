@@ -42,6 +42,15 @@ const handleMessage = async (message: ToWorkerMessage): Promise<MessageWithTrans
         transfer: [output.ids.buffer, output.counts.buffer]
       };
     }
+
+    if (message.type === 'cost_batch') {
+      const output = wrappedSolver.costBatch(message.input, message.target_id);
+      return {
+        type: 'cost_batch_result',
+        output,
+        transfer: [output.ids.buffer, output.counts.buffer, output.costs.buffer]
+      };
+    }
     
     throw new Error('Unknown message type');
   } catch (error) {

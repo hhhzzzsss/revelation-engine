@@ -37,18 +37,38 @@ export const useApotheosisStore = create<ApotheosisState>((set) => ({
   }),
 }));
 
-export interface EnumerationState {
+export interface AvailableItemsState {
   items: Item[];
-  recipes: Recipe[];
   setItems: (items: Item[]) => void;
+}
+export const useAvailableItemsStore = create<AvailableItemsState>((set) => ({
+  items: [],
+  setItems: (items) => set({ items }),
+}));
+
+export interface EnumerationState {
+  recipes: Recipe[];
   setRecipes: (recipes: Recipe[]) => void;
 }
 export const useEnumerationStore = create<EnumerationState>((set) => ({
-  items: [],
   recipes: [],
-  setItems: (items) => set({ items }),
   setRecipes: (recipes) => set({ recipes }),
 }));
+
+
+export interface DerivationState {
+  targetItem?: Item;
+  recipes: Recipe[];
+  setTargetItem: (item?: Item) => void;
+  setRecipes: (recipes: Recipe[]) => void;
+}
+export const useDerivationStore = create<DerivationState>((set) => ({
+  targetItem: undefined,
+  recipes: [],
+  setTargetItem: (item) => set({ targetItem: item }),
+  setRecipes: (recipes) => set({ recipes }),
+}));
+
 
 export interface HoverTooltipState {
   text: string | null;

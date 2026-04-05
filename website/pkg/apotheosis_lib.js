@@ -12,11 +12,31 @@ export class ApotheosisSolverRS {
         wasm.__wbg_apotheosissolverrs_free(ptr, 0);
     }
     /**
+     * @param {Int32Array} ids
+     * @param {Int32Array} counts
+     * @param {Uint32Array} sample_sizes
+     * @param {number} target_id
+     * @returns {CostBatchResultRS}
+     */
+    cost_batch(ids, counts, sample_sizes, target_id) {
+        const ptr0 = passArray32ToWasm0(ids, wasm.__wbindgen_malloc);
+        const len0 = WASM_VECTOR_LEN;
+        const ptr1 = passArray32ToWasm0(counts, wasm.__wbindgen_malloc);
+        const len1 = WASM_VECTOR_LEN;
+        const ptr2 = passArray32ToWasm0(sample_sizes, wasm.__wbindgen_malloc);
+        const len2 = WASM_VECTOR_LEN;
+        const ret = wasm.apotheosissolverrs_cost_batch(this.__wbg_ptr, ptr0, len0, ptr1, len1, ptr2, len2, target_id);
+        if (ret[2]) {
+            throw takeFromExternrefTable0(ret[1]);
+        }
+        return CostBatchResultRS.__wrap(ret[0]);
+    }
+    /**
      * Requires deduplicated items
      * @param {Int32Array} ids
      * @param {Int32Array} counts
      * @param {Uint32Array} sample_sizes
-     * @returns {Int32Array}
+     * @returns {FuseBatchResultRS}
      */
     fuse_batch(ids, counts, sample_sizes) {
         const ptr0 = passArray32ToWasm0(ids, wasm.__wbindgen_malloc);
@@ -26,12 +46,10 @@ export class ApotheosisSolverRS {
         const ptr2 = passArray32ToWasm0(sample_sizes, wasm.__wbindgen_malloc);
         const len2 = WASM_VECTOR_LEN;
         const ret = wasm.apotheosissolverrs_fuse_batch(this.__wbg_ptr, ptr0, len0, ptr1, len1, ptr2, len2);
-        if (ret[3]) {
-            throw takeFromExternrefTable0(ret[2]);
+        if (ret[2]) {
+            throw takeFromExternrefTable0(ret[1]);
         }
-        var v4 = getArrayI32FromWasm0(ret[0], ret[1]).slice();
-        wasm.__wbindgen_free(ret[0], ret[1] * 4, 4);
-        return v4;
+        return FuseBatchResultRS.__wrap(ret[0]);
     }
     /**
      * @param {Float64Array} property_weights
@@ -80,6 +98,133 @@ export class ApotheosisSolverRS {
 }
 if (Symbol.dispose) ApotheosisSolverRS.prototype[Symbol.dispose] = ApotheosisSolverRS.prototype.free;
 
+export class CostBatchResultRS {
+    static __wrap(ptr) {
+        ptr = ptr >>> 0;
+        const obj = Object.create(CostBatchResultRS.prototype);
+        obj.__wbg_ptr = ptr;
+        CostBatchResultRSFinalization.register(obj, obj.__wbg_ptr, obj);
+        return obj;
+    }
+    __destroy_into_raw() {
+        const ptr = this.__wbg_ptr;
+        this.__wbg_ptr = 0;
+        CostBatchResultRSFinalization.unregister(this);
+        return ptr;
+    }
+    free() {
+        const ptr = this.__destroy_into_raw();
+        wasm.__wbg_costbatchresultrs_free(ptr, 0);
+    }
+    /**
+     * @returns {Float64Array}
+     */
+    get costs() {
+        const ret = wasm.__wbg_get_costbatchresultrs_costs(this.__wbg_ptr);
+        var v1 = getArrayF64FromWasm0(ret[0], ret[1]).slice();
+        wasm.__wbindgen_free(ret[0], ret[1] * 8, 8);
+        return v1;
+    }
+    /**
+     * @returns {Int32Array}
+     */
+    get counts() {
+        const ret = wasm.__wbg_get_costbatchresultrs_counts(this.__wbg_ptr);
+        var v1 = getArrayI32FromWasm0(ret[0], ret[1]).slice();
+        wasm.__wbindgen_free(ret[0], ret[1] * 4, 4);
+        return v1;
+    }
+    /**
+     * @returns {Int32Array}
+     */
+    get ids() {
+        const ret = wasm.__wbg_get_costbatchresultrs_ids(this.__wbg_ptr);
+        var v1 = getArrayI32FromWasm0(ret[0], ret[1]).slice();
+        wasm.__wbindgen_free(ret[0], ret[1] * 4, 4);
+        return v1;
+    }
+    /**
+     * @param {Float64Array} arg0
+     */
+    set costs(arg0) {
+        const ptr0 = passArrayF64ToWasm0(arg0, wasm.__wbindgen_malloc);
+        const len0 = WASM_VECTOR_LEN;
+        wasm.__wbg_set_costbatchresultrs_costs(this.__wbg_ptr, ptr0, len0);
+    }
+    /**
+     * @param {Int32Array} arg0
+     */
+    set counts(arg0) {
+        const ptr0 = passArray32ToWasm0(arg0, wasm.__wbindgen_malloc);
+        const len0 = WASM_VECTOR_LEN;
+        wasm.__wbg_set_costbatchresultrs_counts(this.__wbg_ptr, ptr0, len0);
+    }
+    /**
+     * @param {Int32Array} arg0
+     */
+    set ids(arg0) {
+        const ptr0 = passArray32ToWasm0(arg0, wasm.__wbindgen_malloc);
+        const len0 = WASM_VECTOR_LEN;
+        wasm.__wbg_set_costbatchresultrs_ids(this.__wbg_ptr, ptr0, len0);
+    }
+}
+if (Symbol.dispose) CostBatchResultRS.prototype[Symbol.dispose] = CostBatchResultRS.prototype.free;
+
+export class FuseBatchResultRS {
+    static __wrap(ptr) {
+        ptr = ptr >>> 0;
+        const obj = Object.create(FuseBatchResultRS.prototype);
+        obj.__wbg_ptr = ptr;
+        FuseBatchResultRSFinalization.register(obj, obj.__wbg_ptr, obj);
+        return obj;
+    }
+    __destroy_into_raw() {
+        const ptr = this.__wbg_ptr;
+        this.__wbg_ptr = 0;
+        FuseBatchResultRSFinalization.unregister(this);
+        return ptr;
+    }
+    free() {
+        const ptr = this.__destroy_into_raw();
+        wasm.__wbg_fusebatchresultrs_free(ptr, 0);
+    }
+    /**
+     * @returns {Int32Array}
+     */
+    get counts() {
+        const ret = wasm.__wbg_get_fusebatchresultrs_counts(this.__wbg_ptr);
+        var v1 = getArrayI32FromWasm0(ret[0], ret[1]).slice();
+        wasm.__wbindgen_free(ret[0], ret[1] * 4, 4);
+        return v1;
+    }
+    /**
+     * @returns {Int32Array}
+     */
+    get ids() {
+        const ret = wasm.__wbg_get_fusebatchresultrs_ids(this.__wbg_ptr);
+        var v1 = getArrayI32FromWasm0(ret[0], ret[1]).slice();
+        wasm.__wbindgen_free(ret[0], ret[1] * 4, 4);
+        return v1;
+    }
+    /**
+     * @param {Int32Array} arg0
+     */
+    set counts(arg0) {
+        const ptr0 = passArray32ToWasm0(arg0, wasm.__wbindgen_malloc);
+        const len0 = WASM_VECTOR_LEN;
+        wasm.__wbg_set_fusebatchresultrs_counts(this.__wbg_ptr, ptr0, len0);
+    }
+    /**
+     * @param {Int32Array} arg0
+     */
+    set ids(arg0) {
+        const ptr0 = passArray32ToWasm0(arg0, wasm.__wbindgen_malloc);
+        const len0 = WASM_VECTOR_LEN;
+        wasm.__wbg_set_fusebatchresultrs_ids(this.__wbg_ptr, ptr0, len0);
+    }
+}
+if (Symbol.dispose) FuseBatchResultRS.prototype[Symbol.dispose] = FuseBatchResultRS.prototype.free;
+
 function __wbg_get_imports() {
     const import0 = {
         __proto__: null,
@@ -109,6 +254,17 @@ function __wbg_get_imports() {
 const ApotheosisSolverRSFinalization = (typeof FinalizationRegistry === 'undefined')
     ? { register: () => {}, unregister: () => {} }
     : new FinalizationRegistry(ptr => wasm.__wbg_apotheosissolverrs_free(ptr >>> 0, 1));
+const CostBatchResultRSFinalization = (typeof FinalizationRegistry === 'undefined')
+    ? { register: () => {}, unregister: () => {} }
+    : new FinalizationRegistry(ptr => wasm.__wbg_costbatchresultrs_free(ptr >>> 0, 1));
+const FuseBatchResultRSFinalization = (typeof FinalizationRegistry === 'undefined')
+    ? { register: () => {}, unregister: () => {} }
+    : new FinalizationRegistry(ptr => wasm.__wbg_fusebatchresultrs_free(ptr >>> 0, 1));
+
+function getArrayF64FromWasm0(ptr, len) {
+    ptr = ptr >>> 0;
+    return getFloat64ArrayMemory0().subarray(ptr / 8, ptr / 8 + len);
+}
 
 function getArrayI32FromWasm0(ptr, len) {
     ptr = ptr >>> 0;

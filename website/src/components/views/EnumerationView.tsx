@@ -2,22 +2,22 @@ import { useEffect, useRef, useState } from 'react';
 import type { Recipe } from '../../item/types';
 import InventoryPicker from '../InventoryPicker';
 import { useApotheosisBatchSolver } from '../../algorithm/hooks';
-import { useEnumerationStore } from '../../stores';
+import { useAvailableItemsStore, useEnumerationStore } from '../../stores';
 import Button from '../Button';
-import Slot from '../Slot';
 import Input from '../Input';
 import { itemMatchesSearchTerm } from '../../item/util';
-import { useVirtualizer } from '@tanstack/react-virtual';
+import RecipeList from '../RecipeList';
 
-type Intensity = 'low' | 'medium' | 'high';
+type Effort = 'low' | 'medium' | 'high';
 
 function EnumerationView() {
   const batchSolver = useApotheosisBatchSolver();
 
-  const { items, setItems, recipes, setRecipes } = useEnumerationStore();
+  const { items, setItems } = useAvailableItemsStore();
+  const { recipes, setRecipes } = useEnumerationStore();
   const itemsRef = useRef(items);
 
-  const [effort, setEffort] = useState<Intensity>('medium');
+  const [effort, setEffort] = useState<Effort>('medium');
   const targetCountRef = useRef<number>(65536);
   
   const [isEnumerating, setIsEnumerating] = useState(false);
@@ -68,7 +68,7 @@ function EnumerationView() {
             <Button
               key={level}
               className={`${effort === level ? 'bg-primary-600' : 'bg-secondary-700 text-fg-600 opacity-60 hover:opacity-100'} font-pixel`}
-              onClick={() => setEffort(level as Intensity)}
+              onClick={() => setEffort(level as Effort)}
             >
               {level.charAt(0).toUpperCase() + level.slice(1)}
             </Button>
@@ -86,25 +86,13 @@ function EnumerationView() {
         </span>
       </div>
       
-      <RecipeList recipes={recipes} />
+      <SearchableRecipeList recipes={recipes} />
     </>
   );
 }
 
-function RecipeList({ recipes }: { recipes: Recipe[] }) {
+function SearchableRecipeList({ recipes }: { recipes: Recipe[] }) {
   const [searchTerm, setSearchTerm] = useState('');
-  const listRef = useRef<HTMLDivElement>(null);
-
-  const filteredRecipes = recipes
-    .filter((recipe) => itemMatchesSearchTerm(searchTerm, recipe.output.item))
-    .toSorted((a, b) => a.output.item.id - b.output.item.id);
-
-  // eslint-disable-next-line react-hooks/incompatible-library
-  const rowVirtualizer = useVirtualizer({
-    count: filteredRecipes.length,
-    getScrollElement: () => listRef.current,
-    estimateSize: () => 80,
-  });
 
   return (
     <>
@@ -115,44 +103,13 @@ function RecipeList({ recipes }: { recipes: Recipe[] }) {
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value.toLowerCase())}
       />
-      <div ref={listRef} className="max-w-full h-128 overflow-y-auto">
-        {filteredRecipes.length === 0 && (
-          <div className="mt-4 text-center font-pixel text-fg-600">
-            no recipes found
-          </div>
-        )}
-        <div style={{ height: rowVirtualizer.getTotalSize() }} className="relative w-lg mx-auto flex flex-col">
-          {rowVirtualizer.getVirtualItems().map((virtualItem) => {
-            const recipe = filteredRecipes[virtualItem.index];
-            return (
-              <div
-                key={recipe.output.item.id}
-                className="absolute top-0 right-0 min-w-0"
-                style={{ transform: `translateY(${virtualItem.start}px)` }}
-              >
-                <RecipeDisplay key={virtualItem.index} recipe={recipe} />
-              </div>
-            );
-          })}
-        </div>
-      </div>
+      <RecipeList
+        recipes={recipes}
+        filter={(recipe) => itemMatchesSearchTerm(searchTerm, recipe.output.item)}
+        comparator={(a, b) => a.output.item.id - b.output.item.id}
+      />
       <div className="h-12" />
     </>
-  );
-}
-
-function RecipeDisplay({ recipe }: { recipe: Recipe }) {
-  return (
-    <div className="flex items-center">
-      {Array.from({ length: 6 - recipe.inputs.length }).map((_, index) => (
-        <Slot key={index} />
-      ))}
-      {recipe.inputs.map((qItem, index) => (
-        <Slot key={index} item={qItem.item} count={qItem.count} />
-      ))}
-      <div className="font-pixel text-4xl">{'>'}</div>
-      <Slot item={recipe.output.item} count={recipe.output.count} />
-    </div>
   );
 }
 

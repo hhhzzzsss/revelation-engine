@@ -92,16 +92,16 @@ class WorkerHandler {
     if (this.busy) {
       throw new Error('Worker is currently busy');
     }
-
-    const initialInstanceId = this.instanceId;
-    const worker = await this.workerPromise;
-    if (initialInstanceId !== this.instanceId) {
-      throw new Error('Worker instance changed during message handling');
-    }
     
-    this.busy = true;
+    this.busy = true; // Immediately lock (function is sync before first await)
+    const initialInstanceId = this.instanceId;
 
     try {
+      const worker = await this.workerPromise;
+      if (initialInstanceId !== this.instanceId) {
+        throw new Error('Worker instance changed during message handling');
+      }
+
       const response = await sendMessageToWorker(worker, message, transfer);
       if (initialInstanceId !== this.instanceId) {
         throw new Error('Worker instance changed during message handling');
@@ -138,7 +138,11 @@ class WorkerPool {
   }
 
   submitMessage = async (message: ToWorkerMessage, transfer?: Transferable[], onSuccess?: (response: FromWorkerMessage) => void, onError?: (error: Error) => void) => {
-    const workerHandler = await this.getFreeWorker();
+    let workerHandler = this.getFreeWorker();
+    while (!workerHandler) {
+      await this.waitForFreeWorker();
+      workerHandler = this.getFreeWorker();
+    }
 
     workerHandler.sendMessage(message, transfer)
       .then((response) => {
@@ -160,21 +164,17 @@ class WorkerPool {
       });
   };
 
-  getFreeWorker = (): Promise<WorkerHandler> => {
-    return new Promise((resolve) => {
-      for (const workerHandler of this.workerHandlers) {
-        if (!workerHandler.isBusy()) {
-          resolve(workerHandler);
-          return;
-        }
+  private getFreeWorker = (): WorkerHandler | null => {
+    for (const workerHandler of this.workerHandlers) {
+      if (!workerHandler.isBusy()) {
+        return workerHandler;
       }
-
-      this.freeWorkerCallbacks.push(resolve);
-    });
+    }
+    return null;
   };
 
-  hasBusyWorker = (): boolean => {
-    return this.workerHandlers.some(workerHandler => workerHandler.isBusy());
+  private waitForFreeWorker = (): Promise<void> => {
+    return new Promise((resolve) => this.freeWorkerCallbacks.push(() => resolve()));
   };
 
   hasNextUpdate = (): Promise<boolean> => {
@@ -185,6 +185,14 @@ class WorkerPool {
       }
       this.updateCallbacks.push(() => resolve(true));
     });
+  };
+
+  private hasBusyWorker = (): boolean => {
+    return this.workerHandlers.some(workerHandler => workerHandler.isBusy());
+  };
+
+  getNumWorkers = (): number => {
+    return this.workerHandlers.length;
   };
 }
 

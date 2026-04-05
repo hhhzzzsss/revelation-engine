@@ -1,6 +1,6 @@
 import init, { ApotheosisSolverRS } from '../../pkg/apotheosis_lib';
 import type { FuserParameters, Item } from '../item/types';
-import type { SerializedInputBatch, SerializedOutputBatch } from './types';
+import type { SerializedCostBatchOutput, SerializedInputBatch, SerializedFuseBatchOutput } from './types';
 
 const initPromise = init();
 
@@ -64,16 +64,30 @@ export class ApotheosisSolverRSWrapper {
     this.solver = solver;
   }
 
-  public fuseBatch(serializedBatch: SerializedInputBatch): SerializedOutputBatch {
+  public fuseBatch(serializedBatch: SerializedInputBatch): SerializedFuseBatchOutput {
     const result = this.solver.fuse_batch(
       serializedBatch.ids,
       serializedBatch.counts,
       serializedBatch.sample_sizes
     );
-    const outputBatch: SerializedOutputBatch = {
-      ids: new Int32Array(result.slice(0, result.length / 2)),
-      counts: new Int32Array(result.slice(result.length / 2)),
+    const outputBatch: SerializedFuseBatchOutput = {
+      ids: new Int32Array(result.ids),
+      counts: new Int32Array(result.counts),
     };
     return outputBatch;
+  }
+
+  public costBatch(serializedBatch: SerializedInputBatch, target_id: number): SerializedCostBatchOutput {
+    const result = this.solver.cost_batch(
+      serializedBatch.ids,
+      serializedBatch.counts,
+      serializedBatch.sample_sizes,
+      target_id
+    );
+    return {
+      ids: new Int32Array(result.ids),
+      counts: new Int32Array(result.counts),
+      costs: new Float64Array(result.costs),
+    };
   }
 }

@@ -27,6 +27,19 @@ pub struct ApotheosisSolverRS {
     fuseable_biases: Array1<f64>,
 }
 
+#[wasm_bindgen(getter_with_clone)]
+pub struct FuseBatchResultRS {
+    pub ids: Vec<i32>,
+    pub counts: Vec<i32>,
+}
+
+#[wasm_bindgen(getter_with_clone)]
+pub struct CostBatchResultRS {
+    pub ids: Vec<i32>,
+    pub counts: Vec<i32>,
+    pub costs: Vec<f64>,
+}
+
 #[wasm_bindgen]
 impl ApotheosisSolverRS {
     #[wasm_bindgen(constructor)]
@@ -142,7 +155,7 @@ impl ApotheosisSolverRS {
 
     #[wasm_bindgen]
     /// Requires deduplicated items
-    pub fn fuse_batch(&self, ids: Vec<i32>, counts: Vec<i32>, sample_sizes: Vec<usize>) -> Result<Vec<i32>, JsError> {
+    pub fn fuse_batch(&self, ids: Vec<i32>, counts: Vec<i32>, sample_sizes: Vec<usize>) -> Result<FuseBatchResultRS, JsError> {
         if self.fuseable_ids.is_empty() {
             return Err(JsError::new("No fuseable items available"));
         }
@@ -157,6 +170,9 @@ impl ApotheosisSolverRS {
         for size in &sample_sizes {
             if *size < 2 {
                 return Err(JsError::new("sample_sizes must all be at least 2"));
+            }
+            if *size > 6 {
+                return Err(JsError::new("sample_sizes must all be at most 6"));
             }
         }
 
@@ -231,7 +247,126 @@ impl ApotheosisSolverRS {
             })
             .collect();
 
-        Ok(output_ids.into_iter().chain(output_counts).collect())
+        Ok(FuseBatchResultRS { ids: output_ids, counts: output_counts })
+    }
+
+    #[wasm_bindgen]
+    pub fn cost_batch(&self, ids: Vec<i32>, counts: Vec<i32>, sample_sizes: Vec<usize>, target_id: i32) -> Result<CostBatchResultRS, JsError> {
+        if self.fuseable_ids.is_empty() {
+            return Err(JsError::new("No fuseable items available"));
+        }
+
+        let total_input_size = sample_sizes.iter().sum();
+        if ids.len() != total_input_size {
+            return Err(JsError::new("ids.len() must equal sum of sample_sizes"));
+        }
+        if counts.len() != total_input_size {
+            return Err(JsError::new("counts.len() must equal sum of sample_sizes"));
+        }
+        for size in &sample_sizes {
+            if *size < 2 {
+                return Err(JsError::new("sample_sizes must all be at least 2"));
+            }
+            if *size > 6 {
+                return Err(JsError::new("sample_sizes must all be at most 6"));
+            }
+        }
+
+        let target_fuseable_idx = self
+            .id_to_fuseable_index
+            .get(&target_id)
+            .copied()
+            .ok_or_else(|| JsError::new("target_id is not in fuseable_ids"))?;
+
+        let batch_size = sample_sizes.len();
+
+        let mut batch_total_energies: Vec<f64> = vec![0.0; batch_size];
+        let mut batch_mood_vectors: Array2<f64> = Array2::zeros((batch_size, self.num_properties));
+        let mut batch_color_vectors: Array2<f64> = Array2::zeros((batch_size, 3));
+        let mut batch_tag_bitsets: Array1<u32> = Array1::zeros(batch_size);
+        let mut batch_output_tag_bitsets: Array1<u32> = Array1::zeros(batch_size);
+        let mut batch_samey_punishments: Array2<f64> = Array2::zeros((batch_size, self.fuseable_ids.len()));
+        
+        let mut input_ptr: usize = 0;
+        for i in 0..batch_size {
+            // Get the indices and counts for the current sample
+            let sample_ids = &ids[input_ptr..input_ptr + sample_sizes[i]];
+            let sample_idxs = sample_ids.iter()
+                .map(|&id| self.id_to_index.get(&id).copied().ok_or_else(|| JsError::new("ID not found in item IDs")))
+                .collect::<Result<Vec<_>, _>>()?;
+            let sample_counts = &counts[input_ptr..input_ptr + sample_sizes[i]];
+            input_ptr += sample_sizes[i];
+            
+            // Compute combined sample properties
+            let sample_total_energy = sample_idxs.iter().zip(sample_counts).map(
+                |(&idx, &count)| self.energies[idx] * count as f64
+            ).sum::<f64>();
+            let sample_total_energy = if sample_total_energy <= 0.0 { 0.01 } else { sample_total_energy };
+            batch_total_energies[i] = sample_total_energy;
+            for (&id, idx, &count) in izip!(sample_ids, sample_idxs, sample_counts) {
+                let energy_fraction = self.energies[idx] * count as f64 / sample_total_energy;
+                batch_mood_vectors.row_mut(i).scaled_add(energy_fraction, &self.weighted_mood_vectors.row(idx));
+                batch_color_vectors.row_mut(i).scaled_add(energy_fraction, &self.color_vectors.row(idx));
+                batch_tag_bitsets[i] |= self.tag_bitsets[idx];
+                batch_output_tag_bitsets[i] |= self.output_tag_bitsets[idx];
+                if let Some(&fuseable_idx) = self.id_to_fuseable_index.get(&id) {
+                    batch_samey_punishments[[i, fuseable_idx]] += self.samey_punishment;
+                }
+            }
+        }
+
+        // Compute distances and find best matches
+        let batch_mood_distances = euclidean_distances(&batch_mood_vectors, &self.fuseable_mood_vectors);
+        let batch_color_distances = euclidean_distances(&batch_color_vectors, &self.fuseable_color_vectors);
+        let batch_tag_similarities = tag_similarities(&batch_tag_bitsets, &self.fuseable_tag_bitsets);
+        let batch_output_tag_similarities = tag_similarities(&batch_output_tag_bitsets, &self.fuseable_tag_bitsets);
+        let batch_biases = &self.fuseable_biases.clone().insert_axis(Axis(0));
+
+        let batch_distances =
+            batch_mood_distances
+            + batch_color_distances * self.color_weight
+            - batch_tag_similarities.mapv(|x| x * self.tag_magnitude)
+            - batch_output_tag_similarities.mapv(|x| x * 1000.0)
+            - batch_biases
+            + batch_samey_punishments;
+
+        let batch_distances_argmin = batch_distances.map_axis(Axis(1), |row| {
+            row.iter()
+                .enumerate()
+                .min_by(|a, b| a.1.total_cmp(b.1))
+                .map(|(idx, _)| idx)
+                .unwrap()
+        });
+        let output_ids: Vec<i32> = batch_distances_argmin.iter().map(|&idx| self.fuseable_ids[idx]).collect();
+
+        // Determine counts from the sample total energy, matching fuse_batch behavior.
+        let output_counts: Vec<i32> = output_ids.iter()
+            .zip(batch_total_energies)
+            .map(|(&id, total_energy)| {
+                let energy = self.energies[self.id_to_index[&id]];
+                let stack_size = self.stack_sizes[self.id_to_index[&id]];
+                ((total_energy / energy).round() as i32).clamp(1, stack_size)
+            })
+            .collect();
+
+        let cost_deltas = (0..batch_size)
+            .map(|i| {
+                let row = batch_distances.row(i);
+                let actual_distance = row
+                    .iter()
+                    .copied()
+                    .min_by(|a, b| a.total_cmp(b))
+                    .unwrap();
+                let target_distance = row[target_fuseable_idx];
+                target_distance - actual_distance
+            })
+            .collect();
+
+        Ok(CostBatchResultRS {
+            ids: output_ids,
+            counts: output_counts,
+            costs: cost_deltas,
+        })
     }
 }
 

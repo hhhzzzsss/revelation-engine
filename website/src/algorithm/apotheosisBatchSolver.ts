@@ -1,8 +1,9 @@
 import type { SerializedInputBatch } from '../worker/types';
 import type { FuserParameters, Item, QuantifiedItem, Recipe } from '../item/types';
-import { EnergyRatioRecipeAggregator } from './recipeAggregator';
+import { EnergyRatioDerivationAggregator, EnergyRatioEnumerationAggregator } from './recipeAggregator';
 import PriorityQueue from './priorityQueue';
 import WorkerPool from './workerPool';
+import { clamp, randomInt, sample, sampleSize } from 'es-toolkit';
 
 let batchSolverInstance: ApotheosisBatchSolver | null = null;
 export const getApotheosisBatchSolver = (fuserParams: FuserParameters, itemData: Item[]) => {
@@ -21,36 +22,25 @@ interface ProgressMessage {
   done?: boolean;
 }
 
+interface Candidate {
+  input: QuantifiedItem[];
+  output: QuantifiedItem;
+  cost: number;
+}
+
 class ApotheosisBatchSolver {
   private pool: WorkerPool;
+  private itemData: Item[];
   private itemMap: Record<number, Item>;
 
   constructor(fuserParams: FuserParameters, itemData: Item[]) {
+    this.itemData = itemData;
     this.itemMap = Object.fromEntries(itemData.map((item) => [item.id, item]));
     this.pool = new WorkerPool(fuserParams, itemData);
   }
 
   public fuseBatch = async (input: QuantifiedItem[][], onSuccess: (recipes: Recipe[]) => void, onError: (error: Error) => void) => {
-    const ids = [];
-    const counts = [];
-    const sampleSizes = [];
-    for (const sample of input) {
-      const deduplicatedSampleMap = new Map<number, number>();
-      for (const qItem of sample) {
-        deduplicatedSampleMap.set(qItem.item.id, (deduplicatedSampleMap.get(qItem.item.id) ?? 0) + qItem.count);
-      }
-      sampleSizes.push(deduplicatedSampleMap.size);
-      for (const [id, count] of deduplicatedSampleMap) {
-        ids.push(id);
-        counts.push(count);
-      }
-    }
-
-    const serializedBatch: SerializedInputBatch = {
-      ids: Int32Array.from(ids),
-      counts: Int32Array.from(counts),
-      sample_sizes: Uint32Array.from(sampleSizes),
-    };
+    const serializedBatch = this.serializeInputBatch(input);
 
     await this.pool.submitMessage({
       type: 'batch',
@@ -85,6 +75,67 @@ class ApotheosisBatchSolver {
       onError(error);
     });
   };
+  public costBatch = async (input: QuantifiedItem[][], target: Item, onSuccess: (costs: Candidate[]) => void, onError: (error: Error) => void): Promise<void> => {
+    const serializedBatch = this.serializeInputBatch(input);
+
+    await this.pool.submitMessage({
+      type: 'cost_batch',
+      input: serializedBatch,
+      target_id: target.id,
+    }, [
+      serializedBatch.ids.buffer,
+      serializedBatch.counts.buffer,
+      serializedBatch.sample_sizes.buffer,
+    ], (response) => {
+      if (response.type !== 'cost_batch_result') {
+        onError(new Error('Unexpected response type from worker'));
+        return;
+      }
+
+      const outputIds = response.output.ids;
+      const outputCounts = response.output.counts;
+      const costs = response.output.costs;
+      const candidates: Candidate[] = [];
+      for (let i = 0; i < outputIds.length; i++) {
+        const item = this.itemMap[outputIds[i]];
+        if (item) {
+          candidates.push({
+            input: input[i],
+            output: { item, count: outputCounts[i] },
+            cost: costs[i],
+          });
+        } else {
+          onError(new Error(`Worker returned unknown item ID: ${outputIds[i]}`));
+          return;
+        }
+      }
+      onSuccess(candidates);
+    }, (error) => {
+      onError(error);
+    });
+  };
+  private serializeInputBatch = (input: QuantifiedItem[][]): SerializedInputBatch => {
+    const ids = [];
+    const counts = [];
+    const sampleSizes = [];
+    for (const sample of input) {
+      const deduplicatedSampleMap = new Map<number, number>();
+      for (const qItem of sample) {
+        deduplicatedSampleMap.set(qItem.item.id, (deduplicatedSampleMap.get(qItem.item.id) ?? 0) + qItem.count);
+      }
+      sampleSizes.push(deduplicatedSampleMap.size);
+      for (const [id, count] of deduplicatedSampleMap) {
+        ids.push(id);
+        counts.push(count);
+      }
+    }
+
+    return {
+      ids: Int32Array.from(ids),
+      counts: Int32Array.from(counts),
+      sample_sizes: Uint32Array.from(sampleSizes),
+    };
+  };
 
   public enumerateFusions = (
     availableItems: Item[],
@@ -95,7 +146,7 @@ class ApotheosisBatchSolver {
     const cancel = () => cancelled = true;
 
     const batchSize = 8192;
-    const aggregator = new EnergyRatioRecipeAggregator();
+    const aggregator = new EnergyRatioEnumerationAggregator();
     const transformer = new CopyOutputTransformer(availableItems);
 
     const sampleQueue: QuantifiedItem[][] = [];
@@ -141,11 +192,119 @@ class ApotheosisBatchSolver {
       }
 
       callback({ recipes: aggregator.getRecipes(), count: recipesChecked, progress: 1, done: true });
-    })().catch(() => {
-      callback({ count: recipesChecked, progress: 1, error: new Error('Failed to enumerate fusions'), done: true });
+    })().catch((e) => {
+      const error = e instanceof Error ? e : new Error(String(e));
+      callback({ count: recipesChecked, progress: 1, error, done: true });
     });
 
     return cancel;
+  };
+
+  public deriveRecipes = (
+    availableItems: Item[],
+    target: Item,
+    maxGenerations: number,
+    callback: (message: ProgressMessage) => void
+  ): () => void => {
+    let cancelled = false;
+    const cancel = () => cancelled = true;
+
+    const populationBatchNum = this.pool.getNumWorkers();
+    const batchSize = 1024 / populationBatchNum;
+    const populationSize = batchSize * populationBatchNum;
+    const elitePopulation = populationSize * 1 / 16;
+    const mutationPopulation = populationSize * 8 / 16;
+    const crossoverPopulation = populationSize * 7 / 16;
+
+    const aggregator = new EnergyRatioDerivationAggregator();
+    const offspringCalculator = new OffspringCalculator(availableItems);
+
+    const aggregateValidRecipes = (candidates: Candidate[]) => {
+      for (const candidate of candidates) {
+        if (candidate.output.item.id === target.id) {
+          aggregator.addRecipe({
+            inputs: candidate.input,
+            output: candidate.output,
+          });
+        }
+      }
+    };
+
+    (async () => {
+      // Initialize population with random samples and compute initial candidates
+      let population: QuantifiedItem[][] = Array.from({ length: populationSize }, () => this.getRandomSample());
+      let candidates = await this.computePopulationCosts(population, target, batchSize);
+      aggregateValidRecipes(candidates); // Aggregate any valid recipes
+
+      for (let generation = 0; generation < maxGenerations; generation++) {
+        if (cancelled) {
+          return;
+        }
+
+        // Sort candidates by increasing cost
+        candidates.sort((a, b) => a.cost - b.cost);
+
+        // Clear population array and repopulate with offspring
+        population = [];
+        for (let i = 0; i < elitePopulation; i++) {
+          population.push(candidates[i].input);
+        }
+        for (let i = 0; i < mutationPopulation; i++) {
+          const parent = this.tournamentSelect(candidates);
+          const offspring = offspringCalculator.getMutation(parent.input);
+          population.push(offspring);
+        }
+        for (let i = 0; i < crossoverPopulation; i++) {
+          const parentA = this.tournamentSelect(candidates);
+          const parentB = this.tournamentSelect(candidates);
+          const offspring = offspringCalculator.getCrossover(parentA.input, parentB.input);
+          population.push(offspring);
+        }
+
+        // Clear candidates array and replace compute new candidates from the new population
+        candidates = await this.computePopulationCosts(population, target, batchSize);
+        aggregateValidRecipes(candidates); // Aggregate any valid recipes
+
+        callback({ recipes: aggregator.getRecipes(), count: (generation + 1) * populationSize, progress: (generation + 1) / maxGenerations });
+      }
+
+      callback({ recipes: aggregator.getRecipes(), count: maxGenerations * populationSize, progress: 1, done: true });
+    })().catch((e) => {
+      const error = e instanceof Error ? e : new Error(String(e));
+      callback({ count: 0, progress: 1, error, done: true });
+    });
+
+    return cancel;
+  };
+  private getRandomSample = (): QuantifiedItem[] => {
+    const numInputs = Math.floor(Math.random() * 5) + 2; // Random sample size between 2 and 6
+    const items = sampleSize(this.itemData, numInputs);
+    return items.map(item => ({ item, count: randomInt(1, item.stack_size + 1) }));
+  };
+  private tournamentSelect = (candidates: Candidate[]): Candidate => {
+    const [candidateA, candidateB] = sampleSize(candidates, 2);
+    return candidateA.cost < candidateB.cost ? candidateA : candidateB;
+  };
+  private computePopulationCosts = async (population: QuantifiedItem[][], target: Item, batchSize: number): Promise<Candidate[]> => {
+    const errors: Error[] = [];
+    const results: Candidate[] = Array.from({ length: population.length }, () => ({ input: population[0], output: { item: target, count: 1 }, cost: Infinity }));
+    const outputCallback = (popIdx: number, candidates: Candidate[]) => {
+      for (let j = 0; j < candidates.length; j++) {
+        results[popIdx + j] = candidates[j];
+      }
+    };
+    const errorCallback = (error: Error) => {
+      errors.push(error);
+    };
+    for (let popIdx = 0; popIdx < population.length; popIdx += batchSize) {
+      const batch = population.slice(popIdx, popIdx + batchSize);
+      void this.costBatch(batch, target, (candidates) => outputCallback(popIdx, candidates), errorCallback);
+      if (errors.length > 0) throw errors[0];
+    }
+    while (await this.pool.hasNextUpdate()) {
+      if (errors.length > 0) throw errors[0];
+    }
+    return results;
   };
 }
 
@@ -212,4 +371,129 @@ class CopyOutputTransformer {
     }
     return [...recipe.inputs, { item: recipe.output.item, count: 1 }];
   }
+}
+
+class OffspringCalculator {
+  private availableItems: Item[];
+  private availableItemMap: Map<number, number>; // item ID to index in availableItemIds
+
+  constructor(availableItems: Item[]) {
+    this.availableItems = availableItems;
+    this.availableItemMap = new Map(this.availableItems.map((item, index) => [item.id, index]));
+  }
+
+  public getMutation = (input: QuantifiedItem[]): QuantifiedItem[] => {
+    const newInput = [...input];
+
+    const mutationType = randomInt(6);
+    if (mutationType === 0) {
+      if (newInput.length <= 2) {
+        this.mutateRandomItem(newInput);
+      } else {
+        this.removeRandomItem(newInput);
+      }
+    } else if (mutationType === 1) {
+      if (newInput.length >= 6) {
+        this.mutateRandomItem(newInput);
+      } else {
+        this.addRandomItem(newInput);
+      }
+    } else if (mutationType === 2) {
+      this.mutateRandomItem(newInput);
+    } else {
+      this.modifyCount(newInput);
+    }
+
+    return newInput;
+  };
+
+  private removeRandomItem = (newInput: QuantifiedItem[]) => {
+    const idxToRemove = randomInt(0, newInput.length);
+    newInput.splice(idxToRemove, 1);
+  };
+
+  private addRandomItem = (newInput: QuantifiedItem[]) => {
+    const usedIdxs = newInput.map(qItem => this.availableItemMap.get(qItem.item.id) ?? -1).filter(idx => idx !== -1);
+    if (usedIdxs.length >= this.availableItems.length) return; // Can't add if all items are already used
+    usedIdxs.sort((a, b) => a - b);
+
+    let idxToAdd = randomInt(0, this.availableItems.length - usedIdxs.length);
+    for (const usedIdx of usedIdxs) {
+      if (idxToAdd >= usedIdx) {
+        idxToAdd++;
+      } else {
+        break;
+      }
+    }
+
+    const itemToAdd = this.availableItems[idxToAdd];
+    newInput.push({ item: itemToAdd, count: randomInt(1, itemToAdd.stack_size + 1) });
+  };
+
+  private mutateRandomItem = (newInput: QuantifiedItem[]) => {
+    this.removeRandomItem(newInput);
+    this.addRandomItem(newInput);
+  };
+
+  private modifyCount = (newInput: QuantifiedItem[]) => {
+    const idxToModify = randomInt(0, newInput.length);
+    const qItem = newInput[idxToModify];
+    const newCount = clamp(qItem.count + sample([-1, 1]), 1, qItem.item.stack_size);
+    newInput[idxToModify] = { ...qItem, count: newCount };
+  };
+
+  public getCrossover = (inputA: QuantifiedItem[], inputB: QuantifiedItem[]): QuantifiedItem[] => {
+    const mapA = new Map<number, QuantifiedItem>();
+    for (const qItem of inputA) {
+      const existing = mapA.get(qItem.item.id);
+      if (existing) {
+        existing.count += qItem.count;
+      } else {
+        mapA.set(qItem.item.id, { ...qItem });
+      }
+    }
+
+    const mapB = new Map<number, QuantifiedItem>();
+    for (const qItem of inputB) {
+      const existing = mapB.get(qItem.item.id);
+      if (existing) {
+        existing.count += qItem.count;
+      } else {
+        mapB.set(qItem.item.id, { ...qItem });
+      }
+    }
+
+    const offspring: QuantifiedItem[] = [];
+    const uniqueCandidates: QuantifiedItem[] = [];
+
+    for (const [id, qItemA] of mapA) {
+      const qItemB = mapB.get(id);
+      if (qItemB) {
+        const minCount = Math.min(qItemA.count, qItemB.count);
+        const maxCount = Math.max(qItemA.count, qItemB.count);
+        offspring.push({
+          item: qItemA.item,
+          count: randomInt(minCount, maxCount + 1),
+        });
+      } else {
+        uniqueCandidates.push({ ...qItemA });
+      }
+    }
+
+    for (const [id, qItemB] of mapB) {
+      if (!mapA.has(id)) {
+        uniqueCandidates.push({ ...qItemB });
+      }
+    }
+
+    const minParentSize = Math.min(mapA.size, mapB.size);
+    const maxParentSize = Math.max(mapA.size, mapB.size);
+    const targetSize = randomInt(minParentSize, maxParentSize + 1);
+    const targetUniqueCount = targetSize - offspring.length;
+    if (targetUniqueCount > 0) {
+      offspring.push(...sampleSize(uniqueCandidates, targetUniqueCount));
+    }
+
+    return offspring;
+  };
 }

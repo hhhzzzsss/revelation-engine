@@ -1,6 +1,7 @@
-import type { Recipe } from '../item/types';
+import type { QuantifiedItem, Recipe } from '../item/types';
+import { compareEnergyRatio } from './util';
 
-export abstract class RecipeAggregator {
+export abstract class EnumerationAggregator {
   protected recipeMap = new Map<number, Recipe>();
 
   protected abstract compareRecipes(recipeA: Recipe, recipeB: Recipe): number;
@@ -12,7 +13,7 @@ export abstract class RecipeAggregator {
       this.recipeMap.set(outputId, recipe);
     } else {
       const comparison = this.compareRecipes(recipe, existingRecipe);
-      if (comparison > 0) {
+      if (comparison < 0) {
         this.recipeMap.set(outputId, recipe);
       }
     }
@@ -23,10 +24,44 @@ export abstract class RecipeAggregator {
   }
 }
 
-export class EnergyRatioRecipeAggregator extends RecipeAggregator {
+export class EnergyRatioEnumerationAggregator extends EnumerationAggregator {
   protected compareRecipes(recipeA: Recipe, recipeB: Recipe): number {
-    const ratioA = recipeA.output.item.essence.energy / recipeA.inputs.reduce((sum, input) => sum + input.item.essence.energy * input.count, 0.0001);
-    const ratioB = recipeB.output.item.essence.energy / recipeB.inputs.reduce((sum, input) => sum + input.item.essence.energy * input.count, 0.0001);
-    return ratioA - ratioB;
+    return -compareEnergyRatio(recipeA, recipeB);
+  }
+}
+
+export abstract class DerivationAggregator {
+  private recipeMap = new Map<string, Recipe>();
+  
+  protected abstract compareRecipes(recipeA: Recipe, recipeB: Recipe): number;
+
+  public addRecipe(recipe: Recipe) {
+    const key = this.getKey(recipe.inputs);
+    const existingRecipe = this.recipeMap.get(key);
+    if (!existingRecipe) {
+      this.recipeMap.set(key, recipe);
+    } else {
+      const comparison = this.compareRecipes(recipe, existingRecipe);
+      if (comparison < 0) {
+        this.recipeMap.set(key, recipe);
+      }
+    }
+  }
+
+  public getRecipes(): Recipe[] {
+    return Array.from(this.recipeMap.values());
+  }
+
+  // Based on the set of input item IDs, ignoring counts.
+  private getKey = (input: QuantifiedItem[]): string => {
+    const idSet = new Set(input.map((qItem) => qItem.item.id));
+    const sortedIds = Array.from(idSet).sort((a, b) => a - b);
+    return sortedIds.map((id) => id.toString(16)).join(',');
+  };
+}
+
+export class EnergyRatioDerivationAggregator extends DerivationAggregator {
+  protected compareRecipes(recipeA: Recipe, recipeB: Recipe): number {
+    return -compareEnergyRatio(recipeA, recipeB);
   }
 }

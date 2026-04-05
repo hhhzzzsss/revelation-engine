@@ -6,7 +6,7 @@ interface MessageMeta {
 
 export type ToWorkerFullMessage = MessageMeta & ToWorkerMessage;
 
-export type ToWorkerMessage = InitializationMessage | BatchMessage;
+export type ToWorkerMessage = InitializationMessage | BatchMessage | CostBatchMessage;
 
 export interface InitializationMessage {
   type: 'initialize';
@@ -19,9 +19,15 @@ export interface BatchMessage {
   input: SerializedInputBatch;
 }
 
+export interface CostBatchMessage {
+  type: 'cost_batch';
+  input: SerializedInputBatch;
+  target_id: number;
+}
+
 export type FromWorkerFullMessage = MessageMeta & FromWorkerMessage;
 
-export type FromWorkerMessage = ReadyMessage | ErrorMessage | BatchResultMessage;
+export type FromWorkerMessage = ReadyMessage | ErrorMessage | BatchResultMessage | CostBatchResultMessage;
 
 export interface ReadyMessage {
   type: 'ready';
@@ -34,7 +40,12 @@ export interface ErrorMessage {
 
 export interface BatchResultMessage {
   type: 'batch_result';
-  output: SerializedOutputBatch;
+  output: SerializedFuseBatchOutput;
+}
+
+export interface CostBatchResultMessage {
+  type: 'cost_batch_result';
+  output: SerializedCostBatchOutput;
 }
 
 export interface SerializedSlot {
@@ -48,7 +59,13 @@ export interface SerializedInputBatch {
   sample_sizes: Uint32Array;
 }
 
-export interface SerializedOutputBatch {
+export interface SerializedFuseBatchOutput {
   ids: Int32Array;
   counts: Int32Array;
+}
+
+export interface SerializedCostBatchOutput {
+  ids: Int32Array;
+  counts: Int32Array;
+  costs: Float64Array;
 }
