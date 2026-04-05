@@ -10,14 +10,14 @@ interface ItemPickerProps {
   initialItem?: Item;
   onSelect?: (item: Item) => void;
   onBlur?: () => void;
-  filter?: (item: Item) => boolean;
+  showUnfuseable?: boolean;
 }
 
 function ItemPicker({
   initialItem,
   onSelect,
   onBlur,
-  filter = () => true,
+  showUnfuseable = true,
 }: ItemPickerProps) {
   const { data: itemData } = useItemData();
 
@@ -35,10 +35,10 @@ function ItemPicker({
   // Filter and sort items based on search term
   const filteredItemData = useMemo(() => {
     return itemData
-      ?.filter(filter)
+      ?.filter((item) => showUnfuseable || item.essence.fuseable)
       ?.filter((item) => itemMatchesSearchTerm(searchTerm, item))
       .toSorted((a, b) => compareItemsBySearchTerm(searchTerm, a, b));
-  }, [itemData, searchTerm, filter]);
+  }, [itemData, searchTerm, showUnfuseable]);
 
   // Virtualizer for item list
   // eslint-disable-next-line react-hooks/incompatible-library

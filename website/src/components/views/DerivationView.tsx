@@ -76,7 +76,7 @@ function DerivationView() {
       <InventoryPicker className="mb-2" items={items} onItemsChange={setItems} />
 
       <h2 className="text-2xl font-pixel mb-2">Target Item</h2>
-      <PickableItem item={targetItem} onItemChange={setTargetItem} />
+      <PickableItem item={targetItem} onItemChange={setTargetItem} showUnfuseable={false} />
 
       <div className="my-4">
         <div className="mb-2 flex items-center space-x-2">

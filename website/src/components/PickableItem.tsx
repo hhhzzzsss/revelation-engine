@@ -9,14 +9,14 @@ interface PickableItemProps {
   className?: string;
   item?: Item;
   onItemChange?: (item?: Item) => void;
-  filter?: (item: Item) => boolean;
+  showUnfuseable?: boolean;
 }
 
 function PickableItem({
   className = '',
   item,
   onItemChange,
-  filter,
+  showUnfuseable = true,
 }: PickableItemProps) {
   const [picking, setPicking] = useState(false);
 
@@ -44,7 +44,7 @@ function PickableItem({
         disabled={!item}
       />
       <div className="absolute top-full z-10">
-        {picking && <ItemPicker initialItem={item} onSelect={handleItemChange} onBlur={onPickerBlur} filter={filter} />}
+        {picking && <ItemPicker initialItem={item} onSelect={handleItemChange} onBlur={onPickerBlur} showUnfuseable={showUnfuseable} />}
       </div>
     </div>
   );
