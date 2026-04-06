@@ -273,7 +273,6 @@ class ApotheosisBatchSolver {
           }
 
           if (generation - subPopLastImprovementGen[subPopIdx] >= 128) {
-            console.log(`Reinitializing subpopulation ${subPopIdx} at generation ${generation} due to lack of improvement`);
             // If no improvement in 64 generations, reinitialize subpopulation with random samples
             for (let i = subPopStart; i < subPopEnd; i++) {
               population.push(getRandomSample());
