@@ -217,7 +217,7 @@ class ApotheosisBatchSolver {
     // const crossoverProportion = 7 / 16;
 
     const aggregator = new QualityHeuristicDerivationAggregator();
-    const offspringCalculator = new OffspringCalculator(availableItems);
+    const offspringCalculator = new OffspringCalculator(availableItems, target);
     
     const getRandomSample = (): QuantifiedItem[] => {
       const numInputs = randomInt(2, Math.min(availableItems.length, 6) + 1);
@@ -290,13 +290,13 @@ class ApotheosisBatchSolver {
             }
             for (let i = 0; i < mutationPopulation; i++) {
               const parent = this.tournamentSelect(subPopCandidates);
-              const offspring = offspringCalculator.getMutation(parent.inputs);
+              const offspring = offspringCalculator.getMutation(parent);
               population.push(offspring);
             }
             for (let i = 0; i < crossoverPopulation; i++) {
               const parentA = this.tournamentSelect(subPopCandidates);
               const parentB = this.tournamentSelect(subPopCandidates);
-              const offspring = offspringCalculator.getCrossover(parentA.inputs, parentB.inputs);
+              const offspring = offspringCalculator.getCrossover(parentA, parentB);
               population.push(offspring);
             }
           }
@@ -413,35 +413,46 @@ class CopyOutputTransformer {
 class OffspringCalculator {
   private availableItems: Item[];
   private availableItemMap: Map<number, number>; // item ID to index in availableItemIds
+  private targetItem: Item;
 
-  constructor(availableItems: Item[]) {
+  constructor(availableItems: Item[], targetItem: Item) {
     this.availableItems = availableItems;
     this.availableItemMap = new Map(this.availableItems.map((item, index) => [item.id, index]));
+    this.targetItem = targetItem;
   }
 
-  public getMutation = (input: QuantifiedItem[]): QuantifiedItem[] => {
-    const newInput = [...input];
+  public getMutation = (candidate: Candidate): QuantifiedItem[] => {
+    const newInputs = [...candidate.inputs];
 
     const mutationType = randomInt(6);
     if (mutationType === 0) {
-      if (newInput.length <= 2) {
-        this.mutateRandomItem(newInput);
+      if (newInputs.length <= 2) {
+        this.mutateRandomItem(newInputs);
       } else {
-        this.removeRandomItem(newInput);
+        this.removeRandomItem(newInputs);
       }
     } else if (mutationType === 1) {
-      if (newInput.length >= 6) {
-        this.mutateRandomItem(newInput);
+      if (newInputs.length >= 6) {
+        this.mutateRandomItem(newInputs);
       } else {
-        this.addRandomItem(newInput);
+        if (
+          randomInt(4) === 0
+          && this.availableItemMap.has(candidate.output.item.id) // Output is available
+          && candidate.output.item.id !== this.targetItem.id // Doesn't already produce target
+          && !newInputs.some(qItem => qItem.item.id === candidate.output.item.id) // Output not already in input
+        ) {
+          this.copyOutput(newInputs, candidate.output.item);
+        } else {
+          this.addRandomItem(newInputs);
+        }
       }
     } else if (mutationType === 2) {
-      this.mutateRandomItem(newInput);
+      this.mutateRandomItem(newInputs);
     } else {
-      this.modifyCount(newInput);
+      this.modifyCount(newInputs);
     }
 
-    return newInput;
+    return newInputs;
   };
 
   private removeRandomItem = (newInput: QuantifiedItem[]) => {
@@ -472,6 +483,11 @@ class OffspringCalculator {
     this.addRandomItem(newInput);
   };
 
+  private copyOutput = (newInput: QuantifiedItem[], output: Item): QuantifiedItem[] => {
+    newInput.push({ item: output, count: 1 });
+    return newInput;
+  };
+
   private modifyCount = (newInput: QuantifiedItem[]) => {
     const idxToModify = randomInt(0, newInput.length);
     const qItem = newInput[idxToModify];
@@ -479,9 +495,9 @@ class OffspringCalculator {
     newInput[idxToModify] = { ...qItem, count: newCount };
   };
 
-  public getCrossover = (inputA: QuantifiedItem[], inputB: QuantifiedItem[]): QuantifiedItem[] => {
+  public getCrossover = (candidateA: Candidate, candidateB: Candidate): QuantifiedItem[] => {
     const mapA = new Map<number, QuantifiedItem>();
-    for (const qItem of inputA) {
+    for (const qItem of candidateA.inputs) {
       const existing = mapA.get(qItem.item.id);
       if (existing) {
         existing.count += qItem.count;
@@ -491,7 +507,7 @@ class OffspringCalculator {
     }
 
     const mapB = new Map<number, QuantifiedItem>();
-    for (const qItem of inputB) {
+    for (const qItem of candidateB.inputs) {
       const existing = mapB.get(qItem.item.id);
       if (existing) {
         existing.count += qItem.count;
