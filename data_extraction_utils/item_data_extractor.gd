@@ -75,7 +75,18 @@ func item_to_dict(item: Item) -> Dictionary:
     if item is Block:
         var block: Block = item as Block
         item_dict["block_data"] = block_data_to_dict(block)
-        item_dict["is_block"] = true
+        
+    if item is Tool:
+        var tool: Tool = item as Tool
+        item_dict["tool_data"] = tool_data_to_dict(tool)
+    
+    if item is Equipment:
+        var equipment: Equipment = item as Equipment
+        item_dict["equipment_data"] = equipment_data_to_dict(equipment)
+    
+    if item is Food:
+        var food: Food = item as Food
+        item_dict["food_data"] = food_data_to_dict(food)
         
     return item_dict
 
@@ -128,6 +139,45 @@ func block_data_to_dict(b: Block) -> Dictionary:
     d["axe_required"] = b.axe_required
     d["break_time"] = b.break_time
         
+    return d
+    
+func tool_data_to_dict(t: Tool):
+    var d: Dictionary = {}
+    
+    d["attack_increase"] = t.attack_increase
+    d["axe_boost"] = t.axe_boost
+    d["pickaxe_boost"] = t.pickaxe_boost
+    d["cristella_boost"] = t.cristella_boost
+    d["slime_boost"] = t.slime_boost
+    d["plant_boost"] = t.plant_boost
+    d["meat_boost"] = t.meat_boost
+    d["shovel_boost"] = t.shovel_boost
+    d["break_speed_increase"] = t.break_speed_increase
+    d["fire_aspect"] = t.fire_aspect
+    
+    return d
+    
+func equipment_data_to_dict(e: Equipment):
+    var d: Dictionary = {}
+    
+    d["max_health_increase"] = e.max_health_increase;
+    d["attack_increase"] = e.attack_increase
+    d["max_air_increase"] = e.max_air_increase
+    d["water_speed_increase"] = e.water_speed_increase
+    d["jump_increase"] = e.jump_increase
+    d["fall_damage_increase"] = e.fall_damage_increase
+    d["reach_increase"] = e.reach_increase
+    d["weight_increase"] = e.weight_increase
+    d["slip_increase"] = e.slip_increase
+    d["speed_increase"] = e.speed_increase
+    
+    return d
+
+func food_data_to_dict(f: Food):
+    var d: Dictionary = {}
+    
+    d["recovery_amount"] = f.recovery_amount
+    
     return d
 
 func drop_loot_to_dict(l: Loot) -> Dictionary:

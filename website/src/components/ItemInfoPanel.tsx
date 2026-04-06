@@ -41,7 +41,21 @@ function ItemInfoPanel() {
     'shovel boost': item.tool_data.shovel_boost,
     'break speed increase': round(item.tool_data.break_speed_increase),
     'fire aspect': item.tool_data.fire_aspect
-
+  } : undefined;
+  const equipmentData = item?.equipment_data ? {
+    'hp': round(item.equipment_data.max_health_increase),
+    'air': round(item.equipment_data.max_air_increase),
+    'swim': round(item.equipment_data.water_speed_increase),
+    'atk': round(item.equipment_data.attack_increase),
+    'jump': round(item.equipment_data.jump_increase),
+    'reach': round(item.equipment_data.reach_increase),
+    'fall': round(item.equipment_data.fall_damage_increase),
+    'weight': round(item.equipment_data.weight_increase),
+    'slip': round(item.equipment_data.slip_increase),
+    'speed': round(item.equipment_data.speed_increase),
+  } : undefined;
+  const foodData = item?.food_data ? {
+    'recovery amount': round(item.food_data.recovery_amount),
   } : undefined;
 
   return (
@@ -70,6 +84,8 @@ function ItemInfoPanel() {
             <ListInfo title="Output Tags" list={outputTags} />
             {blockData && <DictInfo title="Block Data" dict={blockData} />}
             {toolData && <DictInfo title="Tool Data" dict={toolData} />}
+            {equipmentData && <StatsInfo title="Equipment Data" dict={equipmentData} />}
+            {foodData && <DictInfo title="Food Data" dict={foodData} />}
           </div>
         )}
       </section>
@@ -117,6 +133,27 @@ function ListInfo({title, list=[]}: {title: string, list?: string[]}) {
     </div>
   );
 }
+
+function StatsInfo({title, dict}: {title: string, dict: Record<string, number>}) {
+  return (
+    <div>
+      <h3 className="font-pixel text-lg/5">{title}</h3>
+      <ul className="pl-4">
+        {Object.entries(dict).map(([key, value]) => (
+          <li key={key} className="font-pixel text-sm/5 text-fg-600">
+            {`${key}: `}<span className={getStatColor(value)}>{`${getStatString(value)}`}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+const getStatColor = (value: number): string => {
+  return value > 0 ? 'text-primary-600' : value < 0 ? 'text-severe-600' : 'text-fg-600';
+};
+const getStatString = (value: number): string => {
+  return `${value >= 0 ? '+' : ''}${value}`;
+};
 
 const round = (n: number) => {
   return parseFloat(n.toFixed(3));

@@ -23,6 +23,8 @@ export interface Item {
   essence: Essence;
   block_data?: BlockData;
   tool_data?: ToolData;
+  equipment_data?: EquipmentData;
+  food_data?: FoodData;
 }
 
 export type Color = [number, number, number];
@@ -76,4 +78,21 @@ export interface ToolData {
   shovel_boost: boolean;
   break_speed_increase: number;
   fire_aspect: boolean
+}
+
+export interface EquipmentData {
+  attack_increase: number;
+  fall_damage_increase: number;
+  jump_increase: number;
+  max_air_increase: number;
+  max_health_increase: number;
+  reach_increase: number;
+  slip_increase: number;
+  speed_increase: number;
+  water_speed_increase: number;
+  weight_increase: number;
+}
+
+export interface FoodData {
+  recovery_amount: number;
 }

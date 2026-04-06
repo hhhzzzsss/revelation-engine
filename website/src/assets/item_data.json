@@ -17740,6 +17740,9 @@
                 "meat"
             ]
         },
+        "food_data": {
+            "recovery_amount": 4
+        },
         "id": 741113042,
         "internal": false,
         "internal_name": "raw sheep flesh",
@@ -17778,6 +17781,9 @@
                 "meat",
                 "fire"
             ]
+        },
+        "food_data": {
+            "recovery_amount": 15
         },
         "id": 741113043,
         "internal": false,
@@ -17818,6 +17824,9 @@
                 "fire"
             ]
         },
+        "food_data": {
+            "recovery_amount": 8
+        },
         "id": 741113044,
         "internal": false,
         "internal_name": "cooked sheep flesh",
@@ -17856,6 +17865,9 @@
                 "plant",
                 "meat"
             ]
+        },
+        "food_data": {
+            "recovery_amount": 3
         },
         "id": 741115357,
         "internal": false,
@@ -17897,6 +17909,9 @@
                 "fire"
             ]
         },
+        "food_data": {
+            "recovery_amount": 6
+        },
         "id": 741115358,
         "internal": false,
         "internal_name": "cooked bubblebear flesh",
@@ -17935,6 +17950,9 @@
                 "plant",
                 "meat"
             ]
+        },
+        "food_data": {
+            "recovery_amount": 3
         },
         "id": 741115359,
         "internal": false,
@@ -17976,6 +17994,9 @@
                 "fire"
             ]
         },
+        "food_data": {
+            "recovery_amount": 6
+        },
         "id": 741115360,
         "internal": false,
         "internal_name": "cooked bubblebear flesh fungus",
@@ -18014,6 +18035,9 @@
                 "meat",
                 "water"
             ]
+        },
+        "food_data": {
+            "recovery_amount": 2
         },
         "id": 741115365,
         "internal": false,
@@ -18055,6 +18079,9 @@
                 "fire"
             ]
         },
+        "food_data": {
+            "recovery_amount": 3
+        },
         "id": 741115366,
         "internal": false,
         "internal_name": "cooked fish corpse",
@@ -18093,6 +18120,9 @@
                 "fluff",
                 "meat"
             ]
+        },
+        "food_data": {
+            "recovery_amount": 3
         },
         "id": 741115373,
         "internal": false,
@@ -18134,6 +18164,9 @@
                 "fire"
             ]
         },
+        "food_data": {
+            "recovery_amount": 6
+        },
         "id": 741115374,
         "internal": false,
         "internal_name": "cooked noot flesh",
@@ -18171,6 +18204,9 @@
             "tags": [
                 "meat"
             ]
+        },
+        "food_data": {
+            "recovery_amount": 8
         },
         "id": 741236933,
         "internal": false,
@@ -18211,6 +18247,9 @@
                 "water"
             ]
         },
+        "food_data": {
+            "recovery_amount": 2
+        },
         "id": 824288112,
         "internal": false,
         "internal_name": "melon slice",
@@ -18249,6 +18288,9 @@
                 "plant",
                 "ball"
             ]
+        },
+        "food_data": {
+            "recovery_amount": 1
         },
         "id": 824288113,
         "internal": false,
@@ -18289,6 +18331,9 @@
                 "magnetite"
             ]
         },
+        "food_data": {
+            "recovery_amount": 1
+        },
         "id": 824288114,
         "internal": false,
         "internal_name": "oppleberry slice",
@@ -18327,6 +18372,9 @@
                 "plant",
                 "ball"
             ]
+        },
+        "food_data": {
+            "recovery_amount": 3
         },
         "id": 824288121,
         "internal": false,
@@ -18367,6 +18415,9 @@
                 "ball",
                 "magic"
             ]
+        },
+        "food_data": {
+            "recovery_amount": 9
         },
         "id": 824288122,
         "internal": false,
@@ -18409,6 +18460,9 @@
                 "water"
             ]
         },
+        "food_data": {
+            "recovery_amount": 3
+        },
         "id": 824288126,
         "internal": false,
         "internal_name": "popsicle",
@@ -18446,6 +18500,9 @@
             "tags": [
                 "ring"
             ]
+        },
+        "food_data": {
+            "recovery_amount": 3
         },
         "id": 824288127,
         "internal": false,
@@ -18485,6 +18542,9 @@
                 "plant"
             ]
         },
+        "food_data": {
+            "recovery_amount": 2
+        },
         "id": 824288128,
         "internal": false,
         "internal_name": "tofu",
@@ -18522,6 +18582,9 @@
             "tags": [
                 "stick"
             ]
+        },
+        "food_data": {
+            "recovery_amount": 4
         },
         "id": 824288129,
         "internal": false,
@@ -18562,6 +18625,9 @@
                 "fire"
             ]
         },
+        "food_data": {
+            "recovery_amount": 2
+        },
         "id": 824288158,
         "internal": false,
         "internal_name": "pepper",
@@ -18601,6 +18667,9 @@
                 "water"
             ]
         },
+        "food_data": {
+            "recovery_amount": 3
+        },
         "id": 824288170,
         "internal": false,
         "internal_name": "juice",
@@ -18614,6 +18683,18 @@
             0.7215032577514648
         ],
         "display_name": "omni hat",
+        "equipment_data": {
+            "attack_increase": 0,
+            "fall_damage_increase": 0.0,
+            "jump_increase": 0.0,
+            "max_air_increase": 0,
+            "max_health_increase": 0,
+            "reach_increase": 0,
+            "slip_increase": 0.0,
+            "speed_increase": 0.0,
+            "water_speed_increase": 0.0,
+            "weight_increase": 0.0
+        },
         "essence": {
             "bias": 0.0,
             "energy": 0.35,
@@ -18653,6 +18734,18 @@
             0.19694656133651733
         ],
         "display_name": "ribbon",
+        "equipment_data": {
+            "attack_increase": 0,
+            "fall_damage_increase": 0.0,
+            "jump_increase": 0.0,
+            "max_air_increase": 0,
+            "max_health_increase": 1,
+            "reach_increase": 0,
+            "slip_increase": 0.0,
+            "speed_increase": 0.0,
+            "water_speed_increase": 0.0,
+            "weight_increase": 0.0
+        },
         "essence": {
             "bias": 0.0,
             "energy": 0.35,
@@ -18692,6 +18785,18 @@
             0.49480563402175903
         ],
         "display_name": "vocal string",
+        "equipment_data": {
+            "attack_increase": 0,
+            "fall_damage_increase": 0.0,
+            "jump_increase": 0.0,
+            "max_air_increase": 0,
+            "max_health_increase": 1,
+            "reach_increase": 0,
+            "slip_increase": 0.0,
+            "speed_increase": 0.0,
+            "water_speed_increase": 0.0,
+            "weight_increase": 0.0
+        },
         "essence": {
             "bias": 0.0,
             "energy": 0.35,
@@ -19422,6 +19527,18 @@
             0.2685771882534027
         ],
         "display_name": "choker",
+        "equipment_data": {
+            "attack_increase": 1,
+            "fall_damage_increase": 0.0,
+            "jump_increase": 0.0,
+            "max_air_increase": 0,
+            "max_health_increase": 0,
+            "reach_increase": 0,
+            "slip_increase": 0.0,
+            "speed_increase": 0.0,
+            "water_speed_increase": 0.0,
+            "weight_increase": 0.0
+        },
         "essence": {
             "bias": 0.0,
             "energy": 0.45,
@@ -19460,6 +19577,18 @@
             0.9721479415893555
         ],
         "display_name": "bunny ears",
+        "equipment_data": {
+            "attack_increase": 0,
+            "fall_damage_increase": 0.0,
+            "jump_increase": 0.35,
+            "max_air_increase": 0,
+            "max_health_increase": 0,
+            "reach_increase": 0,
+            "slip_increase": 0.0,
+            "speed_increase": 0.0,
+            "water_speed_increase": 0.0,
+            "weight_increase": 0.0
+        },
         "essence": {
             "bias": 0.0,
             "energy": 0.45,
@@ -19496,6 +19625,18 @@
             0.30619269609451294
         ],
         "display_name": "snorkel",
+        "equipment_data": {
+            "attack_increase": 0,
+            "fall_damage_increase": 0.0,
+            "jump_increase": 0.0,
+            "max_air_increase": 20,
+            "max_health_increase": 0,
+            "reach_increase": 0,
+            "slip_increase": 0.0,
+            "speed_increase": 0.0,
+            "water_speed_increase": 0.0,
+            "weight_increase": 0.0
+        },
         "essence": {
             "bias": 0.0,
             "energy": 0.45,
@@ -19535,6 +19676,18 @@
             0.5024276375770569
         ],
         "display_name": "flippers",
+        "equipment_data": {
+            "attack_increase": 0,
+            "fall_damage_increase": 0.0,
+            "jump_increase": 0.0,
+            "max_air_increase": 0,
+            "max_health_increase": 0,
+            "reach_increase": 0,
+            "slip_increase": 0.0,
+            "speed_increase": 0.0,
+            "water_speed_increase": 0.5,
+            "weight_increase": 0.0
+        },
         "essence": {
             "bias": 0.0,
             "energy": 0.45,
@@ -19574,6 +19727,18 @@
             0.47700533270835876
         ],
         "display_name": "arm extension",
+        "equipment_data": {
+            "attack_increase": 0,
+            "fall_damage_increase": 0.0,
+            "jump_increase": 0.0,
+            "max_air_increase": 0,
+            "max_health_increase": 0,
+            "reach_increase": 1,
+            "slip_increase": 0.0,
+            "speed_increase": 0.0,
+            "water_speed_increase": 0.0,
+            "weight_increase": 0.0
+        },
         "essence": {
             "bias": -0.2,
             "energy": 0.45,
@@ -19614,6 +19779,18 @@
             0.46743035316467285
         ],
         "display_name": "sponge shoes",
+        "equipment_data": {
+            "attack_increase": 0,
+            "fall_damage_increase": -0.5,
+            "jump_increase": 0.0,
+            "max_air_increase": 0,
+            "max_health_increase": 0,
+            "reach_increase": 0,
+            "slip_increase": 0.0,
+            "speed_increase": 0.0,
+            "water_speed_increase": 0.0,
+            "weight_increase": 0.0
+        },
         "essence": {
             "bias": 0.0,
             "energy": 0.45,
@@ -19653,6 +19830,18 @@
             0.7208248972892761
         ],
         "display_name": "ice shoes",
+        "equipment_data": {
+            "attack_increase": 0,
+            "fall_damage_increase": 0.0,
+            "jump_increase": 0.0,
+            "max_air_increase": 0,
+            "max_health_increase": 0,
+            "reach_increase": 0,
+            "slip_increase": 2.0,
+            "speed_increase": 0.1,
+            "water_speed_increase": 0.0,
+            "weight_increase": 0.0
+        },
         "essence": {
             "bias": 0.0,
             "energy": 0.4,
@@ -19692,6 +19881,18 @@
             0.5642305612564087
         ],
         "display_name": "berry earring",
+        "equipment_data": {
+            "attack_increase": 0,
+            "fall_damage_increase": 0.0,
+            "jump_increase": 0.0,
+            "max_air_increase": 0,
+            "max_health_increase": 2,
+            "reach_increase": 0,
+            "slip_increase": 0.0,
+            "speed_increase": 0.0,
+            "water_speed_increase": 0.0,
+            "weight_increase": 0.0
+        },
         "essence": {
             "bias": 0.0,
             "energy": 0.35,
@@ -19731,6 +19932,18 @@
             0.09847494214773178
         ],
         "display_name": "hair clip",
+        "equipment_data": {
+            "attack_increase": 0,
+            "fall_damage_increase": 0.0,
+            "jump_increase": 0.0,
+            "max_air_increase": 0,
+            "max_health_increase": 1,
+            "reach_increase": 0,
+            "slip_increase": 0.0,
+            "speed_increase": 0.0,
+            "water_speed_increase": 0.0,
+            "weight_increase": 0.0
+        },
         "essence": {
             "bias": 0.0,
             "energy": 0.3,
@@ -19770,6 +19983,18 @@
             0.24619242548942566
         ],
         "display_name": "thorn talisman",
+        "equipment_data": {
+            "attack_increase": 1,
+            "fall_damage_increase": 0.0,
+            "jump_increase": 0.0,
+            "max_air_increase": 0,
+            "max_health_increase": 6,
+            "reach_increase": 0,
+            "slip_increase": 0.0,
+            "speed_increase": 0.0,
+            "water_speed_increase": 0.0,
+            "weight_increase": 0.0
+        },
         "essence": {
             "bias": 0.0,
             "energy": 0.7,
@@ -19808,6 +20033,18 @@
             0.6685073971748352
         ],
         "display_name": "string bracelet",
+        "equipment_data": {
+            "attack_increase": 0,
+            "fall_damage_increase": 0.0,
+            "jump_increase": 0.0,
+            "max_air_increase": 0,
+            "max_health_increase": 1,
+            "reach_increase": 0,
+            "slip_increase": 0.0,
+            "speed_increase": 0.0,
+            "water_speed_increase": 0.0,
+            "weight_increase": 0.0
+        },
         "essence": {
             "bias": 0.1,
             "energy": 0.3,
@@ -19847,6 +20084,18 @@
             0.33263617753982544
         ],
         "display_name": "bubble hat",
+        "equipment_data": {
+            "attack_increase": 0,
+            "fall_damage_increase": 0.0,
+            "jump_increase": 0.0,
+            "max_air_increase": 3,
+            "max_health_increase": 3,
+            "reach_increase": 0,
+            "slip_increase": 0.0,
+            "speed_increase": 0.0,
+            "water_speed_increase": 0.0,
+            "weight_increase": 0.0
+        },
         "essence": {
             "bias": 0.0,
             "energy": 0.35,
@@ -19887,6 +20136,18 @@
             0.5097326040267944
         ],
         "display_name": "bead bracelet",
+        "equipment_data": {
+            "attack_increase": 0,
+            "fall_damage_increase": 0.0,
+            "jump_increase": 0.0,
+            "max_air_increase": 0,
+            "max_health_increase": 2,
+            "reach_increase": 0,
+            "slip_increase": 0.0,
+            "speed_increase": 0.0,
+            "water_speed_increase": 0.0,
+            "weight_increase": 0.0
+        },
         "essence": {
             "bias": 0.1,
             "energy": 0.35,
@@ -19926,6 +20187,18 @@
             0.3655773401260376
         ],
         "display_name": "locket",
+        "equipment_data": {
+            "attack_increase": 0,
+            "fall_damage_increase": 0.0,
+            "jump_increase": 0.0,
+            "max_air_increase": 0,
+            "max_health_increase": 7,
+            "reach_increase": 0,
+            "slip_increase": 0.0,
+            "speed_increase": 0.0,
+            "water_speed_increase": 0.0,
+            "weight_increase": 0.0
+        },
         "essence": {
             "bias": 0.0,
             "energy": 0.45,
@@ -19965,6 +20238,18 @@
             0.5898910760879517
         ],
         "display_name": "dybbuk's necklace",
+        "equipment_data": {
+            "attack_increase": 0,
+            "fall_damage_increase": 0.0,
+            "jump_increase": 0.0,
+            "max_air_increase": 0,
+            "max_health_increase": 0,
+            "reach_increase": 0,
+            "slip_increase": 0.0,
+            "speed_increase": 0.0,
+            "water_speed_increase": 0.0,
+            "weight_increase": 0.0
+        },
         "essence": {
             "bias": 0.0,
             "energy": 0.25,
@@ -20005,6 +20290,18 @@
             0.573495626449585
         ],
         "display_name": "bug ring",
+        "equipment_data": {
+            "attack_increase": 0,
+            "fall_damage_increase": 0.0,
+            "jump_increase": 0.0,
+            "max_air_increase": 0,
+            "max_health_increase": 0,
+            "reach_increase": 0,
+            "slip_increase": 0.0,
+            "speed_increase": 0.04,
+            "water_speed_increase": 0.0,
+            "weight_increase": 0.0
+        },
         "essence": {
             "bias": 0.0,
             "energy": 0.45,
@@ -20046,6 +20343,18 @@
             0.46100711822509766
         ],
         "display_name": "serpent ring",
+        "equipment_data": {
+            "attack_increase": 0,
+            "fall_damage_increase": 0.0,
+            "jump_increase": 0.0,
+            "max_air_increase": 0,
+            "max_health_increase": 0,
+            "reach_increase": 0,
+            "slip_increase": 1.0,
+            "speed_increase": 0.0,
+            "water_speed_increase": 0.0,
+            "weight_increase": 0.0
+        },
         "essence": {
             "bias": 0.0,
             "energy": 0.45,
@@ -20087,6 +20396,18 @@
             0.18425196409225464
         ],
         "display_name": "heavy boots",
+        "equipment_data": {
+            "attack_increase": 0,
+            "fall_damage_increase": 0.0,
+            "jump_increase": 0.0,
+            "max_air_increase": 0,
+            "max_health_increase": 2,
+            "reach_increase": 0,
+            "slip_increase": 0.0,
+            "speed_increase": 0.0,
+            "water_speed_increase": 0.0,
+            "weight_increase": 7.0
+        },
         "essence": {
             "bias": 0.0,
             "energy": 0.45,
@@ -20126,6 +20447,18 @@
             0.1780853569507599
         ],
         "display_name": "golden boots",
+        "equipment_data": {
+            "attack_increase": 0,
+            "fall_damage_increase": 0.0,
+            "jump_increase": 0.0,
+            "max_air_increase": 0,
+            "max_health_increase": 4,
+            "reach_increase": 0,
+            "slip_increase": 0.0,
+            "speed_increase": 0.0,
+            "water_speed_increase": 0.0,
+            "weight_increase": 13.0
+        },
         "essence": {
             "bias": 0.0,
             "energy": 0.6,
@@ -20166,6 +20499,18 @@
             0.7944947481155396
         ],
         "display_name": "squirrel ring",
+        "equipment_data": {
+            "attack_increase": 0,
+            "fall_damage_increase": 0.0,
+            "jump_increase": 0.175,
+            "max_air_increase": 0,
+            "max_health_increase": 0,
+            "reach_increase": 0,
+            "slip_increase": 0.0,
+            "speed_increase": 0.0,
+            "water_speed_increase": 0.0,
+            "weight_increase": 0.0
+        },
         "essence": {
             "bias": 0.0,
             "energy": 0.45,
@@ -20207,6 +20552,18 @@
             0.5486630797386169
         ],
         "display_name": "purity ring",
+        "equipment_data": {
+            "attack_increase": 0,
+            "fall_damage_increase": 0.0,
+            "jump_increase": 0.0,
+            "max_air_increase": 0,
+            "max_health_increase": 4,
+            "reach_increase": 0,
+            "slip_increase": 0.0,
+            "speed_increase": 0.0,
+            "water_speed_increase": 0.0,
+            "weight_increase": 0.0
+        },
         "essence": {
             "bias": 0.0,
             "energy": 0.45,
@@ -20246,6 +20603,18 @@
             0.42397215962409973
         ],
         "display_name": "love ring",
+        "equipment_data": {
+            "attack_increase": 0,
+            "fall_damage_increase": 0.0,
+            "jump_increase": 0.0,
+            "max_air_increase": 0,
+            "max_health_increase": 5,
+            "reach_increase": 0,
+            "slip_increase": 0.0,
+            "speed_increase": 0.0,
+            "water_speed_increase": 0.0,
+            "weight_increase": 0.0
+        },
         "essence": {
             "bias": 0.0,
             "energy": 0.45,
@@ -20285,6 +20654,18 @@
             0.8648567199707031
         ],
         "display_name": "flower earring",
+        "equipment_data": {
+            "attack_increase": 0,
+            "fall_damage_increase": 0.0,
+            "jump_increase": 0.0,
+            "max_air_increase": 0,
+            "max_health_increase": 2,
+            "reach_increase": 0,
+            "slip_increase": 0.0,
+            "speed_increase": 0.0,
+            "water_speed_increase": 0.0,
+            "weight_increase": 0.0
+        },
         "essence": {
             "bias": 0.0,
             "energy": 0.35,
@@ -20325,6 +20706,18 @@
             0.47843137383461
         ],
         "display_name": "duck earring",
+        "equipment_data": {
+            "attack_increase": 0,
+            "fall_damage_increase": 0.0,
+            "jump_increase": 0.0,
+            "max_air_increase": 5,
+            "max_health_increase": 1,
+            "reach_increase": 0,
+            "slip_increase": 0.0,
+            "speed_increase": 0.0,
+            "water_speed_increase": 0.0,
+            "weight_increase": 0.0
+        },
         "essence": {
             "bias": 0.0,
             "energy": 0.35,
@@ -20363,6 +20756,18 @@
             0.552692174911499
         ],
         "display_name": "duck bracelet",
+        "equipment_data": {
+            "attack_increase": 0,
+            "fall_damage_increase": 0.0,
+            "jump_increase": 0.0,
+            "max_air_increase": 5,
+            "max_health_increase": 2,
+            "reach_increase": 0,
+            "slip_increase": 0.0,
+            "speed_increase": 0.0,
+            "water_speed_increase": 0.0,
+            "weight_increase": 0.0
+        },
         "essence": {
             "bias": 0.1,
             "energy": 0.35,
