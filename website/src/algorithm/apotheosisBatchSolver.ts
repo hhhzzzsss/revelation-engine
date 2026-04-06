@@ -183,7 +183,7 @@ class ApotheosisBatchSolver {
         }
       }
 
-      while (await this.pool.hasNextUpdate()) {
+      while (sampleQueue.length > 0 || await this.pool.hasNextUpdate()) {
         if (sampleQueue.length > 0) {
           await processBatch();
           callback({ recipes: aggregator.getRecipes(), count: recipesChecked, progress: 1 });
