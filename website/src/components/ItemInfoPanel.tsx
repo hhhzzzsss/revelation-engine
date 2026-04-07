@@ -19,6 +19,7 @@ function ItemInfoPanel() {
   const outputTags = item?.essence.output_tags.toSorted();
   const blockData = item?.block_data ? {
     'unbreakable': item.block_data.unbreakable,
+    'griefable': item.block_data.griefable,
     'flammability': round(item.block_data.flammability),
     'sustain fire': item.block_data.sustain_fire,
     'pickaxe affinity': item.block_data.pickaxe_affinity,
