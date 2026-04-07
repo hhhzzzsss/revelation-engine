@@ -480,7 +480,9 @@ class OffspringCalculator {
     }
 
     const itemToAdd = this.availableItems[idxToAdd];
-    newInput.push({ item: itemToAdd, count: randomInt(1, itemToAdd.stack_size + 1) });
+    const squaredRandom = Math.random() ** 2; // Bias towards lower counts
+    const count = Math.floor(squaredRandom * itemToAdd.stack_size) + 1;
+    newInput.push({ item: itemToAdd, count: count });
   };
 
   private mutateRandomItem = (newInput: QuantifiedItem[]) => {
