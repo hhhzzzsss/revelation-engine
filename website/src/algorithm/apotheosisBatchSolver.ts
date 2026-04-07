@@ -1,6 +1,6 @@
 import type { SerializedInputBatch } from '../worker/types';
 import type { FuserParameters, Item, QuantifiedItem, Recipe } from '../item/types';
-import { QualityHeuristicDerivationAggregator, QualityHeuristicEnumerationAggregator } from './recipeAggregator';
+import { Aggregator, CompositeAggregator, InputCountDerivationAggregator, InputCountEnumerationAggregator, QualityHeuristicDerivationAggregator, QualityHeuristicEnumerationAggregator } from './recipeAggregator';
 import PriorityQueue from './priorityQueue';
 import WorkerPool from './workerPool';
 import { clamp, randomInt, sample, sampleSize } from 'es-toolkit';
@@ -16,7 +16,7 @@ export const getApotheosisBatchSolver = (fuserParams: FuserParameters, itemData:
 };
 
 export interface ProgressMessage {
-  recipes?: Recipe[];
+  aggregator?: Aggregator;
   progress: number; // value between 0 and 1
   count: number;
   error?: Error;
@@ -145,7 +145,10 @@ class ApotheosisBatchSolver {
     const cancel = () => cancelled = true;
 
     const batchSize = 8192;
-    const aggregator = new QualityHeuristicEnumerationAggregator();
+    const aggregator = new CompositeAggregator(
+      new QualityHeuristicEnumerationAggregator(),
+      new InputCountEnumerationAggregator(),
+    );
     const transformer = new CopyOutputTransformer(availableItems);
 
     const sampleQueue: QuantifiedItem[][] = [];
@@ -179,18 +182,18 @@ class ApotheosisBatchSolver {
         sampleQueue.push(input);
         while (sampleQueue.length >= batchSize) {
           await processBatch();
-          callback({ recipes: aggregator.getRecipes(), count: recipesChecked, progress });
+          callback({ aggregator, count: recipesChecked, progress });
         }
       }
 
       while (sampleQueue.length > 0 || await this.pool.hasNextUpdate()) {
         if (sampleQueue.length > 0) {
           await processBatch();
-          callback({ recipes: aggregator.getRecipes(), count: recipesChecked, progress: 1 });
+          callback({ aggregator, count: recipesChecked, progress: 1 });
         }
       }
 
-      callback({ recipes: aggregator.getRecipes(), count: recipesChecked, progress: 1, done: true });
+      callback({ aggregator, count: recipesChecked, progress: 1, done: true });
     })().catch((e) => {
       const error = e instanceof Error ? e : new Error(String(e));
       callback({ count: recipesChecked, progress: 1, error, done: true });
@@ -216,7 +219,10 @@ class ApotheosisBatchSolver {
     const mutationProportion = 8 / 16;
     // const crossoverProportion = 7 / 16;
 
-    const aggregator = new QualityHeuristicDerivationAggregator();
+    const aggregator = new CompositeAggregator(
+      new QualityHeuristicDerivationAggregator({}),
+      new InputCountDerivationAggregator({ maxResults: 32 }),
+    );
     const offspringCalculator = new OffspringCalculator(availableItems, target);
     
     const getRandomSample = (): QuantifiedItem[] => {
@@ -306,10 +312,10 @@ class ApotheosisBatchSolver {
         subtractEnergyRatioFromValidRecipes(candidates);
         aggregateValidRecipes(candidates); // Aggregate any valid recipes
 
-        callback({ recipes: aggregator.getRecipes(), count: (generation + 1) * populationSize, progress: (generation + 1) / maxGenerations });
+        callback({ aggregator, count: (generation + 1) * populationSize, progress: (generation + 1) / maxGenerations });
       }
 
-      callback({ recipes: aggregator.getRecipes(), count: maxGenerations * populationSize, progress: 1, done: true });
+      callback({ aggregator, count: maxGenerations * populationSize, progress: 1, done: true });
     })().catch((e) => {
       const error = e instanceof Error ? e : new Error(String(e));
       callback({ count: 0, progress: 1, error, done: true });

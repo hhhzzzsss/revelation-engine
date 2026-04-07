@@ -1,7 +1,37 @@
 import type { QuantifiedItem, Recipe } from '../item/types';
-import { compareQualityHeuristic } from './util';
+import { compareInputCount, compareInputEnergy, compareQualityHeuristic } from './util';
 
-export abstract class EnumerationAggregator {
+export abstract class Aggregator {
+  public abstract addRecipe(recipe: Recipe): void;
+  public abstract getRecipes(): Recipe[];
+}
+
+export class CompositeAggregator extends Aggregator {
+  private aggregators: Aggregator[];
+
+  constructor(...aggregators: Aggregator[]) {
+    super();
+    this.aggregators = aggregators;
+  }
+
+  public addRecipe(recipe: Recipe) {
+    for (const aggregator of this.aggregators) {
+      aggregator.addRecipe(recipe);
+    }
+  }
+
+  public getRecipes(): Recipe[] {
+    const recipeSet = new Set<Recipe>();
+    for (const aggregator of this.aggregators) {
+      for (const recipe of aggregator.getRecipes()) {
+        recipeSet.add(recipe);
+      }
+    }
+    return Array.from(recipeSet);
+  }
+}
+
+export abstract class EnumerationAggregator extends Aggregator {
   protected recipeMap = new Map<number, Recipe>();
 
   protected abstract compareRecipes(recipeA: Recipe, recipeB: Recipe): number;
@@ -30,7 +60,13 @@ export class QualityHeuristicEnumerationAggregator extends EnumerationAggregator
   }
 }
 
-export abstract class DerivationAggregator {
+export class InputCountEnumerationAggregator extends EnumerationAggregator {
+  protected compareRecipes(recipeA: Recipe, recipeB: Recipe): number {
+    return compareInputCount(recipeA, recipeB) || compareInputEnergy(recipeA, recipeB);
+  }
+}
+
+export abstract class DerivationAggregator extends Aggregator {
   private maxResults: number;
   private recipeMap = new Map<string, Recipe>();
   private worstKey: string | null = null;
@@ -39,7 +75,8 @@ export abstract class DerivationAggregator {
   
   protected abstract compareRecipes(recipeA: Recipe, recipeB: Recipe): number;
 
-  constructor(maxResults: number = 256) {
+  constructor({ maxResults = 256 }: { maxResults?: number }) {
+    super();
     this.maxResults = maxResults;
   }
 
@@ -112,5 +149,11 @@ export abstract class DerivationAggregator {
 export class QualityHeuristicDerivationAggregator extends DerivationAggregator {
   protected compareRecipes(recipeA: Recipe, recipeB: Recipe): number {
     return -compareQualityHeuristic(recipeA, recipeB);
+  }
+}
+
+export class InputCountDerivationAggregator extends DerivationAggregator {
+  protected compareRecipes(recipeA: Recipe, recipeB: Recipe): number {
+    return compareInputCount(recipeA, recipeB) || compareInputEnergy(recipeA, recipeB);
   }
 }

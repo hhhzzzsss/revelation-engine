@@ -59,7 +59,7 @@ function DerivationView() {
           setIsDeriving(false);
         }
 
-        setRecipes(message.recipes ?? []);
+        setRecipes(message.aggregator?.getRecipes() ?? []);
         setProgressDisplay(`${message.count} recipes checked (${Math.round(message.progress * 100)})%`);
       }),
     );
