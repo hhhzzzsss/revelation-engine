@@ -2,6 +2,7 @@ import Navbar from './components/Navbar';
 import ApotheosisView from './components/views/ApotheosisView';
 import DerivationView from './components/views/DerivationView';
 import EnumerationView from './components/views/EnumerationView';
+import FavoriteView from './components/views/FavoritesView';
 import ItemInfoPanel from './components/ItemInfoPanel';
 import { VIEW_STATES } from './components/views/util';
 import { useImagePreload } from './image/hooks';
@@ -23,6 +24,7 @@ function App() {
             {currentView === VIEW_STATES.apotheosis && <ApotheosisView />}
             {currentView === VIEW_STATES.enumeration && <EnumerationView />}
             {currentView === VIEW_STATES.derivation && <DerivationView />}
+            {currentView === VIEW_STATES.favorites && <FavoriteView />}
           </div>
         </div>
         <ItemInfoPanel />

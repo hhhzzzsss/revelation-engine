@@ -13,6 +13,8 @@ export const IMAGE_PATHS = appendBaseUrls({
   revelation_nut: 'revelation_nut.svg',
   slot: 'slot.png',
   slot_hover: 'slot_hover.png',
+  health_heart: 'health_heart.png',
+  health_heart_empty: 'health_heart_empty.png',
 });
 
 export const getIconPath = (item: Item) => {

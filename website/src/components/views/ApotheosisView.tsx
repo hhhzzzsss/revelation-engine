@@ -1,18 +1,29 @@
 import { useMemo } from 'react';
-import type { QuantifiedItem } from '../../item/types';
+import type { Recipe, QuantifiedItem } from '../../item/types';
+import { useFavoriteRecipes } from '../../item/hooks';
 import { useApotheosisSolver } from '../../algorithm/hooks';
 import { useApotheosisStore } from '../../stores';
 import PickableSlot from '../PickableSlot';
 import LabeledSlot from '../LabeledSlot';
+import FavoriteHeartButton from '../FavoriteHeartButton';
 
 function ApotheosisView() {
   const { qItems, setQItem } = useApotheosisStore();
   const solver = useApotheosisSolver();
 
+  const { isFavoriteRecipe, toggleFavoriteRecipe } = useFavoriteRecipes();
+
   const result: QuantifiedItem | null = useMemo(() => {
     if (!solver) return null;
     return solver.fuse(qItems.filter((qItem) => qItem !== null));
   }, [solver, qItems]);
+
+  const recipe = useMemo<Recipe | null>(() => {
+    if (!result) return null;
+    console.log('result', result);
+    const inputs = qItems.filter((qItem) => qItem !== null);
+    return { inputs, output: result };
+  }, [qItems, result]);
 
   if (!solver) {
     return <div className="font-pixel text-2xl">Loading...</div>;
@@ -32,11 +43,21 @@ function ApotheosisView() {
             />
           ))}
         </div>
-        <div className="px-4">
+        <div className="flex flex-col px-4">
           <h2 className="text-2xl font-pixel">Output</h2>
           <LabeledSlot item={result?.item} count={result?.count} />
+          <div className="flex-1" />
         </div>
       </div>
+      {recipe && (
+        <div className="mt-6 flex justify-center items-center space-x-2">
+          <span className="font-pixel">favorite recipe: </span>
+          <FavoriteHeartButton
+            filled={isFavoriteRecipe(recipe)}
+            onClick={() => toggleFavoriteRecipe(recipe)}
+          />
+        </div>
+      )}
     </>
   );
 }

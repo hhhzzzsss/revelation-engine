@@ -62,11 +62,6 @@ export interface DropLoot {
   counts: number[];
 }
 
-export interface Recipe {
-  inputs: QuantifiedItem[];
-  output: QuantifiedItem;
-}
-
 export interface ToolData {
   attack_increase: number;
   axe_boost: boolean;
@@ -95,4 +90,9 @@ export interface EquipmentData {
 
 export interface FoodData {
   recovery_amount: number;
+}
+
+export interface Recipe {
+  inputs: QuantifiedItem[];
+  output: QuantifiedItem;
 }

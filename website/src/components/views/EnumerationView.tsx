@@ -120,7 +120,7 @@ function SearchableRecipeList({ recipes }: { recipes: Recipe[] }) {
       <RecipeList
         recipes={recipes}
         filter={(recipe) => itemMatchesSearchTerm(searchTerm, recipe.output.item)}
-        comparator={(a, b) => compareItemsBySearchTerm(searchTerm, a.output.item, b.output.item, false)}
+        comparator={(a, b) => compareItemsBySearchTerm(searchTerm, a.output.item, b.output.item) || a.output.item.id - b.output.item.id}
       />
       <div className="h-12" />
     </>

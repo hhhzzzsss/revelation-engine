@@ -82,3 +82,12 @@ export const useTooltipStore = create<HoverTooltipState>((set) => ({
   text: null,
   setText: (text) => set({ text }),
 }));
+
+export interface FavoriteRecipesState {
+  serializedRecipes: string[];
+  setSerializedRecipes: (recipes: string[]) => void;
+}
+export const useFavoriteRecipesStore = create<FavoriteRecipesState>((set) => ({
+  serializedRecipes: [],
+  setSerializedRecipes: (recipes) => set({ serializedRecipes: recipes }),
+}));

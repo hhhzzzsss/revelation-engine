@@ -4,7 +4,7 @@ import { useApotheosisBatchSolver, useProgressCallbackThrottler } from '../../al
 import Button from '../Button';
 import InventoryPicker from '../InventoryPicker';
 import type { Recipe } from '../../item/types';
-import { itemMatchesSearchTerm } from '../../item/util';
+import { inputsMatchSearchTerm } from '../../item/util';
 import RecipeList from '../RecipeList';
 import Input from '../Input';
 import PickableItem from '../PickableItem';
@@ -129,7 +129,7 @@ function SearchableRecipeList({ recipes }: { recipes: Recipe[] }) {
       />
       <RecipeList
         recipes={recipes}
-        filter={(recipe) => recipe.inputs.some((input) => itemMatchesSearchTerm(searchTerm, input.item))}
+        filter={(recipe) => inputsMatchSearchTerm(searchTerm, recipe)}
         comparator={(a, b) => -compareQualityHeuristic(a, b)}
       />
       <div className="h-12" />

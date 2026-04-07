@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import type { Item } from '../item/types';
 import { useItemData } from '../item/hooks';
-import { compareItemsBySearchTerm, itemMatchesSearchTerm } from '../item/util';
+import { compareItemsByDisplayName, compareItemsBySearchTerm, itemMatchesSearchTerm } from '../item/util';
 import { getIconPath } from '../image/util';
 import Input from './Input';
 import { useVirtualizer } from '@tanstack/react-virtual';
@@ -37,7 +37,7 @@ function ItemPicker({
     return itemData
       ?.filter((item) => showUnfuseable || item.essence.fuseable)
       ?.filter((item) => itemMatchesSearchTerm(searchTerm, item))
-      .toSorted((a, b) => compareItemsBySearchTerm(searchTerm, a, b));
+      .toSorted((a, b) => compareItemsBySearchTerm(searchTerm, a, b) || compareItemsByDisplayName(a, b));
   }, [itemData, searchTerm, showUnfuseable]);
 
   // Virtualizer for item list

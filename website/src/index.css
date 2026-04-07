@@ -28,6 +28,8 @@
   --spacing-icon-2: calc(var(--spacing-icon-unit) * 2);
   --spacing-icon-3: calc(var(--spacing-icon-unit) * 3);
   --text-icon: calc(var(--spacing-icon-unit) * 8);
+
+  --spacing-heart: calc(11 * var(--spacing-icon-unit));
 }
 
 :root {

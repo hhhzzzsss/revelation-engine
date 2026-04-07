@@ -23,7 +23,7 @@ function InventoryPicker({ className, items, onItemsChange }: InventoryPickerPro
   const [searchTerm, setSearchTerm] = useState('');
 
   const itemIdSet = useMemo(() => new Set(items.map((item) => item.id)), [items]);
-  const sortedItems = useMemo(() => items.toSorted((a, b) => compareItemsBySearchTerm(searchTerm, a, b, false)), [items, searchTerm]);
+  const sortedItems = useMemo(() => items.toSorted((a, b) => compareItemsBySearchTerm(searchTerm, a, b) || a.id - b.id), [items, searchTerm]);
 
   const handleDelete = (item: Item) => {
     const index = sortedItems.findIndex((i) => i.id === item.id);
@@ -191,7 +191,7 @@ function InventoryItemPicker({
     return itemData
       ?.filter(filter)
       ?.filter((item) => itemMatchesSearchTerm(searchTerm, item))
-      ?.toSorted((a, b) => compareItemsBySearchTerm(searchTerm, a, b, false));
+      ?.toSorted((a, b) => compareItemsBySearchTerm(searchTerm, a, b) || a.id - b.id);
   }, [itemData, filter, searchTerm]);
 
   // eslint-disable-next-line react-hooks/incompatible-library
