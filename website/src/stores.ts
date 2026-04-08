@@ -39,15 +39,15 @@ export const useApotheosisStore = create<ApotheosisState>((set) => ({
 
 export interface AvailableItemsState {
   items: Item[];
-  showUnfuseable: boolean;
+  showInternal: boolean;
   setItems: (items: Item[]) => void;
-  setShowUnfuseable: (show: boolean) => void;
+  setShowInternal: (show: boolean) => void;
 }
 export const useAvailableItemsStore = create<AvailableItemsState>((set) => ({
   items: [],
-  showUnfuseable: false,
+  showInternal: false,
   setItems: (items) => set({ items }),
-  setShowUnfuseable: (show) => set({ showUnfuseable: show }),
+  setShowInternal: (show) => set({ showInternal: show }),
 }));
 
 export interface EnumerationState {

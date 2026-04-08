@@ -18,8 +18,8 @@ interface InventoryPickerProps {
 }
 function InventoryPicker({ className, items, onItemsChange }: InventoryPickerProps) {
   const { data: itemData } = useItemData();
-  const showUnfuseable = useAvailableItemsStore((state) => state.showUnfuseable);
-  const setShowUnfuseable = useAvailableItemsStore((state) => state.setShowUnfuseable);
+  const showInternal = useAvailableItemsStore((state) => state.showInternal);
+  const setShowInternal = useAvailableItemsStore((state) => state.setShowInternal);
   const [searchTerm, setSearchTerm] = useState('');
 
   const itemIdSet = useMemo(() => new Set(items.map((item) => item.id)), [items]);
@@ -43,10 +43,10 @@ function InventoryPicker({ className, items, onItemsChange }: InventoryPickerPro
     if (!itemData) return;
 
     let newItems: Item[];
-    if (showUnfuseable) {
+    if (showInternal) {
       newItems = [...itemData];
     } else {
-      newItems = itemData.filter((item) => item.essence.fuseable);
+      newItems = itemData.filter((item) => !item.internal);
     }
 
     onItemsChange?.(newItems);
@@ -61,10 +61,10 @@ function InventoryPicker({ className, items, onItemsChange }: InventoryPickerPro
       <div className="w-150 flex flex-col border-r-2 border-secondary-800">
         <div className="pr-4 mb-2 flex space-x-2">
           <Button
-            className={`${showUnfuseable ? 'bg-primary-600 hover:bg-primary-500' : 'bg-secondary-700 text-fg-600 opacity-60 hover:opacity-100'}`}
-            onClick={() => setShowUnfuseable(!showUnfuseable)}
+            className={`${showInternal ? 'bg-primary-600 hover:bg-primary-500' : 'bg-secondary-700 text-fg-600 opacity-60 hover:opacity-100'}`}
+            onClick={() => setShowInternal(!showInternal)}
           >
-            show unfuseable
+            show internal
           </Button>
           <div className="flex-1" />
           <Button
@@ -93,7 +93,7 @@ function InventoryPicker({ className, items, onItemsChange }: InventoryPickerPro
         onSearchTermChange={setSearchTerm}
         filter={(item) => (
           !itemIdSet.has(item.id)
-          && (showUnfuseable || item.essence.fuseable)
+          && (showInternal || !item.internal)
         )}
         onSelect={handleSelect}
       />
