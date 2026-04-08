@@ -10,6 +10,7 @@ function ItemInfoPanel() {
     'id': item.id,
     'fuseable': item.essence.fuseable,
     'rank': item.essence.rank,
+    'durability': item.max_durability ? round(item.max_durability) : 'N/A',
     'color': `( ${item.color.map(round).join(', ')} )`,
     'energy': round(item.essence.energy),
     'bias': round(item.essence.bias),
