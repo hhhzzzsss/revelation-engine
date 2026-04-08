@@ -1,5 +1,5 @@
-import { useEffect, useRef, useState } from 'react';
-import type { Recipe } from '../../item/types';
+import { useEffect, useMemo, useRef, useState } from 'react';
+import type { Item, Recipe } from '../../item/types';
 import InventoryPicker from '../InventoryPicker';
 import { useApotheosisBatchSolver, useProgressCallbackThrottler } from '../../algorithm/hooks';
 import { useAvailableItemsStore, useEnumerationStore } from '../../stores';
@@ -107,6 +107,16 @@ function EnumerationView() {
 
 function SearchableRecipeList({ recipes }: { recipes: Recipe[] }) {
   const [searchTerm, setSearchTerm] = useState('');
+  const { items, setItems } = useAvailableItemsStore();
+
+  const itemIdSet = useMemo(() => new Set(items.map((item) => item.id)), [items]);
+
+  const onAddItem = (itemToAdd: Item) => {
+    if (itemIdSet.has(itemToAdd.id)) return;
+    setItems([...items, itemToAdd]);
+  };
+
+  const addableItemFilter = (item: Item) => !itemIdSet.has(item.id);
 
   return (
     <>
@@ -121,6 +131,9 @@ function SearchableRecipeList({ recipes }: { recipes: Recipe[] }) {
         recipes={recipes}
         filter={(recipe) => itemMatchesSearchTerm(searchTerm, recipe.output.item)}
         comparator={(a, b) => compareItemsBySearchTerm(searchTerm, a.output.item, b.output.item) || a.output.item.id - b.output.item.id}
+        showAddButton
+        onAddItem={onAddItem}
+        addableItemFilter={addableItemFilter}
       />
       <div className="h-12" />
     </>
