@@ -16,9 +16,9 @@
             "unbreakable": false
         },
         "color": [
-            0.7471466064453125,
-            0.1284167468547821,
-            0.041030142456293106
+            0.8343576192855835,
+            0.08639156818389893,
+            0.08914252370595932
         ],
         "display_name": "debug block",
         "essence": {
@@ -67,9 +67,9 @@
             "unbreakable": false
         },
         "color": [
-            0.3379848897457123,
-            0.38509464263916016,
-            0.3998302221298218
+            0.3722774088382721,
+            0.433409720659256,
+            0.4545963704586029
         ],
         "display_name": "debug block",
         "essence": {
@@ -118,9 +118,9 @@
             "unbreakable": false
         },
         "color": [
-            0.6702996492385864,
-            0.2747983932495117,
-            0.2602665424346924
+            0.7392920851707458,
+            0.29610389471054077,
+            0.31049996614456177
         ],
         "display_name": "debug block",
         "essence": {
@@ -169,9 +169,9 @@
             "unbreakable": false
         },
         "color": [
-            0.665631115436554,
-            0.3674560785293579,
-            0.26386556029319763
+            0.7392920851707458,
+            0.4032594859600067,
+            0.31049996614456177
         ],
         "display_name": "debug block",
         "essence": {
@@ -220,9 +220,9 @@
             "unbreakable": false
         },
         "color": [
-            0.6614379286766052,
-            0.4514896869659424,
-            0.2759697735309601
+            0.7403785586357117,
+            0.5049147009849548,
+            0.317833811044693
         ],
         "display_name": "debug block",
         "essence": {
@@ -271,9 +271,9 @@
             "unbreakable": false
         },
         "color": [
-            0.6473474502563477,
-            0.6185892820358276,
-            0.30815720558166504
+            0.7241660356521606,
+            0.739410936832428,
+            0.31313130259513855
         ],
         "display_name": "debug block",
         "essence": {
@@ -322,9 +322,9 @@
             "unbreakable": false
         },
         "color": [
-            0.5492742657661438,
-            0.6179441213607788,
-            0.2958832085132599
+            0.5766912698745728,
+            0.7397334575653076,
+            0.3152024447917938
         ],
         "display_name": "debug block",
         "essence": {
@@ -373,9 +373,9 @@
             "unbreakable": false
         },
         "color": [
-            0.3497326076030731,
-            0.6188439130783081,
-            0.2807741165161133
+            0.29798829555511475,
+            0.7390204668045044,
+            0.31049996614456177
         ],
         "display_name": "debug block",
         "essence": {
@@ -424,9 +424,9 @@
             "unbreakable": false
         },
         "color": [
-            0.3577115833759308,
-            0.624955415725708,
-            0.450335294008255
+            0.31068670749664307,
+            0.7409727573394775,
+            0.5001103281974792
         ],
         "display_name": "debug block",
         "essence": {
@@ -475,9 +475,9 @@
             "unbreakable": false
         },
         "color": [
-            0.36032596230506897,
-            0.63193279504776,
-            0.5823783874511719
+            0.30814021825790405,
+            0.740582287311554,
+            0.6663271188735962
         ],
         "display_name": "debug block",
         "essence": {
@@ -526,9 +526,9 @@
             "unbreakable": false
         },
         "color": [
-            0.3261692523956299,
-            0.5790680050849915,
-            0.6571428775787354
+            0.3025379776954651,
+            0.6438672542572021,
+            0.7729734182357788
         ],
         "display_name": "debug block",
         "essence": {
@@ -577,9 +577,9 @@
             "unbreakable": false
         },
         "color": [
-            0.2747814357280731,
-            0.4376029074192047,
-            0.6646634340286255
+            0.30318307876586914,
+            0.446260929107666,
+            0.7726508975028992
         ],
         "display_name": "debug block",
         "essence": {
@@ -628,9 +628,9 @@
             "unbreakable": false
         },
         "color": [
-            0.11798407137393951,
-            0.10456494987010956,
-            0.08682598173618317
+            0.1583639681339264,
+            0.15223652124404907,
+            0.1428002417087555
         ],
         "display_name": "direction block",
         "essence": {
@@ -679,9 +679,9 @@
             "unbreakable": false
         },
         "color": [
-            0.6067736148834229,
-            0.35350140929222107,
-            0.661200225353241
+            0.671878457069397,
+            0.3089720606803894,
+            0.7736355066299438
         ],
         "display_name": "debug block w",
         "essence": {
@@ -793,9 +793,9 @@
         ],
         "display_name": "janqualia block",
         "essence": {
-            "bias": 0.0,
+            "bias": -0.15000000000000036,
             "energy": 0.5,
-            "fuseable": false,
+            "fuseable": true,
             "output_tags": [],
             "properties": {
                 "aqua": 1.0,
@@ -1705,7 +1705,7 @@
         "internal": false,
         "internal_name": "kila",
         "max_durability": 0,
-        "stack_size": 1
+        "stack_size": 5
     },
     {
         "color": [
@@ -3638,7 +3638,7 @@
         ],
         "display_name": "foe",
         "essence": {
-            "bias": 0.0,
+            "bias": -0.09999999999999964,
             "energy": 0.3,
             "fuseable": true,
             "output_tags": [],
@@ -3647,7 +3647,7 @@
                 "blockiness": 0.0,
                 "clay": 0.0,
                 "danger": 0.0,
-                "edibility": 0.87,
+                "edibility": 0.2,
                 "faith": 0.0,
                 "hate": 1.0,
                 "lust": 0.0,
@@ -3659,7 +3659,8 @@
             },
             "rank": 0.1,
             "tags": [
-                "digital"
+                "digital",
+                "fire"
             ]
         },
         "id": 93045,
@@ -4143,7 +4144,7 @@
         },
         "id": 93268,
         "internal": false,
-        "internal_name": "segment",
+        "internal_name": "small segment",
         "max_durability": 0,
         "stack_size": 50
     },
@@ -4224,7 +4225,7 @@
         },
         "id": 93270,
         "internal": false,
-        "internal_name": "eye",
+        "internal_name": "round eye",
         "max_durability": 0,
         "stack_size": 50
     },
@@ -4304,7 +4305,7 @@
         },
         "id": 93274,
         "internal": false,
-        "internal_name": "segment",
+        "internal_name": "big segment",
         "max_durability": 0,
         "stack_size": 50
     },
@@ -4365,9 +4366,9 @@
             "unbreakable": false
         },
         "color": [
-            0.3379848897457123,
-            0.38509464263916016,
-            0.3998302221298218
+            0.3722774088382721,
+            0.433409720659256,
+            0.4545963704586029
         ],
         "display_name": "essence block",
         "essence": {
@@ -4419,9 +4420,9 @@
             "unbreakable": false
         },
         "color": [
-            0.11642475426197052,
-            0.1242169588804245,
-            0.1570664644241333
+            0.1657244712114334,
+            0.17494270205497742,
+            0.2170613706111908
         ],
         "display_name": "essence block",
         "essence": {
@@ -4473,9 +4474,9 @@
             "unbreakable": false
         },
         "color": [
-            0.3119599223136902,
-            0.1805109977722168,
-            0.18577370047569275
+            0.35837364196777344,
+            0.2318139374256134,
+            0.24500466883182526
         ],
         "display_name": "essence block",
         "essence": {
@@ -4527,9 +4528,9 @@
             "unbreakable": false
         },
         "color": [
-            0.24354469776153564,
-            0.3503437638282776,
-            0.3213649094104767
+            0.27914437651634216,
+            0.4047534167766571,
+            0.37658941745758057
         ],
         "display_name": "essence block",
         "essence": {
@@ -4581,9 +4582,9 @@
             "unbreakable": false
         },
         "color": [
-            0.13554027676582336,
-            0.12761226296424866,
-            0.13163568079471588
+            0.2776334881782532,
+            0.27564722299575806,
+            0.28950002789497375
         ],
         "display_name": "essence block",
         "essence": {
@@ -4635,9 +4636,9 @@
             "unbreakable": false
         },
         "color": [
-            0.7113827466964722,
-            0.699431300163269,
-            0.7123334407806396
+            0.8463797569274902,
+            0.846328854560852,
+            0.8743570446968079
         ],
         "display_name": "flionide block",
         "essence": {
@@ -4676,6 +4677,57 @@
         "block_data": {
             "axe_affinity": false,
             "axe_required": false,
+            "break_time": 1.0,
+            "drop_item": 432240,
+            "flammability": 0.0,
+            "griefable": true,
+            "meat_affinity": false,
+            "pickaxe_affinity": false,
+            "pickaxe_required": false,
+            "plant_affinity": false,
+            "shovel_affinity": false,
+            "sustain_fire": false,
+            "unbreakable": false
+        },
+        "color": [
+            0.8463797569274902,
+            0.846328854560852,
+            0.8743570446968079
+        ],
+        "display_name": "holy ground",
+        "essence": {
+            "bias": 0.0,
+            "energy": 1.0,
+            "fuseable": false,
+            "output_tags": [],
+            "properties": {
+                "aqua": 0.0,
+                "blockiness": 1.0,
+                "clay": 0.0,
+                "danger": 0.0,
+                "edibility": 0.0,
+                "faith": 0.0,
+                "hate": 0.0,
+                "lust": 0.0,
+                "mercury": 0.0,
+                "phlegm": 0.0,
+                "sulfur": 0.0,
+                "utility": 0.29,
+                "wearability": 0.0
+            },
+            "rank": 0.0,
+            "tags": []
+        },
+        "id": 432240,
+        "internal": false,
+        "internal_name": "yhvh block",
+        "max_durability": 0,
+        "stack_size": 50
+    },
+    {
+        "block_data": {
+            "axe_affinity": false,
+            "axe_required": false,
             "break_time": 0.6000000238418579,
             "drop_item": 432333,
             "flammability": 0.0,
@@ -4689,9 +4741,9 @@
             "unbreakable": false
         },
         "color": [
-            0.4287921190261841,
-            0.41227400302886963,
-            0.41375094652175903
+            0.510058581829071,
+            0.4989219903945923,
+            0.5086325407028198
         ],
         "display_name": "tooth block",
         "essence": {
@@ -4742,9 +4794,9 @@
             "unbreakable": false
         },
         "color": [
-            0.12523554265499115,
-            0.11644172668457031,
-            0.11768101155757904
+            0.17326202988624573,
+            0.16655631363391876,
+            0.17226041853427887
         ],
         "display_name": "star block",
         "essence": {
@@ -4797,9 +4849,9 @@
             "unbreakable": false
         },
         "color": [
-            0.21690858900547028,
-            0.14090484380722046,
-            0.10863254219293594
+            0.27377980947494507,
+            0.19645191729068756,
+            0.16541889309883118
         ],
         "display_name": "sun block",
         "essence": {
@@ -5059,6 +5111,60 @@
             "drop_item": 3341234,
             "flammability": 0.0,
             "griefable": true,
+            "meat_affinity": true,
+            "pickaxe_affinity": false,
+            "pickaxe_required": false,
+            "plant_affinity": false,
+            "shovel_affinity": false,
+            "sustain_fire": false,
+            "unbreakable": false
+        },
+        "color": [
+            0.7137255072593689,
+            0.15640437602996826,
+            0.4023936986923218
+        ],
+        "display_name": "body cakra block",
+        "essence": {
+            "bias": 0.0,
+            "energy": 0.25,
+            "fuseable": true,
+            "output_tags": [],
+            "properties": {
+                "aqua": 0.53,
+                "blockiness": 1.0,
+                "clay": 0.07,
+                "danger": 0.0,
+                "edibility": 0.0,
+                "faith": 0.03,
+                "hate": 0.91,
+                "lust": 0.74,
+                "mercury": 0.17,
+                "phlegm": 1.0,
+                "sulfur": 0.74,
+                "utility": 1.0,
+                "wearability": 0.0
+            },
+            "rank": 0.05,
+            "tags": [
+                "meat",
+                "digital"
+            ]
+        },
+        "id": 3341234,
+        "internal": true,
+        "internal_name": "beep block even",
+        "max_durability": 0,
+        "stack_size": 50
+    },
+    {
+        "block_data": {
+            "axe_affinity": false,
+            "axe_required": false,
+            "break_time": 1.0,
+            "drop_item": 3341296,
+            "flammability": 0.0,
+            "griefable": false,
             "meat_affinity": false,
             "pickaxe_affinity": false,
             "pickaxe_required": false,
@@ -5068,40 +5174,258 @@
             "unbreakable": false
         },
         "color": [
-            0.85313880443573,
-            0.8996503949165344,
-            0.8846937417984009
+            0.7955882549285889,
+            0.8571568727493286,
+            0.8365686535835266
         ],
-        "display_name": "beep block",
+        "display_name": "display cube",
         "essence": {
             "bias": 0.0,
-            "energy": 0.15,
-            "fuseable": false,
+            "energy": 0.5,
+            "fuseable": true,
             "output_tags": [],
             "properties": {
-                "aqua": 0.0,
+                "aqua": 0.53,
                 "blockiness": 1.0,
-                "clay": 0.0,
+                "clay": 0.07,
                 "danger": 0.0,
                 "edibility": 0.0,
                 "faith": 0.03,
-                "hate": 0.04,
-                "lust": 0.0,
-                "mercury": 0.0,
-                "phlegm": 0.0,
-                "sulfur": 0.0,
+                "hate": 0.91,
+                "lust": 0.74,
+                "mercury": 0.17,
+                "phlegm": 0.24,
+                "sulfur": 0.2,
                 "utility": 1.0,
                 "wearability": 0.0
             },
-            "rank": 0.0,
+            "rank": 0.05,
+            "tags": [
+                "digital",
+                "glass"
+            ]
+        },
+        "id": 3341296,
+        "internal": true,
+        "internal_name": "display cube",
+        "max_durability": 0,
+        "stack_size": 5
+    },
+    {
+        "block_data": {
+            "axe_affinity": false,
+            "axe_required": false,
+            "break_time": 1.0,
+            "drop_item": 3341355,
+            "flammability": 0.0,
+            "griefable": true,
+            "meat_affinity": true,
+            "pickaxe_affinity": false,
+            "pickaxe_required": false,
+            "plant_affinity": false,
+            "shovel_affinity": false,
+            "sustain_fire": false,
+            "unbreakable": false
+        },
+        "color": [
+            0.7137255072593689,
+            0.5516170263290405,
+            0.15640437602996826
+        ],
+        "display_name": "egress block",
+        "essence": {
+            "bias": 0.0,
+            "energy": 0.25,
+            "fuseable": true,
+            "output_tags": [],
+            "properties": {
+                "aqua": 0.53,
+                "blockiness": 1.0,
+                "clay": 0.07,
+                "danger": 0.0,
+                "edibility": 0.0,
+                "faith": 0.03,
+                "hate": 0.08,
+                "lust": 0.74,
+                "mercury": 0.17,
+                "phlegm": 1.0,
+                "sulfur": 0.12,
+                "utility": 1.0,
+                "wearability": 0.0
+            },
+            "rank": 0.05,
             "tags": [
                 "meat",
                 "digital"
             ]
         },
-        "id": 3341234,
+        "id": 3341355,
+        "internal": false,
+        "internal_name": "egress block",
+        "max_durability": 0,
+        "stack_size": 50
+    },
+    {
+        "block_data": {
+            "axe_affinity": false,
+            "axe_required": false,
+            "break_time": 1.0,
+            "drop_item": 3341358,
+            "flammability": 0.0,
+            "griefable": true,
+            "meat_affinity": true,
+            "pickaxe_affinity": false,
+            "pickaxe_required": false,
+            "plant_affinity": false,
+            "shovel_affinity": false,
+            "sustain_fire": false,
+            "unbreakable": false
+        },
+        "color": [
+            0.15640437602996826,
+            0.7137255072593689,
+            0.6814361810684204
+        ],
+        "display_name": "mind cakra block",
+        "essence": {
+            "bias": 0.0,
+            "energy": 0.25,
+            "fuseable": true,
+            "output_tags": [],
+            "properties": {
+                "aqua": 0.89,
+                "blockiness": 1.0,
+                "clay": 0.07,
+                "danger": 0.0,
+                "edibility": 0.0,
+                "faith": 0.9,
+                "hate": 0.13,
+                "lust": 0.74,
+                "mercury": 0.17,
+                "phlegm": 1.0,
+                "sulfur": 0.12,
+                "utility": 1.0,
+                "wearability": 0.0
+            },
+            "rank": 0.05,
+            "tags": [
+                "meat",
+                "digital"
+            ]
+        },
+        "id": 3341358,
         "internal": true,
-        "internal_name": "beep block",
+        "internal_name": "beep block odd",
+        "max_durability": 0,
+        "stack_size": 50
+    },
+    {
+        "block_data": {
+            "axe_affinity": false,
+            "axe_required": false,
+            "break_time": 1.0,
+            "drop_item": 3341705,
+            "flammability": 0.0,
+            "griefable": true,
+            "meat_affinity": false,
+            "pickaxe_affinity": true,
+            "pickaxe_required": false,
+            "plant_affinity": false,
+            "shovel_affinity": false,
+            "sustain_fire": false,
+            "unbreakable": false
+        },
+        "color": [
+            0.8523832559585571,
+            0.8523832559585571,
+            0.8523832559585571
+        ],
+        "display_name": "barrier balls",
+        "essence": {
+            "bias": 0.0,
+            "energy": 0.1,
+            "fuseable": true,
+            "output_tags": [],
+            "properties": {
+                "aqua": 0.47,
+                "blockiness": 0.0,
+                "clay": 0.38,
+                "danger": 0.0,
+                "edibility": 0.0,
+                "faith": 0.5,
+                "hate": 0.19,
+                "lust": 0.74,
+                "mercury": 0.71,
+                "phlegm": 0.4,
+                "sulfur": 0.1,
+                "utility": 1.0,
+                "wearability": 0.0
+            },
+            "rank": 0.0,
+            "tags": [
+                "stone",
+                "digital",
+                "ball"
+            ]
+        },
+        "id": 3341705,
+        "internal": false,
+        "internal_name": "barrier balls",
+        "max_durability": 0,
+        "stack_size": 50
+    },
+    {
+        "block_data": {
+            "axe_affinity": false,
+            "axe_required": false,
+            "break_time": 3.0,
+            "drop_item": 3341873,
+            "flammability": 0.0,
+            "griefable": false,
+            "meat_affinity": false,
+            "pickaxe_affinity": true,
+            "pickaxe_required": false,
+            "plant_affinity": false,
+            "shovel_affinity": false,
+            "sustain_fire": false,
+            "unbreakable": false
+        },
+        "color": [
+            0.6304298639297485,
+            0.39472097158432007,
+            0.25818249583244324
+        ],
+        "display_name": "barrier blocks",
+        "essence": {
+            "bias": 0.0,
+            "energy": 0.2,
+            "fuseable": true,
+            "output_tags": [],
+            "properties": {
+                "aqua": 0.47,
+                "blockiness": 1.0,
+                "clay": 0.38,
+                "danger": 0.0,
+                "edibility": 0.0,
+                "faith": 0.5,
+                "hate": 0.19,
+                "lust": 0.74,
+                "mercury": 1.0,
+                "phlegm": 0.4,
+                "sulfur": 0.1,
+                "utility": 1.0,
+                "wearability": 0.0
+            },
+            "rank": 0.0,
+            "tags": [
+                "digital",
+                "magnetite",
+                "metal"
+            ]
+        },
+        "id": 3341873,
+        "internal": false,
+        "internal_name": "barrier blocks",
         "max_durability": 0,
         "stack_size": 50
     },
@@ -5508,7 +5832,7 @@
             0.42498859763145447,
             0.35516035556793213
         ],
-        "display_name": "koadma block",
+        "display_name": "kodama block",
         "essence": {
             "bias": 0.0,
             "energy": 0.3,
@@ -5539,7 +5863,7 @@
         },
         "id": 5131259,
         "internal": true,
-        "internal_name": "koadma block",
+        "internal_name": "kodama block",
         "max_durability": 0,
         "stack_size": 5
     },
@@ -5798,9 +6122,9 @@
             "unbreakable": false
         },
         "color": [
-            0.3759443163871765,
-            0.4178592562675476,
-            0.2919616401195526
+            0.38017144799232483,
+            0.4776334762573242,
+            0.3417876362800598
         ],
         "display_name": "vomit block",
         "essence": {
@@ -5854,9 +6178,9 @@
             "unbreakable": false
         },
         "color": [
-            0.7001103758811951,
-            0.6528138518333435,
-            0.6944741606712341
+            0.8242424130439758,
+            0.7680332660675049,
+            0.8429844379425049
         ],
         "display_name": "amor block",
         "essence": {
@@ -5909,9 +6233,9 @@
             "unbreakable": false
         },
         "color": [
-            0.6665138602256775,
-            0.437467098236084,
-            0.6249045133590698
+            0.7622782588005066,
+            0.4320515990257263,
+            0.7304642796516418
         ],
         "display_name": "ambiguous block",
         "essence": {
@@ -5963,9 +6287,9 @@
             "unbreakable": false
         },
         "color": [
-            0.4312876760959625,
-            0.496884822845459,
-            0.5480689406394958
+            0.48067227005958557,
+            0.5440115332603455,
+            0.6152788400650024
         ],
         "display_name": "ambiguous block",
         "essence": {
@@ -6017,9 +6341,9 @@
             "unbreakable": false
         },
         "color": [
-            0.5491893887519836,
-            0.44838300347328186,
-            0.5435531735420227
+            0.6041422486305237,
+            0.47836345434188843,
+            0.6170613765716553
         ],
         "display_name": "ambiguous block",
         "essence": {
@@ -6071,9 +6395,9 @@
             "unbreakable": false
         },
         "color": [
-            0.5601731538772583,
-            0.5253543853759766,
-            0.314098984003067
+            0.6063661575317383,
+            0.6040913462638855,
+            0.35725319385528564
         ],
         "display_name": "ambiguous block",
         "essence": {
@@ -6125,9 +6449,9 @@
             "unbreakable": false
         },
         "color": [
-            0.7020456790924072,
-            0.5874713659286499,
-            0.5942110419273376
+            0.8228163719177246,
+            0.6600627899169922,
+            0.6827434301376343
         ],
         "display_name": "ambiguous block",
         "essence": {
@@ -6179,9 +6503,9 @@
             "unbreakable": false
         },
         "color": [
-            0.716221034526825,
-            0.6060436367988586,
-            0.3356930613517761
+            0.8374161720275879,
+            0.7190900444984436,
+            0.33508190512657166
         ],
         "display_name": "ambiguous block",
         "essence": {
@@ -6233,9 +6557,9 @@
             "unbreakable": false
         },
         "color": [
-            0.1856888234615326,
-            0.1212630495429039,
-            0.16270264983177185
+            0.24293354153633118,
+            0.17502759397029877,
+            0.23215346038341522
         ],
         "display_name": "prismatic block",
         "essence": {
@@ -6400,7 +6724,7 @@
         },
         "id": 34567887,
         "internal": false,
-        "internal_name": "grappling hook",
+        "internal_name": "flimsy hook",
         "max_durability": 110,
         "stack_size": 1
     },
@@ -6503,7 +6827,7 @@
                 "clay": 0.13,
                 "danger": 0.17,
                 "edibility": 0.0,
-                "faith": 0.0,
+                "faith": 1.0,
                 "hate": 0.0,
                 "lust": 0.0,
                 "mercury": 0.92,
@@ -6522,8 +6846,90 @@
         },
         "id": 34567892,
         "internal": false,
-        "internal_name": "hookshot",
+        "internal_name": "machination",
         "max_durability": 500,
+        "stack_size": 1
+    },
+    {
+        "color": [
+            0.7966444492340088,
+            0.7966444492340088,
+            0.7966444492340088
+        ],
+        "display_name": "mudra",
+        "essence": {
+            "bias": -0.09999999999999964,
+            "energy": 0.45,
+            "fuseable": true,
+            "output_tags": [],
+            "properties": {
+                "aqua": 0.0,
+                "blockiness": 0.0,
+                "clay": 0.13,
+                "danger": 0.17,
+                "edibility": 0.0,
+                "faith": 1.0,
+                "hate": 0.0,
+                "lust": 0.0,
+                "mercury": 0.92,
+                "phlegm": 0.0,
+                "sulfur": 0.0,
+                "utility": 1.0,
+                "wearability": 0.0
+            },
+            "rank": 0.5,
+            "tags": [
+                "string",
+                "metal",
+                "ball",
+                "sky"
+            ]
+        },
+        "id": 34567950,
+        "internal": false,
+        "internal_name": "mudra",
+        "max_durability": 800,
+        "stack_size": 1
+    },
+    {
+        "color": [
+            0.32281047105789185,
+            0.3002614378929138,
+            0.2917647063732147
+        ],
+        "display_name": "grappling gun",
+        "essence": {
+            "bias": -0.09999999999999964,
+            "energy": 0.356,
+            "fuseable": true,
+            "output_tags": [],
+            "properties": {
+                "aqua": 0.0,
+                "blockiness": 0.0,
+                "clay": 0.13,
+                "danger": 0.38,
+                "edibility": 0.0,
+                "faith": 0.0,
+                "hate": 0.27,
+                "lust": 0.0,
+                "mercury": 0.92,
+                "phlegm": 0.0,
+                "sulfur": 0.36,
+                "utility": 1.0,
+                "wearability": 0.0
+            },
+            "rank": 0.0,
+            "tags": [
+                "string",
+                "metal",
+                "stick",
+                "fire"
+            ]
+        },
+        "id": 34567988,
+        "internal": false,
+        "internal_name": "grappling gun",
+        "max_durability": 340,
         "stack_size": 1
     },
     {
@@ -8039,6 +8445,47 @@
     },
     {
         "color": [
+            0.47781217098236084,
+            0.6747161746025085,
+            0.6977089643478394
+        ],
+        "display_name": "hallelbear capsule",
+        "essence": {
+            "bias": -0.3000000000000007,
+            "energy": 1.0,
+            "fuseable": true,
+            "output_tags": [],
+            "properties": {
+                "aqua": 0.45,
+                "blockiness": 0.0,
+                "clay": 0.25,
+                "danger": 0.0,
+                "edibility": 0.84,
+                "faith": 1.0,
+                "hate": 0.0,
+                "lust": 0.0,
+                "mercury": 0.0,
+                "phlegm": 0.9,
+                "sulfur": 0.1,
+                "utility": 0.22,
+                "wearability": 0.0
+            },
+            "rank": 0.0,
+            "tags": [
+                "glass",
+                "meat",
+                "capsule",
+                "sky"
+            ]
+        },
+        "id": 45389775,
+        "internal": false,
+        "internal_name": "hallelbear capsule",
+        "max_durability": 0,
+        "stack_size": 50
+    },
+    {
+        "color": [
             0.5837770700454712,
             0.3752734661102295,
             0.4698452055454254
@@ -8074,6 +8521,47 @@
         "id": 45389839,
         "internal": false,
         "internal_name": "preta capsule",
+        "max_durability": 0,
+        "stack_size": 50
+    },
+    {
+        "color": [
+            0.4740590453147888,
+            0.7072346210479736,
+            0.7433400750160217
+        ],
+        "display_name": "gleeblebear capsule",
+        "essence": {
+            "bias": -0.09999999999999964,
+            "energy": 0.5,
+            "fuseable": true,
+            "output_tags": [],
+            "properties": {
+                "aqua": 0.45,
+                "blockiness": 0.0,
+                "clay": 0.48,
+                "danger": 0.0,
+                "edibility": 0.84,
+                "faith": 1.0,
+                "hate": 0.0,
+                "lust": 0.1,
+                "mercury": 0.27,
+                "phlegm": 0.9,
+                "sulfur": 0.1,
+                "utility": 0.22,
+                "wearability": 0.0
+            },
+            "rank": 0.0,
+            "tags": [
+                "glass",
+                "meat",
+                "capsule",
+                "plastic"
+            ]
+        },
+        "id": 45389961,
+        "internal": false,
+        "internal_name": "gleeblebear capsule",
         "max_durability": 0,
         "stack_size": 50
     },
@@ -9639,9 +10127,9 @@
             "unbreakable": false
         },
         "color": [
-            0.6510652899742126,
-            0.21692556142807007,
-            0.195637047290802
+            0.70993971824646,
+            0.24245819449424744,
+            0.2517273724079132
         ],
         "display_name": "red plastic block",
         "essence": {
@@ -9692,9 +10180,9 @@
             "unbreakable": false
         },
         "color": [
-            0.4572107493877411,
-            0.5688481330871582,
-            0.32793480157852173
+            0.4690094292163849,
+            0.6629827618598938,
+            0.36847466230392456
         ],
         "display_name": "green plastic block",
         "essence": {
@@ -9745,9 +10233,9 @@
             "unbreakable": false
         },
         "color": [
-            0.3561836779117584,
-            0.5594092011451721,
-            0.6040573716163635
+            0.35314488410949707,
+            0.6234105825424194,
+            0.6937780976295471
         ],
         "display_name": "blue plastic block",
         "essence": {
@@ -9798,9 +10286,9 @@
             "unbreakable": false
         },
         "color": [
-            0.6411849856376648,
-            0.4726593792438507,
-            0.21164587140083313
+            0.70993971824646,
+            0.5350819230079651,
+            0.2513369023799896
         ],
         "display_name": "yellow plastic block",
         "essence": {
@@ -9851,9 +10339,9 @@
             "unbreakable": false
         },
         "color": [
-            0.6832357048988342,
-            0.309702068567276,
-            0.43729734420776367
+            0.7601901292800903,
+            0.3073423206806183,
+            0.4896867871284485
         ],
         "display_name": "pink plastic block",
         "essence": {
@@ -9904,9 +10392,9 @@
             "unbreakable": false
         },
         "color": [
-            0.600645124912262,
-            0.5870299339294434,
-            0.6013241410255432
+            0.6630846261978149,
+            0.6629827618598938,
+            0.6937780976295471
         ],
         "display_name": "white plastic block",
         "essence": {
@@ -9957,9 +10445,9 @@
             "unbreakable": false
         },
         "color": [
-            0.2608267664909363,
-            0.250318318605423,
-            0.2591800391674042
+            0.30386215448379517,
+            0.3018079996109009,
+            0.3163908123970032
         ],
         "display_name": "black plastic block",
         "essence": {
@@ -10010,9 +10498,9 @@
             "unbreakable": false
         },
         "color": [
-            0.43050673604011536,
-            0.2288600355386734,
-            0.13669468462467194
+            0.47187843918800354,
+            0.28452593088150024,
+            0.20030558109283447
         ],
         "display_name": "brown plastic block",
         "essence": {
@@ -10051,6 +10539,112 @@
             "axe_affinity": false,
             "axe_required": false,
             "break_time": 1.0,
+            "drop_item": 119639185,
+            "flammability": 0.6499999761581421,
+            "griefable": true,
+            "meat_affinity": false,
+            "pickaxe_affinity": true,
+            "pickaxe_required": false,
+            "plant_affinity": false,
+            "shovel_affinity": false,
+            "sustain_fire": false,
+            "unbreakable": false
+        },
+        "color": [
+            0.70993971824646,
+            0.39500892162323,
+            0.2513369023799896
+        ],
+        "display_name": "orange plastic block",
+        "essence": {
+            "bias": 0.0,
+            "energy": 0.05,
+            "fuseable": true,
+            "output_tags": [],
+            "properties": {
+                "aqua": 0.05,
+                "blockiness": 1.0,
+                "clay": 0.4,
+                "danger": 0.0,
+                "edibility": 0.0,
+                "faith": 0.0,
+                "hate": 0.0,
+                "lust": 0.0,
+                "mercury": 0.05,
+                "phlegm": 0.3,
+                "sulfur": 0.3,
+                "utility": 0.0,
+                "wearability": 0.2
+            },
+            "rank": 0.0,
+            "tags": [
+                "plastic"
+            ]
+        },
+        "id": 119639185,
+        "internal": false,
+        "internal_name": "orange plastic block",
+        "max_durability": 0,
+        "stack_size": 50
+    },
+    {
+        "block_data": {
+            "axe_affinity": false,
+            "axe_required": false,
+            "break_time": 1.0,
+            "drop_item": 119639189,
+            "flammability": 0.6499999761581421,
+            "griefable": true,
+            "meat_affinity": false,
+            "pickaxe_affinity": true,
+            "pickaxe_required": false,
+            "plant_affinity": false,
+            "shovel_affinity": false,
+            "sustain_fire": false,
+            "unbreakable": false
+        },
+        "color": [
+            0.4468211531639099,
+            0.29185977578163147,
+            0.7426024675369263
+        ],
+        "display_name": "purple plastic block",
+        "essence": {
+            "bias": 0.0,
+            "energy": 0.05,
+            "fuseable": true,
+            "output_tags": [],
+            "properties": {
+                "aqua": 0.05,
+                "blockiness": 1.0,
+                "clay": 0.4,
+                "danger": 0.0,
+                "edibility": 0.0,
+                "faith": 0.0,
+                "hate": 0.0,
+                "lust": 0.0,
+                "mercury": 0.05,
+                "phlegm": 0.3,
+                "sulfur": 0.3,
+                "utility": 0.0,
+                "wearability": 0.2
+            },
+            "rank": 0.0,
+            "tags": [
+                "plastic"
+            ]
+        },
+        "id": 119639189,
+        "internal": false,
+        "internal_name": "purple plastic block",
+        "max_durability": 0,
+        "stack_size": 50
+    },
+    {
+        "block_data": {
+            "axe_affinity": false,
+            "axe_required": false,
+            "break_time": 1.0,
             "drop_item": 119639295,
             "flammability": 0.6499999761581421,
             "griefable": true,
@@ -10063,9 +10657,9 @@
             "unbreakable": false
         },
         "color": [
-            0.5723453164100647,
-            0.1971139907836914,
-            0.23519225418567657
+            0.6225957274436951,
+            0.23396995663642883,
+            0.3006875514984131
         ],
         "display_name": "wrapper block",
         "essence": {
@@ -10117,9 +10711,9 @@
             "unbreakable": false
         },
         "color": [
-            0.1491384506225586,
-            0.0009846362518146634,
-            0.0008488243911415339
+            0.21639928221702576,
+            0.03795942664146423,
+            0.04193192347884178
         ],
         "display_name": "couch block",
         "essence": {
@@ -10171,9 +10765,9 @@
             "unbreakable": false
         },
         "color": [
-            0.21212121844291687,
-            0.1445378214120865,
-            0.15385790169239044
+            0.26252439618110657,
+            0.19239453971385956,
+            0.20945590734481812
         ],
         "display_name": "comfort block",
         "essence": {
@@ -10237,13 +10831,13 @@
             "unbreakable": false
         },
         "color": [
-            0.3445887565612793,
-            0.26568204164505005,
-            0.34343433380126953
+            0.39079874753952026,
+            0.31593242287635803,
+            0.41349631547927856
         ],
         "display_name": "mana ore block",
         "essence": {
-            "bias": -0.5,
+            "bias": -0.09999999999999964,
             "energy": 0.7,
             "fuseable": true,
             "output_tags": [],
@@ -10292,9 +10886,9 @@
             "unbreakable": false
         },
         "color": [
-            0.3578983247280121,
-            0.24831508100032806,
-            0.3132501542568207
+            0.40156182646751404,
+            0.2894321382045746,
+            0.37141159176826477
         ],
         "display_name": "pink grass block",
         "essence": {
@@ -10346,9 +10940,9 @@
             "unbreakable": false
         },
         "color": [
-            0.3655886650085449,
-            0.4034801721572876,
-            0.2578049302101135
+            0.3959426283836365,
+            0.4652915596961975,
+            0.3132501542568207
         ],
         "display_name": "grass grass block",
         "essence": {
@@ -10399,9 +10993,9 @@
             "unbreakable": false
         },
         "color": [
-            0.35740599036216736,
-            0.2982259690761566,
-            0.3192598223686218
+            0.3979797959327698,
+            0.34559035301208496,
+            0.3770987093448639
         ],
         "display_name": "pale grass block",
         "essence": {
@@ -10453,9 +11047,9 @@
             "unbreakable": false
         },
         "color": [
-            0.2701977789402008,
-            0.2615906894207001,
-            0.2792632281780243
+            0.3128087520599365,
+            0.3117052912712097,
+            0.3372039794921875
         ],
         "display_name": "blue grass block",
         "essence": {
@@ -10507,9 +11101,9 @@
             "unbreakable": false
         },
         "color": [
-            0.2951022684574127,
-            0.2629827558994293,
-            0.21665392816066742
+            0.33635514974594116,
+            0.3187844753265381,
+            0.27529072761535645
         ],
         "display_name": "grass block",
         "essence": {
@@ -10561,9 +11155,9 @@
             "unbreakable": false
         },
         "color": [
-            0.5284441113471985,
-            0.5017400979995728,
-            0.5073423385620117
+            0.5970460772514343,
+            0.6015108823776245,
+            0.6233596205711365
         ],
         "display_name": "snow grass block",
         "essence": {
@@ -10615,9 +11209,9 @@
             "unbreakable": false
         },
         "color": [
-            0.6392326354980469,
-            0.6626092791557312,
-            0.6747984290122986
+            0.7155249714851379,
+            0.7813428640365601,
+            0.810627281665802
         ],
         "display_name": "snow block",
         "essence": {
@@ -10668,9 +11262,9 @@
             "unbreakable": false
         },
         "color": [
-            0.3538069725036621,
-            0.30055174231529236,
-            0.24140565097332
+            0.39300569891929626,
+            0.3560818135738373,
+            0.2991596758365631
         ],
         "display_name": "bright grass block",
         "essence": {
@@ -10956,6 +11550,59 @@
             "attack_increase": 4,
             "axe_boost": true,
             "break_speed_increase": 1.8,
+            "cristella_boost": false,
+            "fire_aspect": false,
+            "meat_boost": false,
+            "pickaxe_boost": false,
+            "plant_boost": false,
+            "shovel_boost": false,
+            "slime_boost": false
+        }
+    },
+    {
+        "color": [
+            0.3807794749736786,
+            0.3763253390789032,
+            0.2978939712047577
+        ],
+        "display_name": "parashu",
+        "essence": {
+            "bias": -0.15000000000000036,
+            "energy": 0.9,
+            "fuseable": true,
+            "output_tags": [],
+            "properties": {
+                "aqua": 0.78,
+                "blockiness": 0.0,
+                "clay": 0.19,
+                "danger": 1.0,
+                "edibility": 0.0,
+                "faith": 1.0,
+                "hate": 0.22,
+                "lust": 0.0,
+                "mercury": 0.93,
+                "phlegm": 0.0,
+                "sulfur": 0.63,
+                "utility": 0.66,
+                "wearability": 0.0
+            },
+            "rank": 0.8,
+            "tags": [
+                "stick",
+                "metal",
+                "gold",
+                "magic"
+            ]
+        },
+        "id": 152595450,
+        "internal": false,
+        "internal_name": "parashu",
+        "max_durability": 900,
+        "stack_size": 1,
+        "tool_data": {
+            "attack_increase": 7,
+            "axe_boost": true,
+            "break_speed_increase": 5.0,
             "cristella_boost": false,
             "fire_aspect": false,
             "meat_boost": false,
@@ -11282,7 +11929,7 @@
         ],
         "display_name": "methuselah",
         "essence": {
-            "bias": 0.0,
+            "bias": -0.05000000000000071,
             "energy": 1.0,
             "fuseable": true,
             "output_tags": [],
@@ -11644,7 +12291,7 @@
         ],
         "display_name": "hinokagutsuchi",
         "essence": {
-            "bias": 0.0,
+            "bias": -0.09999999999999964,
             "energy": 2.0,
             "fuseable": true,
             "output_tags": [],
@@ -12049,6 +12696,59 @@
         }
     },
     {
+        "color": [
+            0.864263117313385,
+            0.892220139503479,
+            0.9217583537101746
+        ],
+        "display_name": "yueyachan",
+        "essence": {
+            "bias": -0.16000000000000014,
+            "energy": 0.7,
+            "fuseable": true,
+            "output_tags": [],
+            "properties": {
+                "aqua": 0.12,
+                "blockiness": 0.0,
+                "clay": 0.24,
+                "danger": 0.32,
+                "edibility": 0.0,
+                "faith": 1.0,
+                "hate": 0.0,
+                "lust": 0.49,
+                "mercury": 1.0,
+                "phlegm": 0.11,
+                "sulfur": 0.18,
+                "utility": 1.0,
+                "wearability": 0.0
+            },
+            "rank": 0.73,
+            "tags": [
+                "metal",
+                "stick",
+                "cold",
+                "magic"
+            ]
+        },
+        "id": 152629873,
+        "internal": false,
+        "internal_name": "yueyachan",
+        "max_durability": 2500,
+        "stack_size": 1,
+        "tool_data": {
+            "attack_increase": 5,
+            "axe_boost": false,
+            "break_speed_increase": 12.0,
+            "cristella_boost": false,
+            "fire_aspect": false,
+            "meat_boost": false,
+            "pickaxe_boost": false,
+            "plant_boost": false,
+            "shovel_boost": true,
+            "slime_boost": false
+        }
+    },
+    {
         "block_data": {
             "axe_affinity": false,
             "axe_required": false,
@@ -12065,9 +12765,9 @@
             "unbreakable": false
         },
         "color": [
-            0.4902130663394928,
-            0.3815126121044159,
-            0.5401069521903992
+            0.5258467197418213,
+            0.4103217124938965,
+            0.6148883700370789
         ],
         "display_name": "mana gem block",
         "essence": {
@@ -12119,9 +12819,9 @@
             "unbreakable": false
         },
         "color": [
-            0.37215855717658997,
-            0.3654528558254242,
-            0.3560309112071991
+            0.41054239869117737,
+            0.4172990322113037,
+            0.4141923487186432
         ],
         "display_name": "plate block",
         "essence": {
@@ -12172,9 +12872,9 @@
             "unbreakable": false
         },
         "color": [
-            0.15951107442378998,
-            0.16171802580356598,
-            0.150954931974411
+            0.21307189762592316,
+            0.2246328890323639,
+            0.21661998331546783
         ],
         "display_name": "grill block",
         "essence": {
@@ -12225,11 +12925,11 @@
             "unbreakable": false
         },
         "color": [
-            0.15314489603042603,
-            0.1555725336074829,
-            0.14501315355300903
+            0.20699431002140045,
+            0.21850436925888062,
+            0.21066123247146606
         ],
-        "display_name": "grill block",
+        "display_name": "grill vent block",
         "essence": {
             "bias": 0.0,
             "energy": 0.2,
@@ -12278,9 +12978,9 @@
             "unbreakable": false
         },
         "color": [
-            0.14516595005989075,
-            0.10382819920778275,
-            0.11209575086832047
+            0.22108480334281921,
+            0.1716492623090744,
+            0.19300568103790283
         ],
         "display_name": "white lamp",
         "essence": {
@@ -12334,9 +13034,9 @@
             "unbreakable": false
         },
         "color": [
-            0.09961803257465363,
-            0.13358798623085022,
-            0.15075120329856873
+            0.16385705769062042,
+            0.20887869596481323,
+            0.23558272421360016
         ],
         "display_name": "blue lamp",
         "essence": {
@@ -12390,9 +13090,9 @@
             "unbreakable": false
         },
         "color": [
-            0.18261606991291046,
-            0.08831168711185455,
-            0.09788642823696136
+            0.2619132399559021,
+            0.14022578299045563,
+            0.17400899529457092
         ],
         "display_name": "red lamp",
         "essence": {
@@ -12446,9 +13146,9 @@
             "unbreakable": false
         },
         "color": [
-            0.13679653406143188,
-            0.10438842326402664,
-            0.23563364148139954
+            0.2126135230064392,
+            0.14251761138439178,
+            0.32341906428337097
         ],
         "display_name": "purple lamp",
         "essence": {
@@ -12502,9 +13202,9 @@
             "unbreakable": false
         },
         "color": [
-            0.13245055079460144,
-            0.16876326501369476,
-            0.0970885306596756
+            0.19947372376918793,
+            0.2541210353374481,
+            0.1714625209569931
         ],
         "display_name": "green lamp",
         "essence": {
@@ -12558,9 +13258,9 @@
             "unbreakable": false
         },
         "color": [
-            0.33879977464675903,
-            0.17083439230918884,
-            0.09815805405378342
+            0.40962567925453186,
+            0.25328919291496277,
+            0.18102028965950012
         ],
         "display_name": "yellow lamp",
         "essence": {
@@ -12614,9 +13314,9 @@
             "unbreakable": false
         },
         "color": [
-            0.18377047777175903,
-            0.1751803755760193,
-            0.18298955261707306
+            0.23410576581954956,
+            0.232951357960701,
+            0.24505560100078583
         ],
         "display_name": "dark lamp",
         "essence": {
@@ -12669,9 +13369,9 @@
             "unbreakable": false
         },
         "color": [
-            0.4006620943546295,
-            0.23466598987579346,
-            0.2711654305458069
+            0.46634411811828613,
+            0.3054409623146057,
+            0.35368815064430237
         ],
         "display_name": "sodium lamp",
         "essence": {
@@ -12725,13 +13425,13 @@
             "unbreakable": false
         },
         "color": [
-            0.5280196666717529,
-            0.6005432605743408,
-            0.663763701915741
+            0.5527204871177673,
+            0.6741023659706116,
+            0.7919022440910339
         ],
         "display_name": "lucid block",
         "essence": {
-            "bias": -1.0,
+            "bias": -0.34999999999999964,
             "energy": 0.1,
             "fuseable": true,
             "output_tags": [],
@@ -12779,13 +13479,13 @@
             "unbreakable": false
         },
         "color": [
-            0.4911127984523773,
-            0.37606313824653625,
-            0.33564212918281555
+            0.5698158144950867,
+            0.4562091529369354,
+            0.433409720659256
         ],
-        "display_name": "lucid block",
+        "display_name": "state block",
         "essence": {
-            "bias": -1.0,
+            "bias": -0.34999999999999964,
             "energy": 0.1,
             "fuseable": true,
             "output_tags": [],
@@ -12833,9 +13533,9 @@
             "unbreakable": false
         },
         "color": [
-            0.03008233569562435,
-            0.02711145021021366,
-            0.03407181054353714
+            0.06637806445360184,
+            0.0638485699892044,
+            0.0793650820851326
         ],
         "display_name": "tendril block",
         "essence": {
@@ -12886,11 +13586,11 @@
             "unbreakable": false
         },
         "color": [
-            0.19095152616500854,
-            0.20069603621959686,
-            0.23834988474845886
+            0.24351073801517487,
+            0.2574484348297119,
+            0.30258890986442566
         ],
-        "display_name": "metal block",
+        "display_name": "line metal block",
         "essence": {
             "bias": 0.0,
             "energy": 0.5,
@@ -12939,9 +13639,9 @@
             "unbreakable": false
         },
         "color": [
-            0.19254732131958008,
-            0.20239368081092834,
-            0.2397589385509491
+            0.2449367642402649,
+            0.2591291069984436,
+            0.30391308665275574
         ],
         "display_name": "metal block",
         "essence": {
@@ -12992,9 +13692,9 @@
             "unbreakable": false
         },
         "color": [
-            0.2785162627696991,
-            0.1832781583070755,
-            0.07897461950778961
+            0.41723114252090454,
+            0.31012648344039917,
+            0.17139461636543274
         ],
         "display_name": "gold block",
         "essence": {
@@ -13046,9 +13746,9 @@
             "unbreakable": false
         },
         "color": [
-            0.1801205277442932,
-            0.09425345808267593,
-            0.06732875108718872
+            0.23741617798805237,
+            0.1554197371006012,
+            0.13385960459709167
         ],
         "display_name": "rust block",
         "essence": {
@@ -13099,9 +13799,9 @@
             "unbreakable": false
         },
         "color": [
-            0.22565147280693054,
-            0.21750275790691376,
-            0.22672098875045776
+            0.27619048953056335,
+            0.27619048953056335,
+            0.29208046197891235
         ],
         "display_name": "aluminum block",
         "essence": {
@@ -13152,9 +13852,9 @@
             "unbreakable": false
         },
         "color": [
-            0.18852388858795166,
-            0.250301331281662,
-            0.30243611335754395
+            0.2390289455652237,
+            0.30335286259651184,
+            0.36334776878356934
         ],
         "display_name": "osmium block",
         "essence": {
@@ -13206,9 +13906,9 @@
             "unbreakable": false
         },
         "color": [
-            0.3741448223590851,
-            0.3626686930656433,
-            0.37602919340133667
+            0.41317376494407654,
+            0.41334351897239685,
+            0.4343094825744629
         ],
         "display_name": "silver block",
         "essence": {
@@ -13259,9 +13959,9 @@
             "unbreakable": false
         },
         "color": [
-            0.19337916374206543,
-            0.2821662127971649,
-            0.2251931130886078
+            0.2390289455652237,
+            0.3455224633216858,
+            0.2882607579231262
         ],
         "display_name": "cobalt block",
         "essence": {
@@ -13301,6 +14001,167 @@
             "axe_affinity": false,
             "axe_required": false,
             "break_time": 4.0,
+            "drop_item": 163166264,
+            "flammability": 0.44999998807907104,
+            "griefable": true,
+            "meat_affinity": false,
+            "pickaxe_affinity": true,
+            "pickaxe_required": true,
+            "plant_affinity": false,
+            "shovel_affinity": false,
+            "sustain_fire": false,
+            "unbreakable": false
+        },
+        "color": [
+            0.40059417486190796,
+            0.27736184000968933,
+            0.20512689650058746
+        ],
+        "display_name": "copper block",
+        "essence": {
+            "bias": -0.125,
+            "energy": 0.035,
+            "fuseable": true,
+            "output_tags": [],
+            "properties": {
+                "aqua": 0.0,
+                "blockiness": 1.0,
+                "clay": 0.0,
+                "danger": 0.0,
+                "edibility": 0.0,
+                "faith": 0.55,
+                "hate": 0.15,
+                "lust": 0.09,
+                "mercury": 1.0,
+                "phlegm": 0.0,
+                "sulfur": 0.66,
+                "utility": 0.63,
+                "wearability": 0.0
+            },
+            "rank": 0.0,
+            "tags": [
+                "metal",
+                "magnetite",
+                "fire"
+            ]
+        },
+        "id": 163166264,
+        "internal": false,
+        "internal_name": "copper block",
+        "max_durability": 0,
+        "stack_size": 50
+    },
+    {
+        "block_data": {
+            "axe_affinity": false,
+            "axe_required": false,
+            "break_time": 5.0,
+            "drop_item": 163166305,
+            "flammability": 0.14749999344348907,
+            "griefable": true,
+            "meat_affinity": false,
+            "pickaxe_affinity": true,
+            "pickaxe_required": true,
+            "plant_affinity": false,
+            "shovel_affinity": false,
+            "sustain_fire": false,
+            "unbreakable": false
+        },
+        "color": [
+            0.04140565171837807,
+            0.03785756602883339,
+            0.05651472881436348
+        ],
+        "display_name": "tungsten block",
+        "essence": {
+            "bias": -0.02500000000000035,
+            "energy": 0.06,
+            "fuseable": true,
+            "output_tags": [],
+            "properties": {
+                "aqua": 0.0,
+                "blockiness": 0.0,
+                "clay": 0.18,
+                "danger": 0.6,
+                "edibility": 0.0,
+                "faith": 0.0,
+                "hate": 0.77,
+                "lust": 0.14,
+                "mercury": 1.0,
+                "phlegm": 0.41,
+                "sulfur": 0.1,
+                "utility": 0.56,
+                "wearability": 0.0
+            },
+            "rank": 0.0,
+            "tags": [
+                "metal"
+            ]
+        },
+        "id": 163166305,
+        "internal": false,
+        "internal_name": "tungsten block",
+        "max_durability": 0,
+        "stack_size": 50
+    },
+    {
+        "block_data": {
+            "axe_affinity": false,
+            "axe_required": false,
+            "break_time": 1.5,
+            "drop_item": 163166366,
+            "flammability": 0.0,
+            "griefable": true,
+            "meat_affinity": false,
+            "pickaxe_affinity": true,
+            "pickaxe_required": true,
+            "plant_affinity": false,
+            "shovel_affinity": false,
+            "sustain_fire": false,
+            "unbreakable": false
+        },
+        "color": [
+            0.0719803050160408,
+            0.10367541015148163,
+            0.25164246559143066
+        ],
+        "display_name": "lead block",
+        "essence": {
+            "bias": 0.0,
+            "energy": 0.03,
+            "fuseable": true,
+            "output_tags": [],
+            "properties": {
+                "aqua": 0.0,
+                "blockiness": 1.0,
+                "clay": 0.13,
+                "danger": 0.0,
+                "edibility": 0.0,
+                "faith": 0.09,
+                "hate": 0.11,
+                "lust": 0.46,
+                "mercury": 0.93,
+                "phlegm": 0.0,
+                "sulfur": 0.12,
+                "utility": 0.36,
+                "wearability": 0.0
+            },
+            "rank": 0.05,
+            "tags": [
+                "metal"
+            ]
+        },
+        "id": 163166366,
+        "internal": false,
+        "internal_name": "anodized aluminum block",
+        "max_durability": 0,
+        "stack_size": 50
+    },
+    {
+        "block_data": {
+            "axe_affinity": false,
+            "axe_required": false,
+            "break_time": 4.0,
             "drop_item": 163166417,
             "flammability": 0.10000000149011612,
             "griefable": true,
@@ -13313,9 +14174,9 @@
             "unbreakable": false
         },
         "color": [
-            0.12046515941619873,
-            0.3200747072696686,
-            0.25943467020988464
+            0.1668449193239212,
+            0.384670227766037,
+            0.3217383921146393
         ],
         "display_name": "circuit block",
         "essence": {
@@ -13354,6 +14215,60 @@
         "block_data": {
             "axe_affinity": false,
             "axe_required": false,
+            "break_time": 6.0,
+            "drop_item": 163166442,
+            "flammability": 0.0,
+            "griefable": true,
+            "meat_affinity": false,
+            "pickaxe_affinity": true,
+            "pickaxe_required": true,
+            "plant_affinity": false,
+            "shovel_affinity": false,
+            "sustain_fire": false,
+            "unbreakable": false
+        },
+        "color": [
+            0.41317376494407654,
+            0.27029964327812195,
+            0.3718869388103485
+        ],
+        "display_name": "rose gold block",
+        "essence": {
+            "bias": -0.09999999999999964,
+            "energy": 0.08,
+            "fuseable": true,
+            "output_tags": [],
+            "properties": {
+                "aqua": 0.0,
+                "blockiness": 1.0,
+                "clay": 0.0,
+                "danger": 0.0,
+                "edibility": 0.0,
+                "faith": 0.0,
+                "hate": 0.0,
+                "lust": 1.0,
+                "mercury": 1.0,
+                "phlegm": 0.04,
+                "sulfur": 0.51,
+                "utility": 0.02,
+                "wearability": 0.0
+            },
+            "rank": 0.07,
+            "tags": [
+                "metal",
+                "magic"
+            ]
+        },
+        "id": 163166442,
+        "internal": false,
+        "internal_name": "rose gold block",
+        "max_durability": 0,
+        "stack_size": 50
+    },
+    {
+        "block_data": {
+            "axe_affinity": false,
+            "axe_required": false,
             "break_time": 12.0,
             "drop_item": 164114274,
             "flammability": 1.0,
@@ -13367,9 +14282,9 @@
             "unbreakable": false
         },
         "color": [
-            0.4007469713687897,
-            0.23748408257961273,
-            0.13348612189292908
+            0.44643068313598633,
+            0.2973771393299103,
+            0.20437993109226227
         ],
         "display_name": "sulfur block",
         "essence": {
@@ -13411,20 +14326,20 @@
             "axe_required": false,
             "break_time": 30.0,
             "drop_item": 164114324,
-            "flammability": 1.0,
+            "flammability": 0.0,
             "griefable": false,
             "meat_affinity": false,
             "pickaxe_affinity": true,
             "pickaxe_required": true,
             "plant_affinity": false,
             "shovel_affinity": false,
-            "sustain_fire": true,
+            "sustain_fire": false,
             "unbreakable": false
         },
         "color": [
-            0.01132331695407629,
-            0.019302265718579292,
-            0.026194719597697258
+            0.051523640751838684,
+            0.06524064391851425,
+            0.08299804478883743
         ],
         "display_name": "obsidian block",
         "essence": {
@@ -13477,9 +14392,9 @@
             "unbreakable": false
         },
         "color": [
-            0.3870809078216553,
-            0.5179865956306458,
-            0.5440794229507446
+            0.44288259744644165,
+            0.595535159111023,
+            0.6340038776397705
         ],
         "display_name": "petal block",
         "essence": {
@@ -13532,9 +14447,9 @@
             "unbreakable": false
         },
         "color": [
-            0.4005432426929474,
-            0.5532297492027283,
-            0.5864866971969604
+            0.43880826234817505,
+            0.6366182565689087,
+            0.6925897598266602
         ],
         "display_name": "core block",
         "essence": {
@@ -13597,9 +14512,9 @@
             "unbreakable": false
         },
         "color": [
-            0.26237744092941284,
-            0.3343137204647064,
-            0.36642158031463623
+            0.30496323108673096,
+            0.3862132430076599,
+            0.42432597279548645
         ],
         "display_name": "glass block",
         "essence": {
@@ -13650,9 +14565,9 @@
             "unbreakable": false
         },
         "color": [
-            0.19621650874614716,
-            0.18050262331962585,
-            0.1895056664943695
+            0.24982048571109772,
+            0.24059651792049408,
+            0.2573046088218689
         ],
         "display_name": "steel window block",
         "essence": {
@@ -13704,9 +14619,9 @@
             "unbreakable": false
         },
         "color": [
-            0.3675205707550049,
-            0.3561669886112213,
-            0.3690069615840912
+            0.40689435601234436,
+            0.406767874956131,
+            0.42757749557495117
         ],
         "display_name": "mirage block",
         "essence": {
@@ -13757,9 +14672,9 @@
             "unbreakable": false
         },
         "color": [
-            0.3823777735233307,
-            0.05515016242861748,
-            0.0533134788274765
+            0.43216678500175476,
+            0.10528667271137238,
+            0.11998014152050018
         ],
         "display_name": "anger block",
         "essence": {
@@ -13822,9 +14737,9 @@
             "unbreakable": false
         },
         "color": [
-            0.26492825150489807,
-            0.3365271985530853,
-            0.36838486790657043
+            0.3063674867153168,
+            0.3873458802700043,
+            0.4247826933860779
         ],
         "display_name": "glass tile block",
         "essence": {
@@ -13875,9 +14790,9 @@
             "unbreakable": false
         },
         "color": [
-            0.23814617097377777,
-            0.3063576817512512,
-            0.27547746896743774
+            0.2814362049102783,
+            0.36550378799438477,
+            0.3355572521686554
         ],
         "display_name": "ornament block",
         "essence": {
@@ -13929,9 +14844,9 @@
             "unbreakable": false
         },
         "color": [
-            0.33859604597091675,
-            0.31204482913017273,
-            0.24855275452136993
+            0.37645360827445984,
+            0.3680332601070404,
+            0.30593329668045044
         ],
         "display_name": "limestone block",
         "essence": {
@@ -13983,9 +14898,9 @@
             "unbreakable": false
         },
         "color": [
-            0.37752312421798706,
-            0.35856038331985474,
-            0.3296494483947754
+            0.4130549132823944,
+            0.4101519286632538,
+            0.3842797577381134
         ],
         "display_name": "granite block",
         "essence": {
@@ -14036,9 +14951,9 @@
             "unbreakable": false
         },
         "color": [
-            0.4220694303512573,
-            0.38711485266685486,
-            0.3874374032020569
+            0.457770973443985,
+            0.43478482961654663,
+            0.441541463136673
         ],
         "display_name": "concrete block",
         "essence": {
@@ -14089,9 +15004,9 @@
             "unbreakable": false
         },
         "color": [
-            0.33952975273132324,
-            0.30666327476501465,
-            0.3008742928504944
+            0.37849077582359314,
+            0.3569476306438446,
+            0.35652321577072144
         ],
         "display_name": "limestone tile block",
         "essence": {
@@ -14143,9 +15058,9 @@
             "unbreakable": false
         },
         "color": [
-            0.15341651439666748,
-            0.14070113003253937,
-            0.1397334635257721
+            0.20310670137405396,
+            0.19587472081184387,
+            0.19893048703670502
         ],
         "display_name": "asphalt block",
         "essence": {
@@ -14196,9 +15111,9 @@
             "unbreakable": false
         },
         "color": [
-            0.6274170279502869,
-            0.5616840720176697,
-            0.5124183297157288
+            0.7011289596557617,
+            0.6353620290756226,
+            0.574348509311676
         ],
         "display_name": "sandstone block",
         "essence": {
@@ -14250,13 +15165,13 @@
             "unbreakable": false
         },
         "color": [
-            0.1893896907567978,
-            0.14808590710163116,
-            0.16251590847969055
+            0.2297937422990799,
+            0.1921229064464569,
+            0.21397164463996887
         ],
         "display_name": "tendril ore block",
         "essence": {
-            "bias": -0.5,
+            "bias": -0.09999999999999964,
             "energy": 0.7,
             "fuseable": true,
             "output_tags": [],
@@ -14304,13 +15219,13 @@
             "unbreakable": false
         },
         "color": [
-            0.35244885087013245,
-            0.324064165353775,
-            0.2860707938671112
+            0.39028945565223694,
+            0.37776079773902893,
+            0.3429759740829468
         ],
         "display_name": "magnetite ore block",
         "essence": {
-            "bias": -0.5,
+            "bias": -0.09999999999999964,
             "energy": 0.9,
             "fuseable": true,
             "output_tags": [],
@@ -14370,13 +15285,13 @@
             "unbreakable": false
         },
         "color": [
-            0.5670655965805054,
-            0.47773534059524536,
-            0.4121721386909485
+            0.6314574480056763,
+            0.5460487008094788,
+            0.4751379191875458
         ],
         "display_name": "sulfur ore block",
         "essence": {
-            "bias": -0.5,
+            "bias": -0.09999999999999964,
             "energy": 0.4,
             "fuseable": true,
             "output_tags": [],
@@ -14426,9 +15341,9 @@
             "unbreakable": false
         },
         "color": [
-            0.28213223814964294,
-            0.23649944365024567,
-            0.2695017457008362
+            0.32711994647979736,
+            0.2851200997829437,
+            0.32732364535331726
         ],
         "display_name": "pebble tile block",
         "essence": {
@@ -14479,9 +15394,9 @@
             "unbreakable": false
         },
         "color": [
-            0.6864612698554993,
-            0.673728883266449,
-            0.6889398097991943
+            0.8008658289909363,
+            0.8004583716392517,
+            0.8354978561401367
         ],
         "display_name": "white tile block",
         "essence": {
@@ -14532,9 +15447,9 @@
             "unbreakable": false
         },
         "color": [
-            0.49269163608551025,
-            0.32068586349487305,
-            0.2720651924610138
+            0.5328919291496277,
+            0.3697309195995331,
+            0.32825735211372375
         ],
         "display_name": "brick block",
         "essence": {
@@ -14586,9 +15501,9 @@
             "unbreakable": false
         },
         "color": [
-            0.3811221420764923,
-            0.3384771943092346,
-            0.37536710500717163
+            0.42076224088668823,
+            0.3838723301887512,
+            0.43183091282844543
         ],
         "display_name": "tile block",
         "essence": {
@@ -14639,9 +15554,9 @@
             "unbreakable": false
         },
         "color": [
-            0.25902724266052246,
-            0.23084627091884613,
-            0.22047364711761475
+            0.303098201751709,
+            0.2848145365715027,
+            0.2788557708263397
         ],
         "display_name": "temple brick block",
         "essence": {
@@ -14693,9 +15608,9 @@
             "unbreakable": false
         },
         "color": [
-            0.3754520118236542,
-            0.21045751869678497,
-            0.20974449813365936
+            0.4188438951969147,
+            0.26053816080093384,
+            0.2687038481235504
         ],
         "display_name": "clay brick block",
         "essence": {
@@ -14747,9 +15662,9 @@
             "unbreakable": false
         },
         "color": [
-            0.26013073325157166,
-            0.13226380944252014,
-            0.14842543005943298
+            0.31089040637016296,
+            0.1828877031803131,
+            0.20825056731700897
         ],
         "display_name": "clay tile block",
         "essence": {
@@ -14801,9 +15716,9 @@
             "unbreakable": false
         },
         "color": [
-            0.5566760301589966,
-            0.5351837873458862,
-            0.530718982219696
+            0.6053475737571716,
+            0.5980477333068848,
+            0.5992530584335327
         ],
         "display_name": "diorite block",
         "essence": {
@@ -14854,9 +15769,9 @@
             "unbreakable": false
         },
         "color": [
-            0.21942110359668732,
-            0.17088532447814941,
-            0.18175028264522552
+            0.26788896322250366,
+            0.22339360415935516,
+            0.2410661280155182
         ],
         "display_name": "pebble block",
         "essence": {
@@ -14907,9 +15822,9 @@
             "unbreakable": false
         },
         "color": [
-            0.276529997587204,
-            0.2810797095298767,
-            0.2691112756729126
+            0.32219675183296204,
+            0.3390713930130005,
+            0.33087173104286194
         ],
         "display_name": "onyx block",
         "essence": {
@@ -14960,9 +15875,9 @@
             "unbreakable": false
         },
         "color": [
-            0.2881419360637665,
-            0.25663354992866516,
-            0.28121551871299744
+            0.33080384135246277,
+            0.3058483898639679,
+            0.337798148393631
         ],
         "display_name": "cold stone block",
         "essence": {
@@ -15014,9 +15929,9 @@
             "unbreakable": false
         },
         "color": [
-            0.2787030041217804,
-            0.22062642872333527,
-            0.2386384904384613
+            0.32331719994544983,
+            0.27121636271476746,
+            0.2967999279499054
         ],
         "display_name": "stone block",
         "essence": {
@@ -15067,9 +15982,9 @@
             "unbreakable": false
         },
         "color": [
-            0.07759952545166016,
-            0.059808164834976196,
-            0.07763347774744034
+            0.12745946645736694,
+            0.10628978908061981,
+            0.13365589082241058
         ],
         "display_name": "rigid stone block",
         "essence": {
@@ -15120,9 +16035,9 @@
             "unbreakable": false
         },
         "color": [
-            0.2511501610279083,
-            0.24064171314239502,
-            0.24885833263397217
+            0.29483065009117126,
+            0.2921483814716339,
+            0.30630677938461304
         ],
         "display_name": "guard cube",
         "essence": {
@@ -15175,9 +16090,9 @@
             "unbreakable": false
         },
         "color": [
-            0.4042271375656128,
-            0.3942110240459442,
-            0.4452253580093384
+            0.4398268461227417,
+            0.4364655017852783,
+            0.5014854669570923
         ],
         "display_name": "sky rock block",
         "essence": {
@@ -15229,9 +16144,9 @@
             "unbreakable": false
         },
         "color": [
-            0.32919105887413025,
-            0.14754265546798706,
-            0.15917155146598816
+            0.3773024380207062,
+            0.1976572424173355,
+            0.21960784494876862
         ],
         "display_name": "shoal rock block",
         "essence": {
@@ -15283,9 +16198,9 @@
             "unbreakable": false
         },
         "color": [
-            0.1780833601951599,
-            0.08978864550590515,
-            0.0035141329281032085
+            0.23473389446735382,
+            0.15370512008666992,
+            0.0553773008286953
         ],
         "display_name": "tigerstone block",
         "essence": {
@@ -15337,9 +16252,9 @@
             "unbreakable": false
         },
         "color": [
-            0.5726169347763062,
-            0.5304303765296936,
-            0.4992275834083557
+            0.6408284306526184,
+            0.6109158992767334,
+            0.5857227444648743
         ],
         "display_name": "zany block",
         "essence": {
@@ -15430,9 +16345,9 @@
             "unbreakable": false
         },
         "color": [
-            0.5751973390579224,
-            0.4922332465648651,
-            0.42884305119514465
+            0.6282148957252502,
+            0.5508700609207153,
+            0.48068925738334656
         ],
         "display_name": "sand block",
         "essence": {
@@ -15483,9 +16398,9 @@
             "unbreakable": false
         },
         "color": [
-            0.19531449675559998,
-            0.12455648928880692,
-            0.1482047438621521
+            0.24736440181732178,
+            0.17485782504081726,
+            0.20786011219024658
         ],
         "display_name": "black sand block",
         "essence": {
@@ -15536,9 +16451,9 @@
             "unbreakable": false
         },
         "color": [
-            0.552516758441925,
-            0.6093540191650391,
-            0.620558500289917
+            0.5910194516181946,
+            0.6970206499099731,
+            0.7221967577934265
         ],
         "display_name": "shale block",
         "essence": {
@@ -15590,9 +16505,9 @@
             "unbreakable": false
         },
         "color": [
-            0.2823868989944458,
-            0.20713011920452118,
-            0.16801629960536957
+            0.3272557556629181,
+            0.2615567445755005,
+            0.22891095280647278
         ],
         "display_name": "druid dirt block",
         "essence": {
@@ -15643,9 +16558,9 @@
             "unbreakable": false
         },
         "color": [
-            0.3252355456352234,
-            0.19368474185466766,
-            0.1783040463924408
+            0.3704269528388977,
+            0.2465834766626358,
+            0.2379084974527359
         ],
         "display_name": "dirt block",
         "essence": {
@@ -15708,9 +16623,9 @@
             "unbreakable": false
         },
         "color": [
-            0.3418385684490204,
-            0.22661913931369781,
-            0.22858840227127075
+            0.3849758207798004,
+            0.27734488248825073,
+            0.2867838144302368
         ],
         "display_name": "clay block",
         "essence": {
@@ -15761,9 +16676,9 @@
             "unbreakable": false
         },
         "color": [
-            0.1422969251871109,
-            0.1000424399971962,
-            0.13514982163906097
+            0.19477124512195587,
+            0.1484084576368332,
+            0.19480518996715546
         ],
         "display_name": "mud block",
         "essence": {
@@ -15814,9 +16729,9 @@
             "unbreakable": false
         },
         "color": [
-            0.3527714014053345,
-            0.19276802241802216,
-            0.19697818160057068
+            0.39781004190444946,
+            0.24279773235321045,
+            0.2561582326889038
         ],
         "display_name": "clay shepach",
         "essence": {
@@ -15860,7 +16775,7 @@
             "flammability": 0.20000000298023224,
             "griefable": true,
             "meat_affinity": false,
-            "pickaxe_affinity": false,
+            "pickaxe_affinity": true,
             "pickaxe_required": false,
             "plant_affinity": false,
             "shovel_affinity": false,
@@ -15868,9 +16783,9 @@
             "unbreakable": false
         },
         "color": [
-            0.360664963722229,
-            0.6368798017501831,
-            0.6972719430923462
+            0.30052855610847473,
+            0.7334526777267456,
+            0.8404774069786072
         ],
         "display_name": "ball shepach",
         "essence": {
@@ -15915,7 +16830,7 @@
             "flammability": 0.20000000298023224,
             "griefable": true,
             "meat_affinity": false,
-            "pickaxe_affinity": false,
+            "pickaxe_affinity": true,
             "pickaxe_required": false,
             "plant_affinity": false,
             "shovel_affinity": false,
@@ -15923,9 +16838,9 @@
             "unbreakable": false
         },
         "color": [
-            0.7170189023017883,
-            0.34061625599861145,
-            0.3819200396537781
+            0.8164332509040833,
+            0.3486800789833069,
+            0.4350564479827881
         ],
         "display_name": "friend shepach",
         "essence": {
@@ -15978,9 +16893,9 @@
             "unbreakable": false
         },
         "color": [
-            0.13891859352588654,
-            0.06237161532044411,
-            0.13200916349887848
+            0.2008318454027176,
+            0.11122994869947433,
+            0.19646888971328735
         ],
         "display_name": "cache cube",
         "essence": {
@@ -16033,9 +16948,9 @@
             "unbreakable": false
         },
         "color": [
-            0.4092352092266083,
-            0.37402597069740295,
-            0.3632628917694092
+            0.45948562026023865,
+            0.4324250817298889,
+            0.4308292865753174
         ],
         "display_name": "hope cube",
         "essence": {
@@ -16087,9 +17002,9 @@
             "unbreakable": false
         },
         "color": [
-            0.6332908868789673,
-            0.5630252361297607,
-            0.5512265563011169
+            0.7132331728935242,
+            0.6341057419776917,
+            0.6257023811340332
         ],
         "display_name": "cabinet",
         "essence": {
@@ -16193,9 +17108,9 @@
             "unbreakable": false
         },
         "color": [
-            0.37292250990867615,
-            0.3017400801181793,
-            0.3039809763431549
+            0.43716153502464294,
+            0.35319581627845764,
+            0.3620915114879608
         ],
         "display_name": "bookshelf block",
         "essence": {
@@ -16332,9 +17247,9 @@
             "unbreakable": false
         },
         "color": [
-            0.5404804348945618,
-            0.401595801115036,
-            0.30053475499153137
+            0.584398627281189,
+            0.45447754859924316,
+            0.35334861278533936
         ],
         "display_name": "cardboard box",
         "essence": {
@@ -16453,9 +17368,9 @@
             "unbreakable": false
         },
         "color": [
-            0.37898311018943787,
-            0.5050844550132751,
-            0.5338596105575562
+            0.3881164491176605,
+            0.5731601715087891,
+            0.6220355033874512
         ],
         "display_name": "blessing cube",
         "essence": {
@@ -16506,9 +17421,9 @@
             "unbreakable": false
         },
         "color": [
-            0.5428571701049805,
-            0.41999828815460205,
-            0.38044309616088867
+            0.613139808177948,
+            0.4753077030181885,
+            0.43514132499694824
         ],
         "display_name": "infested wood block",
         "essence": {
@@ -16559,9 +17474,9 @@
             "unbreakable": false
         },
         "color": [
-            0.6370596885681152,
-            0.5158645510673523,
-            0.47296494245529175
+            0.7140480279922485,
+            0.5740429759025574,
+            0.5282233953475952
         ],
         "display_name": "cut wood block",
         "essence": {
@@ -16612,9 +17527,9 @@
             "unbreakable": false
         },
         "color": [
-            0.48588404059410095,
-            0.28893980383872986,
-            0.2759188413619995
+            0.5273576378822327,
+            0.33491215109825134,
+            0.33216196298599243
         ],
         "display_name": "varnished wood block",
         "essence": {
@@ -16733,9 +17648,9 @@
             "unbreakable": false
         },
         "color": [
-            0.3903743326663971,
-            0.25294965505599976,
-            0.24777182936668396
+            0.43121975660324097,
+            0.3017231225967407,
+            0.3045412003993988
         ],
         "display_name": "clay pot",
         "essence": {
@@ -16799,9 +17714,9 @@
             "unbreakable": false
         },
         "color": [
-            0.3165266215801239,
-            0.31511756777763367,
-            0.15939223766326904
+            0.3537900149822235,
+            0.3783549666404724,
+            0.2181648463010788
         ],
         "display_name": "melon block",
         "essence": {
@@ -16864,9 +17779,9 @@
             "unbreakable": false
         },
         "color": [
-            0.2707919478416443,
-            0.271284282207489,
-            0.22191664576530457
+            0.31255412101745605,
+            0.32898736000061035,
+            0.2805194854736328
         ],
         "display_name": "cactus block",
         "essence": {
@@ -16929,9 +17844,9 @@
             "unbreakable": false
         },
         "color": [
-            0.5421271324157715,
-            0.2933197617530823,
-            0.334046334028244
+            0.5936338305473328,
+            0.32883456349372864,
+            0.39010271430015564
         ],
         "display_name": "oppleberry block",
         "essence": {
@@ -16983,9 +17898,9 @@
             "unbreakable": false
         },
         "color": [
-            0.5223835110664368,
-            0.36037686467170715,
-            0.4507766664028168
+            0.568780243396759,
+            0.3921908140182495,
+            0.5102792382240295
         ],
         "display_name": "pulp block",
         "essence": {
@@ -17124,9 +18039,9 @@
             "unbreakable": false
         },
         "color": [
-            0.6542398929595947,
-            0.6073168516159058,
-            0.5384941697120667
+            0.7584415674209595,
+            0.7216365337371826,
+            0.6561242938041687
         ],
         "display_name": "letter cube",
         "essence": {
@@ -17177,9 +18092,9 @@
             "unbreakable": false
         },
         "color": [
-            0.24996180832386017,
-            0.16993464529514313,
-            0.13919022679328918
+            0.29834479093551636,
+            0.2262796014547348,
+            0.19867584109306335
         ],
         "display_name": "wood scrap block",
         "essence": {
@@ -17209,7 +18124,7 @@
         },
         "id": 379349063,
         "internal": false,
-        "internal_name": "plank block",
+        "internal_name": "wood scrap block",
         "max_durability": 0,
         "stack_size": 50
     },
@@ -17230,9 +18145,9 @@
             "unbreakable": false
         },
         "color": [
-            0.25963839888572693,
-            0.19331125915050507,
-            0.1790170669555664
+            0.31830912828445435,
+            0.25130295753479004,
+            0.24143961071968079
         ],
         "display_name": "log block",
         "essence": {
@@ -17283,9 +18198,9 @@
             "unbreakable": false
         },
         "color": [
-            0.3025379776954651,
-            0.17512944340705872,
-            0.24561582505702972
+            0.35080215334892273,
+            0.21716323494911194,
+            0.30442237854003906
         ],
         "display_name": "pimble block",
         "essence": {
@@ -17337,9 +18252,9 @@
             "unbreakable": false
         },
         "color": [
-            0.3497665822505951,
-            0.20020371675491333,
-            0.28430524468421936
+            0.3951956629753113,
+            0.24008148908615112,
+            0.3414311110973358
         ],
         "display_name": "abble block",
         "essence": {
@@ -17390,9 +18305,9 @@
             "unbreakable": false
         },
         "color": [
-            0.2569221556186676,
-            0.14722010493278503,
-            0.22994652390480042
+            0.3076309263706207,
+            0.18888039886951447,
+            0.2892623841762543
         ],
         "display_name": "dried abble block",
         "essence": {
@@ -17445,9 +18360,9 @@
             "unbreakable": false
         },
         "color": [
-            0.49085816740989685,
-            0.45581868290901184,
-            0.4753246605396271
+            0.5333842635154724,
+            0.5076309442520142,
+            0.5371360778808594
         ],
         "display_name": "log block",
         "essence": {
@@ -17498,9 +18413,9 @@
             "unbreakable": false
         },
         "color": [
-            0.2320176512002945,
-            0.1450471132993698,
-            0.1884390115737915
+            0.2807741165161133,
+            0.19025549292564392,
+            0.24673627316951752
         ],
         "display_name": "comb block",
         "essence": {
@@ -17551,9 +18466,9 @@
             "unbreakable": false
         },
         "color": [
-            0.6423223614692688,
-            0.5159664154052734,
-            0.21434512734413147
+            0.7184279561042786,
+            0.5949580073356628,
+            0.25220268964767456
         ],
         "display_name": "wallpaper block",
         "essence": {
@@ -17624,7 +18539,7 @@
         },
         "id": 492348301,
         "internal": false,
-        "internal_name": "tiamana compass",
+        "internal_name": "dormant tiamana compass",
         "max_durability": 60,
         "stack_size": 1
     },
@@ -17665,7 +18580,7 @@
         },
         "id": 492348302,
         "internal": false,
-        "internal_name": "tiamana compass",
+        "internal_name": "leaky tiamana compass",
         "max_durability": 60,
         "stack_size": 1
     },
@@ -17755,7 +18670,7 @@
             0.05275069922208786,
             0.03650420159101486
         ],
-        "display_name": "cooked wildebeest flesh",
+        "display_name": "cooked wilde flesh",
         "essence": {
             "bias": 0.0,
             "energy": 0.7,
@@ -18846,9 +19761,9 @@
             "unbreakable": false
         },
         "color": [
-            0.6265851855278015,
-            0.29316696524620056,
-            0.21368305385112762
+            0.6841015219688416,
+            0.3320770859718323,
+            0.268415242433548
         ],
         "display_name": "mutchroom block",
         "essence": {
@@ -18900,9 +19815,9 @@
             "unbreakable": false
         },
         "color": [
-            0.1162719652056694,
-            0.05393430218100548,
-            0.07136915624141693
+            0.16840675473213196,
+            0.09848060458898544,
+            0.12584669888019562
         ],
         "display_name": "floroid block",
         "essence": {
@@ -18954,9 +19869,9 @@
             "unbreakable": false
         },
         "color": [
-            0.2543926537036896,
-            0.24223750829696655,
-            0.15268653631210327
+            0.29703760147094727,
+            0.30316612124443054,
+            0.21203632652759552
         ],
         "display_name": "moss block",
         "essence": {
@@ -19007,9 +19922,9 @@
             "unbreakable": false
         },
         "color": [
-            0.43953824043273926,
-            0.1734997034072876,
-            0.18638485670089722
+            0.4857991635799408,
+            0.2185553014278412,
+            0.24627789855003357
         ],
         "display_name": "flesh block",
         "essence": {
@@ -19060,9 +19975,9 @@
             "unbreakable": false
         },
         "color": [
-            0.42495542764663696,
-            0.21035565435886383,
-            0.22052457928657532
+            0.47313469648361206,
+            0.2591291069984436,
+            0.28306594491004944
         ],
         "display_name": "eye cyst block",
         "essence": {
@@ -19114,9 +20029,9 @@
             "unbreakable": false
         },
         "color": [
-            0.5596808195114136,
-            0.4045327305793762,
-            0.37791359424591064
+            0.6085901260375977,
+            0.4507257342338562,
+            0.43071046471595764
         ],
         "display_name": "processed meat block",
         "essence": {
@@ -19168,9 +20083,9 @@
             "unbreakable": false
         },
         "color": [
-            0.6759697794914246,
-            0.6010864973068237,
-            0.5271539092063904
+            0.7815296053886414,
+            0.7002291679382324,
+            0.5934470891952515
         ],
         "display_name": "dog block",
         "essence": {
@@ -19222,9 +20137,9 @@
             "unbreakable": false
         },
         "color": [
-            0.7034547328948975,
-            0.5452678203582764,
-            0.39500892162323
+            0.8156353235244751,
+            0.6230540871620178,
+            0.4278923571109772
         ],
         "display_name": "cat block",
         "essence": {
@@ -19276,9 +20191,9 @@
             "unbreakable": false
         },
         "color": [
-            0.6469569802284241,
-            0.4887191355228424,
-            0.285323828458786
+            0.7335031032562256,
+            0.5608352422714233,
+            0.3252185583114624
         ],
         "display_name": "s'more block",
         "essence": {
@@ -19345,9 +20260,9 @@
             "unbreakable": false
         },
         "color": [
-            0.17492075264453888,
-            0.20572972297668457,
-            0.15402136743068695
+            0.21871550381183624,
+            0.2654925584793091,
+            0.2119525671005249
         ],
         "display_name": "leaf block",
         "essence": {
@@ -19413,9 +20328,9 @@
             "unbreakable": false
         },
         "color": [
-            0.3553863763809204,
-            0.41513264179229736,
-            0.4914648234844208
+            0.38758939504623413,
+            0.45840829610824585,
+            0.5524567365646362
         ],
         "display_name": "snowy leaf block",
         "essence": {
@@ -19482,9 +20397,9 @@
             "unbreakable": false
         },
         "color": [
-            0.21381776034832,
-            0.140415221452713,
-            0.09771626442670822
+            0.26290658116340637,
+            0.19697809219360352,
+            0.15504036843776703
         ],
         "display_name": "dry leaf block",
         "essence": {
@@ -20332,7 +21247,7 @@
         },
         "id": 1633883498,
         "internal": false,
-        "internal_name": "vitality ring",
+        "internal_name": "bug ring",
         "max_durability": 250,
         "stack_size": 1
     },
@@ -20385,7 +21300,7 @@
         },
         "id": 1633883505,
         "internal": false,
-        "internal_name": "vitality ring",
+        "internal_name": "serpent ring",
         "max_durability": 250,
         "stack_size": 1
     },
@@ -20541,7 +21456,7 @@
         },
         "id": 1633883508,
         "internal": false,
-        "internal_name": "murder ring",
+        "internal_name": "squirrel ring",
         "max_durability": 250,
         "stack_size": 1
     },
@@ -20645,6 +21560,57 @@
         "internal": false,
         "internal_name": "love ring",
         "max_durability": 600,
+        "stack_size": 1
+    },
+    {
+        "color": [
+            0.957734227180481,
+            0.8828976154327393,
+            0.6988017559051514
+        ],
+        "display_name": "hallel torus",
+        "equipment_data": {
+            "attack_increase": 0,
+            "fall_damage_increase": 0.0,
+            "jump_increase": 0.0,
+            "max_air_increase": 0,
+            "max_health_increase": 10,
+            "reach_increase": 0,
+            "slip_increase": 0.0,
+            "speed_increase": 0.0,
+            "water_speed_increase": 0.0,
+            "weight_increase": 0.0
+        },
+        "essence": {
+            "bias": 0.0,
+            "energy": 0.756,
+            "fuseable": false,
+            "output_tags": [],
+            "properties": {
+                "aqua": 0.29,
+                "blockiness": 0.0,
+                "clay": 0.29,
+                "danger": 0.0,
+                "edibility": 0.0,
+                "faith": 1.0,
+                "hate": 0.0,
+                "lust": 0.0,
+                "mercury": 0.79,
+                "phlegm": 0.1,
+                "sulfur": 0.1,
+                "utility": 0.0,
+                "wearability": 1.0
+            },
+            "rank": 0.75,
+            "tags": [
+                "gold",
+                "ring"
+            ]
+        },
+        "id": 1633912198,
+        "internal": false,
+        "internal_name": "hallel torus",
+        "max_durability": 1200,
         "stack_size": 1
     },
     {
