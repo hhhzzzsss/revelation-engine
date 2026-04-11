@@ -30,6 +30,7 @@ function ItemPicker({
   // Focus input on mount
   useEffect(() => {
     inputRef.current?.focus();
+    containerRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   }, []);
 
   // Filter and sort items based on search term
