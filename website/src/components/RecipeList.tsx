@@ -15,6 +15,7 @@ interface RecipeListProps {
   showAddButton?: boolean;
   onAddItem?: (item: Item) => void;
   addableItemFilter?: (item: Item) => boolean;
+  validRecipeFilter?: (recipe: Recipe) => boolean;
 }
 
 function RecipeList({
@@ -26,6 +27,7 @@ function RecipeList({
   showAddButton = false,
   onAddItem = () => {},
   addableItemFilter = () => true,
+  validRecipeFilter = () => true,
 }: RecipeListProps) {
   const listRef = useRef<HTMLDivElement>(null);
   const { isFavoriteRecipe, toggleFavoriteRecipe } = useFavoriteRecipes();
@@ -46,13 +48,13 @@ function RecipeList({
           no recipes found
         </div>
       )}
-      <div style={{ height: rowVirtualizer.getTotalSize() }} className="relative w-2xl mx-auto flex flex-col">
+      <div style={{ height: rowVirtualizer.getTotalSize() }} className="relative w-full flex flex-col">
         {rowVirtualizer.getVirtualItems().map((virtualItem) => {
           const recipe = filteredRecipes[virtualItem.index];
           return (
             <div
               key={virtualItem.index}
-              className="absolute top-0 right-0 min-w-0"
+              className={`absolute top-0 right-0 left-0 min-w-0 ${!validRecipeFilter(recipe) ? 'bg-severe-500/50' : ''}`}
               style={{ transform: `translateY(${virtualItem.start}px)` }}
             >
               <RecipeDisplay
@@ -94,7 +96,7 @@ const RecipeDisplay = memo(function RecipeDisplay({
   const isAddableItem = addableItemFilter(recipe.output.item);
 
   return (
-    <div className="flex items-center">
+    <div className="w-full flex items-center justify-center">
       {Array.from({ length: 6 - recipe.inputs.length }).map((_, index) => (
         <Slot key={index} />
       ))}

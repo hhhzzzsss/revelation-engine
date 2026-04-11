@@ -82,6 +82,11 @@ export const useFavoriteRecipes = () => {
     const [outputItemIdStr, outputCountStr] = outputPart.split(':');
     const output = { item: itemMap[parseInt(outputItemIdStr)], count: parseInt(outputCountStr) };
 
+    if (inputs.some((q) => !q.item) || !output.item) {
+      console.warn(`Invalid recipe data: ${serializedRecipe}`);
+      return null;
+    }
+
     return { inputs, output };
   }, [itemMap]);
 
