@@ -1,7 +1,8 @@
 import { memo, useCallback } from 'react';
 import { getIconPath, IMAGE_PATHS } from '../image/util';
 import type { Item } from '../item/types';
-import { useInfoPanelStore, useTooltipStore } from '../stores';
+import { useInfoPanelStore, useStackSizeStore, useTooltipStore } from '../stores';
+import { getStackSize } from '../item/util';
 
 interface SlotProps {
   className?: string;
@@ -10,7 +11,11 @@ interface SlotProps {
 }
 
 const Slot = memo(function Slot({ className, item, count }: SlotProps) {
-  const stackable = (item?.stack_size ?? 1) > 1;
+  const maxStackSize = useStackSizeStore((state) => state.maxStackSize);
+  const stackSize = item ? getStackSize(item, maxStackSize) : 1;
+  const stackable = stackSize > 1;
+  const cappedCount = count ? Math.min(count, stackSize) : undefined;
+  const isMaxCount = cappedCount && cappedCount >= stackSize;
 
   const setPanelItem = useInfoPanelStore((state) => state.viewItem);
   const setTooltipText = useTooltipStore((state) => state.setText);
@@ -42,8 +47,8 @@ const Slot = memo(function Slot({ className, item, count }: SlotProps) {
           <img src={`${getIconPath(item)}`} className="absolute size-full pixelated" />
         )}
       </div>
-      <div className="absolute left-icon-1 bottom-icon-2 leading-none font-pixel text-icon text-shadow-[0_0_var(--spacing-icon-2)black]">
-        {stackable && count}
+      <div className={`absolute left-icon-1 bottom-icon-2 leading-none font-pixel text-icon text-shadow-[0_0_var(--spacing-icon-2)black] ${isMaxCount ? 'text-max-stack' : ''}`}>
+        {stackable && cappedCount}
       </div>
     </div>
   );

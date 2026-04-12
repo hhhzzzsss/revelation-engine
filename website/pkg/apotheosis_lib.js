@@ -57,7 +57,6 @@ export class ApotheosisSolverRS {
      * @param {number} color_weight
      * @param {number} samey_punishment
      * @param {Int32Array} ids
-     * @param {Int32Array} stack_sizes
      * @param {Float64Array} energies
      * @param {Float64Array} biases
      * @param {Float64Array} flattened_mood_vectors
@@ -66,28 +65,26 @@ export class ApotheosisSolverRS {
      * @param {Uint32Array} output_tag_bitsets
      * @param {Int32Array} fuseable_ids
      */
-    constructor(property_weights, tag_magnitude, color_weight, samey_punishment, ids, stack_sizes, energies, biases, flattened_mood_vectors, flattened_color_vectors, tag_bitsets, output_tag_bitsets, fuseable_ids) {
+    constructor(property_weights, tag_magnitude, color_weight, samey_punishment, ids, energies, biases, flattened_mood_vectors, flattened_color_vectors, tag_bitsets, output_tag_bitsets, fuseable_ids) {
         const ptr0 = passArrayF64ToWasm0(property_weights, wasm.__wbindgen_malloc);
         const len0 = WASM_VECTOR_LEN;
         const ptr1 = passArray32ToWasm0(ids, wasm.__wbindgen_malloc);
         const len1 = WASM_VECTOR_LEN;
-        const ptr2 = passArray32ToWasm0(stack_sizes, wasm.__wbindgen_malloc);
+        const ptr2 = passArrayF64ToWasm0(energies, wasm.__wbindgen_malloc);
         const len2 = WASM_VECTOR_LEN;
-        const ptr3 = passArrayF64ToWasm0(energies, wasm.__wbindgen_malloc);
+        const ptr3 = passArrayF64ToWasm0(biases, wasm.__wbindgen_malloc);
         const len3 = WASM_VECTOR_LEN;
-        const ptr4 = passArrayF64ToWasm0(biases, wasm.__wbindgen_malloc);
+        const ptr4 = passArrayF64ToWasm0(flattened_mood_vectors, wasm.__wbindgen_malloc);
         const len4 = WASM_VECTOR_LEN;
-        const ptr5 = passArrayF64ToWasm0(flattened_mood_vectors, wasm.__wbindgen_malloc);
+        const ptr5 = passArrayF64ToWasm0(flattened_color_vectors, wasm.__wbindgen_malloc);
         const len5 = WASM_VECTOR_LEN;
-        const ptr6 = passArrayF64ToWasm0(flattened_color_vectors, wasm.__wbindgen_malloc);
+        const ptr6 = passArray32ToWasm0(tag_bitsets, wasm.__wbindgen_malloc);
         const len6 = WASM_VECTOR_LEN;
-        const ptr7 = passArray32ToWasm0(tag_bitsets, wasm.__wbindgen_malloc);
+        const ptr7 = passArray32ToWasm0(output_tag_bitsets, wasm.__wbindgen_malloc);
         const len7 = WASM_VECTOR_LEN;
-        const ptr8 = passArray32ToWasm0(output_tag_bitsets, wasm.__wbindgen_malloc);
+        const ptr8 = passArray32ToWasm0(fuseable_ids, wasm.__wbindgen_malloc);
         const len8 = WASM_VECTOR_LEN;
-        const ptr9 = passArray32ToWasm0(fuseable_ids, wasm.__wbindgen_malloc);
-        const len9 = WASM_VECTOR_LEN;
-        const ret = wasm.apotheosissolverrs_new(ptr0, len0, tag_magnitude, color_weight, samey_punishment, ptr1, len1, ptr2, len2, ptr3, len3, ptr4, len4, ptr5, len5, ptr6, len6, ptr7, len7, ptr8, len8, ptr9, len9);
+        const ret = wasm.apotheosissolverrs_new(ptr0, len0, tag_magnitude, color_weight, samey_punishment, ptr1, len1, ptr2, len2, ptr3, len3, ptr4, len4, ptr5, len5, ptr6, len6, ptr7, len7, ptr8, len8);
         if (ret[2]) {
             throw takeFromExternrefTable0(ret[1]);
         }

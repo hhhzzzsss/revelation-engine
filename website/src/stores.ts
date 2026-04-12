@@ -1,4 +1,5 @@
 import { create } from 'zustand';
+import { persist } from 'zustand/middleware';
 import { VIEW_STATES, type ViewState } from './components/views/util';
 import type { Item, QuantifiedItem, Recipe } from './item/types';
 
@@ -23,6 +24,18 @@ export const useInfoPanelStore = create<InfoPanelState>((set) => ({
   viewItem: (item) => set({ isOpen: true, item: item }),
   close: () => set({ isOpen: false, item: null }),
 }));
+
+export interface StackSizeState {
+  maxStackSize: number;
+  setMaxStackSize: (size: number) => void;
+}
+export const useStackSizeStore = create<StackSizeState>()(persist(
+  (set) => ({
+    maxStackSize: 50,
+    setMaxStackSize: (size) => set({ maxStackSize: size }),
+  }),
+  { name: 'maxStackSize' },
+));
 
 export interface ApotheosisState {
   qItems: (QuantifiedItem | null)[];

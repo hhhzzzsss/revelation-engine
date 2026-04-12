@@ -5,6 +5,8 @@ import Button from './Button';
 import ItemPicker from './ItemPicker';
 import IntRangeInput from './IntRangeInput';
 import DeleteButton from './DeleteButton';
+import { useStackSizeStore } from '../stores';
+import { getStackSize } from '../item/util';
 
 interface PickableSlotProps {
   qItem: QuantifiedItem | null;
@@ -13,8 +15,9 @@ interface PickableSlotProps {
 
 function PickableSlot({ qItem, onQItemChange }: PickableSlotProps) {
   const [picking, setPicking] = useState(false);
+  const maxStackSize = useStackSizeStore((state) => state.maxStackSize);
 
-  const stackSize = qItem?.item.stack_size ?? 1;
+  const stackSize = qItem ? getStackSize(qItem.item, maxStackSize) : 0;
   const stackable = stackSize > 1;
 
   const handleInputChange = useCallback((v: number) => {
@@ -32,11 +35,11 @@ function PickableSlot({ qItem, onQItemChange }: PickableSlotProps) {
   }, []);
 
   return (
-    <div className="relative w-96 flex items-center space-x-2 overflow-visible">
+    <div className="relative w-108 flex items-center space-x-2 overflow-visible">
       <Slot className="flex-none" item={qItem?.item} count={qItem?.count} />
       <div className="flex-1 font-pixel leading-none">{qItem?.item.display_name}</div>
       {stackable && <IntRangeInput
-        className="max-w-12"
+        className="max-w-15"
         min={1}
         max={stackSize}
         value={qItem?.count ?? 1}

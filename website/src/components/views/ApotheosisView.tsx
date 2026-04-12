@@ -6,6 +6,7 @@ import { useApotheosisStore } from '../../stores';
 import PickableSlot from '../PickableSlot';
 import LabeledSlot from '../LabeledSlot';
 import FavoriteHeartButton from '../FavoriteHeartButton';
+import StackSizeSlider from '../StackSizeSlider';
 
 function ApotheosisView() {
   const { qItems, setQItem } = useApotheosisStore();
@@ -32,6 +33,7 @@ function ApotheosisView() {
   return (
     <>
       <h1 className="text-4xl font-pixel mb-4">Apotheosis</h1>
+      <StackSizeSlider className="mb-2" />
       <div className="flex justify-center">
         <div className="flex flex-col px-4 border-r-2 border-secondary-800">
           <h2 className="text-2xl font-pixel">Input</h2>

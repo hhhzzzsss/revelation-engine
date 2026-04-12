@@ -2,12 +2,13 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import type { Item, Recipe } from '../../item/types';
 import InventoryPicker from '../InventoryPicker';
 import { useApotheosisBatchSolver, useProgressCallbackThrottler } from '../../algorithm/hooks';
-import { useAvailableItemsStore, useEnumerationStore } from '../../stores';
+import { useAvailableItemsStore, useEnumerationStore, useStackSizeStore } from '../../stores';
 import Button from '../Button';
 import Input from '../Input';
 import { compareItemsBySearchTerm, itemMatchesSearchTerm } from '../../item/util';
 import RecipeList from '../RecipeList';
 import type { ProgressMessage } from '../../algorithm/apotheosisBatchSolver';
+import StackSizeSlider from '../StackSizeSlider';
 
 type Effort = 'low' | 'medium' | 'high';
 
@@ -17,6 +18,8 @@ function EnumerationView() {
   const { items, setItems } = useAvailableItemsStore();
   const { recipes, setRecipes } = useEnumerationStore();
   const itemsRef = useRef(items);
+  const maxStackSize = useStackSizeStore((state) => state.maxStackSize);
+  const maxStackSizeRef = useRef(50);
 
   const [effort, setEffort] = useState<Effort>('medium');
   const targetCountRef = useRef<number>(65536);
@@ -31,8 +34,14 @@ function EnumerationView() {
   }, [items]);
 
   useEffect(() => {
+    maxStackSizeRef.current = maxStackSize;
+  }, [maxStackSize]);
+
+  useEffect(() => {
     targetCountRef.current = effort === 'low' ? 4096 : effort === 'medium' ? 65536 : 262144;
   }, [effort]);
+
+
 
   const progressCallbackThrottler = useProgressCallbackThrottler();
 
@@ -41,6 +50,7 @@ function EnumerationView() {
 
     const cancelEnumeration = batchSolver.enumerateFusions(
       itemsRef.current,
+      maxStackSizeRef.current,
       targetCountRef.current,
       progressCallbackThrottler((message: ProgressMessage) => {
         if (message.error) {
@@ -69,6 +79,7 @@ function EnumerationView() {
       <InventoryPicker className="mb-2" items={items} onItemsChange={setItems} />
 
       <div className="my-4">
+        <StackSizeSlider className="mb-2" />
         <div className="mb-2 flex items-center space-x-2">
           <span className="font-pixel">effort: </span>
           {['low', 'medium', 'high'].map((level) => (

@@ -12,6 +12,7 @@ import { useFavoriteRecipes } from '../../item/hooks';
 import type { Recipe } from '../../item/types';
 import { useApotheosisSolver } from '../../algorithm/hooks';
 import type ApotheosisSolver from '../../algorithm/apotheosisSolver';
+import StackSizeSlider from '../StackSizeSlider';
 
 function FavoriteView() {
   const { favoriteRecipes } = useFavoriteRecipes();
@@ -40,6 +41,7 @@ function FavoriteView() {
   return (
     <div className="w-3xl flex flex-col h-full">
       <h1 className="text-4xl font-pixel mb-4">Favorites</h1>
+      <StackSizeSlider className="mb-4" />
       <Input
         className="w-full mb-2"
         placeholder="search by output or input item"

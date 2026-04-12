@@ -1,4 +1,4 @@
-import type { Item, Recipe } from './types';
+import type { Item, QuantifiedItem, Recipe } from './types';
 
 export const itemMatchesSearchTerm = (searchTerm: string, item?: Item): boolean => {
   if (!item) return false;
@@ -49,3 +49,19 @@ export const deserializeRecipe = (str: string, itemMap: Record<number, Item>): R
   const output = { item: itemMap[parseInt(outputItemIdStr)], count: parseInt(outputCountStr) };
   return { inputs, output };
 };
+
+export const getStackSize = (item: Item, maxStackSize: number): number => {
+  if (item.stack_size >= 50) {
+    return maxStackSize;
+  }
+  return item.stack_size;
+};
+
+export const capItemCount = (qItem: QuantifiedItem, maxStackSize: number): QuantifiedItem => {
+  return { ...qItem, count: Math.min(qItem.count, getStackSize(qItem.item, maxStackSize)) };
+};
+
+export const capRecipeOutput = (recipe: Recipe, maxStackSize: number): Recipe => {
+  return { ...recipe, output: capItemCount(recipe.output, maxStackSize) };
+};
+

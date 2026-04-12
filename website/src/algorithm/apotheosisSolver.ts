@@ -106,9 +106,9 @@ class ApotheosisSolver {
       return null;
     }
 
-    const itemCount = Math.min(Math.max(Math.round(
+    const itemCount = Math.max(Math.round(
       totalEnergy / closestItem.item.essence.energy
-    ), 1), closestItem.item.stack_size);
+    ), 1);
 
     return {
       item: closestItem.item,

@@ -138,6 +138,7 @@ class ApotheosisBatchSolver {
 
   public enumerateFusions = (
     availableItems: Item[],
+    maxStackSize: number,
     targetSampleCount: number,
     callback: (message: ProgressMessage) => void
   ): () => void => {
@@ -146,8 +147,8 @@ class ApotheosisBatchSolver {
 
     const batchSize = 8192;
     const aggregator = new CompositeAggregator(
-      new QualityHeuristicEnumerationAggregator(),
-      new InputCountEnumerationAggregator(),
+      new QualityHeuristicEnumerationAggregator({ maxStackSize }),
+      new InputCountEnumerationAggregator({ maxStackSize }),
     );
     const transformer = new CopyOutputTransformer(availableItems);
 
@@ -205,6 +206,7 @@ class ApotheosisBatchSolver {
   public deriveRecipes = (
     availableItems: Item[],
     target: Item,
+    maxStackSize: number,
     maxGenerations: number,
     callback: (message: ProgressMessage) => void
   ): () => void => {
@@ -220,8 +222,8 @@ class ApotheosisBatchSolver {
     // const crossoverProportion = 7 / 16;
 
     const aggregator = new CompositeAggregator(
-      new QualityHeuristicDerivationAggregator({}),
-      new InputCountDerivationAggregator({ maxResults: 32 }),
+      new QualityHeuristicDerivationAggregator({ maxStackSize }),
+      new InputCountDerivationAggregator({ maxStackSize, maxResults: 32 }),
     );
     const offspringCalculator = new OffspringCalculator(availableItems, target);
     

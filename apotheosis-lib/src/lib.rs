@@ -9,12 +9,8 @@ pub struct ApotheosisSolverRS {
     color_weight: f64,
     samey_punishment: f64,
     num_properties: usize,
-    // ids: Vec<i32>,
     id_to_index: std::collections::HashMap<i32, usize>,
-    stack_sizes: Array1<i32>,
     energies: Array1<f64>,
-    // biases: Array1<f64>,
-    // mood_vectors: Array2<f64>,
     weighted_mood_vectors: Array2<f64>,
     color_vectors: Array2<f64>,
     tag_bitsets: Array1<u32>, 
@@ -49,7 +45,6 @@ impl ApotheosisSolverRS {
         color_weight: f64,
         samey_punishment: f64,
         ids: Vec<i32>,
-        stack_sizes: Vec<i32>,
         energies: Vec<f64>,
         biases: Vec<f64>,
         flattened_mood_vectors: Vec<f64>,
@@ -88,8 +83,6 @@ impl ApotheosisSolverRS {
 
         let energies = Array1::from_shape_vec(num_items, energies)
             .map_err(|_| JsError::new("Failed to create energies array"))?;
-        let stack_sizes = Array1::from_shape_vec(num_items, stack_sizes)
-            .map_err(|_| JsError::new("Failed to create stack_sizes array"))?;
         let biases = Array1::from_shape_vec(num_items, biases)
             .map_err(|_| JsError::new("Failed to create biases array"))?;
 
@@ -134,12 +127,8 @@ impl ApotheosisSolverRS {
             color_weight,
             samey_punishment,
             num_properties,
-            // ids,
             id_to_index,
-            stack_sizes,
             energies,
-            // biases,
-            // mood_vectors,
             weighted_mood_vectors,
             color_vectors,
             tag_bitsets,
@@ -242,8 +231,7 @@ impl ApotheosisSolverRS {
             .zip(batch_total_energies)
             .map(|(&id, total_energy)| {
                 let energy = self.energies[self.id_to_index[&id]];
-                let stack_size = self.stack_sizes[self.id_to_index[&id]];
-                ((total_energy / energy).round() as i32).clamp(1, stack_size)
+                ((total_energy / energy).round() as i32).max(1)
             })
             .collect();
 
@@ -344,8 +332,7 @@ impl ApotheosisSolverRS {
             .zip(batch_total_energies)
             .map(|(&id, total_energy)| {
                 let energy = self.energies[self.id_to_index[&id]];
-                let stack_size = self.stack_sizes[self.id_to_index[&id]];
-                ((total_energy / energy).round() as i32).clamp(1, stack_size)
+                ((total_energy / energy).round() as i32).max(1)
             })
             .collect();
 

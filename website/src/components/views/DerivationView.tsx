@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { useAvailableItemsStore, useDerivationStore } from '../../stores';
+import { useAvailableItemsStore, useDerivationStore, useStackSizeStore } from '../../stores';
 import { useApotheosisBatchSolver, useProgressCallbackThrottler } from '../../algorithm/hooks';
 import Button from '../Button';
 import InventoryPicker from '../InventoryPicker';
@@ -9,6 +9,7 @@ import RecipeList from '../RecipeList';
 import Input from '../Input';
 import PickableItem from '../PickableItem';
 import { compareQualityHeuristic } from '../../algorithm/util';
+import StackSizeSlider from '../StackSizeSlider';
 
 type Effort = 'low' | 'medium' | 'high';
 
@@ -16,9 +17,11 @@ function DerivationView() {
   const batchSolver = useApotheosisBatchSolver();
 
   const { items, setItems } = useAvailableItemsStore();
-  const { targetItem, recipes, setTargetItem, setRecipes } = useDerivationStore();
   const itemsRef = useRef(items);
+  const { targetItem, recipes, setTargetItem, setRecipes } = useDerivationStore();
   const targetItemRef = useRef(targetItem);
+  const maxStackSize = useStackSizeStore((state) => state.maxStackSize);
+  const maxStackSizeRef = useRef(50);
 
   const [effort, setEffort] = useState<Effort>('medium');
   const maxGenerationsRef = useRef<number>(512);
@@ -31,6 +34,10 @@ function DerivationView() {
   useEffect(() => {
     itemsRef.current = items;
   }, [items]);
+
+  useEffect(() => {
+    maxStackSizeRef.current = maxStackSize;
+  }, [maxStackSize]);
 
   useEffect(() => {
     targetItemRef.current = targetItem;
@@ -48,6 +55,7 @@ function DerivationView() {
     const cancelDerivation = batchSolver.deriveRecipes(
       itemsRef.current,
       targetItemRef.current,
+      maxStackSizeRef.current,
       maxGenerationsRef.current,
       progressCallbackThrottler((message) => {
         if (message.error) {
@@ -79,6 +87,7 @@ function DerivationView() {
       <PickableItem item={targetItem} onItemChange={setTargetItem} showUnfuseable={false} />
 
       <div className="my-4">
+        <StackSizeSlider className="mb-2" />
         <div className="mb-2 flex items-center space-x-2">
           <span className="font-pixel">effort: </span>
           {['low', 'medium', 'high'].map((level) => (

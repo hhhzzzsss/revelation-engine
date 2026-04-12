@@ -12,7 +12,6 @@ export const loadSolver = async (fuserParams: FuserParameters, itemData: Item[])
   const color_weight = fuserParams.color_weight;
   const samey_punishment = fuserParams.samey_punishment;
   const ids = itemData.map((item) => item.id);
-  const stack_sizes = itemData.map((item) => item.stack_size);
   const energies = itemData.map((item) => item.essence.energy);
   const biases = itemData.map((item) => item.essence.bias);
   const flattened_mood_vectors = itemData.map(
@@ -32,7 +31,6 @@ export const loadSolver = async (fuserParams: FuserParameters, itemData: Item[])
     color_weight,
     samey_punishment,
     Int32Array.from(ids),
-    Int32Array.from(stack_sizes),
     Float64Array.from(energies),
     Float64Array.from(biases),
     Float64Array.from(flattened_mood_vectors),
