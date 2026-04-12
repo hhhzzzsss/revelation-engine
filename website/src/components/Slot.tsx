@@ -8,14 +8,21 @@ interface SlotProps {
   className?: string;
   item?: Item;
   count?: number;
+  capCount?: boolean;
 }
 
-const Slot = memo(function Slot({ className, item, count }: SlotProps) {
+const Slot = memo(function Slot({ className, item, count, capCount = false }: SlotProps) {
   const maxStackSize = useStackSizeStore((state) => state.maxStackSize);
   const stackSize = item ? getStackSize(item, maxStackSize) : 1;
   const stackable = stackSize > 1;
-  const cappedCount = count ? Math.min(count, stackSize) : undefined;
-  const isMaxCount = cappedCount && cappedCount >= stackSize;
+  const displayedCount = count ? (capCount ? Math.min(count, stackSize) : count) : undefined;
+  
+  const getCountColorClass = () => {
+    if (!stackable || !displayedCount) return '';
+    if (displayedCount == stackSize) return 'text-max-stack';
+    if (displayedCount > stackSize) return 'text-severe-400';
+    return '';
+  };
 
   const setPanelItem = useInfoPanelStore((state) => state.viewItem);
   const setTooltipText = useTooltipStore((state) => state.setText);
@@ -47,8 +54,8 @@ const Slot = memo(function Slot({ className, item, count }: SlotProps) {
           <img src={`${getIconPath(item)}`} className="absolute size-full pixelated" />
         )}
       </div>
-      <div className={`absolute left-icon-1 bottom-icon-2 leading-none font-pixel text-icon text-shadow-[0_0_var(--spacing-icon-2)black] ${isMaxCount ? 'text-max-stack' : ''}`}>
-        {stackable && cappedCount}
+      <div className={`absolute left-icon-1 bottom-icon-2 leading-none font-pixel text-icon text-shadow-[0_0_var(--spacing-icon-2)black] ${getCountColorClass()}`}>
+        {stackable && displayedCount}
       </div>
     </div>
   );

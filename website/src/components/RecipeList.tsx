@@ -104,7 +104,7 @@ const RecipeDisplay = memo(function RecipeDisplay({
         <Slot key={index} item={qItem.item} count={qItem.count} />
       ))}
       <div className="font-pixel text-4xl">{'>'}</div>
-      <Slot item={recipe.output.item} count={recipe.output.count} />
+      <Slot item={recipe.output.item} count={recipe.output.count} capCount={true} />
       {favoriteButtonStyle === 'x' ? (
         <button
           className="shrink-0 ml-2 inline-block font-pixel text-icon text-severe-500 hover:text-severe-400 cursor-pointer"

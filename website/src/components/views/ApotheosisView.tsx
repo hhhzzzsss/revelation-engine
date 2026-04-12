@@ -47,7 +47,7 @@ function ApotheosisView() {
         </div>
         <div className="flex flex-col px-4">
           <h2 className="text-2xl font-pixel">Output</h2>
-          <LabeledSlot item={result?.item} count={result?.count} />
+          <LabeledSlot item={result?.item} count={result?.count} capCount={true} />
           <div className="flex-1" />
         </div>
       </div>
