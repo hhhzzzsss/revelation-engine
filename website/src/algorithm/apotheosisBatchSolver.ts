@@ -5,6 +5,7 @@ import PriorityQueue from './priorityQueue';
 import WorkerPool from './workerPool';
 import { clamp, randomInt, sample, sampleSize } from 'es-toolkit';
 import { getEnergyRatio } from './util';
+import { capItemCount } from '../item/util';
 
 let batchSolverInstance: ApotheosisBatchSolver | null = null;
 export const getApotheosisBatchSolver = (fuserParams: FuserParameters, itemData: Item[]) => {
@@ -247,7 +248,7 @@ class ApotheosisBatchSolver {
     const subtractEnergyRatioFromValidRecipes = (candidates: Candidate[]) => {
       candidates.forEach(candidate => {
         if (candidate.output.item.id === target.id) {
-          candidate.cost -= getEnergyRatio({ inputs: candidate.inputs, output: candidate.output });
+          candidate.cost -= getEnergyRatio({ inputs: candidate.inputs, output: capItemCount(candidate.output, maxStackSize) });
         }
       });
     };
