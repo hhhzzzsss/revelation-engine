@@ -14000,6 +14000,59 @@
         "block_data": {
             "axe_affinity": false,
             "axe_required": false,
+            "break_time": 8.0,
+            "flammability": 0.0,
+            "griefable": true,
+            "meat_affinity": false,
+            "pickaxe_affinity": false,
+            "pickaxe_required": false,
+            "plant_affinity": false,
+            "shovel_affinity": false,
+            "sustain_fire": false,
+            "unbreakable": true
+        },
+        "color": [
+            0.23378321528434753,
+            0.2216619998216629,
+            0.3061879277229309
+        ],
+        "display_name": "lavender block",
+        "essence": {
+            "bias": 0.0,
+            "energy": 1.0,
+            "fuseable": false,
+            "output_tags": [],
+            "properties": {
+                "aqua": 1.0,
+                "blockiness": 1.0,
+                "clay": 0.0,
+                "danger": 0.0,
+                "edibility": 0.0,
+                "faith": 0.53,
+                "hate": 0.14,
+                "lust": 0.0,
+                "mercury": 1.0,
+                "phlegm": 0.0,
+                "sulfur": 0.0,
+                "utility": 0.13,
+                "wearability": 0.0
+            },
+            "rank": 0.0,
+            "tags": [
+                "metal",
+                "cold"
+            ]
+        },
+        "id": 163166197,
+        "internal": false,
+        "internal_name": "lavender block",
+        "max_durability": 0,
+        "stack_size": 50
+    },
+    {
+        "block_data": {
+            "axe_affinity": false,
+            "axe_required": false,
             "break_time": 4.0,
             "drop_item": 163166264,
             "flammability": 0.44999998807907104,

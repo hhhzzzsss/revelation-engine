@@ -194,9 +194,11 @@ func is_valid_item(i: Item) -> bool:
     if i.id == 0: return false # Exclude air
     if i.icon == null: return false
     if i is Block:
+        var b: Block = i as Block
         if i.display_name.ends_with("+"): return false
         if i.display_name.ends_with("-"): return false
-        if i.unbreakable and !i.essence.fuseable: return false
+        var cannot_mimic: bool = b.internal_name == "cutscene block" or b.internal_name == "respawn block" or b.textureless
+        if i.unbreakable and !i.essence.fuseable and cannot_mimic: return false
     return true
 
 func clear_directory(path: String) -> void:
