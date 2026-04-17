@@ -9,6 +9,7 @@ import { getIconPath } from '../image/util';
 import Button from './Button';
 import { useVirtualizer } from '@tanstack/react-virtual';
 import { useAvailableItemsStore } from '../stores';
+import { ToggleButton } from './ToggleButton';
 
 
 interface InventoryPickerProps {
@@ -60,12 +61,12 @@ function InventoryPicker({ className, items, onItemsChange }: InventoryPickerPro
     <div className={`flex h-128 ${className}`}>
       <div className="w-150 flex flex-col border-r-2 border-secondary-800">
         <div className="pr-4 mb-2 flex space-x-2">
-          <Button
-            className={`${showInternal ? 'bg-primary-600 hover:bg-primary-500' : 'bg-secondary-700 text-fg-600 opacity-60 hover:opacity-100'}`}
-            onClick={() => setShowInternal(!showInternal)}
+          <ToggleButton
+            toggled={showInternal}
+            onToggle={() => setShowInternal(!showInternal)}
           >
             show internal
-          </Button>
+          </ToggleButton>
           <div className="flex-1" />
           <Button
             className="bg-primary-600 hover:bg-primary-500"

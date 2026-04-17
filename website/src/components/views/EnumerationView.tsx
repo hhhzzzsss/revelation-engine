@@ -9,6 +9,7 @@ import { compareItemsBySearchTerm, itemMatchesSearchTerm } from '../../item/util
 import RecipeList from '../RecipeList';
 import type { ProgressMessage } from '../../algorithm/apotheosisBatchSolver';
 import StackSizeSlider from '../StackSizeSlider';
+import { ToggleButton } from '../ToggleButton';
 
 type Effort = 'low' | 'medium' | 'high';
 
@@ -116,22 +117,69 @@ function EnumerationView() {
   );
 }
 
-function SearchableRecipeList({ recipes }: { recipes: Recipe[] }) {
+interface SearchableRecipeListProps {
+  recipes: Recipe[];
+}
+function SearchableRecipeList({
+  recipes
+}: SearchableRecipeListProps) {
   const [searchTerm, setSearchTerm] = useState('');
+  const [hideSelected, setHideSelected] = useState(false);
   const { items, setItems } = useAvailableItemsStore();
 
   const itemIdSet = useMemo(() => new Set(items.map((item) => item.id)), [items]);
 
+  const recipeFilter = (recipe: Recipe) => {
+    if (hideSelected && itemIdSet.has(recipe.output.item.id)) {
+      return false;
+    }
+    if (!itemMatchesSearchTerm(searchTerm, recipe.output.item)) {
+      return false;
+    }
+    return true;
+  };
+
+  const addableItemFilter = (item: Item) => !itemIdSet.has(item.id);
   const onAddItem = (itemToAdd: Item) => {
     if (itemIdSet.has(itemToAdd.id)) return;
     setItems([...items, itemToAdd]);
   };
 
-  const addableItemFilter = (item: Item) => !itemIdSet.has(item.id);
+  const hasAddableItems = useMemo(() => {
+    return recipes.some((recipe) => !itemIdSet.has(recipe.output.item.id));
+  }, [recipes, itemIdSet]);
+  const onAddAll = () => {
+    const newItemsMap = new Map(items.map((item) => [item.id, item]));
+    recipes.forEach((recipe) => {
+      console.log(recipe.output.item.display_name);
+      newItemsMap.set(recipe.output.item.id, recipe.output.item);
+    });
+    setItems([...newItemsMap.values()]);
+  };
 
   return (
     <>
-      <h2 className="text-2xl font-pixel mb-2">Recipes</h2>
+      <div className="mb-2 flex items-start">
+        <h2 className="inline-block text-2xl font-pixel">
+          Recipes
+        </h2>
+        <div className="flex-1" />
+        <Button
+          className="ml-2 bg-primary-600 hover:bg-primary-500"
+          onClick={onAddAll}
+          disabled={!hasAddableItems}
+        >
+          add all
+        </Button>
+        <ToggleButton
+          className="ml-2"
+          toggled={hideSelected}
+          onToggle={() => setHideSelected(!hideSelected)}
+        >
+          hide selected
+        </ToggleButton>
+      </div>
+      
       <Input
         className="w-full mb-2"
         placeholder="search by output item"
@@ -140,7 +188,7 @@ function SearchableRecipeList({ recipes }: { recipes: Recipe[] }) {
       />
       <RecipeList
         recipes={recipes}
-        filter={(recipe) => itemMatchesSearchTerm(searchTerm, recipe.output.item)}
+        filter={recipeFilter}
         comparator={(a, b) => compareItemsBySearchTerm(searchTerm, a.output.item, b.output.item) || a.output.item.id - b.output.item.id}
         showAddButton
         onAddItem={onAddItem}
