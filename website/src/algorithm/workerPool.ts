@@ -132,7 +132,7 @@ class WorkerPool {
   private updateCallbacks: (() => void)[] = [];
 
   constructor(fuserParams: FuserParameters, itemData: Item[]) {
-    for (let i = 0; i < Math.min(navigator.hardwareConcurrency, 4); i++) { // Limit to 4 workers for now
+    for (let i = 0; i < Math.min(navigator.hardwareConcurrency, 8); i++) { // Max of 8 workers for now
       this.workerHandlers.push(new WorkerHandler(fuserParams, itemData));
     }
   }

@@ -215,9 +215,9 @@ class ApotheosisBatchSolver {
     const cancel = () => cancelled = true;
 
     const populationBatchNum = this.pool.getNumWorkers();
-    const batchSize = 1024 / populationBatchNum;
+    const batchSize = 4096 / populationBatchNum;
     const populationSize = batchSize * populationBatchNum;
-    const numSubPopulations = 8;
+    const numSubPopulations = 32;
     const eliteProportion = 1 / 16;
     const mutationProportion = 8 / 16;
     // const crossoverProportion = 7 / 16;
