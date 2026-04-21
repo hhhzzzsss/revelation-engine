@@ -11,7 +11,7 @@ import PickableItem from '../PickableItem';
 import { compareQualityHeuristic } from '../../algorithm/util';
 import StackSizeSlider from '../StackSizeSlider';
 
-type Effort = 'low' | 'medium' | 'high';
+type Effort = 'low' | 'medium' | 'high' | 'infinite';
 
 function DerivationView() {
   const batchSolver = useApotheosisBatchSolver();
@@ -44,7 +44,7 @@ function DerivationView() {
   }, [targetItem]);
 
   useEffect(() => {
-    maxGenerationsRef.current = effort === 'low' ? 128 : effort === 'medium' ? 512 : 2048;
+    maxGenerationsRef.current = effort === 'low' ? 128 : effort === 'medium' ? 512 : effort === 'high' ? 2048 : Number.POSITIVE_INFINITY;
   }, [effort]);
 
   const progressCallbackThrottler = useProgressCallbackThrottler();
@@ -52,11 +52,16 @@ function DerivationView() {
   useEffect(() => {
     if (!batchSolver || !isDeriving || itemsRef.current.length < 2 || !targetItemRef.current) return;
 
+    const items = itemsRef.current;
+    const targetItem = targetItemRef.current;
+    const maxStackSize = maxStackSizeRef.current;
+    const maxGenerations = maxGenerationsRef.current;
+
     const cancelDerivation = batchSolver.deriveRecipes(
-      itemsRef.current,
-      targetItemRef.current,
-      maxStackSizeRef.current,
-      maxGenerationsRef.current,
+      items,
+      targetItem,
+      maxStackSize,
+      maxGenerations,
       progressCallbackThrottler((message) => {
         if (message.error) {
           console.error(message.error);
@@ -68,7 +73,11 @@ function DerivationView() {
         }
 
         setRecipes(message.aggregator?.getRecipes() ?? []);
-        setProgressDisplay(`${message.count} recipes checked (${Math.round(message.progress * 100)})%`);
+        if (maxGenerations < Number.POSITIVE_INFINITY) {
+          setProgressDisplay(`${message.count} recipes checked (${Math.round(message.progress * 100)})%`);
+        } else {
+          setProgressDisplay(`${message.count} recipes checked`);
+        }
       }),
     );
 
@@ -90,7 +99,7 @@ function DerivationView() {
         <StackSizeSlider className="mb-2" />
         <div className="mb-2 flex items-center space-x-2">
           <span className="font-pixel">effort: </span>
-          {['low', 'medium', 'high'].map((level) => (
+          {['low', 'medium', 'high', 'infinite'].map((level) => (
             <Button
               key={level}
               className={`${effort === level ? 'bg-primary-600' : 'bg-secondary-700 text-fg-600 opacity-60 hover:opacity-100'} font-pixel`}
