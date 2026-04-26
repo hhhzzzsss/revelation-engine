@@ -151,7 +151,6 @@ function SearchableRecipeList({
   const onAddAll = () => {
     const newItemsMap = new Map(items.map((item) => [item.id, item]));
     recipes.forEach((recipe) => {
-      console.log(recipe.output.item.display_name);
       newItemsMap.set(recipe.output.item.id, recipe.output.item);
     });
     setItems([...newItemsMap.values()]);

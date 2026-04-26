@@ -21,7 +21,6 @@ function ApotheosisView() {
 
   const recipe = useMemo<Recipe | null>(() => {
     if (!result) return null;
-    console.log('result', result);
     const inputs = qItems.filter((qItem) => qItem !== null);
     return { inputs, output: result };
   }, [qItems, result]);
