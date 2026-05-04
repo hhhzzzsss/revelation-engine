@@ -26,9 +26,9 @@ function PickableSlot({ qItem, onQItemChange }: PickableSlotProps) {
   }, [onQItemChange, qItem]);
 
   const onItemChange = useCallback((item: Item) => {
-    onQItemChange?.({ item, count: qItem?.count ?? 1 });
+    onQItemChange?.({ item, count: Math.min(qItem?.count ?? 1, getStackSize(item, maxStackSize)) });
     setPicking(false);
-  }, [onQItemChange, qItem]);
+  }, [onQItemChange, qItem, maxStackSize]);
 
   const onPickerBlur = useCallback(() => {
     setPicking(false);
