@@ -6224,7 +6224,7 @@
             "drop_item": 10170804,
             "flammability": 0.10000000149011612,
             "griefable": true,
-            "meat_affinity": false,
+            "meat_affinity": true,
             "pickaxe_affinity": false,
             "pickaxe_required": false,
             "plant_affinity": false,
@@ -6278,7 +6278,7 @@
             "drop_item": 11009880,
             "flammability": 0.10000000149011612,
             "griefable": true,
-            "meat_affinity": false,
+            "meat_affinity": true,
             "pickaxe_affinity": false,
             "pickaxe_required": false,
             "plant_affinity": false,
@@ -6332,7 +6332,7 @@
             "drop_item": 11009881,
             "flammability": 0.10000000149011612,
             "griefable": true,
-            "meat_affinity": false,
+            "meat_affinity": true,
             "pickaxe_affinity": false,
             "pickaxe_required": false,
             "plant_affinity": false,
@@ -6386,7 +6386,7 @@
             "drop_item": 11009882,
             "flammability": 0.10000000149011612,
             "griefable": true,
-            "meat_affinity": false,
+            "meat_affinity": true,
             "pickaxe_affinity": false,
             "pickaxe_required": false,
             "plant_affinity": false,
@@ -6440,7 +6440,7 @@
             "drop_item": 11009885,
             "flammability": 0.10000000149011612,
             "griefable": true,
-            "meat_affinity": false,
+            "meat_affinity": true,
             "pickaxe_affinity": false,
             "pickaxe_required": false,
             "plant_affinity": false,
@@ -6494,7 +6494,7 @@
             "drop_item": 11009886,
             "flammability": 0.10000000149011612,
             "griefable": true,
-            "meat_affinity": false,
+            "meat_affinity": true,
             "pickaxe_affinity": false,
             "pickaxe_required": false,
             "plant_affinity": false,
@@ -8989,9 +8989,9 @@
         ],
         "display_name": "grave",
         "essence": {
-            "bias": 0.0,
+            "bias": -0.09999999999999964,
             "energy": 0.02,
-            "fuseable": false,
+            "fuseable": true,
             "output_tags": [],
             "properties": {
                 "aqua": 0.0,
@@ -9424,9 +9424,9 @@
         ],
         "display_name": "teeth",
         "essence": {
-            "bias": 0.0,
+            "bias": -0.09999999999999964,
             "energy": 0.01,
-            "fuseable": false,
+            "fuseable": true,
             "output_tags": [],
             "properties": {
                 "aqua": 0.14,
@@ -13453,7 +13453,8 @@
             "rank": 0.5,
             "tags": [
                 "meat",
-                "sky"
+                "sky",
+                "gem"
             ]
         },
         "id": 163165934,
@@ -13507,7 +13508,8 @@
             "rank": 0.5,
             "tags": [
                 "meat",
-                "sky"
+                "sky",
+                "magnetite"
             ]
         },
         "id": 163165935,
@@ -14133,7 +14135,7 @@
             "output_tags": [],
             "properties": {
                 "aqua": 0.0,
-                "blockiness": 0.0,
+                "blockiness": 1.0,
                 "clay": 0.18,
                 "danger": 0.6,
                 "edibility": 0.0,
@@ -17327,7 +17329,9 @@
             },
             "rank": 1.0,
             "tags": [
-                "wood"
+                "wood",
+                "string",
+                "gold"
             ]
         },
         "id": 379348721,
@@ -17448,7 +17452,9 @@
             },
             "rank": 1.0,
             "tags": [
-                "glass"
+                "glass",
+                "gold",
+                "magic"
             ]
         },
         "id": 379348735,
@@ -17729,7 +17735,8 @@
             "rank": 1.0,
             "tags": [
                 "earth",
-                "glass"
+                "glass",
+                "gold"
             ]
         },
         "id": 379348937,
@@ -18119,7 +18126,8 @@
             },
             "rank": 1.0,
             "tags": [
-                "plastic"
+                "plastic",
+                "gold"
             ]
         },
         "id": 379349058,
@@ -19486,7 +19494,7 @@
         ],
         "display_name": "tofu",
         "essence": {
-            "bias": 0.0,
+            "bias": -0.09999999999999964,
             "energy": 0.08,
             "fuseable": true,
             "output_tags": [],
@@ -19507,7 +19515,8 @@
             },
             "rank": 0.0,
             "tags": [
-                "plant"
+                "plant",
+                "water"
             ]
         },
         "food_data": {
