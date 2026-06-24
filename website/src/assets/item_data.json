@@ -932,7 +932,7 @@
         "internal": false,
         "internal_name": "womb block",
         "max_durability": 0,
-        "stack_size": 5
+        "stack_size": 50
     },
     {
         "block_data": {
@@ -1044,7 +1044,225 @@
         "internal": false,
         "internal_name": "respawn block",
         "max_durability": 0,
-        "stack_size": 5
+        "stack_size": 50
+    },
+    {
+        "block_data": {
+            "axe_affinity": false,
+            "axe_required": false,
+            "break_time": 4.0,
+            "drop_item": 33,
+            "flammability": 0.0,
+            "griefable": false,
+            "meat_affinity": false,
+            "pickaxe_affinity": false,
+            "pickaxe_required": false,
+            "plant_affinity": false,
+            "shovel_affinity": false,
+            "sustain_fire": false,
+            "unbreakable": false
+        },
+        "color": [
+            0.7723362445831299,
+            0.6150478720664978,
+            0.8417388796806335
+        ],
+        "display_name": "vismruqualia block",
+        "essence": {
+            "bias": -0.15000000000000036,
+            "energy": 0.5,
+            "fuseable": false,
+            "output_tags": [],
+            "properties": {
+                "aqua": 1.0,
+                "blockiness": 1.0,
+                "clay": 0.0,
+                "danger": 0.0,
+                "edibility": 0.0,
+                "faith": 1.0,
+                "hate": 0.0,
+                "lust": 0.49,
+                "mercury": 0.89,
+                "phlegm": 0.07,
+                "sulfur": 1.0,
+                "utility": 0.66,
+                "wearability": 0.0
+            },
+            "rank": 0.3,
+            "tags": [
+                "glass",
+                "bright",
+                "magic",
+                "magnetite",
+                "ring"
+            ]
+        },
+        "id": 33,
+        "internal": true,
+        "internal_name": "alma block",
+        "max_durability": 0,
+        "stack_size": 1
+    },
+    {
+        "color": [
+            0.14407843351364136,
+            0.15254901349544525,
+            0.16972549259662628
+        ],
+        "display_name": "tathlum tack",
+        "essence": {
+            "bias": -0.16999999999999993,
+            "energy": 0.5,
+            "fuseable": true,
+            "output_tags": [],
+            "properties": {
+                "aqua": 0.0,
+                "blockiness": 0.19,
+                "clay": 0.12,
+                "danger": 1.0,
+                "edibility": 0.0,
+                "faith": 0.0,
+                "hate": 1.0,
+                "lust": 0.0,
+                "mercury": 0.89,
+                "phlegm": 0.0,
+                "sulfur": 0.32,
+                "utility": 0.42,
+                "wearability": 0.0
+            },
+            "rank": 0.4,
+            "tags": [
+                "metal",
+                "fire",
+                "digital"
+            ]
+        },
+        "id": 2248,
+        "internal": false,
+        "internal_name": "pistol",
+        "max_durability": 300,
+        "stack_size": 1
+    },
+    {
+        "color": [
+            0.4642031192779541,
+            0.3290598392486572,
+            0.26153847575187683
+        ],
+        "display_name": "freikugel",
+        "essence": {
+            "bias": -0.25,
+            "energy": 0.9,
+            "fuseable": true,
+            "output_tags": [],
+            "properties": {
+                "aqua": 0.0,
+                "blockiness": 0.32,
+                "clay": 0.12,
+                "danger": 1.0,
+                "edibility": 0.0,
+                "faith": 0.35,
+                "hate": 1.0,
+                "lust": 1.0,
+                "mercury": 0.89,
+                "phlegm": 0.0,
+                "sulfur": 0.32,
+                "utility": 0.24,
+                "wearability": 0.0
+            },
+            "rank": 0.9,
+            "tags": [
+                "digital",
+                "gold",
+                "fire",
+                "magnetite"
+            ]
+        },
+        "id": 2249,
+        "internal": false,
+        "internal_name": "shotgun",
+        "max_durability": 150,
+        "stack_size": 1
+    },
+    {
+        "color": [
+            0.15044564008712769,
+            0.12883244454860687,
+            0.1456773579120636
+        ],
+        "display_name": "needle shot",
+        "essence": {
+            "bias": -0.1999999999999993,
+            "energy": 0.75,
+            "fuseable": true,
+            "output_tags": [],
+            "properties": {
+                "aqua": 0.0,
+                "blockiness": 0.09,
+                "clay": 0.05,
+                "danger": 1.0,
+                "edibility": 0.0,
+                "faith": 0.42,
+                "hate": 1.0,
+                "lust": 0.0,
+                "mercury": 1.0,
+                "phlegm": 0.0,
+                "sulfur": 0.52,
+                "utility": 0.54,
+                "wearability": 0.0
+            },
+            "rank": 0.8,
+            "tags": [
+                "metal",
+                "fire",
+                "magnetite"
+            ]
+        },
+        "id": 2250,
+        "internal": false,
+        "internal_name": "minigun",
+        "max_durability": 800,
+        "stack_size": 1
+    },
+    {
+        "color": [
+            0.2568627595901489,
+            0.20501089096069336,
+            0.19319172203540802
+        ],
+        "display_name": "divine shot",
+        "essence": {
+            "bias": -0.16999999999999993,
+            "energy": 0.5,
+            "fuseable": false,
+            "output_tags": [],
+            "properties": {
+                "aqua": 0.0,
+                "blockiness": 0.19,
+                "clay": 0.12,
+                "danger": 1.0,
+                "edibility": 0.0,
+                "faith": 0.99,
+                "hate": 0.23,
+                "lust": 0.0,
+                "mercury": 1.0,
+                "phlegm": 0.0,
+                "sulfur": 0.65,
+                "utility": 0.61,
+                "wearability": 0.0
+            },
+            "rank": 0.6,
+            "tags": [
+                "metal",
+                "fire",
+                "bright"
+            ]
+        },
+        "id": 2252,
+        "internal": false,
+        "internal_name": "divine shot",
+        "max_durability": 450,
+        "stack_size": 1
     },
     {
         "color": [
@@ -1267,7 +1485,7 @@
         "internal": false,
         "internal_name": "sponge block",
         "max_durability": 0,
-        "stack_size": 5
+        "stack_size": 50
     },
     {
         "block_data": {
@@ -1322,7 +1540,7 @@
         "internal": false,
         "internal_name": "diffuse block",
         "max_durability": 0,
-        "stack_size": 5
+        "stack_size": 50
     },
     {
         "block_data": {
@@ -1377,7 +1595,7 @@
         "internal": false,
         "internal_name": "ice cube",
         "max_durability": 0,
-        "stack_size": 5
+        "stack_size": 50
     },
     {
         "block_data": {
@@ -1430,7 +1648,115 @@
         "internal": false,
         "internal_name": "fractal block",
         "max_durability": 0,
-        "stack_size": 5
+        "stack_size": 50
+    },
+    {
+        "block_data": {
+            "axe_affinity": false,
+            "axe_required": false,
+            "break_time": 1.0,
+            "drop_item": 12442,
+            "flammability": 0.0,
+            "griefable": true,
+            "meat_affinity": false,
+            "pickaxe_affinity": false,
+            "pickaxe_required": false,
+            "plant_affinity": false,
+            "shovel_affinity": false,
+            "sustain_fire": false,
+            "unbreakable": false
+        },
+        "color": [
+            0.7409828305244446,
+            0.8479787111282349,
+            0.6273541450500488
+        ],
+        "display_name": "peace block",
+        "essence": {
+            "bias": -0.09999999999999964,
+            "energy": 0.4,
+            "fuseable": true,
+            "output_tags": [],
+            "properties": {
+                "aqua": 0.34,
+                "blockiness": 1.0,
+                "clay": 0.0,
+                "danger": 0.0,
+                "edibility": 0.0,
+                "faith": 0.0,
+                "hate": 0.0,
+                "lust": 1.0,
+                "mercury": 0.98,
+                "phlegm": 0.0,
+                "sulfur": 0.0,
+                "utility": 0.0,
+                "wearability": 0.0
+            },
+            "rank": 0.4,
+            "tags": [
+                "digital",
+                "plant"
+            ]
+        },
+        "id": 12442,
+        "internal": false,
+        "internal_name": "peace block",
+        "max_durability": 0,
+        "stack_size": 50
+    },
+    {
+        "block_data": {
+            "axe_affinity": false,
+            "axe_required": false,
+            "break_time": 1.0,
+            "drop_item": 12443,
+            "flammability": 0.0,
+            "griefable": true,
+            "meat_affinity": false,
+            "pickaxe_affinity": false,
+            "pickaxe_required": false,
+            "plant_affinity": false,
+            "shovel_affinity": false,
+            "sustain_fire": false,
+            "unbreakable": false
+        },
+        "color": [
+            0.3480513095855713,
+            0.229339137673378,
+            0.3772936463356018
+        ],
+        "display_name": "passion block",
+        "essence": {
+            "bias": -0.09999999999999964,
+            "energy": 0.4,
+            "fuseable": true,
+            "output_tags": [],
+            "properties": {
+                "aqua": 0.18,
+                "blockiness": 1.0,
+                "clay": 0.05,
+                "danger": 0.0,
+                "edibility": 0.0,
+                "faith": 0.0,
+                "hate": 0.0,
+                "lust": 1.0,
+                "mercury": 0.98,
+                "phlegm": 0.0,
+                "sulfur": 0.57,
+                "utility": 0.0,
+                "wearability": 0.0
+            },
+            "rank": 0.4,
+            "tags": [
+                "digital",
+                "fire"
+            ]
+        },
+        "id": 12443,
+        "internal": false,
+        "internal_name": "passion block",
+        "max_durability": 0,
+        "stack_size": 50
     },
     {
         "color": [
@@ -1667,6 +1993,47 @@
         "internal_name": "silver vessel",
         "max_durability": 0,
         "stack_size": 5
+    },
+    {
+        "color": [
+            0.3255835771560669,
+            0.35004669427871704,
+            0.31596639752388
+        ],
+        "display_name": "agate",
+        "essence": {
+            "bias": 0.0,
+            "energy": 0.25,
+            "fuseable": true,
+            "output_tags": [
+                "sky"
+            ],
+            "properties": {
+                "aqua": 0.64,
+                "blockiness": 0.0,
+                "clay": 1.0,
+                "danger": 0.0,
+                "edibility": 0.0,
+                "faith": 1.0,
+                "hate": 0.5,
+                "lust": 1.0,
+                "mercury": 0.22,
+                "phlegm": 0.06,
+                "sulfur": 0.44,
+                "utility": 0.18,
+                "wearability": 0.78
+            },
+            "rank": 0.2,
+            "tags": [
+                "gem",
+                "stone"
+            ]
+        },
+        "id": 14046,
+        "internal": false,
+        "internal_name": "agate",
+        "max_durability": 0,
+        "stack_size": 50
     },
     {
         "color": [
@@ -4891,6 +5258,61 @@
         "block_data": {
             "axe_affinity": false,
             "axe_required": false,
+            "break_time": 1.0,
+            "drop_item": 434379,
+            "flammability": 0.0,
+            "griefable": true,
+            "meat_affinity": false,
+            "pickaxe_affinity": false,
+            "pickaxe_required": false,
+            "plant_affinity": false,
+            "shovel_affinity": false,
+            "sustain_fire": false,
+            "unbreakable": false
+        },
+        "color": [
+            0.4529326856136322,
+            0.4336983263492584,
+            0.7653679847717285
+        ],
+        "display_name": "wave block",
+        "essence": {
+            "bias": -0.15000000000000036,
+            "energy": 0.1,
+            "fuseable": true,
+            "output_tags": [],
+            "properties": {
+                "aqua": 1.0,
+                "blockiness": 1.0,
+                "clay": 0.23,
+                "danger": 0.0,
+                "edibility": 0.0,
+                "faith": 1.0,
+                "hate": 0.0,
+                "lust": 1.0,
+                "mercury": 0.66,
+                "phlegm": 0.12,
+                "sulfur": 0.23,
+                "utility": 0.27,
+                "wearability": 0.0
+            },
+            "rank": 0.0,
+            "tags": [
+                "digital",
+                "bright",
+                "water"
+            ]
+        },
+        "id": 434379,
+        "internal": false,
+        "internal_name": "wave block",
+        "max_durability": 0,
+        "stack_size": 50
+    },
+    {
+        "block_data": {
+            "axe_affinity": false,
+            "axe_required": false,
             "break_time": 0.0,
             "drop_item": 699986,
             "flammability": 0.5,
@@ -5094,12 +5516,67 @@
             "rank": 0.0,
             "tags": [
                 "plastic",
-                "letter"
+                "letter",
+                "fire"
             ]
         },
         "id": 700007,
         "internal": false,
         "internal_name": "d",
+        "max_durability": 0,
+        "stack_size": 50
+    },
+    {
+        "block_data": {
+            "axe_affinity": false,
+            "axe_required": false,
+            "break_time": 1.0,
+            "drop_item": 3341122,
+            "flammability": 0.0,
+            "griefable": false,
+            "meat_affinity": false,
+            "pickaxe_affinity": false,
+            "pickaxe_required": false,
+            "plant_affinity": false,
+            "shovel_affinity": false,
+            "sustain_fire": false,
+            "unbreakable": false
+        },
+        "color": [
+            0.3949878215789795,
+            0.3107089102268219,
+            0.5690219402313232
+        ],
+        "display_name": "thingy",
+        "essence": {
+            "bias": -0.15000000000000036,
+            "energy": 0.5,
+            "fuseable": true,
+            "output_tags": [],
+            "properties": {
+                "aqua": 0.53,
+                "blockiness": 0.0,
+                "clay": 0.07,
+                "danger": 0.0,
+                "edibility": 0.0,
+                "faith": 0.35,
+                "hate": 0.37,
+                "lust": 0.98,
+                "mercury": 0.17,
+                "phlegm": 1.0,
+                "sulfur": 0.2,
+                "utility": 0.0,
+                "wearability": 0.0
+            },
+            "rank": 0.05,
+            "tags": [
+                "digital",
+                "ball"
+            ]
+        },
+        "id": 3341122,
+        "internal": false,
+        "internal_name": "thingy",
         "max_durability": 0,
         "stack_size": 50
     },
@@ -5209,7 +5686,62 @@
         "internal": false,
         "internal_name": "display cube",
         "max_durability": 0,
-        "stack_size": 5
+        "stack_size": 50
+    },
+    {
+        "block_data": {
+            "axe_affinity": false,
+            "axe_required": false,
+            "break_time": 1.0,
+            "drop_item": 3341340,
+            "flammability": 0.0,
+            "griefable": false,
+            "meat_affinity": false,
+            "pickaxe_affinity": false,
+            "pickaxe_required": false,
+            "plant_affinity": false,
+            "shovel_affinity": false,
+            "sustain_fire": false,
+            "unbreakable": false
+        },
+        "color": [
+            0.3562243580818176,
+            0.0,
+            0.0
+        ],
+        "display_name": "red covenant",
+        "essence": {
+            "bias": -0.5,
+            "energy": 0.8,
+            "fuseable": false,
+            "output_tags": [],
+            "properties": {
+                "aqua": 0.48,
+                "blockiness": 0.0,
+                "clay": 0.22,
+                "danger": 1.0,
+                "edibility": 0.0,
+                "faith": 1.0,
+                "hate": 1.0,
+                "lust": 0.45,
+                "mercury": 0.92,
+                "phlegm": 0.56,
+                "sulfur": 0.65,
+                "utility": 0.0,
+                "wearability": 0.0
+            },
+            "rank": 0.5,
+            "tags": [
+                "gem",
+                "magic",
+                "fire"
+            ]
+        },
+        "id": 3341340,
+        "internal": false,
+        "internal_name": "red covenant",
+        "max_durability": 0,
+        "stack_size": 50
     },
     {
         "block_data": {
@@ -5324,6 +5856,59 @@
             "axe_affinity": false,
             "axe_required": false,
             "break_time": 1.0,
+            "drop_item": 3341424,
+            "flammability": 0.0,
+            "griefable": false,
+            "meat_affinity": false,
+            "pickaxe_affinity": false,
+            "pickaxe_required": false,
+            "plant_affinity": false,
+            "shovel_affinity": false,
+            "sustain_fire": false,
+            "unbreakable": false
+        },
+        "color": [
+            0.5695378184318542,
+            0.7782913446426392,
+            0.8677170872688293
+        ],
+        "display_name": "blue covenant",
+        "essence": {
+            "bias": -0.4000000000000003,
+            "energy": 1.0,
+            "fuseable": false,
+            "output_tags": [],
+            "properties": {
+                "aqua": 1.0,
+                "blockiness": 0.0,
+                "clay": 0.0,
+                "danger": 1.0,
+                "edibility": 1.0,
+                "faith": 1.0,
+                "hate": 0.61,
+                "lust": 0.0,
+                "mercury": 0.2,
+                "phlegm": 0.75,
+                "sulfur": 0.41,
+                "utility": 0.0,
+                "wearability": 0.0
+            },
+            "rank": 0.7,
+            "tags": [
+                "water"
+            ]
+        },
+        "id": 3341424,
+        "internal": false,
+        "internal_name": "blue covenant",
+        "max_durability": 0,
+        "stack_size": 50
+    },
+    {
+        "block_data": {
+            "axe_affinity": false,
+            "axe_required": false,
+            "break_time": 1.0,
             "drop_item": 3341705,
             "flammability": 0.0,
             "griefable": true,
@@ -5426,6 +6011,60 @@
         "id": 3341873,
         "internal": false,
         "internal_name": "barrier blocks",
+        "max_durability": 0,
+        "stack_size": 50
+    },
+    {
+        "block_data": {
+            "axe_affinity": false,
+            "axe_required": false,
+            "break_time": 3.0,
+            "drop_item": 3341874,
+            "flammability": 0.0,
+            "griefable": false,
+            "meat_affinity": false,
+            "pickaxe_affinity": true,
+            "pickaxe_required": false,
+            "plant_affinity": false,
+            "shovel_affinity": false,
+            "sustain_fire": false,
+            "unbreakable": false
+        },
+        "color": [
+            0.3768627345561981,
+            0.3768627345561981,
+            0.3768627345561981
+        ],
+        "display_name": "barrier cone",
+        "essence": {
+            "bias": 0.0,
+            "energy": 0.2,
+            "fuseable": true,
+            "output_tags": [],
+            "properties": {
+                "aqua": 0.0,
+                "blockiness": 0.32,
+                "clay": 0.91,
+                "danger": 0.0,
+                "edibility": 0.0,
+                "faith": 0.34,
+                "hate": 1.0,
+                "lust": 0.77,
+                "mercury": 1.0,
+                "phlegm": 0.13,
+                "sulfur": 0.58,
+                "utility": 0.36,
+                "wearability": 0.0
+            },
+            "rank": 0.0,
+            "tags": [
+                "metal",
+                "cold"
+            ]
+        },
+        "id": 3341874,
+        "internal": false,
+        "internal_name": "barrier cone",
         "max_durability": 0,
         "stack_size": 50
     },
@@ -5645,7 +6284,7 @@
         "internal": false,
         "internal_name": "uterus block",
         "max_durability": 0,
-        "stack_size": 5
+        "stack_size": 50
     },
     {
         "block_data": {
@@ -6106,6 +6745,87 @@
         "stack_size": 1
     },
     {
+        "color": [
+            0.9371764659881592,
+            0.5942353010177612,
+            0.31737256050109863
+        ],
+        "display_name": "star wand",
+        "essence": {
+            "bias": -0.15000000000000036,
+            "energy": 0.5,
+            "fuseable": true,
+            "output_tags": [],
+            "properties": {
+                "aqua": 0.1,
+                "blockiness": 0.0,
+                "clay": 0.21,
+                "danger": 1.0,
+                "edibility": 0.0,
+                "faith": 0.0,
+                "hate": 0.0,
+                "lust": 0.69,
+                "mercury": 0.78,
+                "phlegm": 0.62,
+                "sulfur": 0.3,
+                "utility": 0.5,
+                "wearability": 0.0
+            },
+            "rank": 0.25,
+            "tags": [
+                "plastic",
+                "metal",
+                "digital"
+            ]
+        },
+        "id": 7289521,
+        "internal": false,
+        "internal_name": "star wand",
+        "max_durability": 130,
+        "stack_size": 1
+    },
+    {
+        "color": [
+            0.23658476769924164,
+            0.2310250699520111,
+            0.2531149089336395
+        ],
+        "display_name": "mercury wand",
+        "essence": {
+            "bias": -0.15000000000000036,
+            "energy": 0.4,
+            "fuseable": true,
+            "output_tags": [],
+            "properties": {
+                "aqua": 0.0,
+                "blockiness": 0.0,
+                "clay": 0.35,
+                "danger": 1.0,
+                "edibility": 0.0,
+                "faith": 0.0,
+                "hate": 0.81,
+                "lust": 0.0,
+                "mercury": 0.82,
+                "phlegm": 0.21,
+                "sulfur": 0.1,
+                "utility": 0.44,
+                "wearability": 0.0
+            },
+            "rank": 0.45,
+            "tags": [
+                "metal",
+                "ball",
+                "magnetite",
+                "magic"
+            ]
+        },
+        "id": 7289548,
+        "internal": false,
+        "internal_name": "mercury wand",
+        "max_durability": 300,
+        "stack_size": 1
+    },
+    {
         "block_data": {
             "axe_affinity": false,
             "axe_required": false,
@@ -6537,6 +7257,61 @@
         "id": 11009886,
         "internal": false,
         "internal_name": "ambiguous block 5",
+        "max_durability": 0,
+        "stack_size": 50
+    },
+    {
+        "block_data": {
+            "axe_affinity": false,
+            "axe_required": false,
+            "break_time": 0.6000000238418579,
+            "drop_item": 11009887,
+            "flammability": 0.10000000149011612,
+            "griefable": true,
+            "meat_affinity": true,
+            "pickaxe_affinity": false,
+            "pickaxe_required": false,
+            "plant_affinity": false,
+            "shovel_affinity": false,
+            "sustain_fire": false,
+            "unbreakable": false
+        },
+        "color": [
+            0.769968569278717,
+            0.6621848940849304,
+            0.7915287613868713
+        ],
+        "display_name": "rubber block",
+        "essence": {
+            "bias": -0.15000000000000036,
+            "energy": 0.025,
+            "fuseable": true,
+            "output_tags": [],
+            "properties": {
+                "aqua": 0.38,
+                "blockiness": 1.0,
+                "clay": 0.16,
+                "danger": 0.0,
+                "edibility": 0.3,
+                "faith": 0.34,
+                "hate": 0.06,
+                "lust": 0.89,
+                "mercury": 0.0,
+                "phlegm": 0.8,
+                "sulfur": 0.38,
+                "utility": 0.49,
+                "wearability": 0.65
+            },
+            "rank": 0.0,
+            "tags": [
+                "plant",
+                "plastic",
+                "fluff"
+            ]
+        },
+        "id": 11009887,
+        "internal": false,
+        "internal_name": "rubber block",
         "max_durability": 0,
         "stack_size": 50
     },
@@ -8445,6 +9220,47 @@
     },
     {
         "color": [
+            0.6231064796447754,
+            0.5299884676933289,
+            0.6959630846977234
+        ],
+        "display_name": "power capsule",
+        "essence": {
+            "bias": -0.34999999999999964,
+            "energy": 0.6,
+            "fuseable": true,
+            "output_tags": [],
+            "properties": {
+                "aqua": 0.91,
+                "blockiness": 0.15,
+                "clay": 0.87,
+                "danger": 0.72,
+                "edibility": 0.0,
+                "faith": 0.93,
+                "hate": 0.11,
+                "lust": 0.11,
+                "mercury": 0.18,
+                "phlegm": 0.5,
+                "sulfur": 1.0,
+                "utility": 0.31,
+                "wearability": 0.0
+            },
+            "rank": 0.8,
+            "tags": [
+                "glass",
+                "capsule",
+                "magic",
+                "sky"
+            ]
+        },
+        "id": 45389606,
+        "internal": false,
+        "internal_name": "power capsule",
+        "max_durability": 0,
+        "stack_size": 50
+    },
+    {
+        "color": [
             0.47781217098236084,
             0.6747161746025085,
             0.6977089643478394
@@ -8567,6 +9383,87 @@
     },
     {
         "color": [
+            0.5544494986534119,
+            0.3915535509586334,
+            0.4573529362678528
+        ],
+        "display_name": "agate capsule",
+        "essence": {
+            "bias": 0.0,
+            "energy": 0.3,
+            "fuseable": true,
+            "output_tags": [],
+            "properties": {
+                "aqua": 0.44,
+                "blockiness": 0.0,
+                "clay": 1.0,
+                "danger": 1.0,
+                "edibility": 0.0,
+                "faith": 0.62,
+                "hate": 0.17,
+                "lust": 0.19,
+                "mercury": 0.3,
+                "phlegm": 0.24,
+                "sulfur": 0.13,
+                "utility": 0.0,
+                "wearability": 0.0
+            },
+            "rank": 0.0,
+            "tags": [
+                "glass",
+                "stone",
+                "earth",
+                "capsule"
+            ]
+        },
+        "id": 45390012,
+        "internal": false,
+        "internal_name": "agate capsule",
+        "max_durability": 0,
+        "stack_size": 50
+    },
+    {
+        "color": [
+            0.40941986441612244,
+            0.501960813999176,
+            0.6536082625389099
+        ],
+        "display_name": "mushroom capsule",
+        "essence": {
+            "bias": -0.09999999999999964,
+            "energy": 0.5,
+            "fuseable": true,
+            "output_tags": [],
+            "properties": {
+                "aqua": 0.77,
+                "blockiness": 0.0,
+                "clay": 0.54,
+                "danger": 0.13,
+                "edibility": 0.63,
+                "faith": 0.59,
+                "hate": 0.22,
+                "lust": 1.0,
+                "mercury": 0.17,
+                "phlegm": 1.0,
+                "sulfur": 0.45,
+                "utility": 0.0,
+                "wearability": 0.0
+            },
+            "rank": 0.2,
+            "tags": [
+                "glass",
+                "meat",
+                "capsule"
+            ]
+        },
+        "id": 45390082,
+        "internal": false,
+        "internal_name": "mushroom capsule",
+        "max_durability": 0,
+        "stack_size": 50
+    },
+    {
+        "color": [
             0.36313724517822266,
             0.23947712779045105,
             0.2893463969230652
@@ -8642,6 +9539,169 @@
         "id": 45390792,
         "internal": false,
         "internal_name": "glaggler capsule",
+        "max_durability": 0,
+        "stack_size": 50
+    },
+    {
+        "color": [
+            0.6641710996627808,
+            0.47847098112106323,
+            0.5649039149284363
+        ],
+        "display_name": "moth capsule",
+        "essence": {
+            "bias": -0.09999999999999964,
+            "energy": 0.245,
+            "fuseable": true,
+            "output_tags": [],
+            "properties": {
+                "aqua": 0.6,
+                "blockiness": 0.18,
+                "clay": 0.32,
+                "danger": 0.85,
+                "edibility": 0.0,
+                "faith": 0.56,
+                "hate": 0.33,
+                "lust": 0.39,
+                "mercury": 1.0,
+                "phlegm": 0.13,
+                "sulfur": 0.86,
+                "utility": 0.0,
+                "wearability": 0.0
+            },
+            "rank": 0.1,
+            "tags": [
+                "glass",
+                "metal",
+                "sky",
+                "capsule"
+            ]
+        },
+        "id": 45390793,
+        "internal": false,
+        "internal_name": "moth capsule",
+        "max_durability": 0,
+        "stack_size": 50
+    },
+    {
+        "color": [
+            0.5751346945762634,
+            0.4564533531665802,
+            0.6377074122428894
+        ],
+        "display_name": "lozenge capsule",
+        "essence": {
+            "bias": -0.15000000000000036,
+            "energy": 0.245,
+            "fuseable": true,
+            "output_tags": [],
+            "properties": {
+                "aqua": 0.22,
+                "blockiness": 0.0,
+                "clay": 0.61,
+                "danger": 0.0,
+                "edibility": 0.0,
+                "faith": 0.36,
+                "hate": 0.05,
+                "lust": 1.0,
+                "mercury": 0.65,
+                "phlegm": 0.06,
+                "sulfur": 0.43,
+                "utility": 0.11,
+                "wearability": 0.0
+            },
+            "rank": 0.0,
+            "tags": [
+                "glass",
+                "stone",
+                "magnetite",
+                "capsule"
+            ]
+        },
+        "id": 45390794,
+        "internal": false,
+        "internal_name": "lozenge capsule",
+        "max_durability": 0,
+        "stack_size": 50
+    },
+    {
+        "color": [
+            0.36313724517822266,
+            0.23947712779045105,
+            0.2893463969230652
+        ],
+        "display_name": "huitzilopochtli capsule",
+        "essence": {
+            "bias": 0.0,
+            "energy": 0.3,
+            "fuseable": false,
+            "output_tags": [],
+            "properties": {
+                "aqua": 0.44,
+                "blockiness": 0.0,
+                "clay": 0.32,
+                "danger": 1.0,
+                "edibility": 0.0,
+                "faith": 0.59,
+                "hate": 1.0,
+                "lust": 0.0,
+                "mercury": 0.3,
+                "phlegm": 1.0,
+                "sulfur": 0.13,
+                "utility": 0.0,
+                "wearability": 0.0
+            },
+            "rank": 0.0,
+            "tags": [
+                "glass",
+                "meat"
+            ]
+        },
+        "id": 45391463,
+        "internal": true,
+        "internal_name": "huitzilopochtli capsule",
+        "max_durability": 0,
+        "stack_size": 50
+    },
+    {
+        "color": [
+            0.35898128151893616,
+            0.6695965528488159,
+            0.6681992411613464
+        ],
+        "display_name": "bunnicorn capsule",
+        "essence": {
+            "bias": -0.1999999999999993,
+            "energy": 0.5,
+            "fuseable": true,
+            "output_tags": [],
+            "properties": {
+                "aqua": 0.91,
+                "blockiness": 0.75,
+                "clay": 0.44,
+                "danger": 0.0,
+                "edibility": 1.0,
+                "faith": 0.76,
+                "hate": 0.0,
+                "lust": 0.0,
+                "mercury": 0.0,
+                "phlegm": 0.86,
+                "sulfur": 0.13,
+                "utility": 0.0,
+                "wearability": 0.0
+            },
+            "rank": 0.0,
+            "tags": [
+                "glass",
+                "plant",
+                "foliage",
+                "leaf",
+                "capsule"
+            ]
+        },
+        "id": 45391834,
+        "internal": false,
+        "internal_name": "bunnicorn capsule",
         "max_durability": 0,
         "stack_size": 50
     },
@@ -9235,6 +10295,61 @@
         "id": 119542219,
         "internal": false,
         "internal_name": "grass grass foliage",
+        "max_durability": 0,
+        "stack_size": 50
+    },
+    {
+        "block_data": {
+            "axe_affinity": false,
+            "axe_required": false,
+            "break_time": 1.0,
+            "drop_item": 119542221,
+            "flammability": 0.5,
+            "griefable": true,
+            "meat_affinity": false,
+            "pickaxe_affinity": false,
+            "pickaxe_required": false,
+            "plant_affinity": false,
+            "shovel_affinity": false,
+            "sustain_fire": false,
+            "unbreakable": false
+        },
+        "color": [
+            0.36286044120788574,
+            0.41741636395454407,
+            0.4854671359062195
+        ],
+        "display_name": "azure rose",
+        "essence": {
+            "bias": -0.15000000000000036,
+            "energy": 0.01,
+            "fuseable": true,
+            "output_tags": [],
+            "properties": {
+                "aqua": 0.7,
+                "blockiness": 0.12,
+                "clay": 0.0,
+                "danger": 0.0,
+                "edibility": 0.28,
+                "faith": 0.0,
+                "hate": 0.0,
+                "lust": 0.0,
+                "mercury": 0.0,
+                "phlegm": 1.0,
+                "sulfur": 0.0,
+                "utility": 0.0,
+                "wearability": 0.0
+            },
+            "rank": 0.0,
+            "tags": [
+                "plant",
+                "foliage",
+                "cold"
+            ]
+        },
+        "id": 119542221,
+        "internal": false,
+        "internal_name": "azure rose foliage",
         "max_durability": 0,
         "stack_size": 50
     },
@@ -10107,6 +11222,116 @@
         "id": 119542691,
         "internal": false,
         "internal_name": "star foliage",
+        "max_durability": 0,
+        "stack_size": 50
+    },
+    {
+        "block_data": {
+            "axe_affinity": false,
+            "axe_required": false,
+            "break_time": 1.0,
+            "drop_item": 119544300,
+            "flammability": 0.5,
+            "griefable": true,
+            "meat_affinity": false,
+            "pickaxe_affinity": false,
+            "pickaxe_required": false,
+            "plant_affinity": false,
+            "shovel_affinity": false,
+            "sustain_fire": false,
+            "unbreakable": false
+        },
+        "color": [
+            0.2033986896276474,
+            0.15398693084716797,
+            0.2993464171886444
+        ],
+        "display_name": "male fungus",
+        "essence": {
+            "bias": -0.15000000000000036,
+            "energy": 0.01,
+            "fuseable": true,
+            "output_tags": [],
+            "properties": {
+                "aqua": 0.63,
+                "blockiness": 0.0,
+                "clay": 0.34,
+                "danger": 0.0,
+                "edibility": 0.68,
+                "faith": 0.0,
+                "hate": 0.0,
+                "lust": 0.6,
+                "mercury": 0.0,
+                "phlegm": 1.0,
+                "sulfur": 0.0,
+                "utility": 0.0,
+                "wearability": 0.0
+            },
+            "rank": 0.0,
+            "tags": [
+                "foliage",
+                "meat",
+                "plant"
+            ]
+        },
+        "id": 119544300,
+        "internal": false,
+        "internal_name": "male fungus",
+        "max_durability": 0,
+        "stack_size": 50
+    },
+    {
+        "block_data": {
+            "axe_affinity": false,
+            "axe_required": false,
+            "break_time": 1.0,
+            "drop_item": 119544301,
+            "flammability": 0.5,
+            "griefable": true,
+            "meat_affinity": false,
+            "pickaxe_affinity": false,
+            "pickaxe_required": false,
+            "plant_affinity": false,
+            "shovel_affinity": false,
+            "sustain_fire": false,
+            "unbreakable": false
+        },
+        "color": [
+            0.5286274552345276,
+            0.280522882938385,
+            0.31738561391830444
+        ],
+        "display_name": "female fungus",
+        "essence": {
+            "bias": -0.15000000000000036,
+            "energy": 0.01,
+            "fuseable": true,
+            "output_tags": [],
+            "properties": {
+                "aqua": 0.63,
+                "blockiness": 0.0,
+                "clay": 0.56,
+                "danger": 0.0,
+                "edibility": 0.42,
+                "faith": 0.15,
+                "hate": 0.0,
+                "lust": 0.75,
+                "mercury": 0.0,
+                "phlegm": 0.85,
+                "sulfur": 0.22,
+                "utility": 0.0,
+                "wearability": 0.0
+            },
+            "rank": 0.0,
+            "tags": [
+                "foliage",
+                "meat",
+                "plant"
+            ]
+        },
+        "id": 119544301,
+        "internal": false,
+        "internal_name": "female fungus",
         "max_durability": 0,
         "stack_size": 50
     },
@@ -12646,6 +13871,58 @@
     },
     {
         "color": [
+            0.8280858993530273,
+            0.7281419038772583,
+            0.6520634889602661
+        ],
+        "display_name": "dviscythe",
+        "essence": {
+            "bias": -0.25,
+            "energy": 0.9,
+            "fuseable": true,
+            "output_tags": [],
+            "properties": {
+                "aqua": 0.27,
+                "blockiness": 0.0,
+                "clay": 0.06,
+                "danger": 0.16,
+                "edibility": 0.0,
+                "faith": 1.0,
+                "hate": 0.11,
+                "lust": 0.29,
+                "mercury": 1.0,
+                "phlegm": 0.0,
+                "sulfur": 0.43,
+                "utility": 1.0,
+                "wearability": 0.0
+            },
+            "rank": 0.8,
+            "tags": [
+                "stick",
+                "gold",
+                "sky"
+            ]
+        },
+        "id": 152629758,
+        "internal": false,
+        "internal_name": "dviscythe",
+        "max_durability": 1600,
+        "stack_size": 1,
+        "tool_data": {
+            "attack_increase": 1,
+            "axe_boost": false,
+            "break_speed_increase": 10.0,
+            "cristella_boost": false,
+            "fire_aspect": false,
+            "meat_boost": false,
+            "pickaxe_boost": true,
+            "plant_boost": false,
+            "shovel_boost": false,
+            "slime_boost": false
+        }
+    },
+    {
+        "color": [
             0.6583408713340759,
             0.6948416233062744,
             0.7325490117073059
@@ -13405,6 +14682,64 @@
         "id": 163146968,
         "internal": false,
         "internal_name": "sodium lamp",
+        "max_durability": 0,
+        "stack_size": 50
+    },
+    {
+        "block_data": {
+            "axe_affinity": false,
+            "axe_required": false,
+            "break_time": 2.0,
+            "drop_item": 163147258,
+            "flammability": 0.0,
+            "griefable": true,
+            "meat_affinity": false,
+            "pickaxe_affinity": true,
+            "pickaxe_required": false,
+            "plant_affinity": false,
+            "shovel_affinity": false,
+            "sustain_fire": false,
+            "unbreakable": false
+        },
+        "color": [
+            0.3217383921146393,
+            0.24155844748020172,
+            0.3195314407348633
+        ],
+        "display_name": "beacon",
+        "essence": {
+            "bias": -0.09999999999999964,
+            "energy": 0.5,
+            "fuseable": true,
+            "output_tags": [
+                "bright"
+            ],
+            "properties": {
+                "aqua": 0.0,
+                "blockiness": 1.0,
+                "clay": 0.0,
+                "danger": 0.0,
+                "edibility": 0.0,
+                "faith": 1.0,
+                "hate": 0.0,
+                "lust": 0.0,
+                "mercury": 1.0,
+                "phlegm": 0.0,
+                "sulfur": 1.0,
+                "utility": 1.0,
+                "wearability": 0.0
+            },
+            "rank": 0.2,
+            "tags": [
+                "metal",
+                "glass",
+                "bright",
+                "sky"
+            ]
+        },
+        "id": 163147258,
+        "internal": false,
+        "internal_name": "beacon",
         "max_durability": 0,
         "stack_size": 50
     },
@@ -15489,6 +16824,59 @@
         "block_data": {
             "axe_affinity": false,
             "axe_required": false,
+            "break_time": 2.0,
+            "drop_item": 210664601,
+            "flammability": 0.0,
+            "griefable": true,
+            "meat_affinity": false,
+            "pickaxe_affinity": true,
+            "pickaxe_required": false,
+            "plant_affinity": false,
+            "shovel_affinity": false,
+            "sustain_fire": false,
+            "unbreakable": false
+        },
+        "color": [
+            0.6715388894081116,
+            0.6715558767318726,
+            0.7060860991477966
+        ],
+        "display_name": "gray tile block",
+        "essence": {
+            "bias": 0.0,
+            "energy": 0.05,
+            "fuseable": true,
+            "output_tags": [],
+            "properties": {
+                "aqua": 0.22,
+                "blockiness": 1.0,
+                "clay": 1.0,
+                "danger": 0.0,
+                "edibility": 0.0,
+                "faith": 0.16,
+                "hate": 0.0,
+                "lust": 0.0,
+                "mercury": 0.05,
+                "phlegm": 0.0,
+                "sulfur": 0.05,
+                "utility": 0.0,
+                "wearability": 0.0
+            },
+            "rank": 0.0,
+            "tags": [
+                "stone"
+            ]
+        },
+        "id": 210664601,
+        "internal": false,
+        "internal_name": "gray tile block",
+        "max_durability": 0,
+        "stack_size": 50
+    },
+    {
+        "block_data": {
+            "axe_affinity": false,
+            "axe_required": false,
             "break_time": 6.0,
             "drop_item": 210896160,
             "flammability": 0.25,
@@ -15589,6 +16977,60 @@
         "id": 210896288,
         "internal": false,
         "internal_name": "stone tile block",
+        "max_durability": 0,
+        "stack_size": 50
+    },
+    {
+        "block_data": {
+            "axe_affinity": false,
+            "axe_required": false,
+            "break_time": 4.0,
+            "drop_item": 210896289,
+            "flammability": 0.25,
+            "griefable": true,
+            "meat_affinity": false,
+            "pickaxe_affinity": true,
+            "pickaxe_required": false,
+            "plant_affinity": false,
+            "shovel_affinity": false,
+            "sustain_fire": false,
+            "unbreakable": false
+        },
+        "color": [
+            0.5964349508285522,
+            0.630031406879425,
+            0.67069011926651
+        ],
+        "display_name": "carved tile block",
+        "essence": {
+            "bias": -0.15000000000000036,
+            "energy": 0.05,
+            "fuseable": true,
+            "output_tags": [],
+            "properties": {
+                "aqua": 0.47,
+                "blockiness": 1.0,
+                "clay": 1.0,
+                "danger": 0.0,
+                "edibility": 0.0,
+                "faith": 0.4,
+                "hate": 0.0,
+                "lust": 0.0,
+                "mercury": 0.05,
+                "phlegm": 0.0,
+                "sulfur": 0.05,
+                "utility": 0.0,
+                "wearability": 0.0
+            },
+            "rank": 0.0,
+            "tags": [
+                "stone",
+                "water"
+            ]
+        },
+        "id": 210896289,
+        "internal": false,
+        "internal_name": "carved tile block",
         "max_durability": 0,
         "stack_size": 50
     },
@@ -15910,6 +17352,60 @@
         "id": 210957600,
         "internal": false,
         "internal_name": "onyx block",
+        "max_durability": 0,
+        "stack_size": 50
+    },
+    {
+        "block_data": {
+            "axe_affinity": false,
+            "axe_required": false,
+            "break_time": 1.100000023841858,
+            "drop_item": 210957601,
+            "flammability": 0.25,
+            "griefable": true,
+            "meat_affinity": true,
+            "pickaxe_affinity": true,
+            "pickaxe_required": false,
+            "plant_affinity": false,
+            "shovel_affinity": false,
+            "sustain_fire": false,
+            "unbreakable": false
+        },
+        "color": [
+            0.22658517956733704,
+            0.23115184903144836,
+            0.242509126663208
+        ],
+        "display_name": "salome marble block",
+        "essence": {
+            "bias": -0.15000000000000036,
+            "energy": 0.08,
+            "fuseable": true,
+            "output_tags": [],
+            "properties": {
+                "aqua": 0.53,
+                "blockiness": 1.0,
+                "clay": 1.0,
+                "danger": 0.11,
+                "edibility": 0.0,
+                "faith": 0.68,
+                "hate": 0.33,
+                "lust": 0.2,
+                "mercury": 0.05,
+                "phlegm": 0.6,
+                "sulfur": 0.27,
+                "utility": 0.0,
+                "wearability": 0.0
+            },
+            "rank": 0.0,
+            "tags": [
+                "stone",
+                "meat"
+            ]
+        },
+        "id": 210957601,
+        "internal": false,
+        "internal_name": "salome marble block",
         "max_durability": 0,
         "stack_size": 50
     },
@@ -16555,7 +18051,7 @@
             "pickaxe_affinity": true,
             "pickaxe_required": false,
             "plant_affinity": false,
-            "shovel_affinity": false,
+            "shovel_affinity": true,
             "sustain_fire": false,
             "unbreakable": false
         },
@@ -16935,6 +18431,116 @@
         "block_data": {
             "axe_affinity": false,
             "axe_required": false,
+            "break_time": 4.0,
+            "drop_item": 324041244,
+            "flammability": 0.20000000298023224,
+            "griefable": true,
+            "meat_affinity": false,
+            "pickaxe_affinity": true,
+            "pickaxe_required": false,
+            "plant_affinity": false,
+            "shovel_affinity": false,
+            "sustain_fire": false,
+            "unbreakable": false
+        },
+        "color": [
+            0.1448216289281845,
+            0.13677118718624115,
+            0.17258356511592865
+        ],
+        "display_name": "mercury shepach",
+        "essence": {
+            "bias": -0.15000000000000036,
+            "energy": 0.5,
+            "fuseable": true,
+            "output_tags": [],
+            "properties": {
+                "aqua": 0.0,
+                "blockiness": 1.0,
+                "clay": 0.0,
+                "danger": 1.0,
+                "edibility": 0.0,
+                "faith": 0.0,
+                "hate": 1.0,
+                "lust": 0.0,
+                "mercury": 1.0,
+                "phlegm": 0.27,
+                "sulfur": 0.41,
+                "utility": 0.56,
+                "wearability": 0.0
+            },
+            "rank": 0.3,
+            "tags": [
+                "metal",
+                "ball",
+                "fire"
+            ]
+        },
+        "id": 324041244,
+        "internal": false,
+        "internal_name": "mercury shepach",
+        "max_durability": 0,
+        "stack_size": 50
+    },
+    {
+        "block_data": {
+            "axe_affinity": false,
+            "axe_required": false,
+            "break_time": 0.20000000298023224,
+            "drop_item": 324042840,
+            "flammability": 0.5,
+            "griefable": true,
+            "meat_affinity": false,
+            "pickaxe_affinity": true,
+            "pickaxe_required": false,
+            "plant_affinity": false,
+            "shovel_affinity": true,
+            "sustain_fire": false,
+            "unbreakable": false
+        },
+        "color": [
+            0.2989559471607208,
+            0.2865970730781555,
+            0.3327561318874359
+        ],
+        "display_name": "dust block",
+        "essence": {
+            "bias": -0.15000000000000036,
+            "energy": 0.025,
+            "fuseable": true,
+            "output_tags": [],
+            "properties": {
+                "aqua": 0.26,
+                "blockiness": 1.0,
+                "clay": 0.8,
+                "danger": 0.53,
+                "edibility": 0.3,
+                "faith": 0.0,
+                "hate": 0.0,
+                "lust": 0.3,
+                "mercury": 0.49,
+                "phlegm": 0.58,
+                "sulfur": 0.23,
+                "utility": 0.04,
+                "wearability": 0.0
+            },
+            "rank": 0.0,
+            "tags": [
+                "earth",
+                "plastic",
+                "fluff"
+            ]
+        },
+        "id": 324042840,
+        "internal": false,
+        "internal_name": "dust block",
+        "max_durability": 0,
+        "stack_size": 50
+    },
+    {
+        "block_data": {
+            "axe_affinity": false,
+            "axe_required": false,
             "break_time": 3.0,
             "drop_item": 370953288,
             "flammability": 0.0,
@@ -17148,6 +18754,116 @@
     },
     {
         "block_data": {
+            "axe_affinity": false,
+            "axe_required": false,
+            "break_time": 3.0,
+            "drop_item": 370953739,
+            "flammability": 0.0,
+            "griefable": true,
+            "meat_affinity": false,
+            "pickaxe_affinity": true,
+            "pickaxe_required": false,
+            "plant_affinity": false,
+            "shovel_affinity": false,
+            "sustain_fire": false,
+            "unbreakable": false
+        },
+        "color": [
+            0.9032933712005615,
+            0.9103749990463257,
+            0.9483723640441895
+        ],
+        "display_name": "frequency gate",
+        "essence": {
+            "bias": -0.15000000000000036,
+            "energy": 0.3,
+            "fuseable": true,
+            "output_tags": [],
+            "properties": {
+                "aqua": 0.77,
+                "blockiness": 0.0,
+                "clay": 0.19,
+                "danger": 0.0,
+                "edibility": 0.0,
+                "faith": 0.75,
+                "hate": 0.0,
+                "lust": 0.77,
+                "mercury": 1.0,
+                "phlegm": 0.09,
+                "sulfur": 0.41,
+                "utility": 1.0,
+                "wearability": 0.0
+            },
+            "rank": 0.5,
+            "tags": [
+                "metal",
+                "bright",
+                "ring"
+            ]
+        },
+        "id": 370953739,
+        "internal": false,
+        "internal_name": "frequency gate",
+        "max_durability": 0,
+        "stack_size": 50
+    },
+    {
+        "block_data": {
+            "axe_affinity": false,
+            "axe_required": false,
+            "break_time": 3.0,
+            "drop_item": 370954206,
+            "flammability": 0.0,
+            "griefable": true,
+            "meat_affinity": false,
+            "pickaxe_affinity": true,
+            "pickaxe_required": false,
+            "plant_affinity": false,
+            "shovel_affinity": false,
+            "sustain_fire": false,
+            "unbreakable": false
+        },
+        "color": [
+            0.3066100776195526,
+            0.3066100776195526,
+            0.3066100776195526
+        ],
+        "display_name": "glory machine",
+        "essence": {
+            "bias": -0.15000000000000036,
+            "energy": 0.3,
+            "fuseable": true,
+            "output_tags": [],
+            "properties": {
+                "aqua": 1.0,
+                "blockiness": 0.0,
+                "clay": 0.09,
+                "danger": 0.0,
+                "edibility": 0.0,
+                "faith": 1.0,
+                "hate": 0.0,
+                "lust": 0.38,
+                "mercury": 1.0,
+                "phlegm": 0.09,
+                "sulfur": 1.0,
+                "utility": 1.0,
+                "wearability": 0.0
+            },
+            "rank": 0.5,
+            "tags": [
+                "magnetite",
+                "sky",
+                "ball"
+            ]
+        },
+        "id": 370954206,
+        "internal": false,
+        "internal_name": "atmosphere block",
+        "max_durability": 0,
+        "stack_size": 50
+    },
+    {
+        "block_data": {
             "axe_affinity": true,
             "axe_required": false,
             "break_time": 2.0,
@@ -17338,7 +19054,7 @@
         "internal": false,
         "internal_name": "cardboard box",
         "max_durability": 0,
-        "stack_size": 5
+        "stack_size": 50
     },
     {
         "block_data": {
@@ -17461,7 +19177,7 @@
         "internal": false,
         "internal_name": "blessing cube",
         "max_durability": 0,
-        "stack_size": 5
+        "stack_size": 50
     },
     {
         "block_data": {
@@ -17743,7 +19459,7 @@
         "internal": false,
         "internal_name": "clay pot",
         "max_durability": 0,
-        "stack_size": 5
+        "stack_size": 50
     },
     {
         "block_data": {
@@ -18127,7 +19843,8 @@
             "rank": 1.0,
             "tags": [
                 "plastic",
-                "gold"
+                "gold",
+                "digital"
             ]
         },
         "id": 379349058,
@@ -18514,6 +20231,60 @@
         "block_data": {
             "axe_affinity": true,
             "axe_required": false,
+            "break_time": 0.05000000074505806,
+            "drop_item": 379349781,
+            "flammability": 1.0,
+            "griefable": true,
+            "meat_affinity": false,
+            "pickaxe_affinity": false,
+            "pickaxe_required": false,
+            "plant_affinity": false,
+            "shovel_affinity": false,
+            "sustain_fire": false,
+            "unbreakable": false
+        },
+        "color": [
+            0.47145402431488037,
+            0.3979797959327698,
+            0.22308802604675293
+        ],
+        "display_name": "patience block",
+        "essence": {
+            "bias": -0.15000000000000036,
+            "energy": 0.025,
+            "fuseable": true,
+            "output_tags": [],
+            "properties": {
+                "aqua": 0.0,
+                "blockiness": 1.0,
+                "clay": 0.41,
+                "danger": 0.0,
+                "edibility": 0.0,
+                "faith": 0.0,
+                "hate": 0.0,
+                "lust": 0.0,
+                "mercury": 0.36,
+                "phlegm": 1.0,
+                "sulfur": 0.27,
+                "utility": 0.83,
+                "wearability": 0.0
+            },
+            "rank": 0.0,
+            "tags": [
+                "wood",
+                "digital"
+            ]
+        },
+        "id": 379349781,
+        "internal": false,
+        "internal_name": "patience block",
+        "max_durability": 0,
+        "stack_size": 50
+    },
+    {
+        "block_data": {
+            "axe_affinity": true,
+            "axe_required": false,
             "break_time": 1.600000023841858,
             "drop_item": 379351245,
             "flammability": 0.6499999761581421,
@@ -18560,6 +20331,60 @@
         "id": 379351245,
         "internal": false,
         "internal_name": "wallpaper block",
+        "max_durability": 0,
+        "stack_size": 50
+    },
+    {
+        "block_data": {
+            "axe_affinity": true,
+            "axe_required": false,
+            "break_time": 1.600000023841858,
+            "drop_item": 379351246,
+            "flammability": 0.20000000298023224,
+            "griefable": true,
+            "meat_affinity": false,
+            "pickaxe_affinity": false,
+            "pickaxe_required": false,
+            "plant_affinity": false,
+            "shovel_affinity": false,
+            "sustain_fire": false,
+            "unbreakable": false
+        },
+        "color": [
+            0.6011373996734619,
+            0.5840590596199036,
+            0.38881248235702515
+        ],
+        "display_name": "plaster block",
+        "essence": {
+            "bias": -0.15000000000000036,
+            "energy": 0.03,
+            "fuseable": true,
+            "output_tags": [],
+            "properties": {
+                "aqua": 0.13,
+                "blockiness": 1.0,
+                "clay": 0.2,
+                "danger": 0.7,
+                "edibility": 0.0,
+                "faith": 1.0,
+                "hate": 0.0,
+                "lust": 0.3,
+                "mercury": 1.0,
+                "phlegm": 0.93,
+                "sulfur": 0.08,
+                "utility": 0.08,
+                "wearability": 0.0
+            },
+            "rank": 0.0,
+            "tags": [
+                "wood",
+                "stone"
+            ]
+        },
+        "id": 379351246,
+        "internal": false,
+        "internal_name": "wall block",
         "max_durability": 0,
         "stack_size": 50
     },
@@ -19192,6 +21017,48 @@
     },
     {
         "color": [
+            0.4267766773700714,
+            0.10815367102622986,
+            0.2015082985162735
+        ],
+        "display_name": "mushroom cap",
+        "essence": {
+            "bias": 0.0,
+            "energy": 0.6,
+            "fuseable": true,
+            "output_tags": [],
+            "properties": {
+                "aqua": 0.64,
+                "blockiness": 0.0,
+                "clay": 0.49,
+                "danger": 0.22,
+                "edibility": 0.71,
+                "faith": 0.0,
+                "hate": 1.0,
+                "lust": 0.23,
+                "mercury": 0.39,
+                "phlegm": 1.0,
+                "sulfur": 0.74,
+                "utility": 0.0,
+                "wearability": 0.0
+            },
+            "rank": 0.0,
+            "tags": [
+                "meat",
+                "plant"
+            ]
+        },
+        "food_data": {
+            "recovery_amount": 6
+        },
+        "id": 741237151,
+        "internal": false,
+        "internal_name": "mushroom cap",
+        "max_durability": 0,
+        "stack_size": 1
+    },
+    {
+        "color": [
             0.5199626684188843,
             0.46240895986557007,
             0.2408590167760849
@@ -19652,6 +21519,49 @@
         "internal_name": "juice",
         "max_durability": 0,
         "stack_size": 5
+    },
+    {
+        "color": [
+            0.9527233242988586,
+            0.8808279037475586,
+            0.7513071894645691
+        ],
+        "display_name": "popped corn",
+        "essence": {
+            "bias": -0.1750000000000007,
+            "energy": 0.05,
+            "fuseable": true,
+            "output_tags": [],
+            "properties": {
+                "aqua": 0.54,
+                "blockiness": 0.0,
+                "clay": 0.0,
+                "danger": 0.22,
+                "edibility": 1.0,
+                "faith": 0.43,
+                "hate": 0.59,
+                "lust": 0.07,
+                "mercury": 0.0,
+                "phlegm": 1.0,
+                "sulfur": 0.21,
+                "utility": 0.0,
+                "wearability": 0.0
+            },
+            "rank": 0.0,
+            "tags": [
+                "plant",
+                "ball",
+                "fire"
+            ]
+        },
+        "food_data": {
+            "recovery_amount": 1
+        },
+        "id": 824289004,
+        "internal": false,
+        "internal_name": "popped corn",
+        "max_durability": 0,
+        "stack_size": 50
     },
     {
         "color": [
@@ -20288,6 +22198,61 @@
         "id": 1442087659,
         "internal": false,
         "internal_name": "smore block",
+        "max_durability": 0,
+        "stack_size": 50
+    },
+    {
+        "block_data": {
+            "axe_affinity": false,
+            "axe_required": false,
+            "break_time": 1.0,
+            "drop_item": 1442092190,
+            "flammability": 0.10000000149011612,
+            "griefable": true,
+            "meat_affinity": true,
+            "pickaxe_affinity": false,
+            "pickaxe_required": false,
+            "plant_affinity": false,
+            "shovel_affinity": false,
+            "sustain_fire": false,
+            "unbreakable": false
+        },
+        "color": [
+            0.16117477416992188,
+            0.2057720124721527,
+            0.24281470477581024
+        ],
+        "display_name": "cocoon block",
+        "essence": {
+            "bias": -0.15000000000000036,
+            "energy": 0.05,
+            "fuseable": true,
+            "output_tags": [],
+            "properties": {
+                "aqua": 0.77,
+                "blockiness": 1.0,
+                "clay": 0.55,
+                "danger": 0.51,
+                "edibility": 1.0,
+                "faith": 0.66,
+                "hate": 0.99,
+                "lust": 0.6,
+                "mercury": 0.51,
+                "phlegm": 0.98,
+                "sulfur": 0.63,
+                "utility": 1.0,
+                "wearability": 0.0
+            },
+            "rank": 0.0,
+            "tags": [
+                "meat",
+                "sky",
+                "digital"
+            ]
+        },
+        "id": 1442092190,
+        "internal": false,
+        "internal_name": "cocoon block",
         "max_durability": 0,
         "stack_size": 50
     },
@@ -21001,6 +22966,58 @@
         "internal": false,
         "internal_name": "thorn talisman",
         "max_durability": 500,
+        "stack_size": 1
+    },
+    {
+        "color": [
+            0.2395784705877304,
+            0.26030921936035156,
+            0.21675735712051392
+        ],
+        "display_name": "agate armor",
+        "equipment_data": {
+            "attack_increase": 0,
+            "fall_damage_increase": 0.0,
+            "jump_increase": 0.0,
+            "max_air_increase": 0,
+            "max_health_increase": 5,
+            "reach_increase": 0,
+            "slip_increase": 0.0,
+            "speed_increase": 0.0,
+            "water_speed_increase": 0.0,
+            "weight_increase": 0.0
+        },
+        "essence": {
+            "bias": 0.0,
+            "energy": 0.7,
+            "fuseable": false,
+            "output_tags": [],
+            "properties": {
+                "aqua": 0.5,
+                "blockiness": 0.48,
+                "clay": 1.0,
+                "danger": 0.36,
+                "edibility": 0.0,
+                "faith": 0.88,
+                "hate": 1.0,
+                "lust": 0.51,
+                "mercury": 0.62,
+                "phlegm": 0.16,
+                "sulfur": 0.45,
+                "utility": 0.67,
+                "wearability": 1.0
+            },
+            "rank": 0.6,
+            "tags": [
+                "gem",
+                "metal",
+                "stone"
+            ]
+        },
+        "id": 1604069089,
+        "internal": false,
+        "internal_name": "agate armor",
+        "max_durability": 900,
         "stack_size": 1
     },
     {
