@@ -1098,7 +1098,7 @@
             ]
         },
         "id": 33,
-        "internal": true,
+        "internal": false,
         "internal_name": "alma block",
         "max_durability": 0,
         "stack_size": 1
