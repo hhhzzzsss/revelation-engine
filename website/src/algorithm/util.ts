@@ -1,5 +1,29 @@
 import type { Recipe } from '../item/types';
 
+export const isDominated = (candidate: Recipe, dominator: Recipe): boolean => {
+  if (candidate.output.item.id !== dominator.output.item.id) return false;
+  const candidateOutputCount = candidate.output.count || 1;
+  const dominatorOutputCount = dominator.output.count || 1;
+  const candidateInputs = new Map(candidate.inputs.map((q) => [q.item.id, q.count / candidateOutputCount]));
+  const dominatorInputs = new Map(dominator.inputs.map((q) => [q.item.id, q.count / dominatorOutputCount]));
+  let dominated = false;
+  for (const [id, count] of candidateInputs) {
+    const dominatorCount = dominatorInputs.get(id) ?? 0;
+    if (dominatorCount > count) return false;
+    if (dominatorCount < count) dominated = true;
+  }
+  for (const [id] of dominatorInputs) {
+    if (!candidateInputs.has(id)) return false;
+  }
+  return dominated;
+};
+
+export const filterDominatedRecipes = (recipes: Recipe[]): Recipe[] => {
+  return recipes.filter((recipe, i) =>
+    !recipes.some((other, j) => i !== j && isDominated(recipe, other))
+  );
+};
+
 export const getQualityHeuristic = (recipe: Recipe): number => {
   const inputEnergy = recipe.inputs.reduce((sum, input) => sum + input.item.essence.energy * input.count, 0);
   const outputEnergy = recipe.output.item.essence.energy * recipe.output.count;
