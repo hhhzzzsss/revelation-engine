@@ -1,14 +1,20 @@
 extends Node
 
-const ITEM_DATA_OUTPUT_PATH: String = "res://extracted_item_data.json"
-const FUSER_PARAMS_OUTPUT_PATH = "res://extracted_fuser_params.json"
-const IMAGES_OUTPUT_PATH: String = "res://extracted_icons"
+const ITEM_DATA_OUTPUT_PATH: String = "user://item_data_extractor/extracted_item_data.json"
+const FUSER_PARAMS_OUTPUT_PATH = "user://item_data_extractor/extracted_fuser_params.json"
+const IMAGES_OUTPUT_PATH: String = "user://item_data_extractor/extracted_icons"
 
 func _ready() -> void:
     if not ItemMap.all_items_loaded:
         await ItemMap.items_done_loading
+    if not Ref.player_fuser.fusion_table_loaded:
+        await Ref.player_fuser.fusion_table_done_loading
         
     print("[Item Data Extractor] Extracting item data...")
+
+    # Create the necessary directories
+    var make_dir_err := DirAccess.make_dir_recursive_absolute(IMAGES_OUTPUT_PATH)
+    assert(make_dir_err == OK or make_dir_err == ERR_ALREADY_EXISTS, "[Item Data Extractor] Failed to create icon directory: %s" % IMAGES_OUTPUT_PATH)
     
     # Serialize fuser params and save
     var serialized_fuser_params: Dictionary = fuser_params_to_dict(Ref.player_fuser)
@@ -29,8 +35,6 @@ func _ready() -> void:
     clear_directory(IMAGES_OUTPUT_PATH)
     
     # Save all item icons
-    var make_dir_err := DirAccess.make_dir_recursive_absolute(IMAGES_OUTPUT_PATH)
-    assert(make_dir_err == OK or make_dir_err == ERR_ALREADY_EXISTS, "[Item Data Extractor] Failed to create icon directory: %s" % IMAGES_OUTPUT_PATH)
     for item: Item in all_items:
         var texture: Texture2D = item.icon
         if texture == null:

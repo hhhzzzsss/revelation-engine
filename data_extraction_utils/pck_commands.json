@@ -1,0 +1,6 @@
+[
+    {
+        "file": "data_extraction_utils/item_data_extractor.gd",
+        "target": "mods/ItemDataExtractor/mod_init.gd"
+    }
+]
