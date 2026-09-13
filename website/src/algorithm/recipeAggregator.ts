@@ -1,6 +1,6 @@
 import type { QuantifiedItem, Recipe } from '../item/types';
 import { capRecipeOutput, serializeRecipe } from '../item/util';
-import { compareInputCount, compareInputEnergy, compareQualityHeuristic } from './util';
+import { compareInputCount, compareInputEnergy, compareQualityHeuristic, filterDominatedRecipes } from './util';
 
 export abstract class Aggregator {
   public abstract addRecipe(recipe: Recipe): void;
@@ -29,7 +29,7 @@ export class CompositeAggregator extends Aggregator {
         recipeMap.set(serializedRecipe, recipe);
       }
     }
-    return Array.from(recipeMap.values());
+    return filterDominatedRecipes(Array.from(recipeMap.values()));
   }
 }
 
@@ -65,7 +65,7 @@ export abstract class EnumerationAggregator extends Aggregator {
   }
 
   public getRecipes(): Recipe[] {
-    return Array.from(this.recipeMap.values());
+    return filterDominatedRecipes(Array.from(this.recipeMap.values()));
   }
 }
 
@@ -145,7 +145,7 @@ export abstract class DerivationAggregator extends Aggregator {
   }
 
   public getRecipes(): Recipe[] {
-    return Array.from(this.recipeMap.values());
+    return filterDominatedRecipes(Array.from(this.recipeMap.values()));
   }
 
   // Based on the set of input item IDs, ignoring counts.
