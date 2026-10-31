@@ -1374,6 +1374,47 @@
     },
     {
         "color": [
+            0.4642031192779541,
+            0.3290598392486572,
+            0.26153847575187683
+        ],
+        "display_name": "myriad arrows",
+        "essence": {
+            "bias": -0.25,
+            "energy": 0.9,
+            "fuseable": false,
+            "output_tags": [],
+            "properties": {
+                "aqua": 0.0,
+                "blockiness": 0.32,
+                "clay": 0.12,
+                "danger": 1.0,
+                "edibility": 0.0,
+                "faith": 0.35,
+                "hate": 1.0,
+                "lust": 1.0,
+                "mercury": 0.89,
+                "phlegm": 0.0,
+                "sulfur": 0.32,
+                "utility": 0.24,
+                "wearability": 0.0
+            },
+            "rank": 0.9,
+            "tags": [
+                "digital",
+                "gold",
+                "fire",
+                "magnetite"
+            ]
+        },
+        "id": 2604,
+        "internal": true,
+        "internal_name": "myriad arrows",
+        "max_durability": 150,
+        "stack_size": 1
+    },
+    {
+        "color": [
             0.7863872051239014,
             0.7397340536117554,
             0.6714897155761719
@@ -4602,6 +4643,45 @@
         "id": 93013,
         "internal": false,
         "internal_name": "bone",
+        "max_durability": 0,
+        "stack_size": 50
+    },
+    {
+        "color": [
+            0.8349376320838928,
+            0.7009884715080261,
+            0.6390536427497864
+        ],
+        "display_name": "head",
+        "essence": {
+            "bias": 0.0,
+            "energy": 0.035,
+            "fuseable": false,
+            "output_tags": [],
+            "properties": {
+                "aqua": 0.43,
+                "blockiness": 0.0,
+                "clay": 0.49,
+                "danger": 0.64,
+                "edibility": 0.16,
+                "faith": 0.38,
+                "hate": 1.0,
+                "lust": 0.8,
+                "mercury": 0.05,
+                "phlegm": 0.93,
+                "sulfur": 0.33,
+                "utility": 0.12,
+                "wearability": 0.0
+            },
+            "rank": 0.35,
+            "tags": [
+                "meat",
+                "magnetite"
+            ]
+        },
+        "id": 93014,
+        "internal": false,
+        "internal_name": "head",
         "max_durability": 0,
         "stack_size": 50
     },
@@ -10379,6 +10459,47 @@
         "id": 45389961,
         "internal": false,
         "internal_name": "gleeblebear capsule",
+        "max_durability": 0,
+        "stack_size": 50
+    },
+    {
+        "color": [
+            0.6668469905853271,
+            0.5380662679672241,
+            0.7175118327140808
+        ],
+        "display_name": "hwobbb capsule",
+        "essence": {
+            "bias": -0.1999999999999993,
+            "energy": 0.5,
+            "fuseable": true,
+            "output_tags": [],
+            "properties": {
+                "aqua": 0.45,
+                "blockiness": 0.0,
+                "clay": 0.25,
+                "danger": 0.64,
+                "edibility": 0.84,
+                "faith": 1.0,
+                "hate": 1.0,
+                "lust": 1.0,
+                "mercury": 0.0,
+                "phlegm": 0.9,
+                "sulfur": 0.1,
+                "utility": 0.22,
+                "wearability": 0.0
+            },
+            "rank": 0.3,
+            "tags": [
+                "glass",
+                "meat",
+                "capsule",
+                "earth"
+            ]
+        },
+        "id": 45389982,
+        "internal": false,
+        "internal_name": "hwobbb capsule",
         "max_durability": 0,
         "stack_size": 50
     },
@@ -17536,6 +17657,61 @@
         "block_data": {
             "axe_affinity": false,
             "axe_required": false,
+            "break_time": 2.0,
+            "drop_item": 164199510,
+            "flammability": 0.10000000149011612,
+            "griefable": true,
+            "meat_affinity": false,
+            "pickaxe_affinity": true,
+            "pickaxe_required": false,
+            "plant_affinity": false,
+            "shovel_affinity": false,
+            "sustain_fire": false,
+            "unbreakable": false
+        },
+        "color": [
+            0.25133422017097473,
+            0.19823087751865387,
+            0.37254902720451355
+        ],
+        "display_name": "confusion block",
+        "essence": {
+            "bias": -0.25,
+            "energy": 0.1,
+            "fuseable": true,
+            "output_tags": [],
+            "properties": {
+                "aqua": 1.0,
+                "blockiness": 1.0,
+                "clay": 0.52,
+                "danger": 0.0,
+                "edibility": 0.0,
+                "faith": 0.23,
+                "hate": 1.0,
+                "lust": 1.0,
+                "mercury": 1.0,
+                "phlegm": 0.0,
+                "sulfur": 0.19,
+                "utility": 0.0,
+                "wearability": 0.0
+            },
+            "rank": 0.0,
+            "tags": [
+                "metal",
+                "sky",
+                "digital"
+            ]
+        },
+        "id": 164199510,
+        "internal": false,
+        "internal_name": "confusion block",
+        "max_durability": 0,
+        "stack_size": 50
+    },
+    {
+        "block_data": {
+            "axe_affinity": false,
+            "axe_required": false,
             "break_time": 1.0,
             "drop_loot": {
                 "chances": [
@@ -22185,6 +22361,61 @@
         "stack_size": 50
     },
     {
+        "block_data": {
+            "axe_affinity": true,
+            "axe_required": false,
+            "break_time": 1.0,
+            "drop_item": 379391516,
+            "flammability": 0.75,
+            "griefable": true,
+            "meat_affinity": false,
+            "pickaxe_affinity": false,
+            "pickaxe_required": false,
+            "plant_affinity": true,
+            "shovel_affinity": false,
+            "sustain_fire": false,
+            "unbreakable": false
+        },
+        "color": [
+            0.14331550896167755,
+            0.16380612552165985,
+            0.15878108143806458
+        ],
+        "display_name": "otet block",
+        "essence": {
+            "bias": -0.3000000000000007,
+            "energy": 0.1,
+            "fuseable": true,
+            "output_tags": [],
+            "properties": {
+                "aqua": 0.28,
+                "blockiness": 1.0,
+                "clay": 1.0,
+                "danger": 0.78,
+                "edibility": 0.01,
+                "faith": 0.0,
+                "hate": 0.0,
+                "lust": 0.0,
+                "mercury": 0.81,
+                "phlegm": 1.0,
+                "sulfur": 0.1,
+                "utility": 0.14,
+                "wearability": 0.0
+            },
+            "rank": 0.0,
+            "tags": [
+                "wood",
+                "leaf",
+                "earth"
+            ]
+        },
+        "id": 379391516,
+        "internal": false,
+        "internal_name": "otet block",
+        "max_durability": 0,
+        "stack_size": 50
+    },
+    {
         "color": [
             0.29468291997909546,
             0.29440027475357056,
@@ -24327,6 +24558,60 @@
         "id": 1442319112,
         "internal": false,
         "internal_name": "xina leaf block",
+        "max_durability": 0,
+        "stack_size": 50
+    },
+    {
+        "block_data": {
+            "axe_affinity": false,
+            "axe_required": false,
+            "break_time": 2.0,
+            "drop_item": 1442780481,
+            "flammability": 0.3499999940395355,
+            "griefable": true,
+            "meat_affinity": true,
+            "pickaxe_affinity": false,
+            "pickaxe_required": false,
+            "plant_affinity": false,
+            "shovel_affinity": false,
+            "sustain_fire": false,
+            "unbreakable": false
+        },
+        "color": [
+            0.3169001042842865,
+            0.21604278683662415,
+            0.22473473846912384
+        ],
+        "display_name": "sheep block",
+        "essence": {
+            "bias": -0.1999999999999993,
+            "energy": 0.025,
+            "fuseable": true,
+            "output_tags": [],
+            "properties": {
+                "aqua": 0.2,
+                "blockiness": 1.0,
+                "clay": 0.13,
+                "danger": 0.57,
+                "edibility": 0.24,
+                "faith": 0.0,
+                "hate": 1.0,
+                "lust": 0.25,
+                "mercury": 0.67,
+                "phlegm": 1.0,
+                "sulfur": 0.44,
+                "utility": 0.0,
+                "wearability": 0.0
+            },
+            "rank": 0.2,
+            "tags": [
+                "meat",
+                "glass"
+            ]
+        },
+        "id": 1442780481,
+        "internal": false,
+        "internal_name": "sheep block",
         "max_durability": 0,
         "stack_size": 50
     },
